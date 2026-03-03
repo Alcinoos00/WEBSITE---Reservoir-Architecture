@@ -1,0 +1,91 @@
+.navbar-container {
+    width: 100%;
+    background-color: transparent;
+    /* Assuming white or transparent based on design */
+    padding: 16px 32px;
+    /* Reduced from 24px 48px */
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1600px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-img {
+    width: auto;
+    height: 48px;
+    /* Approximate based on the design */
+    object-fit: contain;
+}
+
+.nav-links-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    /* Reduced from 16px */
+    color: var(--foreground);
+}
+
+.nav-separator {
+    font-size: 11px;
+    color: #a0a0a0;
+    /* Typically a lighter gray for the divider */
+    margin: 0;
+    /* Reduced from 0 4px */
+}
+
+.cta-container {
+    flex-shrink: 0;
+}
+
+.cta-button {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 28px;
+    display: inline-block;
+    transition: opacity 0.2s ease;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.cta-button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+    .nav-links-container {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 16px 20px;
+    }
+
+    .navbar-content {
+        justify-content: space-between;
+    }
+
+    .logo-img {
+        height: 32px;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 11px;
+    }
+}
