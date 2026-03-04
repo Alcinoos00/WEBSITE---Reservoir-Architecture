@@ -12,10 +12,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1600px;
+    max-width: 1200px;
     margin: 0 auto;
     flex-wrap: wrap;
     gap: 16px;
+    padding: 0 24px;
 }
 
 .logo-container {

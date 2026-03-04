@@ -41,47 +41,84 @@
 
 .content-body {
     display: flex;
-    justify-content: space-between;
-    gap: 24px;
-    /* Reduced from 48px */
+    flex-direction: column;
+    gap: 40px;
 }
 
 .content-column {
-    flex: 1;
+    width: 100%;
 }
 
-.left-column {
-    max-width: 60%;
-}
-
-.right-column {
-    max-width: 35%;
+.main-text-column {
+    max-width: 100%;
 }
 
 .column-title {
     margin-top: 0 !important;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
     line-height: 1.2;
 }
 
+.tech-sheet-wrapper {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+}
+
+.tech-sheet-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: #000;
+    text-transform: none;
+    line-height: 1.6;
+}
+
+.tech-sheet-toggle:hover {
+    opacity: 0.7;
+}
+
+.toggle-icon {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.tech-sheet-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.tech-sheet-content.open {
+    max-height: 1000px;
+    opacity: 1;
+}
+
 .tech-sheet {
-    margin-top: 0 !important;
-    border-left: 1px solid #000;
-    padding-left: 24px;
-    margin-left: 4px;
+    padding-bottom: 40px;
 }
 
 .tech-row {
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #eee;
     padding: 12px 0;
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 .tech-label {
-    font-weight: 700;
+    font-weight: 400;
 }
 
 .tech-value {
@@ -90,17 +127,7 @@
 
 @media (max-width: 768px) {
     .content-body {
-        flex-direction: column;
         gap: 32px;
-    }
-
-    .left-column,
-    .right-column {
-        max-width: 100%;
-    }
-
-    .content-divider {
-        display: none;
     }
 
     .tech-row {

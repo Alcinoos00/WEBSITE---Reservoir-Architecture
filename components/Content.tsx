@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import "./content.css";
 
 export default function Content() {
+    const [isTechSheetOpen, setIsTechSheetOpen] = useState(false);
+
     return (
         <section className="content-container">
             <div className="content-header">
@@ -20,7 +25,7 @@ export default function Content() {
             </div>
 
             <div className="content-body">
-                <div className="content-column left-column">
+                <div className="content-column main-text-column">
                     <h2 className="title-1 column-title">Espace Signature</h2>
                     <p className="body-text">
                         Un espace écrin sur deux niveaux qui rappelle la promesse de Wauquiez : confort,
@@ -44,29 +49,37 @@ export default function Content() {
                     </p>
                 </div>
 
-                <div className="content-divider" />
+                <div className="tech-sheet-wrapper">
+                    <button
+                        className={`tech-sheet-toggle ${isTechSheetOpen ? 'active' : ''}`}
+                        onClick={() => setIsTechSheetOpen(!isTechSheetOpen)}
+                    >
+                        <span>Fiche technique</span>
+                        <span className="toggle-icon">{isTechSheetOpen ? '−' : '+'}</span>
+                    </button>
 
-                <div className="content-column right-column">
-                    <div className="tech-sheet">
-                        <div className="tech-row">
-                            <span className="tech-label">Lieu</span>
-                            <span className="tech-value">Port Camargue (30)</span>
-                        </div>
-                        <div className="tech-row">
-                            <span className="tech-label">Maître d&apos;Ouvrage</span>
-                            <span className="tech-value">Cap Yatching</span>
-                        </div>
-                        <div className="tech-row">
-                            <span className="tech-label">Mission</span>
-                            <span className="tech-value">Conception / Permis de construire</span>
-                        </div>
-                        <div className="tech-row">
-                            <span className="tech-label">Surface</span>
-                            <span className="tech-value">97,00 m2</span>
-                        </div>
-                        <div className="tech-row">
-                            <span className="tech-label">Calendrier</span>
-                            <span className="tech-value">2014</span>
+                    <div className={`tech-sheet-content ${isTechSheetOpen ? 'open' : ''}`}>
+                        <div className="tech-sheet">
+                            <div className="tech-row">
+                                <span className="tech-label">Lieu</span>
+                                <span className="tech-value">Port Camargue (30)</span>
+                            </div>
+                            <div className="tech-row">
+                                <span className="tech-label">Maître d&apos;Ouvrage</span>
+                                <span className="tech-value">Cap Yatching</span>
+                            </div>
+                            <div className="tech-row">
+                                <span className="tech-label">Mission</span>
+                                <span className="tech-value">Conception / Permis de construire</span>
+                            </div>
+                            <div className="tech-row">
+                                <span className="tech-label">Surface</span>
+                                <span className="tech-value">97,00 m2</span>
+                            </div>
+                            <div className="tech-row">
+                                <span className="tech-label">Calendrier</span>
+                                <span className="tech-value">2014</span>
+                            </div>
                         </div>
                     </div>
                 </div>
