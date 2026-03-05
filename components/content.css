@@ -73,7 +73,7 @@
     border: none;
     padding: 20px 0;
     cursor: pointer;
-    font-size: clamp(12px, calc(0.6rem + 0.27vw), 14px);
+    font-size: clamp(10px, 0.76vw, 16px);
     font-weight: 400;
     letter-spacing: 0.1em;
     text-align: left;
@@ -87,7 +87,7 @@
 }
 
 .toggle-icon {
-    font-size: clamp(14px, calc(0.8rem + 0.32vw), 18px);
+    font-size: clamp(12px, 0.97vw, 20px);
     font-weight: 400;
 }
 
@@ -112,7 +112,7 @@
     justify-content: space-between;
     border-bottom: 1px solid #eee;
     padding: 12px 0;
-    font-size: clamp(12px, calc(0.6rem + 0.27vw), 14px);
+    font-size: clamp(10px, 0.76vw, 16px);
     font-weight: 400;
     line-height: 1.6;
 }
@@ -131,6 +131,6 @@
     }
 
     .tech-row {
-        font-size: clamp(12px, calc(0.6rem + 0.27vw), 16px);
+        font-size: clamp(11px, 0.9vw, 18px);
     }
 }

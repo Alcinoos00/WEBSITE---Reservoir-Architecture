@@ -17,7 +17,7 @@
 
 .footer-brand-title {
     color: #fff !important;
-    font-size: clamp(14px, calc(0.8rem + 0.32vw), 18px) !important;
+    font-size: clamp(12px, 0.97vw, 20px) !important;
     letter-spacing: 0.2em !important;
     margin: 0 !important;
 }
@@ -31,7 +31,7 @@
 
 .footer-info {
     color: #a0a0a0;
-    font-size: clamp(10px, calc(0.6rem + 0.2vw), 13px) !important;
+    font-size: clamp(9px, 0.7vw, 14px) !important;
     margin: 0 !important;
 }
 
@@ -74,7 +74,7 @@
 
 .footer-link-small {
     color: #a0a0a0;
-    font-size: clamp(9px, calc(0.5rem + 0.18vw), 11px);
+    font-size: clamp(8px, 0.625vw, 12px);
     text-decoration: none;
     transition: color 0.2s;
 }
