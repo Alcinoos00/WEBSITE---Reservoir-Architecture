@@ -7,7 +7,7 @@
 .hero-viewport {
     position: relative;
     width: 100%;
-    max-width: 1600px;
+    max-width: 100rem;
 }
 
 .hero-scroll-container {
@@ -52,11 +52,11 @@
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(0.25rem);
     color: white;
     border: none;
-    width: 44px;
-    height: 44px;
+    width: 2.75rem;
+    height: 2.75rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -71,45 +71,45 @@
 }
 
 .slider-nav.prev {
-    left: 24px;
+    left: 1.5rem;
 }
 
 .slider-nav.next {
-    right: 24px;
+    right: 1.5rem;
 }
 
 .hero-overlay-icon {
     position: absolute;
-    bottom: 24px;
-    right: 24px;
+    bottom: 1.5rem;
+    right: 1.5rem;
     z-index: 10;
 }
 
 @media (max-width: 1024px) {
     .hero-scroll-container {
-        height: 300px;
+        height: 18.75rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero-scroll-container {
-        height: 250px;
+        height: 15.625rem;
     }
 
     .slider-nav {
-        width: 36px;
-        height: 36px;
+        width: 2.25rem;
+        height: 2.25rem;
     }
 }
 
 @media (max-width: 1024px) {
     .hero-image-wrapper {
-        height: 300px;
+        height: 18.75rem;
     }
 }
 
 @media (max-width: 768px) {
     .hero-image-wrapper {
-        height: 250px;
+        height: 15.625rem;
     }
 }

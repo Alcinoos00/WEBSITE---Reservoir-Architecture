@@ -2,8 +2,8 @@
     width: 100%;
     background-color: transparent;
     /* Assuming white or transparent based on design */
-    padding: 16px 32px;
-    /* Reduced from 24px 48px */
+    padding: 1rem 2rem;
+    /* Reduced from 1.5rem 3rem */
     position: relative;
     z-index: 100;
 }
@@ -12,11 +12,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 75rem;
     margin: 0 auto;
     flex-wrap: wrap;
-    gap: 16px;
-    padding: 0 24px;
+    gap: 1rem;
+    padding: 0 1.5rem;
 }
 
 .logo-container {
@@ -27,7 +27,7 @@
 
 .logo-img {
     width: auto;
-    height: 48px;
+    height: 3rem;
     /* Approximate based on the design */
     object-fit: contain;
 }
@@ -35,13 +35,13 @@
 .nav-links-container {
     display: flex;
     align-items: center;
-    gap: 12px;
-    /* Reduced from 16px */
+    gap: 0.75rem;
+    /* Reduced from 1rem */
     color: var(--foreground);
 }
 
 .nav-separator {
-    font-size: clamp(8px, 0.625vw, 12px);
+    font-size: 0.6875rem;
     color: #a0a0a0;
     /* Typically a lighter gray for the divider */
     margin: 0;
@@ -55,7 +55,7 @@
 .cta-button {
     background-color: #000000;
     color: #ffffff;
-    padding: 14px 28px;
+    padding: 0.875rem 1.75rem;
     display: inline-block;
     transition: opacity 0.2s ease;
     line-height: 1;
@@ -76,15 +76,15 @@
     }
 
     .navbar-container {
-        padding: 16px 20px;
+        padding: 1rem 1.25rem;
     }
 
     .menu-toggle {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px;
-        height: 20px;
+        width: 1.875rem;
+        height: 1.25rem;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -94,13 +94,13 @@
 
     .bar {
         width: 100%;
-        height: 2px;
+        height: 0.125rem;
         background-color: #000;
         transition: all 0.3s ease;
     }
 
     .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(0.5625rem) rotate(45deg);
     }
 
     .menu-toggle.active .bar:nth-child(2) {
@@ -108,7 +108,7 @@
     }
 
     .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        transform: translateY(-0.5625rem) rotate(-45deg);
     }
 
     .mobile-menu {
@@ -126,7 +126,7 @@
 
     .mobile-menu.open {
         height: auto;
-        padding: 40px 20px;
+        padding: 2.5rem 1.25rem;
     }
 
     .mobile-nav-links {
@@ -137,17 +137,17 @@
     }
 
     .mobile-nav-links .nav-link {
-        font-size: clamp(10px, 0.76vw, 16px);
-        letter-spacing: 0.3em;
-        margin-right: -0.3em;
+        font-size: 0.875rem;
+        letter-spacing: 0.3rem;
+        margin-right: -0.3rem;
     }
 
     .mobile-cta {
-        margin-top: 10px;
+        margin-top: 0.625rem;
         background-color: #000;
         color: #fff;
-        padding: 14px 40px;
-        font-size: clamp(9px, 0.7vw, 14px);
+        padding: 0.875rem 2.5rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
     }
@@ -165,7 +165,7 @@
 
 @media (max-width: 768px) {
     .navbar-container {
-        padding: 16px 20px;
+        padding: 1rem 1.25rem;
     }
 
     .navbar-content {
@@ -173,11 +173,11 @@
     }
 
     .logo-img {
-        height: 32px;
+        height: 2rem;
     }
 
     .cta-button {
-        padding: 10px 20px;
-        font-size: clamp(8px, 0.625vw, 12px);
+        padding: 0.625rem 1.25rem;
+        font-size: 0.6875rem;
     }
 }

@@ -3,7 +3,7 @@
     background-color: #0c0c0c;
     /* Deep dark background */
     color: #fff;
-    padding: 64px 48px;
+    padding: 4rem 3rem;
     z-index: 100;
 }
 
@@ -11,13 +11,14 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1600px;
-    margin: 0 auto 48px auto;
+    max-width: 100rem;
+    margin: 0 auto 3rem auto;
 }
 
 .footer-brand-title {
     color: #fff !important;
-    font-size: clamp(12px, 0.97vw, 20px) !important;
+    font-size: 1.125rem !important;
+    /* 18px */
     letter-spacing: 0.2em !important;
     margin: 0 !important;
 }
@@ -25,34 +26,35 @@
 .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem;
     align-items: flex-start;
 }
 
 .footer-info {
     color: #a0a0a0;
-    font-size: clamp(9px, 0.7vw, 14px) !important;
+    font-size: 0.8125rem !important;
+    /* 13px */
     margin: 0 !important;
 }
 
 .footer-divider {
-    height: 1px;
+    height: 0.0625rem;
     background-color: #333;
-    max-width: 1600px;
-    margin: 0 auto 32px auto;
+    max-width: 100rem;
+    margin: 0 auto 2rem auto;
 }
 
 .footer-bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1600px;
+    max-width: 100rem;
     margin: 0 auto;
 }
 
 .footer-socials {
     display: flex;
-    gap: 16px;
+    gap: 1rem;
     align-items: center;
 }
 
@@ -68,13 +70,14 @@
 
 .footer-links-bottom {
     display: flex;
-    gap: 24px;
+    gap: 1.5rem;
     align-items: center;
 }
 
 .footer-link-small {
     color: #a0a0a0;
-    font-size: clamp(8px, 0.625vw, 12px);
+    font-size: 0.6875rem;
+    /* 11px */
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -90,18 +93,18 @@
 @media (max-width: 1024px) {
     .footer-top {
         flex-direction: column;
-        gap: 32px;
+        gap: 2rem;
     }
 
     .footer-bottom {
         flex-direction: column;
-        gap: 24px;
+        gap: 1.5rem;
         text-align: center;
     }
 
     .footer-links-bottom {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 1rem;
     }
 }
