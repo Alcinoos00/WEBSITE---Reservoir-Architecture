@@ -11,13 +11,13 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto 48px auto;
 }
 
 .footer-brand-title {
     color: #fff !important;
-    font-size: 18px !important;
+    font-size: clamp(14px, calc(0.8rem + 0.32vw), 18px) !important;
     letter-spacing: 0.2em !important;
     margin: 0 !important;
 }
@@ -31,14 +31,14 @@
 
 .footer-info {
     color: #a0a0a0;
-    font-size: 13px !important;
+    font-size: clamp(10px, calc(0.6rem + 0.2vw), 13px) !important;
     margin: 0 !important;
 }
 
 .footer-divider {
     height: 1px;
     background-color: #333;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto 32px auto;
 }
 
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -74,7 +74,7 @@
 
 .footer-link-small {
     color: #a0a0a0;
-    font-size: 11px;
+    font-size: clamp(9px, calc(0.5rem + 0.18vw), 11px);
     text-decoration: none;
     transition: color 0.2s;
 }
