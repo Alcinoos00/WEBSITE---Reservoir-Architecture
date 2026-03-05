@@ -49,7 +49,7 @@ export default function Content() {
                     </p>
                 </div>
 
-                <div className="tech-sheet-wrapper">
+                <div className="tech-sheet-square-wrapper">
                     <button
                         className={`tech-sheet-toggle ${isTechSheetOpen ? 'active' : ''}`}
                         onClick={() => setIsTechSheetOpen(!isTechSheetOpen)}
