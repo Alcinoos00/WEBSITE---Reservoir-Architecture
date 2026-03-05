@@ -1,3 +1,5 @@
+/* * { outline: 1px solid red; } */
+/* Gemini's Debug Lever: Uncomment to see layout overflows */
 :root {
   --background: #ffffff;
   --foreground: #000000;
@@ -11,7 +13,8 @@
 }
 
 html {
-  font-size: clamp(14px, 0.85vw + 0.1rem, 18px);
+  /* Scales from 12px (mobile) to 16px (2K). 1080p will be ~15px. */
+  font-size: clamp(12px, 0.6vw + 0.2rem, 16px);
 }
 
 html,
