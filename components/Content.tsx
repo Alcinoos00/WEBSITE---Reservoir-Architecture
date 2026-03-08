@@ -62,7 +62,7 @@ export default function Content({ project }: ContentProps) {
 
                     <div className={`tech-sheet-content ${isTechSheetOpen ? 'open' : ''}`}>
                         <div className="tech-sheet">
-                            {project.techSheet.map((item, index) => (
+                            {project.techSheet?.map((item, index) => (
                                 <div key={`${project.id}-tech-${index}`} className="tech-row">
                                     <span className="tech-label">{item.label}</span>
                                     <span className="tech-value">{item.value}</span>
