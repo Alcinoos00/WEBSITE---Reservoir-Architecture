@@ -12,11 +12,11 @@
 .hero-scroll-container {
     display: flex;
     overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     height: 42vh;
     background-color: #f5f5f5;
+    gap: 0.5rem;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -33,16 +33,16 @@
 }
 
 .hero-image-item {
-    flex: 0 0 100%;
-    width: 100%;
+    flex: 0 0 auto;
+    width: auto;
     height: 100%;
-    scroll-snap-align: center;
+    scroll-snap-align: start;
 }
 
 .hero-image {
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 }
 

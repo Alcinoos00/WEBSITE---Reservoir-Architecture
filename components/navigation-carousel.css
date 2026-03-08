@@ -1,0 +1,190 @@
+.nav-carousel-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.nav-carousel-viewport {
+    position: relative;
+    width: 100%;
+    padding-bottom: 8px;
+    /* Reserve space for the scrollbar */
+}
+
+.nav-carousel-scroll {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 42vh;
+    /* Match project hero height */
+    gap: 0.25rem;
+    /* Small gap between images */
+    user-select: none;
+}
+
+/* Hide scrollbar */
+.nav-carousel-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-carousel-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.nav-carousel-item {
+    position: relative;
+    flex: 0 0 auto;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    min-width: 25vw;
+    /* Ensure items have some width */
+    max-width: 80vw;
+}
+
+.nav-carousel-image {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none;
+    /* Let parent Link handle clicks, but don't block scroll */
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Base overlay (very subtle dark gradient for text readability) */
+.nav-carousel-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 30%);
+    transition: background-color 0.4s ease;
+    z-index: 5;
+}
+
+/* Hover state: elegant white veil and slight scale */
+.nav-carousel-item:hover .nav-carousel-overlay {
+    background-color: rgba(255, 255, 255, 0.25);
+    /* The white veil */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%);
+    /* Keep text readable */
+}
+
+.nav-carousel-item:hover .nav-carousel-image {
+    transform: scale(1.02);
+}
+
+/* Bottom right title */
+.nav-carousel-title {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    z-index: 10;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    pointer-events: none;
+}
+
+/* Navigation Arrows (same as Hero) */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.25rem);
+    color: white;
+    border: none;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: background 0.3s ease;
+}
+
+.slider-nav:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.slider-nav.prev {
+    left: 1.5rem;
+}
+
+.slider-nav.next {
+    right: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .nav-carousel-scroll {
+        height: 40vh;
+    }
+
+    .nav-carousel-title {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-carousel-scroll {
+        height: 35vh;
+    }
+
+    .slider-nav {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .nav-carousel-title {
+        bottom: 1rem;
+        right: 1rem;
+    }
+}
+
+/* ── Custom scrollbar ── */
+.nav-carousel-scrollbar-track {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    z-index: 30;
+}
+
+.nav-carousel-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #000;
+    border-radius: 2px;
+    cursor: grab;
+    transition: background-color 0.2s ease, height 0.2s ease, top 0.2s ease;
+    will-change: transform, width;
+    min-width: 40px;
+}
+
+.nav-carousel-scrollbar-thumb:active {
+    cursor: grabbing;
+}
+
+.nav-carousel-scrollbar-track:hover .nav-carousel-scrollbar-thumb {
+    height: 6px;
+    top: -1px;
+    background-color: #333;
+}

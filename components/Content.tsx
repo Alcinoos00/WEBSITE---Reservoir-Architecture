@@ -3,50 +3,52 @@
 import { useState } from "react";
 import Image from "next/image";
 import "./content.css";
+import { ProjectData } from "@/types/project";
 
-export default function Content() {
+interface ContentProps {
+    project: ProjectData;
+}
+
+export default function Content({ project }: ContentProps) {
     const [isTechSheetOpen, setIsTechSheetOpen] = useState(false);
 
     return (
         <section className="content-container">
             <div className="content-header">
-                <p className="subtitle content-subtitle">WAUQUIEZ - NAUTISME</p>
-                <h1 className="title content-title">Show - Room</h1>
-                <div className="content-logo-wrapper">
-                    <Image
-                        src="/logo-content.png"
-                        alt="Wauquiez Logo"
-                        width={120}
-                        height={48}
-                        className="content-logo"
-                        priority
-                    />
-                </div>
+                <p className="subtitle content-subtitle">{project.subtitle}</p>
+                <h1 className="title content-title">{project.title}</h1>
+
+                {project.projectLogo && (
+                    <div className="content-logo-wrapper">
+                        <Image
+                            src={project.projectLogo.src}
+                            alt={project.projectLogo.alt}
+                            width={project.projectLogo.width}
+                            height={project.projectLogo.height}
+                            className="content-logo"
+                            priority
+                        />
+                    </div>
+                )}
+
+                {project.descriptionHeader && !project.projectLogo && (
+                    <p className="body-text" style={{ fontWeight: 600, marginBottom: '2rem' }}>
+                        {project.descriptionHeader}
+                    </p>
+                )}
             </div>
 
             <div className="content-body">
                 <div className="content-column main-text-column">
-                    <h2 className="title-1 column-title">Espace Signature</h2>
-                    <p className="body-text">
-                        Un espace écrin sur deux niveaux qui rappelle la promesse de Wauquiez : confort,
-                        matériaux nobles et attention aux détails, marqueurs de leur ligne nautique.
-                    </p>
-                    <p className="body-text">
-                        Un show room pensé en parcours client : espace détente et accueil en RDC, espace
-                        conseil et administration en mezzanine.
-                    </p>
-                    <p className="body-text">
-                        L&apos;espace déploie une architecture intérieure fluide où mezzanine, escalier et verrières
-                        structurent la perspective.
-                    </p>
-                    <p className="body-text">
-                        Le bois chaleureux dialogue avec des parois blanches épurées, créant une atmosphère
-                        élégante et contemporaine baignée de lumière naturelle.
-                    </p>
-                    <p className="body-text">
-                        Entre accueil sculptural, lignes graphiques et mobilier intégré, le projet affirme une identité
-                        forte et raffinée au service de la marque.
-                    </p>
+                    {project.descriptionHeader && project.projectLogo && (
+                        <h2 className="title-1 column-title">{project.descriptionHeader}</h2>
+                    )}
+
+                    {project.descriptionParagraphs.map((para, index) => (
+                        <p key={`${project.id}-para-${index}`} className="body-text">
+                            {para}
+                        </p>
+                    ))}
                 </div>
 
                 <div className="tech-sheet-square-wrapper">
@@ -60,26 +62,12 @@ export default function Content() {
 
                     <div className={`tech-sheet-content ${isTechSheetOpen ? 'open' : ''}`}>
                         <div className="tech-sheet">
-                            <div className="tech-row">
-                                <span className="tech-label">Lieu</span>
-                                <span className="tech-value">Port Camargue (30)</span>
-                            </div>
-                            <div className="tech-row">
-                                <span className="tech-label">Maître d&apos;Ouvrage</span>
-                                <span className="tech-value">Cap Yatching</span>
-                            </div>
-                            <div className="tech-row">
-                                <span className="tech-label">Mission</span>
-                                <span className="tech-value">Conception / Permis de construire</span>
-                            </div>
-                            <div className="tech-row">
-                                <span className="tech-label">Surface</span>
-                                <span className="tech-value">97,00 m2</span>
-                            </div>
-                            <div className="tech-row">
-                                <span className="tech-label">Calendrier</span>
-                                <span className="tech-value">2014</span>
-                            </div>
+                            {project.techSheet.map((item, index) => (
+                                <div key={`${project.id}-tech-${index}`} className="tech-row">
+                                    <span className="tech-label">{item.label}</span>
+                                    <span className="tech-value">{item.value}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

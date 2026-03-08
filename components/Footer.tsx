@@ -3,7 +3,7 @@ import "./footer.css";
 export default function Footer() {
     const currentYear = new Date().getFullYear();
     return (
-        <footer className="footer-container">
+        <footer className="footer-container" id="contact">
             <div className="footer-top">
                 <div className="footer-branding">
                     <h2 className="subtitle footer-brand-title">RESERVOIR ARCHITECTURE</h2>

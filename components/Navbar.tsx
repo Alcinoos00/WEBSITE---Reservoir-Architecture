@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className="navbar-content">
                 <Link href="/" className="logo-container" onClick={closeMenu}>
                     <Image
-                        src="/logo-navbar.svg"
+                        src="/images/ui/logo-navbar.svg"
                         alt="RESERVOIR Architecture"
                         width={240}
                         height={50}
@@ -27,17 +27,17 @@ export default function Navbar() {
 
                 {/* Desktop Menu */}
                 <div className="nav-links-container desktop-only">
-                    <Link href="#villas" className="nav-link">VILLAS</Link>
+                    <Link href="/villas" className="nav-link">VILLAS</Link>
                     <span className="nav-separator">|</span>
-                    <Link href="#logements" className="nav-link">LOGEMENTS</Link>
+                    <Link href="/logements" className="nav-link">LOGEMENTS</Link>
                     <span className="nav-separator">|</span>
-                    <Link href="#commerces" className="nav-link">COMMERCES</Link>
+                    <Link href="/commerces" className="nav-link">COMMERCES</Link>
                     <span className="nav-separator">|</span>
-                    <Link href="#equipements" className="nav-link">EQUIPEMENTS</Link>
+                    <Link href="/equipements" className="nav-link">EQUIPEMENTS</Link>
                 </div>
 
                 <div className="cta-container desktop-only">
-                    <Link href="#contact" className="cta-button cta-text">
+                    <Link href="/#contact" className="cta-button cta-text">
                         Nous Contacter
                     </Link>
                 </div>
@@ -57,11 +57,11 @@ export default function Navbar() {
             {/* Mobile Menu */}
             <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
                 <div className="mobile-nav-links">
-                    <Link href="#villas" className="nav-link" onClick={closeMenu}>VILLAS</Link>
-                    <Link href="#logements" className="nav-link" onClick={closeMenu}>LOGEMENTS</Link>
-                    <Link href="#commerces" className="nav-link" onClick={closeMenu}>COMMERCES</Link>
-                    <Link href="#equipements" className="nav-link" onClick={closeMenu}>EQUIPEMENTS</Link>
-                    <Link href="#contact" className="mobile-cta" onClick={closeMenu}>Nous Contacter</Link>
+                    <Link href="/villas" className="nav-link" onClick={closeMenu}>VILLAS</Link>
+                    <Link href="/logements" className="nav-link" onClick={closeMenu}>LOGEMENTS</Link>
+                    <Link href="/commerces" className="nav-link" onClick={closeMenu}>COMMERCES</Link>
+                    <Link href="/equipements" className="nav-link" onClick={closeMenu}>EQUIPEMENTS</Link>
+                    <Link href="/#contact" className="mobile-cta" onClick={closeMenu}>Nous Contacter</Link>
                 </div>
             </div>
         </nav>
