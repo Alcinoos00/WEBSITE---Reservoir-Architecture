@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect } from "react";
+import Image from "next/image";
 import "./hero.css";
 import { ProjectData } from "@/types/project";
 
@@ -47,10 +48,13 @@ export default function Hero({ project }: HeroProps) {
                 >
                     {project.heroImages.map((src, index) => (
                         <div key={`${project.id}-img-${index}`} className="hero-image-item">
-                            <img
+                            <Image
                                 src={src}
                                 alt={`${project.title} ${index + 1}`}
                                 className="hero-image"
+                                width={1200}
+                                height={800}
+                                priority={index === 0}
                             />
                         </div>
                     ))}
