@@ -263,15 +263,129 @@ export const MAISON_G_PROJECT: ProjectData = {
     ]
 };
 
+export const TRENTINI_PROJECT: ProjectData = {
+    id: "trentini",
+    slug: "trentini",
+    category: "LOGEMENTS",
+    heroImages: [
+        "/images/projects/2-logements/trentini/trentini_1.png",
+        "/images/projects/2-logements/trentini/trentini_2.png",
+        "/images/projects/2-logements/trentini/trentini_3.jpg",
+        "/images/projects/2-logements/trentini/trentini_4.png"
+    ],
+    subtitle: "TRENTINI",
+    title: "Restructuration et extension d’une ancienne remise en 2 logements T3 - Composition dans un tissu urbain hétérogène",
+    descriptionParagraphs: [
+        "Implanté dans un tissu urbain hétérogène, ce petit immeuble d’habitation adopte une volumétrie compacte qui s’insère entre les constructions existantes tout en affirmant une écriture sobre et continue.",
+        "Les retraits, loggias et la terrasse en attique prolongent les espaces de vie vers l’extérieur tout en préservant l’intimité dans ce contexte urbain dense."
+    ],
+    techSheet: [
+        { label: "Lieu", value: "Nîmes (30)" },
+        { label: "Maitre d'Ouvrage", value: "Privé" },
+        { label: "Mission", value: "ESQ APS APD DPC" },
+        { label: "Surface", value: "235 m2" },
+        { label: "Année", value: "2010" }
+    ]
+};
+
+export const JACOU_PROJECT: ProjectData = {
+    id: "jacou",
+    slug: "jacou",
+    category: "LOGEMENTS",
+    heroImages: [
+        "/images/projects/2-logements/jacou/jacou_2.png",
+        "/images/projects/2-logements/jacou/jacou_1.png",
+        "/images/projects/2-logements/jacou/jacou_3.png"
+    ],
+    subtitle: "JACOU",
+    title: "Construction d’un immeuble de 6 logements T2/T3 - Les Villas Suspendues",
+    descriptionParagraphs: [
+        "Composé de 6 logements, le bâtiment est conçu dans un esprit de villa, offrant à chacun une identité propre et des espaces extérieurs généreux.",
+        "Implanté dans la pente, l’ensemble déploie terrasses, coursives et escaliers extérieurs comme autant de prolongements du séjour vers le paysage.",
+        "Entre enduits clairs, pergolas filtrantes et volumes rythmés, le projet affirme une écriture méditerranéenne contemporaine, alliant intimité, lumière et art de vivre en plein air."
+    ],
+    techSheet: [
+        { label: "Lieu", value: "Jacou (34)" },
+        { label: "Maitre d'Ouvrage", value: "Privé" },
+        { label: "Mission", value: "ESQ APS APD DPC PRO" },
+        { label: "Surface", value: "650 m2" },
+        { label: "Calendrier", value: "2011" }
+    ]
+};
+
+export const MARTIN_PIERRE_PROJECT: ProjectData = {
+    id: "martin-pierre",
+    slug: "martin-pierre",
+    category: "LOGEMENTS",
+    heroImages: [
+        "/images/projects/2-logements/martin-pierre/martinpierre_1.png",
+        "/images/projects/2-logements/martin-pierre/martinpierre_2.png"
+    ],
+    subtitle: "MARTIN PIERRE",
+    title: "Construction d’un immeuble de 6 logements T3 - Compacité et confidentialité",
+    descriptionParagraphs: [
+        "Implanté au cœur d’une rue majoritairement composée de maison de ville, l’immeuble cherche à s’inscrire avec retenue dans un tissu résidentiel domestique.",
+        "Le projet privilégie une volumétrie compacte et une écriture sobre afin de limiter son impact dans un environnement pavillonnaire.",
+        "Les loggias creusées et les retraits de façade instaurent des espaces extérieurs protégés, favorisant l’intimité des logements T3.",
+        "Le traitement minéral ocre dialogue avec les tonalités méditerranéennes et la lumière de Nîmes.",
+        "L’ensemble vise ainsi une insertion discrète, conciliant densité douce et respect du caractère résidentiel de la rue."
+    ],
+    techSheet: [
+        { label: "Lieu", value: "Nîmes (30)" },
+        { label: "Maitre d'Ouvrage", value: "Privé" },
+        { label: "Mission", value: "ESQ APS APD DPC" },
+        { label: "Surface", value: "382 m2" },
+        { label: "Calendrier", value: "2005" }
+    ]
+};
+
+export const ROMI_PROJECT: ProjectData = {
+    id: "romi",
+    slug: "romi",
+    category: "LOGEMENTS",
+    heroImages: [
+        "/images/projects/2-logements/romi/romi_1.png",
+        "/images/projects/2-logements/romi/romi_2.png",
+        "/images/projects/2-logements/romi/romi_3.jpg"
+    ],
+    subtitle: "ROMI",
+    title: "Restructuration et extension pour un ensemble de logements T2 AU T4 - La Bastide Contemporaine",
+    descriptionParagraphs: [
+        "Une composition de volumes simples aux enduits clairs et aux toitures de tuiles réinterprète l’architecture traditionnelle provençale dans une écriture contemporaine et épurée.",
+        "Les pergolas métalliques et les larges baies vitrées prolongent les espaces de vie vers le jardin et filtrent la lumière méditerranéenne.",
+        "Organisé autour d’un cœur extérieur structurant, le projet crée un dialogue harmonieux entre architecture, paysage et art de vivre du Sud."
+    ],
+    techSheet: [
+        { label: "Lieu", value: "Rochefort du Gard (30)" },
+        { label: "Maitre d'Ouvrage", value: "Privé" },
+        { label: "Mission", value: "ESQ-APS-APD-DPC" },
+        { label: "Surface", value: "450 m2" },
+        { label: "Année", value: "2007" }
+    ]
+};
+
 export const SAMARITAINE_PROJECT: ProjectData = {
     id: "samaritaine",
     slug: "samaritaine",
     category: "LOGEMENTS",
-    heroImages: ["/images/projects/2-logements/samaritaine/samaritaine_1.png"],
-    subtitle: "LOGEMENTS COLLECTIFS",
-    title: "LA SAMARITAINE",
-    descriptionParagraphs: ["Description à venir pour ce projet de logements."],
-    techSheet: [{ label: "Type", value: "Logements" }]
+    heroImages: [
+        "/images/projects/2-logements/samaritaine/samaritaine_2.png",
+        "/images/projects/2-logements/samaritaine/samaritaine_1.png"
+    ],
+    subtitle: "SAMARITAINE",
+    title: "Construction d’un immeuble de 30 logements - îlot Terre & Lumière",
+    descriptionParagraphs: [
+        "Tout part de l’idée de crée un pont entre un projet moderne et un environnement dense et végétal.",
+        "Au cœur du tissu urbain, le projet affirme une présence minérale forte avec ses façades en béton teinté, chaleureusement nuancées. Les loggias et claustras en bois rythment les volumes et filtrent la lumière, offrant aux logements des espaces extérieurs protégés et habités.",
+        "Organisé autour d’un jardin patio, l’ensemble compose un îlot dense mais respirant, conciliant urbanité, intimité et douceur méditerranéenne."
+    ],
+    techSheet: [
+        { label: "Lieu", value: "Nîmes (30)" },
+        { label: "Maitre d'Ouvrage", value: "Privé" },
+        { label: "Mission", value: "ESQ APS APD DPC" },
+        { label: "Surface", value: "3 000 m2" },
+        { label: "Calendrier", value: "2011" }
+    ]
 };
 
 export const REGIE_DES_EAUX_PROJECT: ProjectData = {
@@ -297,5 +411,9 @@ export const PROJECTS: ProjectData[] = [
     VILLA_C_PROJECT,
     MAISON_G_PROJECT,
     SAMARITAINE_PROJECT,
+    MARTIN_PIERRE_PROJECT,
+    JACOU_PROJECT,
+    TRENTINI_PROJECT,
+    ROMI_PROJECT,
     REGIE_DES_EAUX_PROJECT
 ];

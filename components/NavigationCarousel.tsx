@@ -209,8 +209,8 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
                     ref={scrollRef}
                 >
                     {items.map((item, index) => {
-                        const isVilla = item.category === "VILLAS";
-                        const displayTitle = isCategoryNav ? item.category : (isVilla ? item.subtitle : item.title);
+                        const useSubtitle = item.category === "VILLAS" || item.category === "LOGEMENTS";
+                        const displayTitle = isCategoryNav ? item.category : (useSubtitle ? item.subtitle : item.title);
                         const categorySlug = item.category ? slugify(item.category) : "";
                         const href = item.href || (isCategoryNav ? `/${categorySlug}` : `/${item.slug}`);
 
