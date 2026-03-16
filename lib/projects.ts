@@ -220,6 +220,8 @@ export const MAISON_G_PROJECT: ProjectData = {
     ],
     subtitle: "MAISON G",
     title: "Elévation compacte en coeur de Village ou greffe urbaine",
+    optionalSubtitle: "Réhabilitation et Extension",
+    optionalSubtitle3: "Une greffe contemporaine dans un tissu ancien",
     descriptionParagraphs: [
         "Le projet s’insère dans une rue étroite composé de petits immeubles d’un étage. Le volume adopte une écriture compacte et verticale conforme à l’emprise au sol limitée tout en restant à l’échelle du tissu existant. La façade enduite claire, associée au bois et au métal, propose une expression contemporaine mesurée.",
         "L’organisation intérieure privilégie la lumière malgré la mitoyenneté. Les espaces se développent autour d’un puit de lumière créé, verticalement jusqu’à une terrasse en retrait, conçue comme une pièce extérieure intime au sommet de la maison. Cette séquence verticale — du socle ouvert au belvédère intime — transforme la parcelle étroite en parcours habité, où l’architecture cherche moins l’affirmation formelle que la production d’un espace protégé, lumineux et domestique."
@@ -342,8 +344,9 @@ export const SAMARITAINE_PROJECT: ProjectData = {
         "/images/projects/2-logements/samaritaine/samaritaine_2.png",
         "/images/projects/2-logements/samaritaine/samaritaine_1.png"
     ],
-    subtitle: "SAMARITAINE",
-    title: "Construction d’un immeuble de 30 logements - îlot Terre & Lumière",
+    subtitle: "NIMES 01 - (30)",
+    title: "Construction d’un immeuble de 30 logements",
+    optionalSubtitle: "îlot Terre & Lumière",
     descriptionParagraphs: [
         "Tout part de l’idée de crée un pont entre un projet moderne et un environnement dense et végétal.",
         "Au cœur du tissu urbain, le projet affirme une présence minérale forte avec ses façades en béton teinté, chaleureusement nuancées. Les loggias et claustras en bois rythment les volumes et filtrent la lumière, offrant aux logements des espaces extérieurs protégés et habités.",
@@ -451,7 +454,14 @@ export const FOOD_VILLAGE_PROJECT: ProjectData = {
         "/images/projects/3-commerces/food-village/foodvillage_5.jpg"
     ],
     subtitle: "FOOD VILLAGE",
-    title: "Café, snacking, drink - Pause Urbaine Lumineuse",
+    title: "Café, snacking, drink ",
+    optionalSubtitle: "Pause Urbaine Lumineuse",
+    optionalLogo: {
+        src: "/images/projects/3-commerces/food-village/foodvillage_logo.jpg",
+        alt: "Food Village Logo",
+        width: 100,
+        height: 100
+    },
     descriptionParagraphs: [
         "Pensé comme un café contemporain, l’espace s’organise autour d’un comptoir central aux lignes douces, véritable point d’ancrage du lieu.",
         "Le contraste entre le blanc immaculé, le bois naturel et les touches graphiques de l’identité visuelle crée une atmosphère fraîche et conviviale.",
@@ -579,8 +589,10 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
         "/images/projects/4-equipements/regie-des-eaux/regiedeseaux_5.png",
         "/images/projects/4-equipements/regie-des-eaux/regiedeseaux_6.png"
     ],
-    subtitle: "RÉGIE DES EAUX",
-    title: "Flux & Transparence – Le nouveau visage de la Régie des Eaux",
+    subtitle: "AIX EN PROVENCE (13)",
+    title: "RÉGIE DES EAUX",
+    optionalSubtitle: "RÉHABILITATION - RESTRUCTURATION - EXTENSION",
+    optionalSubtitle3: "Flux & Transparence – Le nouveau visage de la Régie des Eaux",
     descriptionParagraphs: [
         "Le projet consistait ici à réhabiliter , restructurer et agrandir l’actuel centre d’expoitation de la Régie des Eaux afin de revoir l’organisation et le fonctionnement spatial intérieur et donner une nouvelle identity au lieu.",
         "Une architecture contemporaine qui affirme l’identité publique de la Régie par une façade vibrante de lames verticales bleues, évoquant le mouvement et la fluidité de l’eau.",
@@ -743,8 +755,10 @@ export const CAPITAINERIE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/capitainerie/capitainerie_1.png",
         "/images/projects/4-equipements/capitainerie/capitainerie_2.png"
     ],
-    subtitle: "CAPITAINERIE",
-    title: "LA POINTE ROUGE - RÉHABILITATION - EXTENSION ET SURÉLÉVATION - Terre à ciel",
+    subtitle: "MARSEILLE (13)",
+    title: "CAPITAINERIE",
+    optionalSubtitle: "RÉHABILITATION - EXTENSION ET SURÉLÉVATION",
+    optionalSubtitle3: "Terre à ciel",
     descriptionParagraphs: [
         "Le projet consiste en la rehabilitation de l’ancienne capitainerie de la Pointe Rouge à Marseille (13)",
         "Le parti pris architectural de cette réhabilitation repose sur une intention poétique forte : incarner le mouvement ascendant de « la terre vers le ciel ». Le projet ne se contente pas de fonctionnaliser un espace ; il tisse un lien tangible et visuel entre l'ancrage rugueux du sol côtier et l'immensité éthérée de l'horizon maritime de la Méditerrannée.Ce volume minéral posé face à la mer capte la lumière comme une falaise habitée, où les lames horizontales en céramique composent une façade vibrante, entre opacité et transparence.",

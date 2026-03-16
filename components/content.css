@@ -21,7 +21,6 @@
 
 .content-title {
     margin-top: 0;
-    margin-bottom: 1.5rem !important;
 }
 
 .content-logo-wrapper {
@@ -33,6 +32,24 @@
 
 .content-logo {
     object-fit: contain;
+}
+
+.content-optional-logo-wrapper {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.content-optional-logo {
+    object-fit: contain;
+    max-width: 100%;
+}
+
+.content-optional-subtitle {
+    margin-top: 0;
+}
+
+.content-optional-subtitle-3 {
+    margin-top: 0;
 }
 
 .body-text {
@@ -129,6 +146,7 @@
 .tech-value {
     text-align: right;
 }
+
 
 @media (max-width: 768px) {
     .content-body {

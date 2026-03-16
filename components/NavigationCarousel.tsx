@@ -212,7 +212,7 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
                         const useSubtitle = item.category === "VILLAS" || item.category === "LOGEMENTS" || item.category === "COMMERCES" || item.category === "ÉQUIPEMENTS";
                         const displayTitle = isCategoryNav ? item.category : (useSubtitle ? item.subtitle : item.title);
                         const categorySlug = item.category ? slugify(item.category) : "";
-                        const href = item.href || (isCategoryNav ? `/${categorySlug}` : `/${item.slug}`);
+                        const href = item.href || (isCategoryNav ? `/${categorySlug}` : `/${categorySlug}/${item.slug}`);
 
                         return (
                             <Link key={`${item.id}-${index}`} href={href} className="nav-carousel-item">

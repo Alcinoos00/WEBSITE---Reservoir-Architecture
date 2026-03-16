@@ -18,6 +18,9 @@ export interface ProjectData {
     heroImages: string[];
     subtitle: string;
     title: string;
+    optionalLogo?: ProjectLogo;
+    optionalSubtitle?: string;
+    optionalSubtitle3?: string;
     projectLogo?: ProjectLogo;
     descriptionHeader?: string;
     descriptionParagraphs: string[];
