@@ -10,9 +10,9 @@ export const GENDARMERIE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/gendarmerie/gendarmerie_3.png",
         "/images/projects/4-equipements/gendarmerie/gendarmerie_4.png"
     ],
-    subtitle: "GENDARMERIE",
-    title: "BOUC BEL AIR - ÉQUIPEMENT PUBLIC - RÉHABILITATION - EXTENSION ET SURÉLÉVATION",
-    descriptionHeader: "RÉHABILITATION - EXTENSION ET SURÉLÉVATION",
+    subtitle: "BOUC BEL AIR (13)",
+    title: "GENDARMERIE",
+    optionalSubtitle: "BOUC BEL AIR - ÉQUIPEMENT PUBLIC - RÉHABILITATION - EXTENSION ET SURÉLÉVATION",
     descriptionParagraphs: [
         "Le projet s’inscrit dans un tissu urbain résidentiel dense, l’équipement actuel ne répond plus aux normes en vigueur et au nombre et confort des gendarmes.",
         "Le projet consiste en la réhabilitation, l’extension et surélévation de l’actuelle gendarmerie. Le procédé constructif choisi est l’ossature bois avec façade en bardage métal bronze à lames aléatoires , toiture végétalisée.",
@@ -40,8 +40,9 @@ export const VILLA_F_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa F/villa F_3.png",
         "/images/projects/1-villas/villa F/villa F_4.png"
     ],
-    subtitle: "VILLA F",
-    title: "Eminence des lignes, souveraineté des espaces : Une architecture de l’essentiel",
+    subtitle: "CAISSARGUES (30)",
+    title: "VILLA F",
+    optionalSubtitle: "Eminence des lignes, souveraineté des espaces : Une architecture de l’essentiel",
     descriptionParagraphs: [
         "Maison élégamment introvertie, structurée par une géométrie précise et une horizontalité assumée, elle s’organise autour d’une cour-piscine conçue comme un cœur vivant, ouvert au ciel et à la lumière. La majesté des espaces ne s’impose pas par démonstration, mas par la justesse des proportions et la qualité des volumes.",
         "La matérialité épurée affirme un positionnement haut de gamme sans ostentation : béton clair, bois brûlé, lignes ciselées. Les filtres et débords ne ferment pas, ils protègent et cadrent, créant des transitions douces entre intérieur et extérieur.",
@@ -65,8 +66,9 @@ export const VILLA_P1_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa P1/villa P1_2.png",
         "/images/projects/1-villas/villa P1/villa P1_3.png"
     ],
-    subtitle: "VILLA P1",
-    title: "La restanque contemporaine - entre Ancrage et Elevation",
+    subtitle: "NÎMES (30)",
+    title: "VILLA P1",
+    optionalSubtitle: "La restanque contemporaine - entre Ancrage et Elevation",
     descriptionParagraphs: [
         "Entre la masse et la lumière, le projet cherche une tension juste.",
         "Posée en surplomb du paysage, la maison s’ancre dans la pente par un soubassement en pierre qui dialogue avec la garrigue environnante.",
@@ -93,8 +95,9 @@ export const VILLA_B_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa B/villa B_4.png",
         "/images/projects/1-villas/villa B/villa B_5.png"
     ],
-    subtitle: "VILLA B",
-    title: "Horizons Végétalisés",
+    subtitle: "BERGERAC (24)",
+    title: "VILLA B",
+    optionalSubtitle: "Horizons Végétalisés",
     descriptionParagraphs: [
         "Une composition pavillonnaire basse et fragmentée qui s’étire dans le paysage, mêlant toitures plantées et volumes contemporains pour mieux disparaître dans la nature.",
         "Le dialogue entre bardage bois, panneaux minéraux et larges baies vitrées crée une architecture sobre, bioclimatique et profondément ancrée dans son site.",
@@ -119,8 +122,10 @@ export const VILLA_L_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa L/villaL_3.png",
         "/images/projects/1-villas/villa L/villaL_4.png"
     ],
-    subtitle: "MAISON L",
-    title: "La Geometrie de l’ombre sur la pierre - la maison solaire sur la pente",
+    subtitle: "NÎMES (30)",
+    title: "MAISON L",
+    optionalSubtitle: "LA GEOMETRIE DE L’OMBRE SUR LA PIERRE",
+    optionalSubtitle3: "La maison solaire sur la pente",
     descriptionParagraphs: [
         "Ancrée dans un socle de pierre sèche, la maison émerge du paysage comme une extension naturelle du terrain, entre restanques et végétation méditerranéenne.",
         "Pensée comme un cadran solaire, l’architecture répond à la lumière à chaque moment de la journée.",
@@ -144,8 +149,9 @@ export const VILLA_S_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa S/villaS_1.png",
         "/images/projects/1-villas/villa S/villaS_2.png"
     ],
-    subtitle: "VILLA S",
-    title: "Le Murmure de la Lisière",
+    subtitle: "LANGLADE (30)",
+    title: "VILLA S",
+    optionalSubtitle: "Le Murmure de la Lisière",
     descriptionParagraphs: [
         "Glissée entre les pins, la maison s’étire horizontalement pour préserver le paysage et dialoguer avec la forêt de chêne vert existante.",
         "Les différents volumes composent une écriture sobre et chaleureuse, rythmée par de larges ouvertures cadrant la lumière filtrée des arbres.",
@@ -169,8 +175,9 @@ export const VILLA_P2_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa P2/villaP2_2.png",
         "/images/projects/1-villas/villa P2/villaP2_3.jpg"
     ],
-    subtitle: "VILLA P2",
-    title: "L’entre-deux",
+    subtitle: "NÎMES (30)",
+    title: "VILLA P2",
+    optionalSubtitle: "L’entre-deux",
     descriptionParagraphs: [
         "Le projet s’inscrit dans la topographie du site et dans le système de murs de soutènement en pierre qui structure le terrain. L’architecture reprend ces lignes horizontales pour organiser les niveaux de la maison et prolonger la logique des restanques existantes. Depuis la rue, le bâtiment se présente comme un volume compact bardé de bois, relativement fermé, qui limite son impact visuel et préserve l’intimité des habitants. À l’inverse, côté aval, la maison s’ouvre largement sur la pente et la végétation par de grandes baies vitrées et des terrasses filantes.",
         "Vivre ici, c'est habiter l'entre-deux. Entre intimité, pente et forêt, les suspensions en nivellement sont soulignées et sublimées."
@@ -192,8 +199,9 @@ export const VILLA_C_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa C/villaC_1.png",
         "/images/projects/1-villas/villa C/villaC_2.png"
     ],
-    subtitle: "VILLA C",
-    title: "L’intime avec vue sur la ville",
+    subtitle: "NÎMES (30)",
+    title: "VILLA C",
+    optionalSubtitle: "L’intime avec vue sur la ville",
     descriptionParagraphs: [
         "Dans les hauteurs de Nîmes, entre les Jardins de la Fontaine et le Mont Duplan, la maison assume la présence du paysage urbain sans s’y exposer frontalement : elle cadre la ville comme un lointain choisi, jamais comme un vis-à-vis subi. L’intimité se construit par la profondeur des seuils, les retraits et les pleins, tandis que les ouvertures offrent une relation maîtrisée à l’horizon construit.",
         "L’architecture intimiste, blanche et épurée capte la lumière du Sud et s’ouvre généreusement sur le paysage en terasse et la ville",
@@ -218,10 +226,10 @@ export const MAISON_G_PROJECT: ProjectData = {
         "/images/projects/1-villas/maison G/maisonG_1.png",
         "/images/projects/1-villas/maison G/maisonG_3.png"
     ],
-    subtitle: "MAISON G",
-    title: "Elévation compacte en coeur de Village ou greffe urbaine",
-    optionalSubtitle: "Réhabilitation et Extension",
-    optionalSubtitle3: "Une greffe contemporaine dans un tissu ancien",
+    subtitle: "AIMARGUES (30)",
+    title: "MAISON G",
+    optionalSubtitle: "Réhabilitation et Extension - Une greffe contemporaine dans un tissu ancien",
+    optionalSubtitle3: "Elévation compacte en coeur de Village ou greffe urbaine",
     descriptionParagraphs: [
         "Le projet s’insère dans une rue étroite composé de petits immeubles d’un étage. Le volume adopte une écriture compacte et verticale conforme à l’emprise au sol limitée tout en restant à l’échelle du tissu existant. La façade enduite claire, associée au bois et au métal, propose une expression contemporaine mesurée.",
         "L’organisation intérieure privilégie la lumière malgré la mitoyenneté. Les espaces se développent autour d’un puit de lumière créé, verticalement jusqu’à une terrasse en retrait, conçue comme une pièce extérieure intime au sommet de la maison. Cette séquence verticale — du socle ouvert au belvédère intime — transforme la parcelle étroite en parcours habité, où l’architecture cherche moins l’affirmation formelle que la production d’un espace protégé, lumineux et domestique."
@@ -245,8 +253,9 @@ export const TRENTINI_PROJECT: ProjectData = {
         "/images/projects/2-logements/trentini/trentini_3.jpg",
         "/images/projects/2-logements/trentini/trentini_4.png"
     ],
-    subtitle: "TRENTINI",
-    title: "Restructuration et extension d’une ancienne remise en 2 logements T3 - Composition dans un tissu urbain hétérogène",
+    subtitle: "NÎMES (30)",
+    title: "TRENTINI",
+    optionalSubtitle: "Restructuration et extension d’une ancienne remise en 2 logements T3 - Composition dans un tissu urbain hétérogène",
     descriptionParagraphs: [
         "Implanté dans un tissu urbain hétérogène, ce petit immeuble d’habitation adopte une volumétrie compacte qui s’insère entre les constructions existantes tout en affirmant une écriture sobre et continue.",
         "Les retraits, loggias et la terrasse en attique prolongent les espaces de vie vers l’extérieur tout en préservant l’intimité dans ce contexte urbain dense."
@@ -269,8 +278,9 @@ export const JACOU_PROJECT: ProjectData = {
         "/images/projects/2-logements/jacou/jacou_1.png",
         "/images/projects/2-logements/jacou/jacou_3.png"
     ],
-    subtitle: "JACOU",
-    title: "Construction d’un immeuble de 6 logements T2/T3 - Les Villas Suspendues",
+    subtitle: "JACOU (34)",
+    title: "JACOU",
+    optionalSubtitle: "Construction d’un immeuble de 6 logements T2/T3 - Les Villas Suspendues",
     descriptionParagraphs: [
         "Composé de 6 logements, le bâtiment est conçu dans un esprit de villa, offrant à chacun une identité propre et des espaces extérieurs généreux.",
         "Implanté dans la pente, l’ensemble déploie terrasses, coursives et escaliers extérieurs comme autant de prolongements du séjour vers le paysage.",
@@ -293,8 +303,9 @@ export const MARTIN_PIERRE_PROJECT: ProjectData = {
         "/images/projects/2-logements/martin-pierre/martinpierre_1.png",
         "/images/projects/2-logements/martin-pierre/martinpierre_2.png"
     ],
-    subtitle: "MARTIN PIERRE",
-    title: "Construction d’un immeuble de 6 logements T3 - Compacité et confidentialité",
+    subtitle: "NÎMES (30)",
+    title: "MARTIN PIERRE",
+    optionalSubtitle: "Construction d’un immeuble de 6 logements T3 - Compacité et confidentialité",
     descriptionParagraphs: [
         "Implanté au cœur d’une rue majoritairement composée de maison de ville, l’immeuble cherche à s’inscrire avec retenue dans un tissu résidentiel domestique.",
         "Le projet privilégie une volumétrie compacte et une écriture sobre afin de limiter son impact dans un environnement pavillonnaire.",
@@ -320,8 +331,9 @@ export const ROMI_PROJECT: ProjectData = {
         "/images/projects/2-logements/romi/romi_2.png",
         "/images/projects/2-logements/romi/romi_3.jpg"
     ],
-    subtitle: "ROMI",
-    title: "Restructuration et extension pour un ensemble de logements T2 AU T4 - La Bastide Contemporaine",
+    subtitle: "ROCHEFORT DU GARD (30)",
+    title: "ROMI",
+    optionalSubtitle: "Restructuration et extension pour un ensemble de logements T2 AU T4 - La Bastide Contemporaine",
     descriptionParagraphs: [
         "Une composition de volumes simples aux enduits clairs et aux toitures de tuiles réinterprète l’architecture traditionnelle provençale dans une écriture contemporaine et épurée.",
         "Les pergolas métalliques et les larges baies vitrées prolongent les espaces de vie vers le jardin et filtrent la lumière méditerranéenne.",
@@ -344,9 +356,9 @@ export const SAMARITAINE_PROJECT: ProjectData = {
         "/images/projects/2-logements/samaritaine/samaritaine_2.png",
         "/images/projects/2-logements/samaritaine/samaritaine_1.png"
     ],
-    subtitle: "NIMES 01 - (30)",
-    title: "Construction d’un immeuble de 30 logements",
-    optionalSubtitle: "îlot Terre & Lumière",
+    subtitle: "NÎMES (30)",
+    title: "SAMARITAINE",
+    optionalSubtitle: "Construction d’un immeuble de 30 logements - îlot Terre & Lumière",
     descriptionParagraphs: [
         "Tout part de l’idée de crée un pont entre un projet moderne et un environnement dense et végétal.",
         "Au cœur du tissu urbain, le projet affirme une présence minérale forte avec ses façades en béton teinté, chaleureusement nuancées. Les loggias et claustras en bois rythment les volumes et filtrent la lumière, offrant aux logements des espaces extérieurs protégés et habités.",
@@ -370,8 +382,9 @@ export const WAUQUIEZ_PROJECT: ProjectData = {
         "/images/projects/3-commerces/wauquiez/wauquiez_2.png",
         "/images/projects/3-commerces/wauquiez/wauquiez_3.png"
     ],
-    subtitle: "WAUQUIEZ",
-    title: "Show - Room Espace Signature - Nautisme",
+    subtitle: "PORT CAMARGUE (30)",
+    title: "WAUQUIEZ",
+    optionalSubtitle: "Show - Room Espace Signature - Nautisme",
     descriptionParagraphs: [
         "Un espace écrin sur deux niveaux qui rappelle la promesse de Wauquiez : confort, matériaux nobles et attention aux détails, marqueurs de leur ligne nautique.",
         "Un show room pensé en parcours client : espace détente et accueil en RDC, espace conseil et administration en mezzanine.",
@@ -400,8 +413,9 @@ export const PUYRICARD_PROJECT: ProjectData = {
         "/images/projects/3-commerces/puyricard/puyricard_5.png",
         "/images/projects/3-commerces/puyricard/puyricard_6.png"
     ],
-    subtitle: "PUYRICARD",
-    title: "Complexe de commerces et services haut de gamme - Cour des Oliviers",
+    subtitle: "PUYRICARD (13)",
+    title: "PUYRICARD",
+    optionalSubtitle: "Complexe de commerces et services haut de gamme - Cour des Oliviers",
     descriptionParagraphs: [
         "Articulé autour d’un patio planté d’oliviers, le projet réinterprète l’esprit des bastides en mêlant pierre naturelle, enduits clairs et toitures tuilées.",
         "Les commerces s’ouvrent largement sur la cour, créant un lieu de vie convivial où transparence, ombre et végétation composent une atmosphère méditerranéenne chaleureuse.",
@@ -423,8 +437,9 @@ export const CACHAREL_PROJECT: ProjectData = {
         "/images/projects/3-commerces/cacharel/cacharel_1.png",
         "/images/projects/3-commerces/cacharel/cacharel_2.jpg"
     ],
-    subtitle: "CACHAREL",
-    title: "Developpement Boutiques France et International - Épure & Matière",
+    subtitle: "FRANCE ET INTERNATIONAL",
+    title: "CACHAREL",
+    optionalSubtitle: "Developpement Boutiques France et International - Épure & Matière",
     descriptionParagraphs: [
         "Le concept général qui se décline sur les différentes boutiques est pensé comme un écrin minimaliste.",
         "L’espace met en scène le vêtement dans une architecture luxueuse, claire et silencieuse.",
@@ -453,9 +468,9 @@ export const FOOD_VILLAGE_PROJECT: ProjectData = {
         "/images/projects/3-commerces/food-village/foodvillage_4.jpg",
         "/images/projects/3-commerces/food-village/foodvillage_5.jpg"
     ],
-    subtitle: "FOOD VILLAGE",
-    title: "Café, snacking, drink ",
-    optionalSubtitle: "Pause Urbaine Lumineuse",
+    subtitle: "NÎMES (30)",
+    title: "FOOD VILLAGE",
+    optionalSubtitle: "Pause Urbaine Lumineuse - Café, snacking, drink",
     optionalLogo: {
         src: "/images/projects/3-commerces/food-village/foodvillage_logo.jpg",
         alt: "Food Village Logo",
@@ -485,8 +500,9 @@ export const GARONS_PROJECT: ProjectData = {
         "/images/projects/3-commerces/garons/garons_2.png",
         "/images/projects/3-commerces/garons/garons_3.jpg"
     ],
-    subtitle: "GARONS",
-    title: "Restaurant tunisien - Extension de la salle de restaurant et création d’un logement de fonction",
+    subtitle: "GARONS (30)",
+    title: "GARONS",
+    optionalSubtitle: "Restaurant tunisien - Extension de la salle de restaurant et création d’un logement de fonction",
     descriptionParagraphs: [
         "Le projet s’inscrit dans un environnement d’activités dominé par des volumes industriels. La facade d’accueil est repensée : L’intention consiste à introduire une présence identifiable sans excès formel. Le bâtiment adopte une volumétrie simple et compacte inspirée des architectures méditerranéennes : enduit clair, percements limités et façades sobres.",
         "La façade principale introduit une référence tunisienne plus explicite à travers les arcs et le motif de faïence bleue. Le décor reste contenu dans une composition rigoureuse afin d’éviter l’effet pastiche et d’affirmer une identité lisible."
@@ -510,8 +526,9 @@ export const FOURNIL_ST_HONORE_PROJECT: ProjectData = {
         "/images/projects/3-commerces/fournil-st-honore/fournilsthonore_3.jpg",
         "/images/projects/3-commerces/fournil-st-honore/fournilsthonore_1.jpg"
     ],
-    subtitle: "ST HONORÉ",
-    title: "Le Pétrin d’Honoré – La Tradition en Vitrine",
+    subtitle: "MONTPELLIER (34)",
+    title: "ST HONORÉ",
+    optionalSubtitle: "Le Pétrin d’Honoré – La Tradition en Vitrine",
     descriptionParagraphs: [
         "La mission a consisté ici à créer le concept boutique : Une façade noire affirmée et largement vitrée qui expose le savoir-faire artisanal comme un spectacle vivant au cœur du flux urbain.",
         "Un lieu hybride entre boulangerie de tradition et espace de pause contemporaine, où l’identité graphique forte structure l’architecture.",
@@ -536,8 +553,9 @@ export const ANHA_CIUDAD_PROJECT: ProjectData = {
         "/images/projects/3-commerces/anha-ciudad/anhaciudad_3.jpg",
         "/images/projects/3-commerces/anha-ciudad/anhaciudad_4.jpg"
     ],
-    subtitle: "ANHA CIUDAD",
-    title: "Couloir Boutique - Écrin Contemporain dans le Tissu Ancien",
+    subtitle: "AVIGNON (84)",
+    title: "ANHA CIUDAD",
+    optionalSubtitle: "Couloir Boutique - Écrin Contemporain dans le Tissu Ancien",
     descriptionParagraphs: [
         "Ce projet transforme une cellule commerciale étroite en un espace de vente fluide et lumineux, où la façade contemporaine affirme une identité forte au cœur d’une rue traditionnelle.",
         "À l’intérieur, l’architecture exploite la profondeur par un mobilier intégré aux lignes courbes et des étagères rétroéclairées qui prolongent visuellement l’espace et guident le parcours client.",
@@ -561,8 +579,9 @@ export const DENIM_PROJECT: ProjectData = {
         "/images/projects/3-commerces/denim/denim_1.png",
         "/images/projects/3-commerces/denim/denim_3.jpg"
     ],
-    subtitle: "DENIM",
-    title: "Boutique Denim - L’Atelier Brut du Denim",
+    subtitle: "NÎMES (30)",
+    title: "DENIM",
+    optionalSubtitle: "Boutique Denim - L’Atelier Brut du Denim",
     descriptionParagraphs: [
         "Un volume simple et monolithique se transforme en paysage intérieur industriel, où les murs périphériques deviennent des strates d’exposition continues, comme des falaises de denim.",
         "Au centre, un archipel de tables massives structure le parcours et met en scène la matière dans une scénographie claire, rythmée par les poteaux et un éclairage linéaire affirmé.",
@@ -591,8 +610,8 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
     ],
     subtitle: "AIX EN PROVENCE (13)",
     title: "RÉGIE DES EAUX",
-    optionalSubtitle: "RÉHABILITATION - RESTRUCTURATION - EXTENSION",
-    optionalSubtitle3: "Flux & Transparence – Le nouveau visage de la Régie des Eaux",
+    optionalSubtitle: "RÉHABILITATION - RESTRUCTURATION - EXTENSION - Flux & Transparence",
+    optionalSubtitle3: "Le nouveau visage de la Régie des Eaux",
     descriptionParagraphs: [
         "Le projet consistait ici à réhabiliter , restructurer et agrandir l’actuel centre d’expoitation de la Régie des Eaux afin de revoir l’organisation et le fonctionnement spatial intérieur et donner une nouvelle identity au lieu.",
         "Une architecture contemporaine qui affirme l’identité publique de la Régie par une façade vibrante de lames verticales bleues, évoquant le mouvement et la fluidité de l’eau.",
@@ -619,8 +638,9 @@ export const SUPER_U_PROJECT: ProjectData = {
         "/images/projects/4-equipements/super-u/superu_2.png",
         "/images/projects/4-equipements/super-u/superu_3.jpg"
     ],
-    subtitle: "SUPER U",
-    title: "Réhabilitation et Extension d’un Super U",
+    subtitle: "LA CALMETTE (30)",
+    title: "SUPER U",
+    optionalSubtitle: "Réhabilitation et Extension d’un Super U",
     descriptionParagraphs: [
         "Réhabilitation et Extension d’un Super U à La Calmette."
     ],
@@ -644,8 +664,9 @@ export const CLAPIERS_PROJECT: ProjectData = {
         "/images/projects/4-equipements/clapiers/clapiers_4.png",
         "/images/projects/4-equipements/clapiers/clapiers_5.jpg"
     ],
-    subtitle: "CLAPIERS",
-    title: "Construction d’un nouveau hall, Réhabilitation des chambres, traitement des facades par ITE, aménagement paysager - Le soin pensé comme lieu de vie",
+    subtitle: "CLAPIERS (34)",
+    title: "CLAPIERS",
+    optionalSubtitle: "Le soin pensé comme lieu de vie - Construction d’un nouveau hall, Réhabilitation des chambres, aménagement paysager",
     descriptionParagraphs: [
         "L’intention première de ce projet était de briser l’image institutionnelle du batiment pour offrir à l’occasion de sa réhabilitation un environnement plus chaleureux et sécurisant. L’architecture reste horizontale et apaisée, le projet s’inscrit dans la pente comme une extension naturelle du terrain, offrant à chaque résident lumière, vues lointaines et relation directe à l’environnement paysager existant.",
         "Le socle minéral ancre le bâtiment dans le site tandis que les volumes enduits clairs et les filtres bois issus du nouveau projet composent une écriture contemporaine, chaleureuse et domestique, loin de l’image institutionnelle.",
@@ -672,8 +693,9 @@ export const CUCURRON_PROJECT: ProjectData = {
         "/images/projects/4-equipements/cucurron/cucurron_4.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_5.jpg"
     ],
-    subtitle: "CUCURRON",
-    title: "CENTRE DE PREMIERE INTERVENTION - CPI - Un trait d'union entre technicité et paysage",
+    subtitle: "CUCURRON (84)",
+    title: "CUCURRON CPI",
+    optionalSubtitle: "Un trait d'union entre technicité et paysage - Centre de Première Intervention",
     descriptionParagraphs: [
         "Situé au cœur du Luberon, le Centre de Première Intervention de Cucuron concilie les impératifs de réactivité opérationnelle et une insertion paysagère sensible. Le projet se définit par une lecture claire de ses fonctions :",
         "Le pôle opérationnel : Un volume sobre et robuste de quatre travées, conçu pour l'efficacité des flux et la maintenance des véhicules de secours.",
@@ -701,8 +723,9 @@ export const LA_TOUR_DAIGUES_PROJECT: ProjectData = {
         "/images/projects/4-equipements/la-tour-daigues/latourdaigues_4.jpg",
         "/images/projects/4-equipements/la-tour-daigues/latourdaigues_5.jpg"
     ],
-    subtitle: "LA TOUR D’AIGUES",
-    title: "CENTRE DE PREMIERE INTERVENTION - CPI - Réhabiliter l’existant, affirmer l’engagement",
+    subtitle: "LA TOUR D’AIGUES (84)",
+    title: "LA TOUR D’AIGUES CPI",
+    optionalSubtitle: "Réhabiliter l’existant, affirmer l’engagement - Centre de Première Intervention",
     descriptionParagraphs: [
         "La réhabilitation et l’extension- surrélevation de la caserne des sapeurs-pompiers de La Tour d’Aigues transforment un équipement vieillissant en un bâtiment contemporain, fonctionnel et parfaitement intégré au tissu provençal.",
         "Le projet affirme une écriture architecturale jouant sur des volumes clairs, des percements verticaux et une matérialité lumineuse qui dialoguent avec l’identité locale tout en exprimant modernité et rigueur.",
@@ -729,8 +752,9 @@ export const GRANS_PROJECT: ProjectData = {
         "/images/projects/4-equipements/grans/grans_4.jpg",
         "/images/projects/4-equipements/grans/grans_5.jpg"
     ],
-    subtitle: "GRANS",
-    title: "Maison des jeunes - Réhabilitation d'une maison de ville et création d'un chemin piétonnier",
+    subtitle: "GRANS (13)",
+    title: "GRANS",
+    optionalSubtitle: "Maison des jeunes - Réhabilitation d'une maison de ville et création d'un chemin piétonnier",
     descriptionParagraphs: [
         "Le projet a consisté en la rehabilitation d’une maison de ville en maison des jeunes et création d’un chemin pietonnier à Grans.",
         "La distribution intérieure a été entièrement repensée, une nouvelle entrée a été organisée permettant l’agrandissement de l’espace accueil. L’ensemble a été décloisonné et un grand nombre de murs porteurs ont été modifiés et ouverts afin de permettre une transparence visuelle sur l’ensemble des espaces intérieurs et extérieurs.",
@@ -757,7 +781,7 @@ export const CAPITAINERIE_PROJECT: ProjectData = {
     ],
     subtitle: "MARSEILLE (13)",
     title: "CAPITAINERIE",
-    optionalSubtitle: "RÉHABILITATION - EXTENSION ET SURÉLÉVATION",
+    optionalSubtitle: "RÉHABILITATION - EXTENSION ET SURÉLÉVATION - Pointe Rouge",
     optionalSubtitle3: "Terre à ciel",
     descriptionParagraphs: [
         "Le projet consiste en la rehabilitation de l’ancienne capitainerie de la Pointe Rouge à Marseille (13)",
@@ -785,8 +809,9 @@ export const LODEVE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/lodeve/lodeve_3.jpg",
         "/images/projects/4-equipements/lodeve/lodeve_4.jpg"
     ],
-    subtitle: "LODEVE",
-    title: "centre technique municipal - Réhabilitation du CTM de Lodève",
+    subtitle: "LODÈVE (34)",
+    title: "LODÈVE",
+    optionalSubtitle: "centre technique municipal - Réhabilitation du CTM",
     descriptionParagraphs: [
         "Le site étant en zone inondable, les nouveaux aménagements tels que les ateliers, les bureaux administratifs et leurs annexes (vestiaires, sanitaires) ont été réalisés au dessus de la cote référence des plus hautes eaux.",
         "Les transparences hydrauliques ont été respectées afin de favoriser l'évacuation naturelle des eaux.",
@@ -814,8 +839,9 @@ export const VITROLLES_PROJECT: ProjectData = {
         "/images/projects/4-equipements/vitrolles/vitrolles_4.jpg",
         "/images/projects/4-equipements/vitrolles/vitrolles_5.png"
     ],
-    subtitle: "VITROLLES",
-    title: "Réhabilitation et Extension des Archives Municipales - Monolithe noir pour la mémoire collective",
+    subtitle: "VITROLLES (13)",
+    title: "VITROLLES",
+    optionalSubtitle: "Réhabilitation et Extension des Archives Municipales - Monolithe noir",
     descriptionParagraphs: [
         "Émergeant du paysage industriel de la ZI des Estroublans à Vitrolles, ce volume sombre et compact affirme une présence sobre et institutionnelle, où la rigueur formelle traduit la pérennité des archives qu’il abrite.",
         "Organisé autour de vastes salles de conservation rationnelles et protégées, le bâtiment dissocie clairement les flux publics et techniques pour garantir sécurité, fonctionnalité et lisibilité.",
@@ -842,8 +868,9 @@ export const SALON_PROJECT: ProjectData = {
         "/images/projects/4-equipements/salon-de-provence/salon_4.jpg",
         "/images/projects/4-equipements/salon-de-provence/salon_5.png"
     ],
-    subtitle: "SALON DE PROVENCE",
-    title: "BOULODROME DES CARNOUGUES - Couverture et réhabilitation",
+    subtitle: "SALON DE PROVENCE (13)",
+    title: "SALON DE PROVENCE",
+    optionalSubtitle: "BOULODROME DES CARNOUGUES - Couverture et réhabilitation",
     descriptionParagraphs: [
         "Le projet consiste en la création d’une couverture du boulodrome actuel, la réhabilitation de ses aires de jeux ainsi que la création d’annexes (local de stockage et sanitaires).",
         "Le projet situé au cœur d’un quartier « populaire » s’intègre dans un tissu urbain déjà en place. L’idée est de créer au travers du projet une façade urbaine en continuité avec l’existant.",
@@ -868,8 +895,9 @@ export const FERRIGNO_PROJECT: ProjectData = {
         "/images/projects/4-equipements/ferrigno/ferrigno_2.png",
         "/images/projects/4-equipements/ferrigno/ferrigno_3.png"
     ],
-    subtitle: "FERRIGNO",
-    title: "ENTREPÔT de stockage et CONSERVERIE - FERRIGNO",
+    subtitle: "PORT ST LOUIS DU RHÔNE (13)",
+    title: "FERRIGNO",
+    optionalSubtitle: "ENTREPÔT de stockage et CONSERVERIE",
     descriptionParagraphs: [
         "Le projet s’inscrit dans le paysage sensible naturel propre au delta du Rhône et de la Camargue à Port St Louis du Rhône.",
         "Le volume de la construction simple s’étire horizontalement afin de répondre à la problématique programmatique constructive et environnementale. La construction de la halle est en ossature métal avec bandeau lumineux en polycarbonate, bardage métal alu réfléchissant pour une meilleure intégration dans le site.",
