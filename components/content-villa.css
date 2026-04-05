@@ -1,0 +1,54 @@
+.content-villa-container {
+    width: 100%;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem 5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.content-villa-header {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.content-villa-overline {
+    margin-bottom: 0;
+}
+
+.content-villa-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content-villa-subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content-villa-subtitle3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content-villa-desc-header {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.content-villa-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .content-villa-body {
+        gap: 2rem;
+    }
+}

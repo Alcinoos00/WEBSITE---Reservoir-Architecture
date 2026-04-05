@@ -42,7 +42,8 @@ export const VILLA_F_PROJECT: ProjectData = {
     ],
     subtitle: "CAISSARGUES (30)",
     title: "VILLA F",
-    optionalSubtitle: "Eminence des lignes, souveraineté des espaces : Une architecture de l’essentiel",
+    optionalSubtitle: "RÉNOVATION ET EXTENSION POUR TRANSFORMATION D’UNE MAISON DE LOTISSEMENT EN UNE VILLA CONTEMPORAINE",
+    descriptionHeader: "Eminence des lignes, souveraineté des espaces - Une architecture de l’essentiel",
     descriptionParagraphs: [
         "Maison élégamment introvertie, structurée par une géométrie précise et une horizontalité assumée, elle s’organise autour d’une cour-piscine conçue comme un cœur vivant, ouvert au ciel et à la lumière. La majesté des espaces ne s’impose pas par démonstration, mas par la justesse des proportions et la qualité des volumes.",
         "La matérialité épurée affirme un positionnement haut de gamme sans ostentation : béton clair, bois brûlé, lignes ciselées. Les filtres et débords ne ferment pas, ils protègent et cadrent, créant des transitions douces entre intérieur et extérieur.",
@@ -120,12 +121,14 @@ export const VILLA_L_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa L/villaL_1.png",
         "/images/projects/1-villas/villa L/villaL_2.png",
         "/images/projects/1-villas/villa L/villaL_3.png",
-        "/images/projects/1-villas/villa L/villaL_4.png"
+        "/images/projects/1-villas/villa L/villaL_4.png",
+        "/images/projects/1-villas/villa L/villaL_5.png",
+        "/images/projects/1-villas/villa L/villaL_6.png"
     ],
     subtitle: "NÎMES (30)",
-    title: "MAISON L",
-    optionalSubtitle: "LA GEOMETRIE DE L’OMBRE SUR LA PIERRE",
-    optionalSubtitle3: "La maison solaire sur la pente",
+    title: "VILLA L",
+    optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE",
+    optionalSubtitle3: "La Géométrie de l’ombre sur la pierre",
     descriptionParagraphs: [
         "Ancrée dans un socle de pierre sèche, la maison émerge du paysage comme une extension naturelle du terrain, entre restanques et végétation méditerranéenne.",
         "Pensée comme un cadran solaire, l’architecture répond à la lumière à chaque moment de la journée.",
