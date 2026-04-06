@@ -71,12 +71,6 @@ export default function Hero({ project }: HeroProps) {
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
                 </button>
-
-                <div className="hero-overlay-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M 12 0 L 14.59 9.41 L 24 12 L 14.59 14.59 L 12 24 L 9.41 14.59 L 0 12 L 9.41 9.41 L 12 0 Z" fill="white" opacity="0.8" />
-                    </svg>
-                </div>
             </div>
         </section>
     );

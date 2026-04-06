@@ -124,12 +124,13 @@ export const VILLA_L_PROJECT: ProjectData = {
     slug: "villa-l",
     category: "VILLAS",
     heroImages: [
-        "/images/projects/1-villas/villa L/villaL_1.png",
-        "/images/projects/1-villas/villa L/villaL_2.png",
-        "/images/projects/1-villas/villa L/villaL_3.png",
-        "/images/projects/1-villas/villa L/villaL_4.png",
-        "/images/projects/1-villas/villa L/villaL_5.png",
-        "/images/projects/1-villas/villa L/villaL_6.png"
+        "/images/projects/1-villas/villa L/villaL_1.jpg",
+        "/images/projects/1-villas/villa L/villaL_2.jpg",
+        "/images/projects/1-villas/villa L/villaL_3.jpg",
+        "/images/projects/1-villas/villa L/villaL_4.jpg",
+        "/images/projects/1-villas/villa L/villaL_5.jpg",
+        "/images/projects/1-villas/villa L/villaL_6.jpg",
+        "/images/projects/1-villas/villa L/villaL_7.jpg"
     ],
     subtitle: "NÎMES (30)",
     title: "VILLA L",
@@ -348,7 +349,7 @@ export const TRENTINI_PROJECT: ProjectData = {
         "/images/projects/2-logements/trentini/childebert_7.jpg"
     ],
     subtitle: "NÎMES (30)",
-    title: "RESIDENCE CHILDEBERT",
+    title: "CHILDEBERT",
     optionalSubtitle: "DEMOLITION D’UNE ANCIENNE REMISE - CONSTRUCTION D’UN IMMEUBLE DE 2 LOGEMENTS T3",
     descriptionHeader: "Composition d’un mini collectif dans un tissu urbain hétérogène",
     descriptionParagraphs: [
@@ -407,7 +408,7 @@ export const MARTIN_PIERRE_PROJECT: ProjectData = {
         "/images/projects/2-logements/martin-pierre/guillot_5.jpg"
     ],
     subtitle: "NÎMES (30)",
-    title: "RESIDENCE LE GUILLOT",
+    title: "LE GUILLOT",
     optionalSubtitle: "CONSTRUCTION D’UNE RESIDENCE DE 6 LOGEMENTS T3",
     descriptionHeader: "Compacité et confidentialité",
     descriptionParagraphs: [
@@ -789,7 +790,7 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
 export const SUPER_U_PROJECT: ProjectData = {
     id: "super-u",
     slug: "super-u",
-    category: "ÉQUIPEMENTS",
+    category: "COMMERCES",
     heroImages: [
         "/images/projects/4-equipements/super-u/superu_1.jpg",
         "/images/projects/4-equipements/super-u/superu_2.jpg"
@@ -843,7 +844,6 @@ export const CUCURRON_PROJECT: ProjectData = {
     category: "ÉQUIPEMENTS",
     heroImages: [
         "/images/projects/4-equipements/cucurron/cucurron_1.jpg",
-        "/images/projects/4-equipements/cucurron/cucurron_2.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_3.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_4.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_5.jpg",
@@ -851,6 +851,7 @@ export const CUCURRON_PROJECT: ProjectData = {
     ],
     subtitle: "CUCURRON (84)",
     title: "CENTRE DE PREMIERE INTERVENTION - CPI",
+    navigationTitle: "SDIS",
     optionalSubtitle: "CONSTRUCTION - EXTENSION SDIS",
     descriptionHeader: "Un trait d’union entre technicité et paysage",
     descriptionParagraphs: [
@@ -883,6 +884,7 @@ export const LA_TOUR_DAIGUES_PROJECT: ProjectData = {
     ],
     subtitle: "LA TOUR D’AIGUES (84)",
     title: "CENTRE DE PREMIERE INTERVENTION - CPI",
+    navigationTitle: "SDIS",
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION",
     descriptionParagraphs: [
         "La réhabilitation et l’extension- surrélevation de la caserne des sapeurs-pompiers de La Tour d’Aigues transforment un équipement vieillissant en un bâtiment contemporain, fonctionnel en plein coeur du village de la Tour d’Aigues.",
@@ -1060,7 +1062,7 @@ export const FERRIGNO_PROJECT: ProjectData = {
         "/images/projects/4-equipements/ferrigno/ferrigno_2.jpg"
     ],
     subtitle: "PORT ST LOUIS DU RHÔNE (13)",
-    title: "ENTREPÔT de stockage et CONSERVERIE",
+    title: "ENTREPÔT STOCKAGE- CONSERVERIE",
     optionalSubtitle: "CONSTRUCTION ENTREPOT",
     descriptionParagraphs: [
         "Le projet s’inscrit dans le paysage sensible naturel propre au delta du Rhône et de la Camargue à Port St Louis du Rhône pour y implanter uun entrepôt de stockage et de conserverie de sardines.",
@@ -1078,40 +1080,40 @@ export const FERRIGNO_PROJECT: ProjectData = {
 };
 
 export const PROJECTS: ProjectData[] = [
-    GENDARMERIE_PROJECT,
-    SUPER_U_PROJECT,
-    VITROLLES_PROJECT,
     VILLA_F_PROJECT,
     VILLA_P1_PROJECT,
     VILLA_B_PROJECT,
-    VILLA_L_PROJECT,
     VILLA_S_PROJECT,
+    VILLA_L_PROJECT,
     VILLA_P2_PROJECT,
-    VILLA_C_PROJECT,
     VILLA_V_PROJECT,
+    VILLA_C_PROJECT,
     VILLA_T_PROJECT,
     MAISON_G_PROJECT,
     SAMARITAINE_PROJECT,
-    MARTIN_PIERRE_PROJECT,
     JACOU_PROJECT,
-    TRENTINI_PROJECT,
     ROMI_PROJECT,
     VACQUEROLLES_PROJECT,
+    TRENTINI_PROJECT,
+    MARTIN_PIERRE_PROJECT,
     WAUQUIEZ_PROJECT,
-    PUYRICARD_PROJECT,
     CACHAREL_PROJECT,
     FOOD_VILLAGE_PROJECT,
-    GARONS_PROJECT,
-    FOURNIL_ST_HONORE_PROJECT,
-    ANHA_CIUDAD_PROJECT,
+    PUYRICARD_PROJECT,
     DENIM_PROJECT,
-    CLAPIERS_PROJECT,
+    ANHA_CIUDAD_PROJECT,
+    FOURNIL_ST_HONORE_PROJECT,
+    GARONS_PROJECT,
+    SUPER_U_PROJECT,
+    REGIE_DES_EAUX_PROJECT,
+    VITROLLES_PROJECT,
+    GENDARMERIE_PROJECT,
     CUCURRON_PROJECT,
     LA_TOUR_DAIGUES_PROJECT,
+    CLAPIERS_PROJECT,
     GRANS_PROJECT,
-    SALON_PROJECT,
-    FERRIGNO_PROJECT,
     CAPITAINERIE_PROJECT,
     LODEVE_PROJECT,
-    REGIE_DES_EAUX_PROJECT
+    FERRIGNO_PROJECT,
+    SALON_PROJECT
 ];
