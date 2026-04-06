@@ -26,28 +26,21 @@ export default function ContentVilla({ project }: ContentVillaProps) {
                     {project.title}
                 </h1>
 
-                {/* H2 */}
+                {/* SUBTITLE (uppercase, sous le titre) */}
                 {project.optionalSubtitle && (
                     <h2 className="title-1 content-villa-h2">
                         {project.optionalSubtitle}
                     </h2>
                 )}
-
-                {/* DESCRIPTION HEADER */}
-                {project.descriptionHeader && (
-                    <p className="body-text content-villa-desc-header">
-                        {project.descriptionHeader}
-                    </p>
-                )}
             </div>
 
             <div className="content-villa-body">
                 <div className="content-column main-text-column">
-                    {/* SUBTITLE collé au texte */}
-                    {project.optionalSubtitle3 && (
-                        <h3 className="title-2 content-villa-subtitle">
-                            {project.optionalSubtitle3}
-                        </h3>
+                    {/* H2 (bold, collé au texte) */}
+                    {project.descriptionHeader && (
+                        <h2 className="title-2 content-villa-subtitle">
+                            {project.descriptionHeader}
+                        </h2>
                     )}
 
                     {project.descriptionParagraphs.map((para, index) => (
