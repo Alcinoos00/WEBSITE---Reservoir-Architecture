@@ -12,6 +12,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "RESERVOIR Architecture",
   description: "VILLAS | LOGEMENTS | COMMERCES | EQUIPEMENTS",
+  icons: {
+    icon: [
+      { url: "/images/ui/icon_dark.svg", media: "(prefers-color-scheme: light)" },
+      { url: "/images/ui/icon_light.svg", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export default function RootLayout({
