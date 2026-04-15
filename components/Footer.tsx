@@ -1,4 +1,5 @@
 import "./footer.css";
+import Image from "next/image";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -6,12 +7,18 @@ export default function Footer() {
         <footer className="footer-container" id="contact">
             <div className="footer-top">
                 <div className="footer-branding">
-                    <h2 className="subtitle footer-brand-title">RESERVOIR ARCHITECTURE</h2>
+                    <Image
+                        src="/images/ui/logo_light.svg"
+                        alt="Reservoir Architecture"
+                        width={200}
+                        height={40}
+                        className="footer-logo"
+                    />
                 </div>
                 <div className="footer-contact">
-                    <p className="body-text footer-info">contact@reservoir-archi.com</p>
-                    <p className="body-text footer-info">+33 (0) 4 67 00 00 00</p>
-                    <p className="body-text footer-info">Port Camargue, 30240 Le Grau-du-Roi, France</p>
+                    <p className="body-text footer-info">contact@reservoir-architecture.com</p>
+                    <p className="body-text footer-info">+33 6 13 51 67 67</p>
+                    <p className="body-text footer-info">Aix-en-Provence, région PACA, France</p>
                 </div>
             </div>
 

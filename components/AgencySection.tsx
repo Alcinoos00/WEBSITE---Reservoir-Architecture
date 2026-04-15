@@ -16,7 +16,7 @@ export default function AgencySection() {
                         <h3 className="title-1 agency-subheading">RESERVOIR ARCHITECTURE</h3>
                         
                         <p className="body-text">
-                            est née d’un parcours qui ne cloisonne pas, celui de Serge ETTORE, architecte Dplg depuis 1999, dirigeant l’agence.
+                            Est née d’un parcours qui ne cloisonne pas, celui de Serge ETTORE, architecte Dplg depuis 1999, dirigeant l’agence.
                         </p>
                         <p className="body-text">
                             Formé à l’architecture et actif très tôt dans l’univers de la marque, Serge ETTORE développe une approche où l’espace est à la fois structure, usage et perception. Responsable de projets architecture au sein de CACHAREL, il participe à des workshops internationaux qui l’exposent à d’autres cultures constructives et à d’autres manières d’habiter l’espace.

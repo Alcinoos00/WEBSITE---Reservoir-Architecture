@@ -33,7 +33,7 @@
 .agency-column-single {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0;
     max-width: 90rem;
 }
 
@@ -45,6 +45,10 @@
     margin: 0rem 0 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.agency-column-single .body-text {
+    margin-bottom: 0.75rem;
 }
 
 .agency-list {
