@@ -135,7 +135,7 @@ export const VILLA_L_PROJECT: ProjectData = {
     subtitle: "NÎMES (30)",
     title: "VILLA L",
     optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE",
-    optionalSubtitle3: "La Géométrie de l’ombre sur la pierre",
+    descriptionHeader: "La Géométrie de l’ombre sur la pierre",
     descriptionParagraphs: [
         "Ancrée dans un socle de pierre sèche, la maison émerge du paysage comme une extension naturelle du terrain, entre restanques et végétation méditerranéenne.",
         "Pensée comme un cadran solaire, l’architecture répond à la lumière à chaque moment de la journée.",
@@ -252,7 +252,7 @@ export const VILLA_V_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa V/villaV_5.jpg",
         "/images/projects/1-villas/villa V/villaV_6.jpg"
     ],
-    subtitle: "VERRARGUES (34)",
+    subtitle: "VERARGUES (34)",
     title: "VILLA V",
     optionalSubtitle: "CONSTRUCTION D'UNE VILLA CONTEMPORAINE",
     descriptionHeader: "Horizons de garrigue",
@@ -432,10 +432,10 @@ export const ROMI_PROJECT: ProjectData = {
     slug: "romi",
     category: "LOGEMENTS",
     heroImages: [
-        "/images/projects/2-logements/romi/rosalie_1.png",
+        "/images/projects/2-logements/romi/rosalie_1.jpg",
         "/images/projects/2-logements/romi/rosalie_2.jpg",
         "/images/projects/2-logements/romi/rosalie_3.jpg",
-        "/images/projects/2-logements/romi/rosalie_4.png",
+        "/images/projects/2-logements/romi/rosalie_4.jpg",
         "/images/projects/2-logements/romi/rosalie_5.jpg",
         "/images/projects/2-logements/romi/rosalie_6.jpg"
     ],
@@ -530,6 +530,12 @@ export const WAUQUIEZ_PROJECT: ProjectData = {
     ],
     subtitle: "PORT-CAMARGUE (GARD)",
     title: "WAUQUIEZ",
+    optionalLogo: {
+        src: "/images/projects/3-commerces/wauquiez/logo_wauquiez.png",
+        alt: "Wauquiez Logo",
+        width: 100,
+        height: 100
+    },
     optionalSubtitle: "RÉALISATION D’UN SHOWROOM NAUTIQUE - PORTS DU SUD",
     descriptionHeader: "Espace Signature",
     descriptionParagraphs: [
@@ -588,6 +594,12 @@ export const CACHAREL_PROJECT: ProjectData = {
     ],
     subtitle: "France et International",
     title: "CACHAREL",
+    optionalLogo: {
+        src: "/images/projects/3-commerces/cacharel/logo_cacharel.png",
+        alt: "Cacharel Logo",
+        width: 100,
+        height: 100
+    },
     optionalSubtitle: "DEVELOPPEMENT CONCEPT BOUTIQUE FRANCE ET INTERNATIONAL",
     descriptionHeader: "Épure & Matière",
     descriptionParagraphs: [
@@ -709,6 +721,12 @@ export const ANHA_CIUDAD_PROJECT: ProjectData = {
     ],
     subtitle: "AVIGNON (84)",
     title: "ANHA CIUDAD",
+    optionalLogo: {
+        src: "/images/projects/3-commerces/anha-ciudad/logo_anha_ciudad.png",
+        alt: "Anha Ciudad Logo",
+        width: 100,
+        height: 100
+    },
     optionalSubtitle: "CREATION CONCEPT POUR UNE BOUTIQUE MODE FEMME",
     descriptionHeader: "Écrin Contemporain dans le Tissu Ancien",
     descriptionParagraphs: [
@@ -736,6 +754,13 @@ export const DENIM_PROJECT: ProjectData = {
     ],
     subtitle: "NÎMES (30)",
     title: "DENIM",
+    optionalLogo: {
+        src: "/images/projects/3-commerces/denim/logo_denim.png",
+        alt: "Denim Logo",
+        width: 100,
+        height: 100,
+        invert: true
+    },
     optionalSubtitle: "Création, aménagement et agencement d’une boutique de vêtements",
     descriptionHeader: "L’Atelier Brut du Denim",
     descriptionParagraphs: [
@@ -779,7 +804,7 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
     techSheet: [
         { label: "Lieu", value: "Aix en Provence (13)" },
         { label: "Maitre d'Ouvrage", value: "Régie des eaux d’Aix en Provence" },
-        { label: "Mission", value: "MOP+DIAG" },
+        { label: "Mission", value: "Mandataire MOP+DIAG" },
         { label: "Surface", value: "3 080 m2" },
         { label: "Coût travaux", value: "4 200 000 € HT" },
         { label: "Année", value: "2022" },
@@ -852,7 +877,7 @@ export const CUCURRON_PROJECT: ProjectData = {
     subtitle: "CUCURRON (84)",
     title: "CENTRE DE PREMIERE INTERVENTION - CPI",
     navigationTitle: "SDIS",
-    optionalSubtitle: "CONSTRUCTION - EXTENSION SDIS",
+    optionalSubtitle: "CONSTRUCTION - EXTENSION",
     descriptionHeader: "Un trait d’union entre technicité et paysage",
     descriptionParagraphs: [
         "Situé au cœur du Luberon, le nouveau Centre de Première Intervention de Cucuron concilie les impératifs de réactivité opérationnelle et une insertion paysagère sensible. Le projet se définit par une lecture claire de ses fonctions :",
@@ -916,17 +941,17 @@ export const GRANS_PROJECT: ProjectData = {
     title: "MAISON DES JEUNES",
     optionalSubtitle: "RÉHABILITATION ET AGENCEMENT EQUIPEMENT PUBLIC JEUNESSE",
     descriptionParagraphs: [
-        "La ville de Grans souhaitait la réhabilitation d’une maison de ville en maison des jeunes afin d’offir un nouvel equipement pour sa jeunesse.",
+        "La ville de Grans souhaitait  la réhabilitation d’une maison de ville en maison des jeunes afin d’offir un nouvel equipement pour sa jeunesse.",
         "La distribution intérieure a été entièrement repensée, une nouvelle entrée a été organisée permettant l’agrandissement de l’espace accueil. L’ensemble a été décloisonné et un grand nombre de murs porteurs ont été modifiés et ouverts afin de permettre une transparence visuelle sur l’ensemble des espaces intérieurs et extérieurs.",
-        "L’aménagement intérieur est traité de manière sobre car l’équipe pédagogique a pour projet la réalisation de plusieurs fresques murales. Un mobilier spécifique a été créé: banquettes pour espace « gaming » et loisir, office, meuble rangement bureau pour structurer les espace dédiés.",
-        "Enfin un cehmin pietonnier a été créé afin de rejoindre aisément l’avenue principale."
+        "L’aménagement intérieur est traité de manière sobre car l’équipe pédagogique avait pour projet la réalisation de plusieurs fresques murales. Un mobilier spécifique a été créé: banquettes pour espace « gaming » et loisirs, office, meuble rangement bureau pour structurer les espace dédiés.",
+        "Enfin un chemin piétonnier a été créé afin de rejoindre aisément l’avenue principale."
     ],
     techSheet: [
         { label: "Lieu", value: "Grans (13)" },
         { label: "Maitre d’Ouvrage", value: "Ville de Grans" },
-        { label: "Mission", value: "MOP+OPC" },
+        { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "162,40 m2 + 228 m2 aménagements extérieurs" },
-        { label: "Coût travaux", value: "278 000 € HT (maison) + 117 383 € HT (chemin)" },
+        { label: "Coût travaux", value: "278 00 € HT (maison) + 117 383 € HT (chemin piétonnier)" },
         { label: "Année", value: "2018-2021" }
     ]
 };
@@ -1016,9 +1041,10 @@ export const VITROLLES_PROJECT: ProjectData = {
     techSheet: [
         { label: "Lieu", value: "Vitrolles (13)" },
         { label: "Maitre d'Ouvrage", value: "Ville de Vitrolles" },
-        { label: "Mission", value: "MOP+OPC" },
+        { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "516 m2" },
         { label: "Coût travaux", value: "797 390 € HT" },
+        { label: "Année", value: "2017-2018" },
         { label: "Année", value: "2017-2018" }
     ]
 };
@@ -1046,9 +1072,10 @@ export const SALON_PROJECT: ProjectData = {
     techSheet: [
         { label: "Lieu", value: "Salon de Provence (13)" },
         { label: "Maitre d'Ouvrage", value: "Ville de Salon de Provence" },
-        { label: "Mission", value: "MOP+OPC" },
+        { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "1182 m2" },
         { label: "Coût travaux", value: "633 000 € HT" },
+        { label: "Année", value: "2020-2021" },
         { label: "Année", value: "2020-2021" }
     ]
 };
@@ -1094,8 +1121,8 @@ export const PROJECTS: ProjectData[] = [
     JACOU_PROJECT,
     ROMI_PROJECT,
     VACQUEROLLES_PROJECT,
-    TRENTINI_PROJECT,
     MARTIN_PIERRE_PROJECT,
+    TRENTINI_PROJECT,
     WAUQUIEZ_PROJECT,
     CACHAREL_PROJECT,
     FOOD_VILLAGE_PROJECT,

@@ -8,6 +8,7 @@ export interface ProjectLogo {
     alt: string;
     width: number;
     height: number;
+    invert?: boolean;
 }
 
 export interface ProjectData {
@@ -21,7 +22,6 @@ export interface ProjectData {
     navigationTitle?: string;
     optionalLogo?: ProjectLogo;
     optionalSubtitle?: string;
-    optionalSubtitle3?: string;
     projectLogo?: ProjectLogo;
     descriptionHeader?: string;
     descriptionParagraphs: string[];

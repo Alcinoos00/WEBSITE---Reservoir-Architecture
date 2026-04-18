@@ -13,17 +13,17 @@ export default function Content({ project }: ContentProps) {
     const [isTechSheetOpen, setIsTechSheetOpen] = useState(false);
 
     const hasH2 = !!project.optionalSubtitle;
-    const hasH3 = !!project.optionalSubtitle3;
+    const hasH3 = !!project.descriptionHeader;
     const hasLogo = !!project.optionalLogo;
 
     return (
         <section className="content-container">
             <div className="content-header">
                 {/* OVERLINE - Subtitle 1 */}
-                <p 
+                <p
                     className="subtitle content-subtitle"
-                    style={{ 
-                        marginBottom: '30px' 
+                    style={{
+                        marginBottom: hasLogo ? '16px' : '30px'
                     }}
                 >
                     {project.subtitle}
@@ -31,13 +31,14 @@ export default function Content({ project }: ContentProps) {
 
                 {/* LOGO */}
                 {project.optionalLogo && (
-                    <div className="content-optional-logo-wrapper" style={{ marginBottom: '16px' }}>
+                    <div className="content-optional-logo-wrapper">
                         <Image
                             src={project.optionalLogo.src}
                             alt={project.optionalLogo.alt || "Logo"}
                             width={project.optionalLogo.width}
                             height={project.optionalLogo.height}
                             className="content-optional-logo"
+                            style={project.optionalLogo.invert ? { filter: 'invert(1)' } : undefined}
                             priority
                         />
                     </div>
@@ -65,18 +66,6 @@ export default function Content({ project }: ContentProps) {
                     </h2>
                 )}
 
-                {/* SOUS-TITRE 3 - H3 */}
-                {project.optionalSubtitle3 && (
-                    <h3 
-                        className="title-2 content-optional-subtitle-3"
-                        style={{ 
-                            marginBottom: '4px' 
-                        }}
-                    >
-                        {project.optionalSubtitle3}
-                    </h3>
-                )}
-
                 {project.projectLogo && (
                     <div className="content-logo-wrapper">
                         <Image
@@ -90,10 +79,11 @@ export default function Content({ project }: ContentProps) {
                     </div>
                 )}
 
+                {/* H3 - Sous-titre poetique */}
                 {project.descriptionHeader && !project.projectLogo && (
-                    <p className="body-text" style={{ fontWeight: 600, marginBottom: '2rem' }}>
+                    <h3 className="title-2" style={{ marginBottom: '2rem' }}>
                         {project.descriptionHeader}
-                    </p>
+                    </h3>
                 )}
             </div>
 
