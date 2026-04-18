@@ -28,8 +28,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.variable}>
+        <Navbar />
         <div className="main-container">
-          <Navbar />
           <main className="content-wrapper">
             {children}
           </main>

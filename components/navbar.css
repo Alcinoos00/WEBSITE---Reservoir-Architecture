@@ -4,8 +4,17 @@
     /* Assuming white or transparent based on design */
     padding: 1rem 2rem;
     /* Reduced from 1.5rem 3rem */
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 100;
+    background-color: #fff;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar-container.scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar-content {
@@ -42,6 +51,28 @@
     color: var(--foreground);
 }
 
+.nav-link {
+    text-decoration: none;
+    position: relative;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0.8em;
+    bottom: -0.25rem;
+    height: 0.5px;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    opacity: 1;
+}
+
 .nav-separator {
     font-size: 0.6875rem;
     color: #a0a0a0;
@@ -57,11 +88,13 @@
 .cta-button {
     background-color: #000000;
     color: #ffffff;
-    padding: 0.875rem 1.75rem;
+    padding: 1rem 2rem;
     display: inline-block;
     transition: opacity 0.2s ease;
     line-height: 1;
     white-space: nowrap;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -152,6 +185,8 @@
         font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+        border: none;
+        cursor: pointer;
     }
 }
 
@@ -181,5 +216,77 @@
     .cta-button {
         padding: 0.625rem 1.25rem;
         font-size: 0.6875rem;
+    }
+}
+
+/* Contact Popup */
+.contact-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 200;
+}
+
+.contact-popup {
+    background-color: #fff;
+    padding: 3rem 3.5rem;
+    position: relative;
+    text-align: center;
+    min-width: 20rem;
+}
+
+.contact-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #000;
+    line-height: 1;
+}
+
+.contact-title {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.contact-btn {
+    font-size: 0.75rem;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    padding: 0.875rem 1.75rem;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.contact-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+    }
+
+    .contact-popup {
+        padding: 2.5rem 1.5rem;
+        min-width: auto;
+        margin: 0 1rem;
     }
 }
