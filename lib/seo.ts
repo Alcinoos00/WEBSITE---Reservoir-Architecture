@@ -83,7 +83,8 @@ export function truncateAtWord(text: string, maxLen: number): string {
 
 export function getProjectMetadata(project: ProjectData): Metadata {
     const typology = typologyLabel(project.category);
-    const title = `${project.title} — ${typology} à ${project.subtitle} | ${SITE_NAME}`;
+    const title = `${project.title} — ${typology} à ${project.subtitle}`;
+    const ogTitle = `${title} | ${SITE_NAME}`;
     const rawDesc =
         project.descriptionHeader ??
         project.descriptionParagraphs[0] ??
@@ -100,7 +101,7 @@ export function getProjectMetadata(project: ProjectData): Metadata {
         description,
         alternates: { canonical: url },
         openGraph: {
-            title,
+            title: ogTitle,
             description,
             url,
             type: "article",
@@ -110,7 +111,7 @@ export function getProjectMetadata(project: ProjectData): Metadata {
         },
         twitter: {
             card: "summary_large_image",
-            title,
+            title: ogTitle,
             description,
             images: [image],
         },
