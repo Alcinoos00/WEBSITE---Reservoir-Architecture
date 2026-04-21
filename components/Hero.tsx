@@ -4,6 +4,7 @@ import { useRef, useEffect, useState, useCallback } from "react";
 import Image from "next/image";
 import "./hero.css";
 import { ProjectData } from "@/types/project";
+import { getProjectAlt } from "@/lib/seo";
 
 interface HeroProps {
     project: ProjectData;
@@ -81,7 +82,7 @@ export default function Hero({ project }: HeroProps) {
                         >
                             <Image
                                 src={src}
-                                alt={`${project.title} ${index + 1}`}
+                                alt={getProjectAlt(project, index)}
                                 className="hero-image"
                                 width={1200}
                                 height={800}
@@ -122,7 +123,7 @@ export default function Hero({ project }: HeroProps) {
 
                         <Image
                             src={project.heroImages[lightboxIndex]}
-                            alt={`${project.title} ${lightboxIndex + 1}`}
+                            alt={getProjectAlt(project, lightboxIndex)}
                             className="lightbox-image"
                             width={1920}
                             height={1080}
