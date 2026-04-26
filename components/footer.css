@@ -52,22 +52,6 @@
     margin: 0 auto;
 }
 
-.footer-socials {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
-}
-
-.social-icon {
-    color: #fff;
-    opacity: 0.8;
-    transition: opacity 0.2s;
-}
-
-.social-icon:hover {
-    opacity: 1;
-}
-
 .footer-links-bottom {
     display: flex;
     gap: 1.5rem;
