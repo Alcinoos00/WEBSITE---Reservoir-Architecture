@@ -3,7 +3,7 @@
     background-color: #0c0c0c;
     /* Deep dark background */
     color: #fff;
-    padding: 4rem 3rem;
+    padding: 4rem 1.5rem;
     z-index: 100;
 }
 
@@ -11,7 +11,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 100rem;
+    max-width: 90rem;
     margin: 0 auto 3rem auto;
 }
 
@@ -40,7 +40,7 @@
 .footer-divider {
     height: 0.0625rem;
     background-color: #333;
-    max-width: 100rem;
+    max-width: 90rem;
     margin: 0 auto 2rem auto;
 }
 
@@ -48,7 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100rem;
+    max-width: 90rem;
     margin: 0 auto;
 }
 
