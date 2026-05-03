@@ -17,7 +17,13 @@
 }
 
 .footer-branding {
+    margin-left: 0;
     padding-left: 0;
+}
+
+.footer-logo {
+    display: block;
+    margin-left: -2px;
 }
 
 .footer-brand-title {
