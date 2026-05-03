@@ -191,14 +191,15 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
     }, []);
 
     const scroll = (direction: "left" | "right") => {
-        if (scrollRef.current) {
-            const { scrollLeft, clientWidth } = scrollRef.current;
-            const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
-            scrollRef.current.scrollTo({
-                left: scrollLeft + scrollAmount,
-                behavior: "smooth"
-            });
-        }
+        const el = scrollRef.current;
+        if (!el || el.children.length === 0) return;
+        const first = el.children[0] as HTMLElement;
+        const second = el.children[1] as HTMLElement | undefined;
+        const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
+        el.scrollTo({
+            left: el.scrollLeft + (direction === "left" ? -step : step),
+            behavior: "smooth"
+        });
     };
 
     return (

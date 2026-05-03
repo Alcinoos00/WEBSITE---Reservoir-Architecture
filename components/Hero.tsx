@@ -15,11 +15,12 @@ export default function Hero({ project }: HeroProps) {
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
     const scroll = (direction: "left" | "right") => {
-        if (scrollRef.current) {
-            const { clientWidth } = scrollRef.current;
-            const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
-            scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-        }
+        const el = scrollRef.current;
+        if (!el || el.children.length === 0) return;
+        const first = el.children[0] as HTMLElement;
+        const second = el.children[1] as HTMLElement | undefined;
+        const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
+        el.scrollBy({ left: direction === "left" ? -step : step, behavior: "smooth" });
     };
 
     const lightboxPrev = useCallback(() => {
