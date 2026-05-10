@@ -1,4 +1,4 @@
-import type { MetadataRoute } from "next";
+﻿import type { MetadataRoute } from "next";
 import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, categoryToPath } from "@/lib/seo";
 
@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     const staticUrls: MetadataRoute.Sitemap = [
         { url: SITE_URL, lastModified, priority: 1.0, changeFrequency: "monthly" },
+        { url: `${SITE_URL}/contact`, lastModified, priority: 0.95, changeFrequency: "monthly" },
         { url: `${SITE_URL}/villas`, lastModified, priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/logements`, lastModified, priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/commerces`, lastModified, priority: 0.9, changeFrequency: "monthly" },

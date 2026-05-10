@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import ClarityInit from "@/components/ClarityInit";
 import Navbar from "@/components/Navbar";
@@ -14,24 +14,23 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Architecte à Aix-en-Provence, Marseille, Nîmes`,
+    default: `${SITE_NAME} - Architecte à Aix-en-Provence`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Agence d'architecture en Provence (13, 30, 83, 84). Villas contemporaines, logements collectifs, commerces, équipements publics. Particuliers & promoteurs.",
+    "Agence d'architecture à Aix-en-Provence intervenant en PACA. Villas contemporaines, logements collectifs, commerces et équipements publics.",
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME }],
   generator: "Next.js",
   keywords: [
     "architecte Aix-en-Provence",
+    "architecte PACA",
     "architecte Marseille",
-    "architecte Nîmes",
     "architecte Provence",
     "villa contemporaine architecte",
     "architecte logements collectifs",
-    "architecte promoteur immobilier",
     "architecte commerce",
-    "architecte showroom",
+    "architecte équipements publics",
     "Reservoir Architecture",
   ],
   icons: {
@@ -66,10 +65,11 @@ export default function RootLayout({
         />
         <Navbar />
         <div className="main-container">
-          <main className="content-wrapper">{children}</main>
+          <div className="content-wrapper">{children}</div>
           <Footer />
         </div>
       </body>
     </html>
   );
 }
+

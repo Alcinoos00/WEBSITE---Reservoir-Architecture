@@ -1,37 +1,52 @@
-import type { ProjectData } from "@/types/project";
+﻿import type { ProjectData } from "@/types/project";
 import type { Metadata } from "next";
 
-export const SITE_URL = "https://reservoir-architecture.com";
+export const SITE_URL = "https://www.reservoir-architecture.com";
 export const SITE_NAME = "Reservoir Architecture";
 export const SITE_LOCATION = "Aix-en-Provence";
 export const SITE_REGION = "Provence-Alpes-Côte d'Azur";
 export const SITE_COUNTRY = "FR";
 export const SITE_PHONE = "+33613516767";
+export const SITE_PHONE_DISPLAY = "+33 6 13 51 67 67";
 export const SITE_EMAIL = "contact@reservoir-architecture.com";
+export const SITE_STREET_ADDRESS = "1330 rue Jean René Guillibert Gauthier de la Lauzière";
+export const SITE_POSTAL_CODE = "13290";
+export const SITE_ADDRESS = `${SITE_STREET_ADDRESS}, ${SITE_POSTAL_CODE} ${SITE_LOCATION}`;
 export const SITE_FOUNDED = "2013";
 export const SITE_FOUNDER = "Serge Ettore";
 export const SITE_FOUNDER_TITLE = "Architecte DPLG";
 
-export const AREA_SERVED_CITIES = ["Aix-en-Provence", "Marseille", "Nîmes"];
+export const AREA_SERVED_CITIES = [
+    "Aix-en-Provence",
+    "Marseille",
+    "Salon-de-Provence",
+    "Vitrolles",
+    "Avignon",
+    "Toulon",
+    "Nîmes",
+];
+
 export const AREA_SERVED_REGIONS = [
+    "Provence-Alpes-Côte d'Azur",
     "Bouches-du-Rhône",
-    "Gard",
     "Var",
     "Vaucluse",
+    "Gard",
 ];
 
 export const KNOWS_ABOUT = [
     "Architecture résidentielle",
     "Villa contemporaine",
     "Maison d'architecte",
+    "Rénovation et extension",
     "Logements collectifs",
     "Résidences",
     "Architecture commerciale",
     "Aménagement de showroom",
     "Design retail",
     "Équipements publics",
-    "Rénovation",
-    "Extension",
+    "Réhabilitation",
+    "Architecture en PACA",
 ];
 
 export const TYPOLOGY_LABEL: Record<string, string> = {
@@ -60,7 +75,7 @@ export function typologyLabel(category: string | undefined): string {
 
 export function getProjectAlt(project: ProjectData, index: number): string {
     const typology = typologyLabel(project.category);
-    return `${typology} ${project.title} à ${project.subtitle} — projet d'architecte ${SITE_NAME}, image ${index + 1}`;
+    return `${typology} ${project.title} à ${project.subtitle} - projet d'architecte ${SITE_NAME}, image ${index + 1}`;
 }
 
 export function getProjectUrl(project: ProjectData): string {
@@ -78,12 +93,12 @@ export function truncateAtWord(text: string, maxLen: number): string {
     if (text.length <= maxLen) return text;
     const sliced = text.slice(0, maxLen);
     const lastSpace = sliced.lastIndexOf(" ");
-    return (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced) + "…";
+    return (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced) + "...";
 }
 
 export function getProjectMetadata(project: ProjectData): Metadata {
     const typology = typologyLabel(project.category);
-    const title = `${project.title} — ${typology} à ${project.subtitle}`;
+    const title = `${project.title} - ${typology} à ${project.subtitle}`;
     const ogTitle = `${title} | ${SITE_NAME}`;
     const rawDesc =
         project.descriptionHeader ??
@@ -147,14 +162,17 @@ export function getOrganizationJsonLd() {
         name: SITE_NAME,
         alternateName: "RESERVOIR Architecture",
         description:
-            "Agence d'architecture à Aix-en-Provence. Villas contemporaines, logements collectifs, commerces, équipements publics en Provence (13, 30, 83, 84).",
+            "Agence d'architecture à Aix-en-Provence intervenant en PACA. Villas contemporaines, logements collectifs, commerces, équipements publics, rénovation et réhabilitation.",
         url: SITE_URL,
         logo: `${SITE_URL}/images/ui/logo_light.svg`,
         image: `${SITE_URL}/images/ui/logo_light.svg`,
         telephone: SITE_PHONE,
         email: SITE_EMAIL,
+        priceRange: "Sur devis",
         address: {
             "@type": "PostalAddress",
+            streetAddress: SITE_STREET_ADDRESS,
+            postalCode: SITE_POSTAL_CODE,
             addressLocality: SITE_LOCATION,
             addressRegion: SITE_REGION,
             addressCountry: SITE_COUNTRY,
@@ -171,6 +189,26 @@ export function getOrganizationJsonLd() {
         foundingDate: SITE_FOUNDED,
         knowsAbout: KNOWS_ABOUT,
         slogan: "Construire une présence",
+        contactPoint: {
+            "@type": "ContactPoint",
+            telephone: SITE_PHONE,
+            email: SITE_EMAIL,
+            contactType: "customer service",
+            areaServed: SITE_COUNTRY,
+            availableLanguage: ["fr"],
+        },
+    };
+}
+
+export function getContactPageJsonLd() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": `${SITE_URL}/contact#contact`,
+        url: `${SITE_URL}/contact`,
+        name: `Contact - ${SITE_NAME}`,
+        isPartOf: { "@id": `${SITE_URL}/#organization` },
+        about: { "@id": `${SITE_URL}/#organization` },
     };
 }
 
@@ -208,7 +246,7 @@ export function getProjectJsonLd(project: ProjectData) {
         "@type": "CreativeWork",
         name: project.title,
         description: truncateAtWord(
-            (project.descriptionParagraphs[0] ?? "").replace(/\s+/g, " "),
+            (project.descriptionParagraphs[0] ?? project.optionalSubtitle ?? "").replace(/\s+/g, " "),
             300,
         ),
         creator: { "@id": `${SITE_URL}/#organization` },

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -10,7 +10,6 @@ export default function Navbar() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
-    const [isContactOpen, setIsContactOpen] = useState(false);
 
     const isActive = (href: string) => pathname.startsWith(href);
 
@@ -22,11 +21,6 @@ export default function Navbar() {
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
-    const openContact = (e: React.MouseEvent) => {
-        e.preventDefault();
-        closeMenu();
-        setIsContactOpen(true);
-    };
 
     return (
         <nav className={`navbar-container ${isMenuOpen ? "menu-open" : ""} ${scrolled ? "scrolled" : ""}`}>
@@ -42,7 +36,6 @@ export default function Navbar() {
                     />
                 </Link>
 
-                {/* Desktop Menu */}
                 <div className="nav-links-container desktop-only">
                     <Link href="/villas" className={`nav-link ${isActive("/villas") ? "active" : ""}`}>VILLAS</Link>
                     <span className="nav-separator">|</span>
@@ -54,12 +47,11 @@ export default function Navbar() {
                 </div>
 
                 <div className="cta-container desktop-only">
-                    <button onClick={openContact} className="cta-button cta-text">
+                    <Link href="/contact" className="cta-button cta-text">
                         Nous Contacter
-                    </button>
+                    </Link>
                 </div>
 
-                {/* Hamburger Toggle */}
                 <button
                     className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
                     onClick={toggleMenu}
@@ -71,35 +63,15 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
             <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
                 <div className="mobile-nav-links">
                     <Link href="/villas" className={`nav-link ${isActive("/villas") ? "active" : ""}`} onClick={closeMenu}>VILLAS</Link>
                     <Link href="/logements" className={`nav-link ${isActive("/logements") ? "active" : ""}`} onClick={closeMenu}>LOGEMENTS</Link>
                     <Link href="/commerces" className={`nav-link ${isActive("/commerces") ? "active" : ""}`} onClick={closeMenu}>COMMERCES</Link>
                     <Link href="/equipements" className={`nav-link ${isActive("/equipements") ? "active" : ""}`} onClick={closeMenu}>EQUIPEMENTS</Link>
-                    <button className="mobile-cta" onClick={openContact}>Nous Contacter</button>
+                    <Link href="/contact" className="mobile-cta" onClick={closeMenu}>Nous Contacter</Link>
                 </div>
             </div>
-            {/* Contact Popup */}
-            {isContactOpen && (
-                <div className="contact-overlay" onClick={() => setIsContactOpen(false)}>
-                    <div className="contact-popup" onClick={(e) => e.stopPropagation()}>
-                        <button className="contact-close" onClick={() => setIsContactOpen(false)} aria-label="Fermer">
-                            &times;
-                        </button>
-                        <h3 className="contact-title">Nous Contacter</h3>
-                        <div className="contact-links">
-                            <a href="mailto:contact@reservoir-architecture.com" className="contact-btn">
-                                contact@reservoir-architecture.com
-                            </a>
-                            <a href="tel:+33613516767" className="contact-btn">
-                                +33 6 13 51 67 67
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            )}
         </nav>
     );
 }

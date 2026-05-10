@@ -1,5 +1,7 @@
-import "./footer.css";
+﻿import "./footer.css";
 import Image from "next/image";
+import Link from "next/link";
+import { SITE_ADDRESS, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -16,9 +18,9 @@ export default function Footer() {
                     />
                 </div>
                 <div className="footer-contact">
-                    <p className="body-text footer-info">contact@reservoir-architecture.com</p>
-                    <p className="body-text footer-info">+33 6 13 51 67 67</p>
-                    <p className="body-text footer-info">Aix-en-Provence, région PACA, France</p>
+                    <p className="body-text footer-info"><a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a></p>
+                    <p className="body-text footer-info"><a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a></p>
+                    <p className="body-text footer-info">{SITE_ADDRESS}</p>
                 </div>
             </div>
 
@@ -26,13 +28,14 @@ export default function Footer() {
 
             <div className="footer-bottom">
                 <div className="footer-links-bottom">
-                    <a href="#accessibility" className="footer-link-small">Accessibility Statement</a>
-                    <a href="#privacy" className="footer-link-small">Privacy Policy</a>
-                    <a href="#terms" className="footer-link-small">Terms & Conditions</a>
-                    <a href="#refund" className="footer-link-small">Refund Policy</a>
+                    <Link href="/contact" className="footer-link-small">Contact</Link>
+                    <Link href="/villas" className="footer-link-small">Villas</Link>
+                    <Link href="/logements" className="footer-link-small">Logements</Link>
+                    <Link href="/commerces" className="footer-link-small">Commerces</Link>
+                    <Link href="/equipements" className="footer-link-small">Équipements</Link>
                 </div>
                 <div className="footer-copyright">
-                    <p className="footer-link-small">© {currentYear} by Reservoir</p>
+                    <p className="footer-link-small">Â© {currentYear} Reservoir Architecture</p>
                 </div>
             </div>
         </footer>
