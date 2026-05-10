@@ -35,9 +35,14 @@ export const metadata: Metadata = {
   ],
   icons: {
     icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
       { url: "/images/ui/icon_dark.svg", media: "(prefers-color-scheme: light)" },
       { url: "/images/ui/icon_light.svg", media: "(prefers-color-scheme: dark)" },
     ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: ["/favicon.ico"],
   },
   openGraph: {
     type: "website",
@@ -83,4 +88,5 @@ export default function RootLayout({
     </html>
   );
 }
+
 
