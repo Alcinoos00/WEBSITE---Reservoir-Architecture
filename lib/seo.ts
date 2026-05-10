@@ -15,6 +15,8 @@ export const SITE_ADDRESS = `${SITE_STREET_ADDRESS}, ${SITE_POSTAL_CODE} ${SITE_
 export const SITE_FOUNDED = "2013";
 export const SITE_FOUNDER = "Serge Ettore";
 export const SITE_FOUNDER_TITLE = "Architecte DPLG";
+export const SITE_DEFAULT_IMAGE = `${SITE_URL}/images/projects/1-villas/villa%20F/villaF_1.jpg`;
+export const SITE_DEFAULT_IMAGE_ALT = "Villa contemporaine conçue par Reservoir Architecture";
 
 export const AREA_SERVED_CITIES = [
     "Aix-en-Provence",
@@ -165,7 +167,7 @@ export function getOrganizationJsonLd() {
             "Agence d'architecture à Aix-en-Provence intervenant en PACA. Villas contemporaines, logements collectifs, commerces, équipements publics, rénovation et réhabilitation.",
         url: SITE_URL,
         logo: `${SITE_URL}/images/ui/logo_light.svg`,
-        image: `${SITE_URL}/images/ui/logo_light.svg`,
+        image: SITE_DEFAULT_IMAGE,
         telephone: SITE_PHONE,
         email: SITE_EMAIL,
         priceRange: "Sur devis",

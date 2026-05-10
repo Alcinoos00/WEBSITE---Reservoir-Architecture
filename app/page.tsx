@@ -8,7 +8,7 @@ import {
   WAUQUIEZ_PROJECT,
   REGIE_DES_EAUX_PROJECT,
 } from "@/lib/projects";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Architecte à Aix-en-Provence",
@@ -21,6 +21,18 @@ export const metadata: Metadata = {
       "Agence d'architecture en PACA pour villas contemporaines, logements collectifs, commerces et équipements publics.",
     url: SITE_URL,
     type: "website",
+    images: [
+      {
+        url: SITE_DEFAULT_IMAGE,
+        width: 1200,
+        height: 800,
+        alt: SITE_DEFAULT_IMAGE_ALT,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [SITE_DEFAULT_IMAGE],
   },
 };
 

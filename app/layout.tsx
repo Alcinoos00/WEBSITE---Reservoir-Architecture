@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import ClarityInit from "@/components/ClarityInit";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_NAME, SITE_URL, getOrganizationJsonLd } from "@/lib/seo";
+import { SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, SITE_NAME, SITE_URL, getOrganizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,8 +44,19 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     siteName: SITE_NAME,
     url: SITE_URL,
+    images: [
+      {
+        url: SITE_DEFAULT_IMAGE,
+        width: 1200,
+        height: 800,
+        alt: SITE_DEFAULT_IMAGE_ALT,
+      },
+    ],
   },
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    images: [SITE_DEFAULT_IMAGE],
+  },
   robots: { index: true, follow: true },
 };
 
