@@ -1,0 +1,574 @@
+/* Landing pages Google Ads (service x localisation).
+   Réutilise la charte du site (Inter, monochrome, eyebrows trackés, boutons bordés).
+   Toutes les classes sont préfixées .lp- et scopées sous .lp. */
+
+.lp {
+    --lp-ink: #161412;
+    --lp-cream: #f4f1ea;
+    --lp-white: #ffffff;
+    --lp-text: #1a1714;
+    --lp-muted: #6b655d;
+    --lp-line: rgba(0, 0, 0, 0.14);
+    --lp-line-light: rgba(255, 255, 255, 0.28);
+    --lp-maxw: 84rem;
+    width: 100%;
+    color: var(--lp-text);
+}
+
+.lp-inner {
+    max-width: var(--lp-maxw);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.lp-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--lp-muted);
+    margin: 0 0 1.25rem;
+}
+
+/* ── Buttons ── */
+.lp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.95rem 1.5rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    border: 1px solid var(--lp-ink);
+    cursor: pointer;
+    transition: background-color 0.25s ease, color 0.25s ease, opacity 0.25s ease;
+    white-space: nowrap;
+}
+
+.lp-btn svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+.lp-btn--solid {
+    background: var(--lp-ink);
+    color: var(--lp-white);
+}
+
+.lp-btn--solid:hover {
+    opacity: 0.85;
+}
+
+.lp-btn--ghost {
+    background: transparent;
+    color: var(--lp-ink);
+}
+
+.lp-btn--ghost:hover {
+    background: var(--lp-ink);
+    color: var(--lp-white);
+}
+
+/* Variantes sur fond sombre */
+.lp-btn--on-dark.lp-btn--solid {
+    background: var(--lp-white);
+    color: var(--lp-ink);
+    border-color: var(--lp-white);
+}
+
+.lp-btn--on-dark.lp-btn--ghost {
+    color: var(--lp-white);
+    border-color: var(--lp-line-light);
+}
+
+.lp-btn--on-dark.lp-btn--ghost:hover {
+    background: var(--lp-white);
+    color: var(--lp-ink);
+    border-color: var(--lp-white);
+}
+
+.lp-btn--full {
+    width: 100%;
+    justify-content: center;
+}
+
+.lp-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+/* ── Hero ── */
+.lp-hero {
+    position: relative;
+    min-height: clamp(34rem, 78vh, 46rem);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.lp-hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.lp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.34) 46%, rgba(0, 0, 0, 0.08) 100%);
+}
+
+.lp-hero-inner {
+    position: relative;
+    z-index: 2;
+    color: var(--lp-white);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.lp-hero-eyebrow {
+    color: rgba(255, 255, 255, 0.86);
+}
+
+.lp-hero h1 {
+    margin: 0;
+    max-width: 18ch;
+    font-size: clamp(2.25rem, 4.6vw, 3.6rem);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: 0.005em;
+}
+
+.lp-hero-sub {
+    max-width: 38rem;
+    margin: 1.5rem 0 2rem;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.lp-hero-trust {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-top: 2.25rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.lp-hero-trust svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+/* ── Section générique ── */
+.lp-section {
+    padding: 6rem 0;
+}
+
+.lp-section--cream {
+    background: var(--lp-cream);
+}
+
+.lp-section--white {
+    background: var(--lp-white);
+}
+
+.lp-section-head {
+    margin-bottom: 3.5rem;
+}
+
+.lp-section-lead {
+    margin: 0;
+    max-width: 44rem;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--lp-text);
+}
+
+/* ── Réalisations (cartes) ── */
+.lp-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.lp-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--lp-white);
+    border: 1px solid var(--lp-line);
+    overflow: hidden;
+}
+
+.lp-card-imgwrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e7e3da;
+}
+
+.lp-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lp-card:hover .lp-card-img {
+    transform: scale(1.03);
+}
+
+.lp-card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.lp-card-title {
+    margin: 0 0 0.65rem;
+    font-size: 1.1875rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+.lp-card-desc {
+    margin: 0 0 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--lp-muted);
+}
+
+.lp-card-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.lp-spec {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    color: var(--lp-muted);
+}
+
+.lp-spec svg {
+    width: 0.9rem;
+    height: 0.9rem;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+.lp-card-cta {
+    margin-top: auto;
+}
+
+/* ── Réassurance + étapes ── */
+.lp-two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+}
+
+.lp-reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.lp-reason {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: 1rem;
+    align-items: start;
+}
+
+.lp-reason-icon {
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--lp-ink);
+}
+
+.lp-reason-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.lp-reason h3,
+.lp-step h3 {
+    margin: 0 0 0.4rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+}
+
+.lp-reason p,
+.lp-step p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--lp-muted);
+}
+
+.lp-steps {
+    display: flex;
+    flex-direction: column;
+}
+
+.lp-step {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding-bottom: 1.75rem;
+    position: relative;
+}
+
+.lp-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: 1.125rem;
+    top: 2.25rem;
+    bottom: 0;
+    width: 1px;
+    background: var(--lp-line);
+}
+
+.lp-step-num {
+    width: 2.25rem;
+    height: 2.25rem;
+    border: 1px solid var(--lp-ink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    background: var(--lp-cream);
+}
+
+.lp-center-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+}
+
+/* ── Ancrage local ── */
+.lp-local-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: center;
+}
+
+.lp-local-imgwrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #e7e3da;
+}
+
+.lp-local-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.lp-local h2 {
+    margin: 0 0 1.5rem;
+    font-size: clamp(1.85rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.lp-local p {
+    margin: 0 0 1rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--lp-text);
+}
+
+.lp-local .lp-cta-row {
+    margin-top: 1.5rem;
+}
+
+/* ── FAQ ── */
+.lp-faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem 2rem;
+}
+
+.lp-faq-item {
+    border-bottom: 1px solid var(--lp-line);
+}
+
+.lp-faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--lp-text);
+}
+
+.lp-faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.lp-faq-chevron {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.lp-faq-item[open] .lp-faq-chevron {
+    transform: rotate(180deg);
+}
+
+.lp-faq-answer {
+    margin: 0;
+    padding: 0 0 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--lp-muted);
+    max-width: 90%;
+}
+
+/* ── Gros CTA final ── */
+.lp-final {
+    position: relative;
+    overflow: hidden;
+    background: var(--lp-ink);
+}
+
+.lp-final-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+}
+
+.lp-final-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(95deg, rgba(15, 13, 11, 0.92) 0%, rgba(15, 13, 11, 0.7) 45%, rgba(15, 13, 11, 0.25) 100%);
+}
+
+.lp-final-inner {
+    position: relative;
+    z-index: 2;
+    padding: 5.5rem 0;
+    color: var(--lp-white);
+}
+
+.lp-final h2 {
+    margin: 0;
+    max-width: 20ch;
+    font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+    font-weight: 400;
+    line-height: 1.1;
+}
+
+.lp-final p {
+    max-width: 40rem;
+    margin: 1.25rem 0 2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── Barre d'appel fixe (mobile) ── */
+.lp-mobile-cta {
+    display: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+    .lp-cards {
+        grid-template-columns: 1fr;
+        max-width: 32rem;
+        margin: 0 auto;
+    }
+
+    .lp-two-col {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .lp-local-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .lp-faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .lp-inner {
+        padding: 0 1.25rem;
+    }
+
+    .lp-section {
+        padding: 4rem 0;
+    }
+
+    .lp-hero-inner {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .lp {
+        padding-bottom: 4.5rem;
+        /* place pour la barre d'appel fixe */
+    }
+
+    .lp-mobile-cta {
+        display: flex;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 90;
+        padding: 0.65rem 1rem;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid var(--lp-line);
+    }
+
+    .lp-mobile-cta .lp-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.85rem 1rem;
+    }
+}
