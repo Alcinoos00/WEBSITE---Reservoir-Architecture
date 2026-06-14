@@ -1,8 +1,8 @@
 import "./landing.css";
-import { SITE_PHONE, SITE_EMAIL } from "@/lib/seo";
+import { SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { LeadTracking, EmailButton } from "./LeadButtons";
 
 const TEL = `tel:${SITE_PHONE}`;
-const MAIL = `mailto:${SITE_EMAIL}`;
 
 export type Spec = { icon: string; label: string };
 export type ProjectCard = {
@@ -56,6 +56,14 @@ function ArrowIcon() {
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
+        </svg>
+    );
+}
+
+function PhoneIcon() {
+    return (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
         </svg>
     );
 }
@@ -172,6 +180,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
     return (
         <main className="lp">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+            <LeadTracking />
 
             {/* 1. HERO */}
             <section className="lp-hero">
@@ -183,11 +192,9 @@ export default function LandingPage({ data }: { data: LandingData }) {
                     <p className="lp-hero-sub">{data.hero.sub}</p>
                     <div className="lp-cta-row">
                         <a className="lp-btn lp-btn--on-dark lp-btn--solid" href={TEL} data-cta="appel" data-loc="hero">
-                            {data.hero.ctaPrimary} <ArrowIcon />
+                            <PhoneIcon /> {SITE_PHONE_DISPLAY}
                         </a>
-                        <a className="lp-btn lp-btn--on-dark lp-btn--ghost" href={MAIL} data-cta="email" data-loc="hero">
-                            {data.hero.ctaEmail} <ArrowIcon />
-                        </a>
+                        <EmailButton loc="hero" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
                     <p className="lp-hero-trust">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -335,11 +342,9 @@ export default function LandingPage({ data }: { data: LandingData }) {
                     <p>{data.finalCta.p}</p>
                     <div className="lp-cta-row">
                         <a className="lp-btn lp-btn--on-dark lp-btn--solid" href={TEL} data-cta="appel" data-loc="final">
-                            {data.finalCta.ctaPrimary} <ArrowIcon />
+                            <PhoneIcon /> {SITE_PHONE_DISPLAY}
                         </a>
-                        <a className="lp-btn lp-btn--on-dark lp-btn--ghost" href={MAIL} data-cta="email" data-loc="final">
-                            {data.finalCta.ctaEmail} <ArrowIcon />
-                        </a>
+                        <EmailButton loc="final" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
                 </div>
             </section>
@@ -347,7 +352,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
             {/* Barre d'appel fixe (mobile) */}
             <div className="lp-mobile-cta">
                 <a className="lp-btn lp-btn--solid" href={TEL} data-cta="appel" data-loc="mobile_sticky">
-                    {data.hero.ctaPrimary} <ArrowIcon />
+                    <PhoneIcon /> Appeler {SITE_PHONE_DISPLAY}
                 </a>
             </div>
         </main>

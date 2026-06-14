@@ -39,6 +39,7 @@
     padding: 0.95rem 1.5rem;
     font-size: 0.8125rem;
     font-weight: 500;
+    font-family: inherit;
     letter-spacing: 0.01em;
     line-height: 1;
     border: 1px solid var(--lp-ink);
@@ -93,6 +94,13 @@
 .lp-btn--full {
     width: 100%;
     justify-content: center;
+}
+
+.lp-btn--email {
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.3;
+    text-align: center;
 }
 
 .lp-cta-row {
