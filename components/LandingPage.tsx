@@ -207,7 +207,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         <EmailButton loc="hero" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
                     <a className="lp-archidvisor" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Note 5 sur 5, 7 avis sur Archidvisor">
-                        <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.png" alt="Archidvisor" />
+                        <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" />
                         <span className="lp-stars" aria-hidden="true"><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></span>
                         <span className="lp-archidvisor-rating">5,0<span className="lp-archidvisor-max">/5</span></span>
                         <span className="lp-archidvisor-count">7 avis</span>
@@ -319,7 +319,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
                     </div>
                     <div className="lp-reviews">
                         <div className="lp-reviews-head">
-                            <img className="lp-reviews-logo" src="/images/ui/archidvisor.png" alt="Archidvisor" />
+                            <img className="lp-reviews-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" />
                             <span className="lp-reviews-score">5,0<span className="lp-reviews-max">/5</span></span>
                             <span className="lp-stars" aria-label="Note 5 sur 5">
                                 <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
