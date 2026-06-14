@@ -36,7 +36,7 @@ const data: LandingData = {
                 title: "Villa F",
                 img: "/images/projects/1-villas/villa F/villaF_2.jpg",
                 alt: "Villa contemporaine F, vue aérienne avec piscine, par Reservoir Architecture",
-                desc: "Rénovation et extension transformant une maison en villa contemporaine, organisée autour d’une cour-piscine. Béton clair, bois brûlé, un haut de gamme sans ostentation.",
+                desc: "Villa contemporaine organisée autour d’une cour-piscine. Béton clair, bois brûlé, lignes ciselées, un haut de gamme sans ostentation.",
                 specs: [
                     { icon: "surface", label: "401 m²" },
                     { icon: "mission", label: "Construction neuve" },

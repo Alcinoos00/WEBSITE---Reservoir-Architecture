@@ -145,7 +145,7 @@ const data: LandingData = {
         eyebrow: "Un architecte installé à",
         city: "Aix-en-Provence",
         paragraphs: [
-            "Notre agence est basée à Aix-en-Provence, avec des réalisations commerciales en Pays d’Aix, dont l’ensemble Esprit Bastide à Puyricard.",
+            "Notre agence est basée à Aix-en-Provence, avec des réalisations commerciales en Pays d’Aix.",
             "Nous intervenons sur Aix, les Bouches-du-Rhône et la région PACA pour vos boutiques, showrooms et espaces de vente.",
         ],
         cta: "Parler de mon projet",
