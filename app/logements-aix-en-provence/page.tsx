@@ -118,7 +118,7 @@ const data: LandingData = {
             {
                 icon: "building",
                 title: "Capacité à livrer.",
-                text: "Des opérations menées de l’esquisse au dépôt de permis et au suivi de chantier, sur des programmes de 2 à 30 logements.",
+                text: "Des opérations menées de l’esquisse au dépôt de permis et au suivi de chantier, sur des programmes de 30 logements et plus.",
             },
             {
                 icon: "shield",
