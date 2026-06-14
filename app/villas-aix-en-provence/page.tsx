@@ -39,7 +39,7 @@ const data: LandingData = {
                 desc: "Rénovation et extension transformant une maison en villa contemporaine, organisée autour d’une cour-piscine. Béton clair, bois brûlé, un haut de gamme sans ostentation.",
                 specs: [
                     { icon: "surface", label: "401 m²" },
-                    { icon: "mission", label: "Conception + PC" },
+                    { icon: "mission", label: "Construction neuve" },
                     { icon: "pin", label: "Caissargues (30)" },
                 ],
                 cta: "Réaliser ma villa",
@@ -65,7 +65,7 @@ const data: LandingData = {
                 desc: "Réhabilitation d’une maison de ville aixoise, prolongée d’extensions contemporaines largement ouvertes sur les terrasses et le jardin. La lumière provençale devient matière première.",
                 specs: [
                     { icon: "surface", label: "202 m²" },
-                    { icon: "mission", label: "Mission complète" },
+                    { icon: "mission", label: "Réhabilitation" },
                     { icon: "pin", label: "Aix-en-Provence (13)" },
                 ],
                 cta: "Échanger avec un architecte",
@@ -78,7 +78,7 @@ const data: LandingData = {
                 desc: "Volumes blancs purs posés comme une sculpture horizontale dans le paysage méditerranéen, ouverts sur une terrasse en bois et une piscine miroir.",
                 specs: [
                     { icon: "surface", label: "240 m²" },
-                    { icon: "mission", label: "Conception + PC" },
+                    { icon: "mission", label: "Construction neuve" },
                     { icon: "pin", label: "Nîmes (30)" },
                 ],
                 cta: "Réaliser ma villa",
@@ -104,7 +104,7 @@ const data: LandingData = {
                 desc: "Ancrée dans un socle de pierre sèche et pensée comme un cadran solaire. Volumes enduits sobres et lumineux, protégés par de larges débords qui filtrent le soleil.",
                 specs: [
                     { icon: "surface", label: "194 m²" },
-                    { icon: "mission", label: "Conception + PC" },
+                    { icon: "mission", label: "Construction neuve" },
                     { icon: "pin", label: "Nîmes (30)" },
                 ],
                 cta: "Échanger avec un architecte",

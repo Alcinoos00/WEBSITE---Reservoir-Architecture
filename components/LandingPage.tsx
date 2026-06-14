@@ -1,6 +1,6 @@
 import "./landing.css";
 import { SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
-import { LeadTracking, EmailButton } from "./LeadButtons";
+import { LeadTracking, EmailButton, CardCtaButton } from "./LeadButtons";
 
 const TEL = `tel:${SITE_PHONE}`;
 
@@ -64,6 +64,14 @@ function PhoneIcon() {
     return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" />
+        </svg>
+    );
+}
+
+function StarIcon() {
+    return (
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+            <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
         </svg>
     );
 }
@@ -223,16 +231,14 @@ export default function LandingPage({ data }: { data: LandingData }) {
                                     <h3 className="lp-card-title">{proj.title}</h3>
                                     <p className="lp-card-desc">{proj.desc}</p>
                                     <div className="lp-card-specs">
-                                        {proj.specs.map((s) => (
+                                        {proj.specs.filter((s) => s.icon !== "pin").map((s) => (
                                             <span className="lp-spec" key={s.label}>
                                                 <SpecIcon name={s.icon} />
                                                 {s.label}
                                             </span>
                                         ))}
                                     </div>
-                                    <a className="lp-btn lp-btn--solid lp-btn--full lp-card-cta" href={TEL} data-cta="appel" data-loc={proj.loc}>
-                                        {proj.cta} <ArrowIcon />
-                                    </a>
+                                    <CardCtaButton label={proj.cta} loc={proj.loc} />
                                 </div>
                             </article>
                         ))}
@@ -301,6 +307,23 @@ export default function LandingPage({ data }: { data: LandingData }) {
                                     {data.local.cta} <ArrowIcon />
                                 </a>
                             </div>
+                        </div>
+                    </div>
+                    <div className="lp-reviews">
+                        <div className="lp-reviews-head">
+                            <span className="lp-reviews-score">5,0<span className="lp-reviews-max">/5</span></span>
+                            <span className="lp-stars" aria-label="Note 5 sur 5">
+                                <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
+                            </span>
+                            <span className="lp-reviews-label">Avis clients vérifiés sur Archidvisor</span>
+                            <a className="lp-reviews-link" href="https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture" target="_blank" rel="noopener noreferrer">
+                                Voir tous les avis <ArrowIcon />
+                            </a>
+                        </div>
+                        <div className="lp-reviews-list">
+                            <blockquote className="lp-review">« Très disponible, rapide, de bons conseils. »<cite>Celsio C.</cite></blockquote>
+                            <blockquote className="lp-review">« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »<cite>Hamid Y.</cite></blockquote>
+                            <blockquote className="lp-review">« Bien à l’écoute, a parfaitement compris ce que j’attendais. »<cite>Axel A.</cite></blockquote>
                         </div>
                     </div>
                 </div>

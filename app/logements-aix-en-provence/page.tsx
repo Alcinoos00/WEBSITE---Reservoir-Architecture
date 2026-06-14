@@ -53,7 +53,7 @@ const data: LandingData = {
                 specs: [
                     { icon: "units", label: "6 logements" },
                     { icon: "surface", label: "650 m²" },
-                    { icon: "pin", label: "Jacou (34)" },
+                    { icon: "mission", label: "ESQ à DPC" },
                 ],
                 cta: "Estimation en 48h",
                 loc: "card_plaine",
@@ -66,6 +66,7 @@ const data: LandingData = {
                 specs: [
                     { icon: "units", label: "Logements T2 à T4" },
                     { icon: "surface", label: "450 m²" },
+                    { icon: "mission", label: "ESQ à DPC" },
                 ],
                 cta: "Échanger avec l’agence",
                 loc: "card_rosalie",
@@ -78,7 +79,7 @@ const data: LandingData = {
                 specs: [
                     { icon: "units", label: "6 logements T3" },
                     { icon: "surface", label: "382 m²" },
-                    { icon: "pin", label: "Nîmes (30)" },
+                    { icon: "mission", label: "ESQ à DPC" },
                 ],
                 cta: "Étudier mon opération",
                 loc: "card_guillot",
@@ -91,7 +92,7 @@ const data: LandingData = {
                 specs: [
                     { icon: "units", label: "2 logements T3" },
                     { icon: "surface", label: "235 m²" },
-                    { icon: "pin", label: "Nîmes (30)" },
+                    { icon: "mission", label: "ESQ à DPC" },
                 ],
                 cta: "Estimation en 48h",
                 loc: "card_childebert",
@@ -104,7 +105,7 @@ const data: LandingData = {
                 specs: [
                     { icon: "units", label: "T3 et T5" },
                     { icon: "surface", label: "180 m²" },
-                    { icon: "pin", label: "Nîmes (30)" },
+                    { icon: "mission", label: "ESQ à DPC" },
                 ],
                 cta: "Échanger avec l’agence",
                 loc: "card_vacquerolles",
