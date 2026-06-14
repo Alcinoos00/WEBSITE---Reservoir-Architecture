@@ -690,6 +690,50 @@
     height: 0.85rem;
 }
 
+.lp-reviews-logo {
+    height: 22px;
+    width: auto;
+    display: block;
+    margin-right: 0.25rem;
+}
+
+/* ── Badge Archidvisor (hero) ── */
+.lp-archidvisor {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex-wrap: wrap;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: 1.75rem;
+    padding: 0.5rem 0.85rem;
+    background: var(--lp-white);
+    border-radius: 6px;
+}
+
+.lp-archidvisor-logo {
+    height: 17px;
+    width: auto;
+    display: block;
+}
+
+.lp-archidvisor-rating {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--lp-text);
+}
+
+.lp-archidvisor-max {
+    font-size: 0.72rem;
+    color: var(--lp-muted);
+    margin-left: 1px;
+}
+
+.lp-archidvisor-count {
+    font-size: 0.75rem;
+    color: var(--lp-muted);
+}
+
 .lp-reviews-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

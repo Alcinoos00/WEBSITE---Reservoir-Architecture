@@ -3,6 +3,8 @@ import { SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { LeadTracking, EmailButton, CardCtaButton } from "./LeadButtons";
 
 const TEL = `tel:${SITE_PHONE}`;
+const ARCHIDVISOR_URL =
+    "https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture";
 
 export type Spec = { icon: string; label: string };
 export type ProjectCard = {
@@ -204,6 +206,12 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         </a>
                         <EmailButton loc="hero" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
+                    <a className="lp-archidvisor" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Note 5 sur 5, 7 avis sur Archidvisor">
+                        <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.png" alt="Archidvisor" />
+                        <span className="lp-stars" aria-hidden="true"><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></span>
+                        <span className="lp-archidvisor-rating">5,0<span className="lp-archidvisor-max">/5</span></span>
+                        <span className="lp-archidvisor-count">7 avis</span>
+                    </a>
                     <p className="lp-hero-trust">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="9" />
@@ -311,12 +319,13 @@ export default function LandingPage({ data }: { data: LandingData }) {
                     </div>
                     <div className="lp-reviews">
                         <div className="lp-reviews-head">
+                            <img className="lp-reviews-logo" src="/images/ui/archidvisor.png" alt="Archidvisor" />
                             <span className="lp-reviews-score">5,0<span className="lp-reviews-max">/5</span></span>
                             <span className="lp-stars" aria-label="Note 5 sur 5">
                                 <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
                             </span>
-                            <span className="lp-reviews-label">Avis clients vérifiés sur Archidvisor</span>
-                            <a className="lp-reviews-link" href="https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture" target="_blank" rel="noopener noreferrer">
+                            <span className="lp-reviews-label">7 avis vérifiés</span>
+                            <a className="lp-reviews-link" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer">
                                 Voir tous les avis <ArrowIcon />
                             </a>
                         </div>
