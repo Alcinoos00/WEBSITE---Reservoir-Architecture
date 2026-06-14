@@ -1,5 +1,6 @@
 ﻿import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -75,6 +76,13 @@ export default function RootLayout({
     <html lang="fr">
       <body className={inter.variable}>
         <ClarityInit />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P177CL77BE"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P177CL77BE');`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
