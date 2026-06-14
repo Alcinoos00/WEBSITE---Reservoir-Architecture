@@ -734,6 +734,16 @@
     color: var(--lp-muted);
 }
 
+/* ── Landing pages : navigation masquée (focus conversion, pas de distraction) ──
+   Ne s'active que lorsqu'une landing page (main.lp) est rendue. Le reste du site garde sa nav. */
+body:has(main.lp) .nav-links-container,
+body:has(main.lp) .cta-container,
+body:has(main.lp) .menu-toggle,
+body:has(main.lp) .mobile-menu,
+body:has(main.lp) .footer-links-bottom {
+    display: none !important;
+}
+
 .lp-reviews-list {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
