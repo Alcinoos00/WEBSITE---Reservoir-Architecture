@@ -3,14 +3,14 @@ import LandingPage, { LandingData } from "@/components/LandingPage";
 import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte commercial à Aix-en-Provence",
+    title: "Architecte commercial en PACA",
     description:
-        "Architecte DPLG à Aix-en-Provence pour vos commerces, boutiques et showrooms. Concept, agencement et permis, au service de votre image et de vos ventes. Estimation sous 48h.",
+        "Architecte DPLG pour vos commerces, boutiques et showrooms en région PACA. Concept, agencement et permis, au service de votre image et de vos ventes. Estimation sous 48h.",
     alternates: { canonical: `${SITE_URL}/commerces-aix-en-provence` },
     openGraph: {
-        title: "Architecte commercial à Aix-en-Provence - Reservoir Architecture",
+        title: "Architecte commercial en PACA - Reservoir Architecture",
         description:
-            "Boutiques, showrooms et espaces de vente à Aix-en-Provence, du concept à l’agencement. Estimation sous 48h.",
+            "Boutiques, showrooms et espaces de vente en région PACA, du concept à l’agencement. Estimation sous 48h.",
         url: `${SITE_URL}/commerces-aix-en-provence`,
         type: "website",
         images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const data: LandingData = {
     hero: {
         eyebrow: "Architecte à Aix-en-Provence",
-        h1: "Aménagez votre commerce à Aix-en-Provence",
+        h1: "Aménagez votre commerce en PACA",
         sub: "Reservoir Architecture conçoit boutiques, showrooms et espaces de vente, du concept à l’agencement. Une architecture commerciale qui sert votre image de marque et votre parcours client.",
         trust: "Architecte DPLG · Agence fondée en 2013 · Cacharel, Wauquiez, Puyricard · Estimation sous 48h",
         img: "/images/projects/3-commerces/puyricard/puyricard_2.jpg",
@@ -145,8 +145,8 @@ const data: LandingData = {
         eyebrow: "Un architecte installé à",
         city: "Aix-en-Provence",
         paragraphs: [
-            "Notre agence est basée à Aix-en-Provence, avec des réalisations commerciales en Pays d’Aix.",
-            "Nous intervenons sur Aix, les Bouches-du-Rhône et la région PACA pour vos boutiques, showrooms et espaces de vente.",
+            "Notre agence est basée à Aix-en-Provence et intervient dans toute la région PACA pour vos commerces.",
+            "Boutiques, showrooms et espaces de vente : nous concevons des Bouches-du-Rhône au Var, du Vaucluse aux Alpes-Maritimes.",
         ],
         cta: "Parler de mon projet",
         ctaLoc: "local",
@@ -166,7 +166,7 @@ const data: LandingData = {
     },
     finalCta: {
         img: "/images/projects/3-commerces/wauquiez/wauquiez_2.jpg",
-        h2: "Aménager mon commerce à Aix",
+        h2: "Aménager mon commerce en PACA",
         p: "Parlons de votre enseigne, de votre surface et de vos délais d’ouverture. Estimation sous 48h, sans engagement.",
         ctaPrimary: "Appeler l’agence",
         ctaEmail: "Écrire un email",

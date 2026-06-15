@@ -147,7 +147,7 @@ const data: LandingData = {
         eyebrow: "Un architecte installé à",
         city: "Aix-en-Provence",
         paragraphs: [
-            "Notre agence est basée à Aix-en-Provence, 1330 rue Jean René Guillibert Gauthier de la Lauzière. Nous intervenons sur Aix et le Pays d’Aix, les Bouches-du-Rhône et l’ensemble de la région PACA.",
+            "Notre agence est basée à Aix-en-Provence. Nous intervenons sur Aix et le Pays d’Aix, les Bouches-du-Rhône et l’ensemble de la région PACA.",
             "Cette proximité nous permet de visiter votre terrain, de rencontrer les services d’urbanisme et de suivre le chantier de près.",
         ],
         cta: "Parler de mon projet",
