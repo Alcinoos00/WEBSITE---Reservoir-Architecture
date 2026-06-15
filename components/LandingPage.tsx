@@ -302,7 +302,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
                 <div className="lp-inner">
                     <div className="lp-local-grid">
                         <div className="lp-local-imgwrap">
-                            <img className="lp-local-img" src={data.local.img} alt={data.local.alt} loading="lazy" />
+                            <img className="lp-local-img" src="/images/serge-ettore.webp" alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence" loading="lazy" />
                         </div>
                         <div>
                             <p className="lp-eyebrow">{data.local.eyebrow}</p>
@@ -310,6 +310,9 @@ export default function LandingPage({ data }: { data: LandingData }) {
                             {data.local.paragraphs.map((para, i) => (
                                 <p key={i}>{para}</p>
                             ))}
+                            <p>
+                                L’agence est dirigée par Serge Ettore, architecte DPLG depuis 1999. D’une double culture, architecturale et scénographique (projets pour la maison Cacharel, workshops internationaux), il aborde chaque projet comme une situation unique : un site, un programme, un budget, des usages réels. L’objectif n’est pas la signature, mais la justesse.
+                            </p>
                             <div className="lp-cta-row">
                                 <a className="lp-btn lp-btn--solid" href={TEL} data-cta="appel" data-loc={data.local.ctaLoc}>
                                     {data.local.cta} <ArrowIcon />
