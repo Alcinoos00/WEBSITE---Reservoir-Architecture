@@ -13,6 +13,17 @@
     align-items: flex-start;
     max-width: 90rem;
     margin: 0 auto 3rem auto;
+    padding: 0;
+}
+
+.footer-branding {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.footer-logo {
+    display: block;
+    margin-left: -2px;
 }
 
 .footer-brand-title {
