@@ -39,7 +39,13 @@ export default function VillasPage() {
                 eyebrow="Villas et maisons d'architecte"
                 title="Architecte villa contemporaine en PACA"
                 subtitle="Depuis Aix-en-Provence, Reservoir Architecture accompagne la conception, la rénovation et l'extension de villas contemporaines dans des contextes méditerranéens variés."
-                links={[{ href: "/contact", label: "Parler d'un projet" }, { href: "/", label: "Agence" }]}
+                links={[
+                    { href: "/villas-aix-en-provence", label: "Architecte villa à Aix-en-Provence" },
+                    { href: "/villas-marseille", label: "Architecte villa à Marseille" },
+                    { href: "/villas-nimes", label: "Architecte villa à Nîmes" },
+                    { href: "/villas-nice", label: "Architecte villa à Nice" },
+                    { href: "/contact", label: "Parler d'un projet" },
+                ]}
             >
                 <p>
                     Une villa contemporaine ne se limite pas à une image. Elle doit répondre au terrain, à l'orientation, aux vues, à la lumière, aux règles d'urbanisme et aux usages quotidiens. L'agence travaille ces paramètres pour construire une maison cohérente avec son site et durable dans le temps.

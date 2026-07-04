@@ -1,0 +1,100 @@
+.seo-faq-section {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem 8rem;
+}
+
+.seo-faq-container {
+    max-width: 90rem;
+    width: 100%;
+}
+
+.seo-faq-eyebrow {
+    color: #333;
+    margin: 0 0 1.5rem;
+}
+
+.seo-faq-title {
+    margin: 0 0 2.5rem;
+    max-width: 45rem;
+    line-height: 1.1;
+}
+
+.seo-faq-list {
+    max-width: 60rem;
+    border-top: 1px solid #e2e2e2;
+}
+
+.seo-faq-item {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.seo-faq-question {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #111;
+}
+
+.seo-faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.seo-faq-icon {
+    position: relative;
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+}
+
+.seo-faq-icon::before,
+.seo-faq-icon::after {
+    content: "";
+    position: absolute;
+    background: #111;
+}
+
+.seo-faq-icon::before {
+    top: 6px;
+    left: 0;
+    width: 14px;
+    height: 2px;
+}
+
+.seo-faq-icon::after {
+    left: 6px;
+    top: 0;
+    width: 2px;
+    height: 14px;
+    transition: transform 0.2s ease;
+}
+
+.seo-faq-item[open] .seo-faq-icon::after {
+    transform: scaleY(0);
+}
+
+.seo-faq-answer {
+    margin: 0;
+    padding: 0 0 1.5rem;
+    max-width: 55rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .seo-faq-section {
+        padding: 0 1.5rem 6rem;
+    }
+
+    .seo-faq-title {
+        font-size: 1.5rem;
+    }
+}

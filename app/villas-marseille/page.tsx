@@ -1,0 +1,174 @@
+import type { Metadata } from "next";
+import LandingPage, { LandingData } from "@/components/LandingPage";
+import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
+
+export const metadata: Metadata = {
+    title: "Architecte villa et maison contemporaine à Marseille",
+    description:
+        "Architecte DPLG pour votre villa ou maison contemporaine à Marseille et dans les Bouches-du-Rhône. Du terrain au permis de construire. Estimation sous 48h.",
+    alternates: { canonical: `${SITE_URL}/villas-marseille` },
+    openGraph: {
+        title: "Architecte villa et maison contemporaine à Marseille - Reservoir Architecture",
+        description:
+            "Villa ou maison contemporaine sur-mesure à Marseille et dans les Bouches-du-Rhône, du terrain au permis. Estimation sous 48h.",
+        url: `${SITE_URL}/villas-marseille`,
+        type: "website",
+        images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
+    },
+};
+
+const data: LandingData = {
+    hero: {
+        eyebrow: "Architecte villa à Marseille",
+        h1: "Votre villa ou maison contemporaine à Marseille",
+        sub: "Reservoir Architecture conçoit votre maison sur-mesure à Marseille, du choix du terrain au permis de construire et jusqu’au suivi du chantier. Une architecture juste, pensée pour votre site, vos vues et votre budget.",
+        trust: "Architecte DPLG · Agence fondée en 2013 · 30+ projets dans le Sud · Estimation sous 48h",
+        img: "/images/projects/1-villas/villa C/villaC_1.jpg",
+        alt: "Villa contemporaine près de Marseille conçue par Reservoir Architecture",
+        ctaPrimary: "Parler de mon projet",
+        ctaEmail: "Email",
+    },
+    realisations: {
+        eyebrow: "Nos réalisations",
+        lead: "Collines, littoral, arrière-pays : nous partons toujours de votre terrain. Orientation, vues sur la mer ou la garrigue, pente, lumière, règles d’urbanisme, votre maison est conçue pour son site, jamais plaquée dessus.",
+        projects: [
+            {
+                title: "Villa F",
+                img: "/images/projects/1-villas/villa F/villaF_2.jpg",
+                alt: "Villa contemporaine F, vue aérienne avec piscine, par Reservoir Architecture",
+                desc: "Villa contemporaine organisée autour d’une cour-piscine. Béton clair, bois brûlé, lignes ciselées, un haut de gamme sans ostentation.",
+                specs: [
+                    { icon: "surface", label: "401 m²" },
+                    { icon: "mission", label: "Construction neuve" },
+                ],
+                cta: "Réaliser ma villa",
+                loc: "card_villa_f",
+            },
+            {
+                title: "Villa T",
+                img: "/images/projects/1-villas/villa T/villaT_1.jpg",
+                alt: "Villa contemporaine T, maison de ville réhabilitée, par Reservoir Architecture",
+                desc: "Réhabilitation d’une maison méditerranéenne, prolongée d’extensions contemporaines largement ouvertes sur les terrasses et le jardin. La lumière du Sud devient matière première.",
+                specs: [
+                    { icon: "surface", label: "202 m²" },
+                    { icon: "mission", label: "Réhabilitation" },
+                ],
+                cta: "Échanger avec un architecte",
+                loc: "card_villa_t",
+            },
+            {
+                title: "Villa C",
+                img: "/images/projects/1-villas/villa C/villaC_2.jpg",
+                alt: "Villa contemporaine C, volumes blancs et piscine miroir, par Reservoir Architecture",
+                desc: "Volumes blancs purs posés comme une sculpture horizontale dans le paysage méditerranéen, ouverts sur une terrasse en bois et une piscine miroir.",
+                specs: [
+                    { icon: "surface", label: "240 m²" },
+                    { icon: "mission", label: "Construction neuve" },
+                ],
+                cta: "Réaliser ma villa",
+                loc: "card_villa_c",
+            },
+            {
+                title: "Villa P",
+                img: "/images/projects/1-villas/villa P1/villaP_1.jpg",
+                alt: "Villa contemporaine P, restanque en surplomb du paysage, par Reservoir Architecture",
+                desc: "Restanque contemporaine posée en surplomb du paysage, ancrée dans la pente par un soubassement en pierre qui dialogue avec la garrigue.",
+                specs: [
+                    { icon: "surface", label: "191 m²" },
+                    { icon: "mission", label: "Construction neuve" },
+                ],
+                cta: "Estimation en 48h",
+                loc: "card_villa_p",
+            },
+            {
+                title: "Villa L",
+                img: "/images/projects/1-villas/villa L/villaL_1.jpg",
+                alt: "Villa contemporaine L, socle de pierre sèche et volumes enduits, par Reservoir Architecture",
+                desc: "Ancrée dans un socle de pierre sèche et pensée comme un cadran solaire. Volumes enduits sobres et lumineux, protégés par de larges débords qui filtrent le soleil.",
+                specs: [
+                    { icon: "surface", label: "194 m²" },
+                    { icon: "mission", label: "Construction neuve" },
+                ],
+                cta: "Échanger avec un architecte",
+                loc: "card_villa_l",
+            },
+            {
+                title: "Villa S",
+                img: "/images/projects/1-villas/villa S/villaS_1.jpg",
+                alt: "Villa contemporaine S, maison entre les pins, par Reservoir Architecture",
+                desc: "Glissée entre les pins, la maison s’étire horizontalement pour préserver le paysage et dialoguer avec la forêt de chênes verts. Un refuge sobre et chaleureux.",
+                specs: [
+                    { icon: "surface", label: "193 m²" },
+                    { icon: "mission", label: "Construction neuve" },
+                ],
+                cta: "Estimation en 48h",
+                loc: "card_villa_s",
+            },
+        ],
+    },
+    reassurance: {
+        reasonsEyebrow: "Pourquoi Reservoir Architecture",
+        reasons: [
+            {
+                icon: "shield",
+                title: "Un architecte DPLG, pas un dessinateur.",
+                text: "Responsabilité, assurance et vision d’ensemble du projet, de la faisabilité à la réception.",
+            },
+            {
+                icon: "pin",
+                title: "Basés à Aix, proches de Marseille.",
+                text: "À trente minutes de Marseille et des Bouches-du-Rhône, nous intervenons sur toute la métropole et son littoral.",
+            },
+            {
+                icon: "building",
+                title: "Du choix du terrain au chantier.",
+                text: "Un seul interlocuteur sur toute la chaîne : terrain, conception, permis, consultation des entreprises, suivi des travaux.",
+            },
+        ],
+        stepsEyebrow: "Comment se passe votre projet",
+        steps: [
+            { title: "Échange et qualification.", text: "Nous écoutons votre programme, votre terrain, votre budget. Estimation sous 48h." },
+            { title: "Faisabilité et esquisse.", text: "Analyse du terrain et des règles d’urbanisme, première intention architecturale." },
+            { title: "Conception et permis de construire.", text: "Plans détaillés, dépôt et suivi du permis." },
+            { title: "Réalisation.", text: "Consultation des entreprises, suivi de chantier, réception." },
+        ],
+        cta: "Échanger avec un expert architecte",
+        ctaLoc: "reassurance",
+    },
+    local: {
+        img: "/images/projects/1-villas/villa C/villaC_2.jpg",
+        alt: "Villa contemporaine dans les Bouches-du-Rhône conçue par Reservoir Architecture",
+        eyebrow: "Un architecte qui conçoit à",
+        city: "Marseille",
+        paragraphs: [
+            "Reservoir Architecture conçoit des villas et maisons contemporaines à Marseille et dans les Bouches-du-Rhône. Notre agence est basée à Aix-en-Provence, à trente minutes de Marseille.",
+            "Cette proximité nous permet de visiter votre terrain, sur les collines, la côte ou l’arrière-pays, d’échanger avec les services d’urbanisme et de suivre le chantier de près.",
+        ],
+        cta: "Parler de mon projet",
+        ctaLoc: "local",
+    },
+    faq: {
+        eyebrow: "Questions fréquentes",
+        items: [
+            { q: "Faut-il obligatoirement un architecte pour une villa ?", a: "Oui dès que la surface de plancher dépasse 150 m². En dessous, l’architecte reste vivement conseillé pour la qualité, la valeur et la maîtrise du projet." },
+            { q: "Intervenez-vous à Marseille et dans les Bouches-du-Rhône ?", a: "Oui. Basés à Aix-en-Provence, à trente minutes de Marseille, nous concevons des villas et maisons contemporaines sur toute la métropole marseillaise et son littoral." },
+            { q: "Comment fonctionne l’estimation en 48h ?", a: "Vous nous décrivez votre projet par téléphone ou email (terrain, surface, intentions). Nous revenons vers vous sous 48h avec une première estimation chiffrée." },
+            { q: "Quels délais pour une villa contemporaine ?", a: "Ils dépendent de la complexité du projet et de l’instruction du permis. Nous vous communiquons un calendrier prévisionnel dès la phase de faisabilité." },
+            { q: "Intervenez-vous en rénovation et extension ?", a: "Oui : construction neuve, rénovation, extension et transformation de maisons existantes." },
+            { q: "Je n’ai pas encore de terrain, pouvez-vous m’aider ?", a: "Oui. Nous vous accompagnons dans le choix de votre terrain et étudions son potentiel au regard de votre projet." },
+        ],
+        cta: "Poser une question",
+        ctaLoc: "faq",
+    },
+    finalCta: {
+        img: "/images/projects/1-villas/villa F/villaF_1.jpg",
+        h2: "Réaliser ma villa contemporaine à Marseille",
+        p: "Un premier échange pour qualifier votre projet, votre terrain et votre budget. Estimation sous 48h, sans engagement.",
+        ctaPrimary: "Appeler l’agence",
+        ctaEmail: "Écrire un email",
+    },
+};
+
+export default function VillasMarseillePage() {
+    return <LandingPage data={data} />;
+}
