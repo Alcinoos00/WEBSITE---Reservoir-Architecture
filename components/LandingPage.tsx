@@ -3,6 +3,7 @@ import "./landing.css";
 import { ARCHIDVISOR_URL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { EmailButton, CardCtaButton } from "./LeadButtons";
 import { noBreakHyphens } from "./noBreakHyphens";
+import AfterLoad from "./AfterLoad";
 
 const TEL = `tel:${SITE_PHONE}`;
 
@@ -242,14 +243,15 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         {data.realisations.projects.map((proj) => (
                             <article className="lp-card" key={proj.title}>
                                 <div className="lp-card-imgwrap">
-                                    <Image
-                                        className="lp-card-img"
-                                        src={proj.img}
-                                        alt={proj.alt}
-                                        fill
-                                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 384px, 400px"
-                                        fetchPriority="low"
-                                    />
+                                    <AfterLoad>
+                                        <Image
+                                            className="lp-card-img"
+                                            src={proj.img}
+                                            alt={proj.alt}
+                                            fill
+                                            sizes="(max-width: 768px) 90vw, (max-width: 1024px) 384px, 400px"
+                                        />
+                                    </AfterLoad>
                                 </div>
                                 <div className="lp-card-body">
                                     <h3 className="lp-card-title">{proj.title}</h3>
@@ -318,13 +320,15 @@ export default function LandingPage({ data }: { data: LandingData }) {
                 <div className="lp-inner">
                     <div className="lp-local-grid">
                         <div className="lp-local-imgwrap">
-                            <Image
-                                className="lp-local-img"
-                                src="/images/serge-ettore.webp"
-                                alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
-                                fill
-                                sizes="384px"
-                            />
+                            <AfterLoad>
+                                <Image
+                                    className="lp-local-img"
+                                    src="/images/serge-ettore.webp"
+                                    alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
+                                    fill
+                                    sizes="384px"
+                                />
+                            </AfterLoad>
                         </div>
                         <div>
                             <p className="lp-eyebrow">{data.local.eyebrow}</p>
@@ -392,14 +396,16 @@ export default function LandingPage({ data }: { data: LandingData }) {
 
             {/* 6. GROS CTA FINAL */}
             <section className="lp-final">
-                <Image
-                    className="lp-final-bg"
-                    src={data.finalCta.img}
-                    alt=""
-                    aria-hidden="true"
-                    fill
-                    sizes="(max-width: 768px) 150vw, 100vw"
-                />
+                <AfterLoad>
+                    <Image
+                        className="lp-final-bg"
+                        src={data.finalCta.img}
+                        alt=""
+                        aria-hidden="true"
+                        fill
+                        sizes="100vw"
+                    />
+                </AfterLoad>
                 <div className="lp-final-overlay" />
                 <div className="lp-inner lp-final-inner">
                     <h2>{noBreakHyphens(data.finalCta.h2)}</h2>

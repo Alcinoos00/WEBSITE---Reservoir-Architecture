@@ -1,11 +1,12 @@
 "use client";
 
-import { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import "./navigation-carousel.css";
 import { ProjectData } from "@/types/project";
 import { getProjectAlt, typologyLabel } from "@/lib/seo";
+import { useAfterLoad } from "./AfterLoad";
 
 interface NavigationCarouselProps {
     items: ProjectData[];
@@ -35,6 +36,22 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
 
     // La molette verticale n'est pas détournée : elle fait défiler la page, comme sur les fiches
     // projet. Défilement horizontal : flèches, barre, glisser, geste horizontal, Maj + molette.
+
+    // Photos du bandeau : la première part tout de suite (image LCP). Les suivantes ne sont
+    // rendues que si elles sont visibles au premier écran (desktop) ou peu après le chargement
+    // de la page : elles ne concurrencent plus la photo principale sur mobile.
+    const [visibleCount, setVisibleCount] = useState(1);
+    const afterLoad = useAfterLoad();
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const viewport = el.clientWidth;
+        const visible = Array.from(el.children).filter((child) => {
+            const item = child as HTMLElement;
+            return item.offsetLeft + item.offsetWidth * 0.25 < viewport;
+        }).length;
+        setVisibleCount(Math.max(1, visible));
+    }, []);
 
     // --- Scrollbar sync ---
     const updateThumb = useCallback(() => {
@@ -170,7 +187,7 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
                             <Link key={`${item.id}-${index}`} href={href} className="nav-carousel-item">
                                 {/* Largeur affichée = hauteur du bandeau x 1,5 (aspect-ratio 3:2), plafonnée à 86vw en mobile.
                                     Seule la première image, visible au chargement, part en priorité. */}
-                                <Image
+                                {(index < visibleCount || afterLoad) && <Image
                                     src={item.heroImages[0]}
                                     alt={isCategoryNav
                                         ? `${typologyLabel(item.category)}, projet ${item.title} de Reservoir Architecture`
@@ -181,7 +198,7 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
                                     loading={index === 0 ? "eager" : "lazy"}
                                     fetchPriority={index === 0 ? "high" : "auto"}
                                     draggable={false}
-                                />
+                                />}
                                 <div className="nav-carousel-overlay"></div>
                                 {/* Libellé visuel, pas un titre : un <h3> ici passait avant le <h1> de la page. */}
                                 {displayTitle && <span className="nav-carousel-title">{displayTitle}</span>}

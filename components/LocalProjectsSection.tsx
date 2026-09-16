@@ -5,6 +5,7 @@ import { categoryToPath } from "@/lib/seo";
 import "./seo-content-section.css";
 import "./local-projects-section.css";
 import { noBreakHyphens } from "./noBreakHyphens";
+import AfterLoad from "./AfterLoad";
 
 export type LocalProject = {
     project: ProjectData;
@@ -40,14 +41,15 @@ export default function LocalProjectsSection({ eyebrow, title, lede, items, link
                                 className="local-project-card"
                             >
                                 <div className="local-project-imgwrap">
-                                    <Image
-                                        src={project.heroImages[0]}
-                                        alt={`${summary}, ${project.title} à ${place}`}
-                                        className="local-project-img"
-                                        fill
-                                        sizes="(max-width: 1024px) 50vw, 33vw"
-                                        fetchPriority="low"
-                                    />
+                                    <AfterLoad>
+                                        <Image
+                                            src={project.heroImages[0]}
+                                            alt={`${summary}, ${project.title} à ${place}`}
+                                            className="local-project-img"
+                                            fill
+                                            sizes="(max-width: 1024px) 50vw, 33vw"
+                                        />
+                                    </AfterLoad>
                                 </div>
                                 <p className="local-project-place">{place}</p>
                                 <h3 className="title-2 local-project-title">{project.title}</h3>
