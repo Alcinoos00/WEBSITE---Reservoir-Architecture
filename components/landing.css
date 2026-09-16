@@ -130,7 +130,8 @@
 .lp-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(95deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.34) 46%, rgba(0, 0, 0, 0.08) 100%);
+    /* Voile renforcé sous la colonne de texte (gauche) : sous-titre lisible en AA 4,5:1 */
+    background: linear-gradient(95deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.56) 46%, rgba(0, 0, 0, 0.14) 100%);
 }
 
 .lp-hero-inner {
@@ -427,6 +428,8 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.75rem 2rem;
+    /* Ouvrir une question n'étire plus sa voisine de rangée */
+    align-items: start;
 }
 
 .lp-faq-item {
@@ -495,7 +498,8 @@
 .lp-final-inner {
     position: relative;
     z-index: 2;
-    padding: 5.5rem 0;
+    /* padding-block seul : le padding horizontal reste celui de .lp-inner (sinon écrasé en mobile) */
+    padding-block: 5.5rem;
     color: var(--lp-white);
 }
 
@@ -555,6 +559,15 @@
     .lp-hero-inner {
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+
+    .lp-final-inner {
+        padding-block: 3.5rem;
+    }
+
+    /* En mobile le texte couvre toute la largeur de la photo : voile vertical et uniforme */
+    .lp-hero-overlay {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.72) 100%);
     }
 
     .lp {

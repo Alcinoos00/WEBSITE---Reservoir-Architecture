@@ -140,6 +140,13 @@
         height: 35vh;
     }
 
+    /* Vignette plafonnée sous la largeur de l'écran : le libellé ancré à droite reste
+       visible et la vignette suivante dépasse, ce qui signale le défilement. */
+    .nav-carousel-item {
+        aspect-ratio: auto;
+        width: min(52.5vh, 86vw);
+    }
+
     .slider-nav {
         width: 2.25rem;
         height: 2.25rem;

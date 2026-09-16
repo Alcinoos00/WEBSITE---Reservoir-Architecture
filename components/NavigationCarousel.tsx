@@ -1,15 +1,21 @@
 "use client";
 
 import { useRef, useEffect, useCallback } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import "./navigation-carousel.css";
 import { ProjectData } from "@/types/project";
+import { getProjectAlt, typologyLabel } from "@/lib/seo";
 
 interface NavigationCarouselProps {
     items: ProjectData[];
     // Controls whether clicking navigates to a category or a project
     isCategoryNav?: boolean;
 }
+
+// Défilement animé, sauf si le visiteur a demandé à réduire les animations.
+const scrollBehavior = (): ScrollBehavior =>
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 
 // Helper to sluggify category names (remove accents and spaces)
 const slugify = (text: string) => {
@@ -27,62 +33,8 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
     const trackRef = useRef<HTMLDivElement>(null);
     const thumbRef = useRef<HTMLDivElement>(null);
 
-    // --- Smooth wheel scroll ---
-    useEffect(() => {
-        const container = containerRef.current;
-        const el = scrollRef.current;
-        if (!container || !el) return;
-
-        let targetScrollLeft = el.scrollLeft;
-        let rafId: number | null = null;
-        let isAnimating = false;
-
-        const animate = () => {
-            // Always re-read real position so buttons / drag don't desync
-            const current = el.scrollLeft;
-            const diff = targetScrollLeft - current;
-
-            if (Math.abs(diff) < 0.5) {
-                el.scrollLeft = targetScrollLeft;
-                isAnimating = false;
-                rafId = null;
-                return;
-            }
-
-            el.scrollLeft += diff * 0.12;
-            rafId = requestAnimationFrame(animate);
-        };
-
-        const handleWheel = (e: WheelEvent) => {
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                let delta = e.deltaY;
-                if (e.deltaMode === 1) delta *= 40;
-                if (e.deltaMode === 2) delta *= el.clientWidth;
-
-                // Sync target with current real position before adding delta
-                if (!isAnimating) {
-                    targetScrollLeft = el.scrollLeft;
-                }
-
-                const maxScroll = el.scrollWidth - el.clientWidth;
-                targetScrollLeft = Math.max(0, Math.min(maxScroll, targetScrollLeft + delta * 1.5));
-
-                e.preventDefault();
-                e.stopPropagation();
-
-                if (!isAnimating) {
-                    isAnimating = true;
-                    rafId = requestAnimationFrame(animate);
-                }
-            }
-        };
-
-        container.addEventListener("wheel", handleWheel, { passive: false, capture: true });
-        return () => {
-            container.removeEventListener("wheel", handleWheel, { capture: true });
-            if (rafId !== null) cancelAnimationFrame(rafId);
-        };
-    }, []);
+    // La molette verticale n'est pas détournée : elle fait défiler la page, comme sur les fiches
+    // projet. Défilement horizontal : flèches, barre, glisser, geste horizontal, Maj + molette.
 
     // --- Scrollbar sync ---
     const updateThumb = useCallback(() => {
@@ -173,7 +125,7 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
 
             if (scrollableTrack > 0) {
                 const ratio = (clickX - thumbWidth / 2) / scrollableTrack;
-                el.scrollTo({ left: Math.max(0, Math.min(scrollable, ratio * scrollable)), behavior: "smooth" });
+                el.scrollTo({ left: Math.max(0, Math.min(scrollable, ratio * scrollable)), behavior: scrollBehavior() });
             }
         };
 
@@ -198,7 +150,7 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
         const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
         el.scrollTo({
             left: el.scrollLeft + (direction === "left" ? -step : step),
-            behavior: "smooth"
+            behavior: scrollBehavior()
         });
     };
 
@@ -216,25 +168,35 @@ export default function NavigationCarousel({ items, isCategoryNav = false }: Nav
 
                         return (
                             <Link key={`${item.id}-${index}`} href={href} className="nav-carousel-item">
-                                <img
+                                {/* Largeur affichée = hauteur du bandeau x 1,5 (aspect-ratio 3:2), plafonnée à 86vw en mobile.
+                                    Seule la première image, visible au chargement, part en priorité. */}
+                                <Image
                                     src={item.heroImages[0]}
-                                    alt={displayTitle || item.title}
+                                    alt={isCategoryNav
+                                        ? `${typologyLabel(item.category)}, projet ${item.title} de Reservoir Architecture`
+                                        : getProjectAlt(item, 0)}
                                     className="nav-carousel-image"
+                                    fill
+                                    sizes="(max-width: 768px) 86vw, (max-width: 1024px) 60vh, 63vh"
+                                    loading={index === 0 ? "eager" : "lazy"}
+                                    fetchPriority={index === 0 ? "high" : "auto"}
+                                    draggable={false}
                                 />
                                 <div className="nav-carousel-overlay"></div>
-                                {displayTitle && <h3 className="nav-carousel-title">{displayTitle}</h3>}
+                                {/* Libellé visuel, pas un titre : un <h3> ici passait avant le <h1> de la page. */}
+                                {displayTitle && <span className="nav-carousel-title">{displayTitle}</span>}
                             </Link>
                         )
                     })}
                 </div>
 
-                <button className="slider-nav prev" onClick={() => scroll("left")} aria-label="Previous slide">
+                <button className="slider-nav prev" onClick={() => scroll("left")} aria-label="Projets précédents">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
 
-                <button className="slider-nav next" onClick={() => scroll("right")} aria-label="Next slide">
+                <button className="slider-nav next" onClick={() => scroll("right")} aria-label="Projets suivants">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>

@@ -15,7 +15,7 @@ export const GENDARMERIE_PROJECT: ProjectData = {
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION",
     descriptionParagraphs: [
         "Le projet s’inscrit dans un tissu urbain résidentiel dense, l’équipement actuel ne répond plus aux normes en vigueur et au nombre et confort des gendarmes.",
-        "L’opération consiste en la réhabilitation, l’extension et surélévation de l’actuelle gendarmerie. Le procédé constructif choisi est l’ossature bois avec façade en bardage métal bronze à lames aléatoires , toiture végétalisée.",
+        "L’opération consiste en la réhabilitation, l’extension et surélévation de l’actuelle gendarmerie. Le procédé constructif choisi est l’ossature bois avec façade en bardage métal bronze à lames aléatoires, toiture végétalisée.",
         "La réhabilitation, extension et surélévation de la gendarmerie de Bouc-Bel-Air transforme le bâtiment existant en un équipement contemporain affirmant une identité forte et institutionnelle.",
         "L’ossature bois structure l’intervention et enveloppe l’édifice d’une écriture verticale rythmée, alliant performance environnementale, légèreté constructive et intégration au tissu urbain.",
         "La façade principale, marquée par une séquence tricolore et une transparence maîtrisée, incarne la présence républicaine tout en offrant des espaces fonctionnels, lumineux et durables."
@@ -47,7 +47,7 @@ export const VILLA_F_PROJECT: ProjectData = {
     optionalSubtitle: "RÉNOVATION ET EXTENSION POUR TRANSFORMATION D’UNE MAISON DE LOTISSEMENT EN UNE VILLA CONTEMPORAINE",
     descriptionHeader: "Eminence des lignes, souveraineté des espaces - Une architecture de l’essentiel",
     descriptionParagraphs: [
-        "Maison élégamment introvertie, structurée par une géométrie précise et une horizontalité assumée, elle s’organise autour d’une cour-piscine conçue comme un cœur vivant, ouvert au ciel et à la lumière. La majesté des espaces ne s’impose pas par démonstration, mas par la justesse des proportions et la qualité des volumes.",
+        "Maison élégamment introvertie, structurée par une géométrie précise et une horizontalité assumée, elle s’organise autour d’une cour-piscine conçue comme un cœur vivant, ouvert au ciel et à la lumière. La majesté des espaces ne s’impose pas par démonstration, mais par la justesse des proportions et la qualité des volumes.",
         "La matérialité épurée affirme un positionnement haut de gamme sans ostentation : béton clair, bois brûlé, lignes ciselées. Les filtres et débords ne ferment pas, ils protègent et cadrent, créant des transitions douces entre intérieur et extérieur.",
         "Ici, l’architecture d’éminence reste accessible ; son écriture, précise comme un bijou, ne cherche pas à impressionner mais à offrir une sensation durable de sérénité et de distinction."
     ],
@@ -78,7 +78,7 @@ export const VILLA_P1_PROJECT: ProjectData = {
     descriptionParagraphs: [
         "Entre la masse et la lumière, le projet cherche une tension juste.",
         "Posée en surplomb du paysage, la maison s’ancre dans la pente par un soubassement en pierre qui dialogue avec la garrigue environnante.",
-        "Les volumes blancs, nets et horizontaux, semblent flottter au-dessus du socle, largement ouverts par de généreuses baies cadrant l’horizon.",
+        "Les volumes blancs, nets et horizontaux, semblent flotter au-dessus du socle, largement ouverts par de généreuses baies cadrant l’horizon.",
         "Entre terrasse en bois et miroir d’eau, l’architecture compose un art de vivre méditerranéen, où matière, lumière et panorama ne font qu’un. Dans cette suspension, l’habiter devient contemplation."
     ],
     techSheet: [
@@ -195,7 +195,7 @@ export const VILLA_P2_PROJECT: ProjectData = {
     ],
     subtitle: "NÎMES (30)",
     title: "VILLA D",
-    optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE DANS UN SITE SESIBLE INONDABLE",
+    optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE DANS UN SITE SENSIBLE INONDABLE",
     descriptionHeader: "L’entre-deux",
     descriptionParagraphs: [
         "Le projet s’inscrit dans la topographie du site et dans le système de murs de soutènement en pierre qui structure le terrain. L’architecture reprend ces lignes horizontales pour organiser les niveaux de la maison et prolonger la logique des restanques existantes. Depuis la rue, le bâtiment se présente comme un volume compact bardé de bois, relativement fermé, qui limite son impact visuel et préserve l’intimité des habitants. À l’inverse, côté aval, la maison s’ouvre largement sur la pente et la végétation par de grandes baies vitrées et des terrasses filantes.",
@@ -263,7 +263,7 @@ export const VILLA_V_PROJECT: ProjectData = {
         "Entre jardin méditerranéen et horizon ouvert, le projet propose une habitation à la fois ancrée, lumineuse et profondément tournée vers son territoire."
     ],
     techSheet: [
-        { label: "Lieu", value: "Verrargues (34)" },
+        { label: "Lieu", value: "Vérargues (34)" },
         { label: "Maitre d'Ouvrage", value: "Privée" },
         { label: "Mission", value: "Mission complète" },
         { label: "Surface", value: "201 m2" },
@@ -292,7 +292,7 @@ export const VILLA_T_PROJECT: ProjectData = {
     descriptionHeader: "Lumière Provençale, Réinterprétée",
     descriptionParagraphs: [
         "Cette réhabilitation révèle une villa méditerranéenne où tradition et modernité dialoguent avec finesse.",
-        "Les volumes existants réamenagés sont prolongés par des extensions contemporaines, largement ouvertes sur les terrasses et le jardin, effaçant les limites entre intérieur et extérieur.",
+        "Les volumes existants réaménagés sont prolongés par des extensions contemporaines, largement ouvertes sur les terrasses et le jardin, effaçant les limites entre intérieur et extérieur.",
         "La lumière devient matière première, glissant sur des espaces épurés aux tonalités naturelles et chaleureuses.",
         "Le projet offre ainsi un cadre de vie apaisé, ancré dans un paysage aixois exceptionnel tout en affirmant une écriture architecturale résolument actuelle."
     ],
@@ -324,7 +324,7 @@ export const MAISON_G_PROJECT: ProjectData = {
     descriptionHeader: "Elévation compacte en coeur de Village - Greffe urbaine",
     descriptionParagraphs: [
         "Le projet s’insère dans une rue étroite composé de petits immeubles d’un étage. Le volume adopte une écriture compacte et verticale conforme à l’emprise au sol limitée tout en restant à l’échelle du tissu existant. La façade enduite claire, associée au bois et au métal, propose une expression contemporaine mesurée.",
-        "L’organisation intérieure privilégie la lumière malgré la mitoyenneté. Les espaces se développent autour d’un puit de lumière créé, verticalement jusqu’à une terrasse en retrait, conçue comme une pièce extérieure intime au sommet de la maison. Cette séquence verticale — du socle ouvert au belvédère intime — transforme la parcelle étroite en parcours habité, où l’architecture cherche moins l’affirmation formelle que la production d’un espace protégé, lumineux et domestique."
+        "L’organisation intérieure privilégie la lumière malgré la mitoyenneté. Les espaces se développent autour d’un puits de lumière créé, verticalement jusqu’à une terrasse en retrait, conçue comme une pièce extérieure intime au sommet de la maison. Cette séquence verticale (du socle ouvert au belvédère intime) transforme la parcelle étroite en parcours habité, où l’architecture cherche moins l’affirmation formelle que la production d’un espace protégé, lumineux et domestique."
     ],
     techSheet: [
         { label: "Lieu", value: "Aimargues (30)" },
@@ -412,7 +412,7 @@ export const MARTIN_PIERRE_PROJECT: ProjectData = {
     optionalSubtitle: "CONSTRUCTION D’UNE RESIDENCE DE 6 LOGEMENTS T3",
     descriptionHeader: "Compacité et confidentialité",
     descriptionParagraphs: [
-        "Implanté au cœur d’une rue majoritairement composée de maison de ville, ce petit collectif residentiel cherche à s’inscrire avec retenue dans un tissu résidentiel domestique.",
+        "Implanté au cœur d’une rue majoritairement composée de maison de ville, ce petit collectif résidentiel cherche à s’inscrire avec retenue dans un tissu résidentiel domestique.",
         "Le projet privilégie une volumétrie compacte et une écriture sobre afin de limiter son impact dans un environnement pavillonnaire.",
         "Les loggias creusées et les retraits de façade instaurent des espaces extérieurs protégés, favorisant l’intimité des logements T3.",
         "Le traitement minéral ocre dialogue avec les tonalités méditerranéennes et la lumière de Nîmes.",
@@ -475,7 +475,7 @@ export const VACQUEROLLES_PROJECT: ProjectData = {
     optionalSubtitle: "CONSTRUCTION D'UNE RESIDENCE COMPRENANT UN T3 ET UN T5",
     descriptionHeader: "Entre garrigue et lumière : deux logements ancrés dans le paysage nîmois",
     descriptionParagraphs: [
-        "Implanté dans la garrigue de Nîmes, ce projet compose deux volumes méditerranéens distincts — un T3 et un T5 — qui dialoguent avec la topographie et le paysage naturel des Hauts de Vacquerolles.",
+        "Implanté dans la garrigue de Nîmes, ce projet compose deux volumes méditerranéens distincts (un T3 et un T5) qui dialoguent avec la topographie et le paysage naturel des Hauts de Vacquerolles.",
         "Les façades minérales aux deux teintes ocre, associées aux toitures en tuiles et aux larges terrasses, prolongent l'architecture vernaculaire tout en offrant des vues ouvertes sur le territoire.",
         "Pensé comme un habitat contemporain ancré dans son site, l'ensemble privilégie la lumière, les espaces extérieurs et une implantation douce qui épouse le relief."
     ],
@@ -505,7 +505,7 @@ export const SAMARITAINE_PROJECT: ProjectData = {
     optionalSubtitle: "CONSTRUCTION D’UNE RESIDENCE DE 30 LOGEMENTS COLLECTIFS",
     descriptionHeader: "îlot Terre & Lumière",
     descriptionParagraphs: [
-        "Tout part de l’idée de crée un pont entre un projet moderne et un environnement dense et végétal.",
+        "Tout part de l’idée de créer un pont entre un projet moderne et un environnement dense et végétal.",
         "Au cœur du tissu urbain, le projet affirme une présence minérale forte avec ses façades en béton teinté, chaleureusement nuancées. Les loggias et claustras en bois rythment les volumes et filtrent la lumière, offrant aux logements des espaces extérieurs protégés et habités.",
         "Organisé autour d’un jardin patio, l’ensemble compose un îlot dense mais respirant, conciliant urbanité, intimité et douceur méditerranéenne."
     ],
@@ -607,7 +607,7 @@ export const CACHAREL_PROJECT: ProjectData = {
         "L’espace met en scène le vêtement dans une architecture feutrée, claire et silencieuse.",
         "Le bois blond, décliné du sol aux mobiliers intégrés, crée une atmosphère chaleureuse et homogène, sublimée ici par une lumière zénithale douce et maîtrisée.",
         "Entre lignes pures, proportions généreuses et détails soignés, le concept souhaite affirmer une élégance contemporaine où la matière devient identité. Ici images Boutiques à Jeddah en Arabie Saoudite, Agen et Bordeaux.",
-        "FRANCE: Bordeaux, Paris, Nantes, Montpellier, Marseille, Strasbourg, Lyon, Nice, Cannes, Grenoble, ect...",
+        "FRANCE: Bordeaux, Paris, Nantes, Montpellier, Marseille, Strasbourg, Lyon, Nice, Cannes, Grenoble, etc.",
         "INTERNATIONAL : Italie, Arabie-Saoudite, Monaco, Russie, Slovénie, Brésil, Grèce, Chypre, Maroc, Indonésie, Japon, Allemagne, Espagne..."
     ],
     techSheet: [
@@ -669,7 +669,7 @@ export const GARONS_PROJECT: ProjectData = {
     descriptionHeader: "Restaurant tunisien",
     descriptionParagraphs: [
         "Le projet consistait en l’extension d’un restaurant et la création d’un logement de fonction dans un environnement d’activités dominé par des volumes industriels en pleine ZI.",
-        "La facade d’accueil est repensée : L’intention consiste à introduire une présence identifiable sans excès formel. Le bâtiment adopte une volumétrie simple et compacte inspirée des architectures méditerranéennes : enduit clair, percements limités et façades sobres.",
+        "La façade d’accueil est repensée : l’intention consiste à introduire une présence identifiable sans excès formel. Le bâtiment adopte une volumétrie simple et compacte inspirée des architectures méditerranéennes : enduit clair, percements limités et façades sobres.",
         "La façade principale introduit une référence tunisienne plus explicite à travers les arcs et le motif de faïence bleue. Le décor reste contenu dans une composition rigoureuse afin d’éviter l’effet pastiche et d’affirmer une identité lisible."
     ],
     techSheet: [
@@ -796,8 +796,8 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
     optionalSubtitle: "RÉHABILITATION - RESTRUCTURATION - EXTENSION - TRANSFORMATION D’ATELIERS EN BUREAUX",
     descriptionHeader: "Flux & Transparence – Le nouveau visage de la Régie des Eaux",
     descriptionParagraphs: [
-        "Le projet consistait ici à réhabiliter, restructurer et agrandir l’actuel centre d’expoitation de la Régie des Eaux afin de revoir l’organisation et le fonctionnement spatial intérieur et donner une nouvelle identité au lieu axée sur les bureaux.",
-        "L’ architecture contemporaine adopte une écriture contemporaine qui affirme l’identité publique de la Régie par une façade vibrante de lames verticales bleues, évoquant le mouvement et la fluidité de l’eau.",
+        "Le projet consistait ici à réhabiliter, restructurer et agrandir l’actuel centre d’exploitation de la Régie des Eaux afin de revoir l’organisation et le fonctionnement spatial intérieur et donner une nouvelle identité au lieu axée sur les bureaux.",
+        "L’architecture adopte une écriture contemporaine qui affirme l’identité publique de la Régie par une façade vibrante de lames verticales bleues, évoquant le mouvement et la fluidité de l’eau.",
         "Au cœur du bâtiment, un atrium lumineux structure les espaces de travail autour de transparences maîtrisées, favorisant collaboration, lisibilité et confort.",
         "De l’accueil à la cafétéria, les espaces intérieurs conjuguent sobriété, chaleur et fonctionnalité pour incarner un service public moderne, ouvert et accessible."
     ],
@@ -846,17 +846,17 @@ export const CLAPIERS_PROJECT: ProjectData = {
     ],
     subtitle: "CLAPIERS (34)",
     title: "MAISON DE RETRAITE",
-    optionalSubtitle: "EXTENSION D’UN EPHAD AVEC CONSTRUCTION D’UN NOUVEAU HALL, RÉHABILITATION DES CHAMBRES, TRAITEMENT DES FACADES PAR ITE, AMÉNAGEMENT PAYSAGER",
+    optionalSubtitle: "EXTENSION D’UN EHPAD AVEC CONSTRUCTION D’UN NOUVEAU HALL, RÉHABILITATION DES CHAMBRES, TRAITEMENT DES FACADES PAR ITE, AMÉNAGEMENT PAYSAGER",
     descriptionHeader: "Le soin pensé comme lieu de vie",
     descriptionParagraphs: [
-        "L’intention première de ce projet était de briser l’image institutionnelle du batiment pour offrir à l’occasion de sa réhabilitation et extension un environnement plus chaleureux et sécurisant. L’architecture reste horizontale et apaisée, le projet s’inscrit dans la pente comme une extension naturelle du terrain, offrant à chaque résident lumière, vues lointaines et relation directe à l’environnement paysager existant.",
+        "L’intention première de ce projet était de briser l’image institutionnelle du bâtiment pour offrir à l’occasion de sa réhabilitation et extension un environnement plus chaleureux et sécurisant. L’architecture reste horizontale et apaisée, le projet s’inscrit dans la pente comme une extension naturelle du terrain, offrant à chaque résident lumière, vues lointaines et relation directe à l’environnement paysager existant.",
         "Le socle minéral ancre le bâtiment dans le site tandis que les volumes enduits clairs et les filtres bois issus du nouveau projet composent une écriture contemporaine, chaleureuse et domestique, loin de l’image institutionnelle.",
-        "A cela s’est accompagné une reflexion paysagère particulière afin de récréer une entrée- jardin sensorielle."
+        "A cela s’est accompagné une réflexion paysagère particulière afin de recréer une entrée-jardin sensorielle."
     ],
     techSheet: [
         { label: "Lieu", value: "Clapiers (34)" },
         { label: "Maitre d’Ouvrage", value: "Privé" },
-        { label: "Mission", value: "Complète ( projet arreté en APS)" },
+        { label: "Mission", value: "Complète (projet arrêté en APS)" },
         { label: "Surface", value: "4 000 m2" },
         { label: "Budget travaux (estimation)", value: "4 000 000 € HT" },
         { label: "Année", value: "2012" }
@@ -882,8 +882,8 @@ export const CUCURRON_PROJECT: ProjectData = {
     descriptionParagraphs: [
         "Situé au cœur du Luberon, le nouveau Centre de Première Intervention de Cucuron concilie les impératifs de réactivité opérationnelle et une insertion paysagère sensible. Le projet se définit par une lecture claire de ses fonctions :",
         "• Le pôle opérationnel : Un volume sobre et robuste de quatre travées, conçu pour l’efficacité des flux et la maintenance des véhicules de secours.",
-        "• Le pôle humain : Un pavillon administratif dont la façade est rythmée par un claire-voie en bois vertical. Ce dispositif assure un rôle de brise-soleil tout en créant un dialogue texturé avec la forêt de pins environnante. Une salle de sport , espace barbecue est située à l’arrière du batiment",
-        "Par ce jeu de matériaux — entre la rigueur du métal et la chaleur du bois — le bâtiment s’efface devant le relief boisé tout en affirmant sa présence comme équipement public structurant.",
+        "• Le pôle humain : Un pavillon administratif dont la façade est rythmée par un claire-voie en bois vertical. Ce dispositif assure un rôle de brise-soleil tout en créant un dialogue texturé avec la forêt de pins environnante. Une salle de sport et un espace barbecue sont situés à l’arrière du bâtiment",
+        "Par ce jeu de matériaux, entre la rigueur du métal et la chaleur du bois, le bâtiment s’efface devant le relief boisé tout en affirmant sa présence comme équipement public structurant.",
         "Une architecture au service de l’urgence, pensée pour la sérénité des usagers."
     ],
     techSheet: [
@@ -912,7 +912,7 @@ export const LA_TOUR_DAIGUES_PROJECT: ProjectData = {
     navigationTitle: "SDIS",
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION",
     descriptionParagraphs: [
-        "La réhabilitation et l’extension- surrélevation de la caserne des sapeurs-pompiers de La Tour d’Aigues transforment un équipement vieillissant en un bâtiment contemporain, fonctionnel en plein coeur du village de la Tour d’Aigues.",
+        "La réhabilitation et l’extension-surélévation de la caserne des sapeurs-pompiers de La Tour d’Aigues transforment un équipement vieillissant en un bâtiment contemporain, fonctionnel en plein coeur du village de la Tour d’Aigues.",
         "Le projet affirme une écriture architecturale jouant sur des volumes clairs, des percements verticaux et une matérialité lumineuse qui dialoguent avec l’identité locale tout en exprimant modernité et rigueur.",
         "Cette intervention renforce la performance opérationnelle et la visibilité institutionnelle de la caserne, offrant aux équipes un outil de travail adapté aux exigences actuelles et futures du service de secours."
     ],
@@ -941,7 +941,7 @@ export const GRANS_PROJECT: ProjectData = {
     title: "MAISON DES JEUNES",
     optionalSubtitle: "RÉHABILITATION ET AGENCEMENT EQUIPEMENT PUBLIC JEUNESSE",
     descriptionParagraphs: [
-        "La ville de Grans souhaitait  la réhabilitation d’une maison de ville en maison des jeunes afin d’offir un nouvel equipement pour sa jeunesse.",
+        "La ville de Grans souhaitait la réhabilitation d’une maison de ville en maison des jeunes afin d’offrir un nouvel équipement pour sa jeunesse.",
         "La distribution intérieure a été entièrement repensée, une nouvelle entrée a été organisée permettant l’agrandissement de l’espace accueil. L’ensemble a été décloisonné et un grand nombre de murs porteurs ont été modifiés et ouverts afin de permettre une transparence visuelle sur l’ensemble des espaces intérieurs et extérieurs.",
         "L’aménagement intérieur est traité de manière sobre car l’équipe pédagogique avait pour projet la réalisation de plusieurs fresques murales. Un mobilier spécifique a été créé: banquettes pour espace « gaming » et loisirs, office, meuble rangement bureau pour structurer les espace dédiés.",
         "Enfin un chemin piétonnier a été créé afin de rejoindre aisément l’avenue principale."
@@ -972,8 +972,8 @@ export const CAPITAINERIE_PROJECT: ProjectData = {
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION - PORTS DU SUD",
     descriptionHeader: "Terre à ciel",
     descriptionParagraphs: [
-        "Le projet consiste en la rehabilitation et l’extension surrélevation de l’ancienne capitainerie du port de la Pointe Rouge à Marseille (13).",
-        "Le parti pris architectural de cette réhabilitation repose sur une intention poétique forte : incarner le mouvement ascendant de « la terre vers le ciel ». Le projet ne se contente pas de fonctionnaliser un espace ; il tisse un lien tangible et visuel entre l'ancrage rugueux du sol côtier et l'immensité éthérée de l'horizon maritime de la Méditerrannée.Ce volume minéral posé face à la mer capte la lumière comme une falaise habitée, où les lames horizontales en céramique composent une façade vibrante, entre opacité et transparence.",
+        "Le projet consiste en la réhabilitation et l’extension-surélévation de l’ancienne capitainerie du port de la Pointe Rouge à Marseille (13).",
+        "Le parti pris architectural de cette réhabilitation repose sur une intention poétique forte : incarner le mouvement ascendant de « la terre vers le ciel ». Le projet ne se contente pas de fonctionnaliser un espace ; il tisse un lien tangible et visuel entre l'ancrage rugueux du sol côtier et l'immensité éthérée de l'horizon maritime de la Méditerranée. Ce volume minéral posé face à la mer capte la lumière comme une falaise habitée, où les lames horizontales en céramique composent une façade vibrante, entre opacité et transparence.",
         "La masse sombre et sculpturale du socle affirme une présence tellurique, tandis que l’enveloppe dialogue avec l’horizon et les reflets changeants de l’eau.",
         "À la croisée du paysage et de l’infrastructure portuaire, l’architecture devient signal, repère et matière vivante."
     ],
@@ -1001,7 +1001,7 @@ export const LODEVE_PROJECT: ProjectData = {
     title: "CENTRE TECHNIQUE MUNICIPAL",
     optionalSubtitle: "RÉHABILITATION",
     descriptionParagraphs: [
-        "Ici commande publique pour rénover un équipement veillissan, en l'espèce le centre technique municipal de la ville de Lodève en Occitanie.",
+        "Ici commande publique pour rénover un équipement vieillissant, en l'espèce le centre technique municipal de la ville de Lodève en Occitanie.",
         "Le site étant en zone inondable, les nouveaux aménagements tels que les ateliers, les bureaux administratifs et leurs annexes (vestiaires, sanitaires) ont été réalisés au dessus de la cote référence des plus hautes eaux.",
         "Les transparences hydrauliques ont été respectées afin de favoriser l'évacuation naturelle des eaux.",
         "Les aménagements s’organisent en deux bandes distinctes accueillant d’un coté l’administration et les locaux des agents et de l’autre l’ensemble des ateliers, menuiserie et serrurerie.",
@@ -1033,7 +1033,7 @@ export const VITROLLES_PROJECT: ProjectData = {
     optionalSubtitle: "RÉHABILITATION - EXTENSION - TRANSFORMATION D’UN HANGAR DE STOCKAGE EN ARCHIVES MUNICIPALES",
     descriptionHeader: "Monolithe noir pour la mémoire collective",
     descriptionParagraphs: [
-        "Cette commande publique consistait à réhabiliter un hanger existant en zone industrielle afin de le transformer en le nouveau batiment des archives municipales de la Ville de Vitrolles.",
+        "Cette commande publique consistait à réhabiliter un hangar existant en zone industrielle afin de le transformer en le nouveau bâtiment des archives municipales de la Ville de Vitrolles.",
         "Émergeant du paysage industriel de la ZI des Estroublans à Vitrolles, ce volume sombre et compact affirme une présence sobre et institutionnelle, où la rigueur formelle traduit la pérennité des archives qu’il abrite.",
         "Organisé autour de vastes salles de conservation rationnelles et protégées, le bâtiment dissocie clairement les flux publics et techniques pour garantir sécurité, fonctionnalité et lisibilité.",
         "Sa peau métallique noire, rythmée par des percements verticaux et des casquettes protectrices, confère à l’équipement une identité contemporaine forte, à la fois discrète et emblématique."
@@ -1044,7 +1044,6 @@ export const VITROLLES_PROJECT: ProjectData = {
         { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "516 m2" },
         { label: "Coût travaux", value: "797 390 € HT" },
-        { label: "Année", value: "2017-2018" },
         { label: "Année", value: "2017-2018" }
     ]
 };
@@ -1065,7 +1064,7 @@ export const SALON_PROJECT: ProjectData = {
     title: "BOULODROME",
     optionalSubtitle: "CONSTRUCTION EQUIPEMENT PUBLIC",
     descriptionParagraphs: [
-        "Le projet a consisté en la création d’une couverture du boulodrome actuel , la réhabilitation de ses aires de jeux ainsi que la création d’annexes (local de stockage et sanitaires).",
+        "Le projet a consisté en la création d’une couverture du boulodrome actuel, la réhabilitation de ses aires de jeux ainsi que la création d’annexes (local de stockage et sanitaires).",
         "Le projet situé au cœur d’un quartier « populaire » de Salon de Provence s’intègre dans un tissu urbain déjà en place. L’idée est de créer au travers du projet une façade urbaine en continuité avec l’existant.",
         "Le projet est réalisé à partir d’une structure mixte bois et métal"
     ],
@@ -1075,7 +1074,6 @@ export const SALON_PROJECT: ProjectData = {
         { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "1182 m2" },
         { label: "Coût travaux", value: "633 000 € HT" },
-        { label: "Année", value: "2020-2021" },
         { label: "Année", value: "2020-2021" }
     ]
 };
@@ -1092,7 +1090,7 @@ export const FERRIGNO_PROJECT: ProjectData = {
     title: "ENTREPÔT STOCKAGE- CONSERVERIE",
     optionalSubtitle: "CONSTRUCTION ENTREPOT",
     descriptionParagraphs: [
-        "Le projet s’inscrit dans le paysage sensible naturel propre au delta du Rhône et de la Camargue à Port St Louis du Rhône pour y implanter uun entrepôt de stockage et de conserverie de sardines.",
+        "Le projet s’inscrit dans le paysage sensible naturel propre au delta du Rhône et de la Camargue à Port St Louis du Rhône pour y implanter un entrepôt de stockage et de conserverie de sardines.",
         "Le volume de la construction simple s’étire horizontalement afin de répondre à la problématique programmatique constructive et environnementale. La construction de la halle est en ossature métal avec bandeau lumineux en polycarbonate, bardage métal alu réfléchissant pour une meilleure intégration dans le site.",
         "Le projet allie sobriété, simplicité et esthétique tout en répondant à sa fonction, son usage et son organisation."
     ],

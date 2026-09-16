@@ -52,6 +52,11 @@
     margin: 0;
 }
 
+/* Fiches projet : les paragraphes étaient collés et se lisaient comme un seul bloc */
+.main-text-column .body-text + .body-text {
+    margin-top: 0.9em;
+}
+
 .content-body {
     display: flex;
     flex-direction: column;

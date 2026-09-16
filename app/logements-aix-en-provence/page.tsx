@@ -161,7 +161,7 @@ const data: LandingData = {
             { q: "Intégrez-vous les normes en vigueur (RE2020, accessibilité) ?", a: "Oui, la conformité réglementaire est intégrée dès la conception." },
             { q: "Quels délais pour une opération de logements ?", a: "Ils dépendent de la taille de l’opération et de l’instruction du permis. Nous établissons un calendrier prévisionnel dès l’étude de faisabilité." },
             { q: "Quelle taille d’opération traitez-vous ?", a: "Du petit collectif à la résidence de 30 logements et plus, en neuf comme en extension." },
-            { q: "Pouvez-vous nous communiquer des références ?", a: "Oui, plusieurs résidences réalisées en PACA et en région. Contactez-nous pour le détail." },
+            { q: "Pouvez-vous nous communiquer des références ?", a: "Oui, plusieurs résidences réalisées dans le Gard et l’Hérault. Contactez-nous pour le détail." },
         ],
         cta: "Poser une question",
         ctaLoc: "faq",

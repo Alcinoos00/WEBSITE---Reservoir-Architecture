@@ -1,0 +1,138 @@
+/* Réalisations locales (accueil) : même charte que les sections SEO voisines,
+   monochrome, photos au format 3:2 comme le carrousel, aucun arrondi. */
+
+.local-projects-section {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem 8rem;
+}
+
+.local-projects-container {
+    max-width: 90rem;
+    width: 100%;
+}
+
+.local-projects-header {
+    margin-bottom: 3rem;
+}
+
+.local-projects-eyebrow {
+    color: #333;
+    margin: 0 0 1.5rem;
+}
+
+.local-projects-title {
+    margin: 0;
+    max-width: 45rem;
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+.local-projects-lede {
+    max-width: 60rem;
+    margin: 1.5rem 0 0;
+    color: #111;
+}
+
+.local-projects-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 1.5rem;
+}
+
+.local-project-card {
+    display: block;
+    color: #111;
+}
+
+.local-project-card:focus-visible {
+    outline: 1px solid #000;
+    outline-offset: 0.5rem;
+}
+
+.local-project-imgwrap {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: #f5f5f5;
+    margin-bottom: 1rem;
+}
+
+.local-project-img {
+    object-fit: cover;
+    /* motion: même léger zoom au survol que le carrousel d'accueil, signale le lien */
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.local-project-card:hover .local-project-img {
+    transform: scale(1.02);
+}
+
+.local-project-place {
+    margin: 0 0 0.5rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.local-project-title {
+    margin: 0 0 0.35rem;
+}
+
+.local-project-summary {
+    margin: 0;
+    color: #333;
+}
+
+.local-projects-links {
+    margin-top: 3rem;
+}
+
+.local-projects-links-intro {
+    margin: 0;
+    color: #111;
+}
+
+.local-projects-links .seo-content-links {
+    margin-top: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .local-project-img {
+        transition: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .local-projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .local-projects-section {
+        padding: 0 1.5rem 6rem;
+    }
+
+    .local-projects-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .local-projects-title {
+        font-size: 1.5rem;
+    }
+
+    .local-projects-grid {
+        gap: 2rem 1rem;
+    }
+
+    .local-project-place {
+        letter-spacing: 0.18em;
+    }
+}

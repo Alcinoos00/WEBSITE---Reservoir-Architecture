@@ -19,6 +19,16 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    // Menu mobile ouvert : Échap le ferme
+    useEffect(() => {
+        if (!isMenuOpen) return;
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setIsMenuOpen(false);
+        };
+        document.addEventListener("keydown", onKeyDown);
+        return () => document.removeEventListener("keydown", onKeyDown);
+    }, [isMenuOpen]);
+
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
 
@@ -53,9 +63,12 @@ export default function Navbar() {
                 </div>
 
                 <button
+                    type="button"
                     className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
                     onClick={toggleMenu}
-                    aria-label="Toggle menu"
+                    aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+                    aria-expanded={isMenuOpen}
+                    aria-controls="mobile-menu"
                 >
                     <span className="bar"></span>
                     <span className="bar"></span>
@@ -63,7 +76,8 @@ export default function Navbar() {
                 </button>
             </div>
 
-            <div className={`mobile-menu ${isMenuOpen ? "open" : ""}`}>
+            {/* Fermé, le menu n'est réduit qu'à height: 0 : `inert` retire ses liens du parcours clavier. */}
+            <div id="mobile-menu" className={`mobile-menu ${isMenuOpen ? "open" : ""}`} inert={!isMenuOpen}>
                 <div className="mobile-nav-links">
                     <Link href="/villas" className={`nav-link ${isActive("/villas") ? "active" : ""}`} onClick={closeMenu}>VILLAS</Link>
                     <Link href="/logements" className={`nav-link ${isActive("/logements") ? "active" : ""}`} onClick={closeMenu}>LOGEMENTS</Link>

@@ -1,10 +1,10 @@
+import Image from "next/image";
 import "./landing.css";
-import { SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
-import { LeadTracking, EmailButton, CardCtaButton } from "./LeadButtons";
+import { ARCHIDVISOR_URL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { EmailButton, CardCtaButton } from "./LeadButtons";
+import { noBreakHyphens } from "./noBreakHyphens";
 
 const TEL = `tel:${SITE_PHONE}`;
-const ARCHIDVISOR_URL =
-    "https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture";
 
 export type Spec = { icon: string; label: string };
 export type ProjectCard = {
@@ -190,15 +190,24 @@ export default function LandingPage({ data }: { data: LandingData }) {
     return (
         <main className="lp">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
-            <LeadTracking />
 
             {/* 1. HERO */}
             <section className="lp-hero">
-                <img className="lp-hero-bg" src={data.hero.img} alt={data.hero.alt} />
+                {/* Photo sous un voile sombre : la largeur d'écran suffit, même recadrée en cover sur mobile.
+                    Seule image prioritaire de la page (LCP). */}
+                <Image
+                    className="lp-hero-bg"
+                    src={data.hero.img}
+                    alt={data.hero.alt}
+                    fill
+                    sizes="100vw"
+                    loading="eager"
+                    fetchPriority="high"
+                />
                 <div className="lp-hero-overlay" />
                 <div className="lp-inner lp-hero-inner">
                     <p className="lp-eyebrow lp-hero-eyebrow">{data.hero.eyebrow}</p>
-                    <h1>{data.hero.h1}</h1>
+                    <h1>{noBreakHyphens(data.hero.h1)}</h1>
                     <p className="lp-hero-sub">{data.hero.sub}</p>
                     <div className="lp-cta-row">
                         <a className="lp-btn lp-btn--on-dark lp-btn--solid" href={TEL} data-cta="appel" data-loc="hero">
@@ -207,7 +216,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         <EmailButton loc="hero" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
                     <a className="lp-archidvisor" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Note 5 sur 5, 7 avis sur Archidvisor">
-                        <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" />
+                        <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} />
                         <span className="lp-stars" aria-hidden="true"><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></span>
                         <span className="lp-archidvisor-rating">5,0<span className="lp-archidvisor-max">/5</span></span>
                         <span className="lp-archidvisor-count">7 avis</span>
@@ -233,7 +242,14 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         {data.realisations.projects.map((proj) => (
                             <article className="lp-card" key={proj.title}>
                                 <div className="lp-card-imgwrap">
-                                    <img className="lp-card-img" src={proj.img} alt={proj.alt} loading="lazy" />
+                                    <Image
+                                        className="lp-card-img"
+                                        src={proj.img}
+                                        alt={proj.alt}
+                                        fill
+                                        sizes="(max-width: 768px) 90vw, (max-width: 1024px) 384px, 400px"
+                                        fetchPriority="low"
+                                    />
                                 </div>
                                 <div className="lp-card-body">
                                     <h3 className="lp-card-title">{proj.title}</h3>
@@ -302,7 +318,13 @@ export default function LandingPage({ data }: { data: LandingData }) {
                 <div className="lp-inner">
                     <div className="lp-local-grid">
                         <div className="lp-local-imgwrap">
-                            <img className="lp-local-img" src="/images/serge-ettore.webp" alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence" loading="lazy" />
+                            <Image
+                                className="lp-local-img"
+                                src="/images/serge-ettore.webp"
+                                alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
+                                fill
+                                sizes="384px"
+                            />
                         </div>
                         <div>
                             <p className="lp-eyebrow">{data.local.eyebrow}</p>
@@ -322,7 +344,7 @@ export default function LandingPage({ data }: { data: LandingData }) {
                     </div>
                     <div className="lp-reviews">
                         <div className="lp-reviews-head">
-                            <img className="lp-reviews-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" />
+                            <img className="lp-reviews-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} loading="lazy" />
                             <span className="lp-reviews-score">5,0<span className="lp-reviews-max">/5</span></span>
                             <span className="lp-stars" aria-label="Note 5 sur 5">
                                 <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
@@ -370,10 +392,17 @@ export default function LandingPage({ data }: { data: LandingData }) {
 
             {/* 6. GROS CTA FINAL */}
             <section className="lp-final">
-                <img className="lp-final-bg" src={data.finalCta.img} alt="" aria-hidden="true" />
+                <Image
+                    className="lp-final-bg"
+                    src={data.finalCta.img}
+                    alt=""
+                    aria-hidden="true"
+                    fill
+                    sizes="(max-width: 768px) 150vw, 100vw"
+                />
                 <div className="lp-final-overlay" />
                 <div className="lp-inner lp-final-inner">
-                    <h2>{data.finalCta.h2}</h2>
+                    <h2>{noBreakHyphens(data.finalCta.h2)}</h2>
                     <p>{data.finalCta.p}</p>
                     <div className="lp-cta-row">
                         <a className="lp-btn lp-btn--on-dark lp-btn--solid" href={TEL} data-cta="appel" data-loc="final">

@@ -28,6 +28,7 @@ export default function Footer() {
 
             <div className="footer-bottom">
                 <div className="footer-links-bottom">
+                    <Link href="/" className="footer-link-small">Architecte à Aix-en-Provence</Link>
                     <Link href="/contact" className="footer-link-small">Contact</Link>
                     <Link href="/villas" className="footer-link-small">Villas</Link>
                     <Link href="/logements" className="footer-link-small">Logements</Link>
@@ -39,7 +40,7 @@ export default function Footer() {
                     <Link href="/villas-nice" className="footer-link-small">Villa Nice</Link>
                 </div>
                 <div className="footer-copyright">
-                    <p className="footer-link-small">Â© {currentYear} Reservoir Architecture</p>
+                    <p className="footer-link-small">© {currentYear} Reservoir Architecture</p>
                 </div>
             </div>
         </footer>

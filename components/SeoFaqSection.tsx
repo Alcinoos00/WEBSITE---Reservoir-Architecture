@@ -1,4 +1,5 @@
 import "./seo-faq-section.css";
+import { noBreakHyphens } from "./noBreakHyphens";
 
 export type SeoFaqItem = { q: string; a: string };
 
@@ -27,12 +28,12 @@ export default function SeoFaqSection({ title, items, eyebrow = "Questions fréq
             />
             <div className="seo-faq-container">
                 <p className="subtitle seo-faq-eyebrow">{eyebrow}</p>
-                <h2 className="title seo-faq-title">{title}</h2>
+                <h2 className="title seo-faq-title">{noBreakHyphens(title)}</h2>
                 <div className="seo-faq-list">
                     {items.map((f) => (
                         <details className="seo-faq-item" key={f.q}>
                             <summary className="seo-faq-question">
-                                <span>{f.q}</span>
+                                <span>{noBreakHyphens(f.q)}</span>
                                 <span className="seo-faq-icon" aria-hidden="true" />
                             </summary>
                             <p className="body-text seo-faq-answer">{f.a}</p>

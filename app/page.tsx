@@ -3,18 +3,26 @@ import NavigationCarousel from "@/components/NavigationCarousel";
 import AgencySection from "@/components/AgencySection";
 import SeoContentSection from "@/components/SeoContentSection";
 import SeoFaqSection from "@/components/SeoFaqSection";
+import LocalProjectsSection, { type LocalProject } from "@/components/LocalProjectsSection";
 import {
   VILLA_F_PROJECT,
   SAMARITAINE_PROJECT,
   WAUQUIEZ_PROJECT,
   REGIE_DES_EAUX_PROJECT,
+  VILLA_T_PROJECT,
+  PUYRICARD_PROJECT,
+  GENDARMERIE_PROJECT,
+  VITROLLES_PROJECT,
+  SALON_PROJECT,
 } from "@/lib/projects";
 import { SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Architecte à Aix-en-Provence",
+  // `absolute` : le template « %s | Reservoir Architecture » du layout ne s'applique pas
+  // à la page du même segment, la marque manquait dans le <title> de l'accueil.
+  title: { absolute: "Architecte à Aix-en-Provence | Reservoir Architecture" },
   description:
-    "Reservoir Architecture, agence d'architecture DPLG à Aix-en-Provence, conçoit villas, logements, commerces et équipements publics en PACA depuis 2013.",
+    "Reservoir Architecture, agence d'architecture DPLG à Aix-en-Provence depuis 2013 : maisons, rénovations, logements, commerces et équipements publics.",
   alternates: { canonical: SITE_URL },
   openGraph: {
     title: "Architecte à Aix-en-Provence - Reservoir Architecture",
@@ -44,7 +52,11 @@ const FAQ_ITEMS = [
   },
   {
     q: "Où intervient Reservoir Architecture ?",
-    a: "Basée à Aix-en-Provence, l'agence intervient sur le Pays d'Aix, Marseille, les Bouches-du-Rhône et l'ensemble de la région PACA.",
+    a: "Basée à Aix-en-Provence, l'agence intervient sur le Pays d'Aix, Marseille, les Bouches-du-Rhône et l'ensemble de la région PACA. Elle a notamment conçu des projets à Puyricard, Bouc-Bel-Air, Vitrolles, Salon-de-Provence et Grans.",
+  },
+  {
+    q: "Réalisez-vous des rénovations et des extensions à Aix-en-Provence ?",
+    a: "Oui. L'agence a par exemple rénové la Villa T, une maison de ville à Aix-en-Provence, en mission complète, de la conception au suivi du chantier. Chaque rénovation ou extension part de l'analyse de l'existant, des règles d'urbanisme et du budget.",
   },
   {
     q: "Faut-il obligatoirement faire appel à un architecte ?",
@@ -62,6 +74,16 @@ const FAQ_ITEMS = [
     q: "Travaillez-vous avec les particuliers et les professionnels ?",
     a: "Oui. Nous accompagnons aussi bien les particuliers (villas, maisons, rénovations) que les promoteurs, commerçants et collectivités.",
   },
+];
+
+// Uniquement des projets situés dans les Bouches-du-Rhône (lieu vérifié dans la fiche technique).
+const LOCAL_PROJECTS: LocalProject[] = [
+  { project: VILLA_T_PROJECT, place: "Aix-en-Provence", summary: "Rénovation d'une maison de ville" },
+  { project: PUYRICARD_PROJECT, place: "Puyricard", summary: "Ensemble de commerces et services" },
+  { project: REGIE_DES_EAUX_PROJECT, place: "Aix-en-Provence", summary: "Transformation d'ateliers en bureaux" },
+  { project: GENDARMERIE_PROJECT, place: "Bouc-Bel-Air", summary: "Réhabilitation, extension et surélévation" },
+  { project: VITROLLES_PROJECT, place: "Vitrolles", summary: "Hangar transformé en archives municipales" },
+  { project: SALON_PROJECT, place: "Salon-de-Provence", summary: "Construction d'un boulodrome" },
 ];
 
 export default function Home() {
@@ -103,6 +125,23 @@ export default function Home() {
           Pour une mission d'architecte à Aix-en-Provence ou en région Provence-Alpes-Côte d'Azur, le premier échange permet de qualifier le programme, le niveau d'accompagnement attendu et les conditions de faisabilité du projet.
         </p>
       </SeoContentSection>
+      {/* Preuve locale avant la FAQ. Les liens renvoient vers les pages dédiées à Aix
+          (maillage de la requête « architecte aix en provence » vers ses déclinaisons). */}
+      <LocalProjectsSection
+        eyebrow="Projets dans les Bouches-du-Rhône"
+        title="Nos réalisations à Aix-en-Provence et alentours"
+        lede="Maison de ville, commerces, équipements publics : l'agence conçoit des projets à Aix-en-Provence, Puyricard, Bouc-Bel-Air, Vitrolles et Salon-de-Provence, pour des particuliers comme pour les communes."
+        items={LOCAL_PROJECTS}
+        links={{
+          intro: "Votre projet à Aix-en-Provence :",
+          items: [
+            { href: "/villas-aix-en-provence", label: "Architecte villa" },
+            { href: "/commerces-aix-en-provence", label: "Architecte commerce" },
+            { href: "/logements-aix-en-provence", label: "Architecte logements" },
+            { href: "/equipements-aix-en-provence", label: "Architecte équipements publics" },
+          ],
+        }}
+      />
       <SeoFaqSection
         eyebrow="Questions fréquentes"
         title="Architecte à Aix-en-Provence : questions fréquentes"

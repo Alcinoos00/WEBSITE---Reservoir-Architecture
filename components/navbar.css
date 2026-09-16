@@ -123,7 +123,10 @@
         background: transparent;
         border: none;
         cursor: pointer;
-        padding: 0;
+        /* Zone tactile portée à ~44px sans changer le dessin ni la position des barres */
+        box-sizing: content-box;
+        padding: 1.2rem 0.9rem;
+        margin: -1.2rem -0.9rem;
         z-index: 101;
     }
 

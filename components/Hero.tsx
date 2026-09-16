@@ -5,6 +5,7 @@ import Image from "next/image";
 import "./hero.css";
 import { ProjectData } from "@/types/project";
 import { getProjectAlt } from "@/lib/seo";
+import { useDialogFocus } from "@/lib/useDialogFocus";
 
 interface HeroProps {
     project: ProjectData;
@@ -12,7 +13,9 @@ interface HeroProps {
 
 export default function Hero({ project }: HeroProps) {
     const scrollRef = useRef<HTMLDivElement>(null);
+    const lightboxRef = useRef<HTMLDivElement>(null);
     const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+    useDialogFocus(lightboxRef, lightboxIndex !== null);
 
     const scroll = (direction: "left" | "right") => {
         const el = scrollRef.current;
@@ -20,7 +23,8 @@ export default function Hero({ project }: HeroProps) {
         const first = el.children[0] as HTMLElement;
         const second = el.children[1] as HTMLElement | undefined;
         const step = second ? second.offsetLeft - first.offsetLeft : first.offsetWidth;
-        el.scrollBy({ left: direction === "left" ? -step : step, behavior: "smooth" });
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        el.scrollBy({ left: direction === "left" ? -step : step, behavior: reduceMotion ? "auto" : "smooth" });
     };
 
     const lightboxPrev = useCallback(() => {
@@ -33,24 +37,9 @@ export default function Hero({ project }: HeroProps) {
 
     const closeLightbox = useCallback(() => setLightboxIndex(null), []);
 
-    useEffect(() => {
-        const el = scrollRef.current;
-        if (!el) return;
-
-        const handleWheel = (e: WheelEvent) => {
-            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                let delta = e.deltaY;
-                if (e.deltaMode === 1) delta *= 40;
-                if (e.deltaMode === 2) delta *= el.clientWidth;
-
-                el.scrollLeft += delta * 1.5;
-                e.preventDefault();
-            }
-        };
-
-        el.addEventListener("wheel", handleWheel, { passive: false });
-        return () => el.removeEventListener("wheel", handleWheel);
-    }, []);
+    // La molette verticale n'est plus détournée : avec l'aimantation (scroll-snap), les petits
+    // incréments étaient annulés et la bande devenait une zone morte où la page ne défilait plus.
+    // Défilement horizontal : flèches, geste horizontal natif, Maj + molette, clavier.
 
     useEffect(() => {
         if (lightboxIndex === null) return;
@@ -79,27 +68,40 @@ export default function Hero({ project }: HeroProps) {
                             key={`${project.id}-img-${index}`}
                             className="hero-image-item"
                             onClick={() => setLightboxIndex(index)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter" || e.key === " ") {
+                                    e.preventDefault();
+                                    setLightboxIndex(index);
+                                }
+                            }}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Agrandir l'image ${index + 1} sur ${project.heroImages.length}`}
                             style={{ cursor: "pointer" }}
                         >
+                            {/* Hauteur fixe du bandeau (15.625rem mobile, 18.75rem tablette, 42vh desktop),
+                                largeur libre : `sizes` couvre jusqu'aux photos panoramiques. */}
                             <Image
                                 src={src}
                                 alt={getProjectAlt(project, index)}
                                 className="hero-image"
                                 width={1200}
                                 height={800}
-                                priority={index === 0}
+                                sizes="(max-width: 768px) 400px, (max-width: 1024px) 540px, 76vh"
+                                loading={index === 0 ? "eager" : "lazy"}
+                                fetchPriority={index === 0 ? "high" : "auto"}
                             />
                         </div>
                     ))}
                 </div>
 
-                <button className="slider-nav prev" onClick={() => scroll("left")} aria-label="Previous slide">
+                <button className="slider-nav prev" onClick={() => scroll("left")} aria-label="Image précédente">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="15 18 9 12 15 6"></polyline>
                     </svg>
                 </button>
 
-                <button className="slider-nav next" onClick={() => scroll("right")} aria-label="Next slide">
+                <button className="slider-nav next" onClick={() => scroll("right")} aria-label="Image suivante">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <polyline points="9 18 15 12 9 6"></polyline>
                     </svg>
@@ -107,8 +109,21 @@ export default function Hero({ project }: HeroProps) {
             </div>
 
             {lightboxIndex !== null && (
-                <div className="lightbox-overlay" onClick={closeLightbox}>
-                    <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+                <div
+                    className="lightbox-overlay"
+                    ref={lightboxRef}
+                    role="dialog"
+                    aria-modal="true"
+                    aria-label={`Galerie ${project.title}`}
+                >
+                    {/* Le conteneur couvre tout l'écran : un clic sur le fond (et non sur l'image
+                        ou les boutons) ferme la galerie. */}
+                    <div
+                        className="lightbox-content"
+                        onClick={(e) => {
+                            if (e.target === e.currentTarget) closeLightbox();
+                        }}
+                    >
                         <button className="lightbox-close" onClick={closeLightbox} aria-label="Fermer">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="18" y1="6" x2="6" y2="18" />

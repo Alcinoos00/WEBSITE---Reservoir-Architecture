@@ -9,9 +9,14 @@ export const SITE_COUNTRY = "FR";
 export const SITE_PHONE = "+33613516767";
 export const SITE_PHONE_DISPLAY = "+33 6 13 51 67 67";
 export const SITE_EMAIL = "contact@reservoir-architecture.com";
-export const SITE_STREET_ADDRESS = "1330 rue Jean René Guillibert Gauthier de la Lauzière";
+// Adresse alignée sur le registre SIRENE (SIREN 792 144 875) et la Base Adresse Nationale :
+// les annuaires et Google recoupent ce libellé, il doit être identique partout.
+export const SITE_STREET_ADDRESS = "Europarc Pichaury, bât. C2, 1330 avenue Jean-René Guillibert Gautier de la Lauzière";
 export const SITE_POSTAL_CODE = "13290";
 export const SITE_ADDRESS = `${SITE_STREET_ADDRESS}, ${SITE_POSTAL_CODE} ${SITE_LOCATION}`;
+export const SITE_GEO = { latitude: 43.478817, longitude: 5.371065 };
+export const ARCHIDVISOR_URL =
+    "https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture";
 export const SITE_FOUNDED = "2013";
 export const SITE_FOUNDER = "Serge Ettore";
 export const SITE_FOUNDER_TITLE = "Architecte DPLG";
@@ -179,6 +184,13 @@ export function getOrganizationJsonLd() {
             addressRegion: SITE_REGION,
             addressCountry: SITE_COUNTRY,
         },
+        geo: {
+            "@type": "GeoCoordinates",
+            latitude: SITE_GEO.latitude,
+            longitude: SITE_GEO.longitude,
+        },
+        hasMap: `https://www.google.com/maps/search/?api=1&query=${SITE_GEO.latitude},${SITE_GEO.longitude}`,
+        sameAs: [ARCHIDVISOR_URL],
         areaServed: [
             ...AREA_SERVED_CITIES.map((name) => ({ "@type": "City", name })),
             ...AREA_SERVED_REGIONS.map((name) => ({ "@type": "AdministrativeArea", name })),
@@ -199,6 +211,18 @@ export function getOrganizationJsonLd() {
             areaServed: SITE_COUNTRY,
             availableLanguage: ["fr"],
         },
+    };
+}
+
+export function getWebsiteJsonLd() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        inLanguage: "fr-FR",
+        publisher: { "@id": `${SITE_URL}/#organization` },
     };
 }
 

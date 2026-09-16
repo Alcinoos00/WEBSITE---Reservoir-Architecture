@@ -2,9 +2,18 @@
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
+import GtagLoader from "@/components/GtagLoader";
+import { LeadTracking } from "@/components/LeadButtons";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, SITE_NAME, SITE_URL, getOrganizationJsonLd } from "@/lib/seo";
+import {
+  SITE_DEFAULT_IMAGE,
+  SITE_DEFAULT_IMAGE_ALT,
+  SITE_NAME,
+  SITE_URL,
+  getOrganizationJsonLd,
+  getWebsiteJsonLd,
+} from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -63,7 +72,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: [SITE_DEFAULT_IMAGE],
   },
-  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -71,21 +79,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const orgJsonLd = getOrganizationJsonLd();
+  const jsonLd = [getOrganizationJsonLd(), getWebsiteJsonLd()];
   return (
     <html lang="fr">
       <body className={inter.variable}>
         <ClarityInit />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-P177CL77BE"
-          strategy="afterInteractive"
-        />
+        {/* Suivi des clics téléphone et email sur tout le site (conversions Google Ads). */}
+        <LeadTracking />
+        {/* gtag() est défini dès l'hydratation : les conversions click_phone / click_email
+            sont mises en file dans dataLayer, puis envoyées dès que la librairie arrive. */}
         <Script id="ga4-init" strategy="afterInteractive">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-P177CL77BE');`}
         </Script>
+        <GtagLoader id="G-P177CL77BE" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
         <div className="main-container">
