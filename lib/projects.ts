@@ -26,7 +26,7 @@ export const GENDARMERIE_PROJECT: ProjectData = {
         { label: "Mission", value: "MOP" },
         { label: "Surface", value: "600 m2" },
         { label: "Coût travaux (estimatif)", value: "900 000,00 € HT" },
-        { label: "Calendrier", value: "en cours" }
+        { label: "Calendrier", value: "Projet arrêté en phase APD" }
     ]
 };
 
@@ -874,7 +874,7 @@ export const CUCURRON_PROJECT: ProjectData = {
         "/images/projects/4-equipements/cucurron/cucurron_5.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_6.jpg"
     ],
-    subtitle: "CUCURRON (84)",
+    subtitle: "CUCURON (84)",
     title: "CENTRE DE PREMIERE INTERVENTION - CPI",
     navigationTitle: "SDIS",
     optionalSubtitle: "CONSTRUCTION - EXTENSION",
@@ -887,7 +887,7 @@ export const CUCURRON_PROJECT: ProjectData = {
         "Une architecture au service de l’urgence, pensée pour la sérénité des usagers."
     ],
     techSheet: [
-        { label: "Lieu", value: "Cucurron (84)" },
+        { label: "Lieu", value: "Cucuron (84)" },
         { label: "Maitre d'Ouvrage", value: "SDIS du Vaucluse" },
         { label: "Mission", value: "MANDATAIRE MOP+OPC" },
         { label: "Surface", value: "418 m2" },
@@ -951,7 +951,7 @@ export const GRANS_PROJECT: ProjectData = {
         { label: "Maitre d’Ouvrage", value: "Ville de Grans" },
         { label: "Mission", value: "Mandataire MOP+OPC" },
         { label: "Surface", value: "162,40 m2 + 228 m2 aménagements extérieurs" },
-        { label: "Coût travaux", value: "278 00 € HT (maison) + 117 383 € HT (chemin piétonnier)" },
+        { label: "Coût travaux", value: "278 000 € HT (maison) + 117 383 € HT (chemin piétonnier)" },
         { label: "Année", value: "2018-2021" }
     ]
 };
