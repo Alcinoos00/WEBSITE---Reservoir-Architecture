@@ -40,7 +40,8 @@ export const VILLA_F_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa F/villaF_3.jpg",
         "/images/projects/1-villas/villa F/villaF_4.jpg",
         "/images/projects/1-villas/villa F/villaF_5.jpg",
-        "/images/projects/1-villas/villa F/villaF_6.jpg"
+        "/images/projects/1-villas/villa F/villaF_6.jpg",
+        "/images/projects/1-villas/villa F/villaF_7.jpg"
     ],
     subtitle: "CAISSARGUES (30)",
     title: "VILLA F",
