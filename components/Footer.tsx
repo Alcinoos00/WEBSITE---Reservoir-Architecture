@@ -1,7 +1,7 @@
 ﻿import "./footer.css";
 import Image from "next/image";
 import Link from "next/link";
-import { SITE_ADDRESS, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { FACEBOOK_URL, INSTAGRAM_URL, SITE_ADDRESS, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -21,6 +21,10 @@ export default function Footer() {
                     <p className="body-text footer-info"><a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a></p>
                     <p className="body-text footer-info"><a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a></p>
                     <p className="body-text footer-info">{SITE_ADDRESS}</p>
+                    <p className="body-text footer-info footer-social">
+                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Facebook</a>
+                    </p>
                 </div>
             </div>
 

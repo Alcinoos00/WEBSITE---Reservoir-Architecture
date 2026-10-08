@@ -92,3 +92,8 @@
         gap: 1rem;
     }
 }
+
+.footer-social {
+    display: flex;
+    gap: 1.5em;
+}
