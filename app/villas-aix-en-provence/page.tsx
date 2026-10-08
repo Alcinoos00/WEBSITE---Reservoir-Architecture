@@ -5,7 +5,7 @@ import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo"
 export const metadata: Metadata = {
     title: "Architecte villa contemporaine à Aix-en-Provence",
     description:
-        "Architecte DPLG à Aix-en-Provence, Reservoir Architecture conçoit votre villa contemporaine sur-mesure, du terrain au permis. Estimation sous 48h.",
+        "Architecte DPLG à Aix-en-Provence : Reservoir Architecture conçoit votre villa contemporaine ou maison d’architecte sur-mesure, du terrain au permis. Estimation sous 48h.",
     alternates: { canonical: `${SITE_URL}/villas-aix-en-provence` },
     openGraph: {
         title: "Architecte villa contemporaine à Aix-en-Provence - Reservoir Architecture",
@@ -149,6 +149,7 @@ const data: LandingData = {
         paragraphs: [
             "Notre agence est basée à Aix-en-Provence. Nous intervenons sur Aix et le Pays d’Aix, les Bouches-du-Rhône et l’ensemble de la région PACA.",
             "Cette proximité nous permet de visiter votre terrain, de rencontrer les services d’urbanisme et de suivre le chantier de près.",
+            "Villa contemporaine ou maison d’architecte : l’agence a conçu 10 maisons individuelles, de 140 à 401 m², en construction neuve comme en réhabilitation, à Aix-en-Provence, dans le Gard, l’Hérault et la Dordogne.",
         ],
         cta: "Parler de mon projet",
         ctaLoc: "local",
@@ -160,6 +161,9 @@ const data: LandingData = {
             { q: "Quels sont les honoraires d’un architecte ?", a: "Ils dépendent de la nature et de l’étendue de la mission. Nous vous adressons une proposition claire après un premier échange. Pour le budget global de votre projet, l’estimation sous 48h vous donne une première vision." },
             { q: "Comment fonctionne l’estimation en 48h ?", a: "Vous nous décrivez votre projet par téléphone ou email (terrain, surface, intentions). Nous revenons vers vous sous 48h avec une première estimation chiffrée." },
             { q: "Quels délais pour une villa contemporaine ?", a: "Ils dépendent de la complexité du projet et de l’instruction du permis. Nous vous communiquons un calendrier prévisionnel dès la phase de faisabilité." },
+            { q: "Qu’est-ce qu’une maison d’architecte ?", a: "Une maison conçue sur-mesure par un architecte pour un terrain, un programme et un budget précis, plutôt qu’un modèle de catalogue. Implantation, orientation, lumière et matériaux sont pensés pour le site." },
+            { q: "Avez-vous déjà réalisé une villa à Aix-en-Provence ?", a: "Oui : la Villa T, une maison de ville aixoise de 202 m² réhabilitée et prolongée d’extensions contemporaines, en mission complète, livrée en 2024." },
+            { q: "Quelles villas l’agence a-t-elle conçues ?", a: "10 maisons individuelles entre 2007 et 2025, de 140 à 401 m² : la Villa F (401 m², Caissargues), la Villa T (202 m², Aix-en-Provence), des villas à Nîmes, Langlade, Aimargues, Vérargues et Bergerac." },
             { q: "Intervenez-vous en rénovation et extension ?", a: "Oui : construction neuve, rénovation, extension et transformation de maisons existantes." },
             { q: "Je n’ai pas encore de terrain, pouvez-vous m’aider ?", a: "Oui. Nous vous accompagnons dans le choix de votre terrain et étudions son potentiel au regard de votre projet." },
         ],
