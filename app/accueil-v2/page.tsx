@@ -15,6 +15,7 @@ import {
 import { categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import V2Motion from "./V2Motion";
 import V2Nav from "./V2Nav";
+import HeroCategories from "./HeroCategories";
 import "./v2.css";
 
 // Version de travail de l'accueil, calquée sur la structure du template Teras
@@ -116,17 +117,14 @@ export default function AccueilV2() {
                         </p>
                     </div>
                 </div>
-                <div className="v2-hero-photo">
-                    <Image
-                        src={VILLA_F_PROJECT.heroImages[0]}
-                        alt="Villa F, villa contemporaine avec piscine conçue par Reservoir Architecture"
-                        fill
-                        priority
-                        fetchPriority="high"
-                        sizes="(max-width: 768px) 100vw, calc(100vw - 48px)"
-                        data-parallax
-                    />
-                </div>
+                <HeroCategories
+                    items={[
+                        { label: "Villas", href: "/villas", count: count("VILLAS"), img: VILLA_F_PROJECT.heroImages[0], alt: "Villa F, villa contemporaine avec piscine" },
+                        { label: "Logements", href: "/logements", count: count("LOGEMENTS"), img: SAMARITAINE_PROJECT.heroImages[0], alt: "Résidence Samaritaine, logements collectifs" },
+                        { label: "Commerces", href: "/commerces", count: count("COMMERCES"), img: PUYRICARD_PROJECT.heroImages[0], alt: "Esprit Bastide, commerces à Puyricard" },
+                        { label: "Équipements", href: "/equipements", count: count("ÉQUIPEMENTS"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
+                    ]}
+                />
             </section>
 
             {/* À propos */}
