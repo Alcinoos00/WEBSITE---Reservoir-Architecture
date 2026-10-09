@@ -384,10 +384,8 @@ body:has(.v2) .main-container { overflow-x: clip; }
 .v2-panel:focus-visible { outline: 2px solid var(--v2-ink); outline-offset: 3px; }
 
 @media (max-width: 768px) {
-    /* Même principe à la verticale : les panneaux restent collés à l'écran pendant
-       ~0,65 écran de défilement, et chaque quart agrandit la catégorie suivante. */
-    .v2-cats-scroll { height: 165svh; }
-    .v2-cats-panels { position: sticky; top: 12px; flex-direction: column; height: calc(100svh - 24px); gap: 6px; }
+    /* Même principe à la verticale : le panneau touché s'agrandit */
+    .v2-cats-panels { flex-direction: column; height: 72svh; gap: 6px; }
     .v2-panel { transition: flex-grow 0.6s var(--v2-ease); }
     .v2-panel.is-active { flex-grow: 3.6; }
     .v2-panel-label { left: 14px; right: 14px; bottom: 10px; }
