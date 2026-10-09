@@ -12,7 +12,8 @@ import {
     PUYRICARD_PROJECT,
     SAMARITAINE_PROJECT,
 } from "@/lib/projects";
-import { categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { ARCHIDVISOR_URL, categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { FAQ_ITEMS, LOCAL_PROJECTS } from "@/lib/homeContent";
 import V2Motion from "./V2Motion";
 import V2Nav from "./V2Nav";
 import HeroCategories from "./HeroCategories";
@@ -27,12 +28,6 @@ export const metadata: Metadata = {
 };
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--v2-font" });
-
-function sheet(project: ProjectData, label: string): string | null {
-    const value = project.techSheet?.find((t) => t.label.toLowerCase().startsWith(label.toLowerCase()))?.value;
-    if (!value || value === "N/A") return null;
-    return value.replace(/\bm2\b/g, "m²");
-}
 
 function projectHref(project: ProjectData) {
     return `/${categoryToPath(project.category)}/${project.slug}`;
@@ -56,42 +51,47 @@ function Letters({ text }: { text: string }) {
     );
 }
 
-const FEATURED: { project: ProjectData; img: string; kind: string; text: string }[] = [
-    {
-        project: VILLA_F_PROJECT,
-        img: VILLA_F_PROJECT.heroImages[1],
-        kind: "Villa contemporaine",
-        text: "Une villa organisée autour d'une cour-piscine. Béton clair, bois brûlé, lignes nettes : un haut de gamme sans ostentation.",
-    },
-    {
-        project: REGIE_DES_EAUX_PROJECT,
-        img: REGIE_DES_EAUX_PROJECT.heroImages[0],
-        kind: "Équipement public",
-        text: "D'anciens ateliers de la Régie des eaux d'Aix-en-Provence restructurés, agrandis et transformés en bureaux.",
-    },
-    {
-        project: PUYRICARD_PROJECT,
-        img: PUYRICARD_PROJECT.heroImages[0],
-        kind: "Commerces et services",
-        text: "Un ensemble de commerces autour d'un patio d'oliviers, qui réinterprète l'esprit des bastides à Puyricard.",
-    },
-    {
-        project: SAMARITAINE_PROJECT,
-        img: SAMARITAINE_PROJECT.heroImages[0],
-        kind: "Logements collectifs",
-        text: "Une résidence de 30 logements organisée autour d'un jardin patio. Béton teinté, loggias et claustras en bois qui filtrent la lumière.",
-    },
-];
+const pick = (...ids: string[]) => ids.map((id) => PROJECTS.find((p) => p.id === id)).filter((p): p is ProjectData => !!p);
 
 const DOMAINS = [
-    { label: "Villas et maisons", href: "/villas", category: "VILLAS" },
-    { label: "Logements collectifs", href: "/logements", category: "LOGEMENTS" },
-    { label: "Commerces et showrooms", href: "/commerces", category: "COMMERCES" },
-    { label: "Équipements publics", href: "/equipements", category: "ÉQUIPEMENTS" },
+    {
+        label: "Villas et maisons", eyebrow: "Villas et maisons d'architecte", href: "/villas", category: "VILLAS",
+        text: "Depuis Aix-en-Provence, Reservoir Architecture accompagne la conception, la rénovation et l'extension de villas contemporaines dans des contextes méditerranéens variés.",
+        examples: pick("villa-t", "villa-f", "villa-c"),
+    },
+    {
+        label: "Logements collectifs", eyebrow: "Logements collectifs et résidences", href: "/logements", category: "LOGEMENTS",
+        text: "Reservoir Architecture conçoit résidences et opérations de logements collectifs pour promoteurs, bailleurs et maîtres d'ouvrage, de l'étude de faisabilité à la livraison, en PACA et dans le Gard.",
+        examples: pick("samaritaine", "jacou", "vacquerolles"),
+    },
+    {
+        label: "Commerces et showrooms", eyebrow: "Commerces et lieux de marque", href: "/commerces", category: "COMMERCES",
+        text: "L'agence conçoit des espaces commerciaux, boutiques, showrooms et lieux de marque où l'architecture sert autant l'usage que la perception.",
+        examples: pick("puyricard", "wauquiez", "garons"),
+    },
+    {
+        label: "Équipements publics", eyebrow: "Équipements publics", href: "/equipements", category: "ÉQUIPEMENTS",
+        text: "Reservoir Architecture accompagne des collectivités et maîtres d'ouvrage publics sur des projets de réhabilitation, extension, transformation et construction d'équipements.",
+        examples: pick("regie-des-eaux", "salon-de-provence", "vitrolles"),
+    },
 ];
 
-const STATEMENT =
-    "Reservoir Architecture conçoit et suit des projets depuis Aix-en-Provence, du particulier à la collectivité. Une pratique large, une seule exigence : la justesse plutôt que la signature.";
+// Textes identiques à ceux de l'accueil en ligne (app/page.tsx), pour garder le même référencement.
+const INTRO =
+    "Implantée à Aix-en-Provence, Reservoir Architecture intervient dans le Pays d'Aix, les Bouches-du-Rhône et l'ensemble de la région PACA, auprès de particuliers, promoteurs, commerçants et collectivités. L'agence développe une architecture attentive au site, aux usages, au budget et à la durée de vie des bâtiments.";
+const AGENCY_PARAGRAPHS = [
+    "Le travail de l'agence couvre la conception de maisons et villas contemporaines, la rénovation, l'extension, les logements collectifs, les espaces commerciaux, les showrooms et les équipements publics. Cette diversité correspond à la réalité de l'agence : une pratique large, mais une même exigence de justesse constructive.",
+    "Chaque projet part d'un contexte précis : orientation, lumière, structure existante, contraintes réglementaires, économie de moyens, parcours et matérialité. L'objectif est de produire une réponse claire, durable et lisible, sans réduire l'architecture à un style répétitif.",
+    "L'agence est dirigée par Serge Ettore, architecte DPLG. Faire appel à un architecte à Aix-en-Provence, c'est s'assurer d'un interlocuteur unique et responsable, de la faisabilité au suivi de chantier, qui engage sa signature et son assurance sur la qualité du projet.",
+    "Pour une mission d'architecte à Aix-en-Provence ou en région Provence-Alpes-Côte d'Azur, le premier échange permet de qualifier le programme, le niveau d'accompagnement attendu et les conditions de faisabilité du projet.",
+];
+const YEAR = new Date().getFullYear();
+const FIGURES = [
+    { value: String(PROJECTS.length), label: "Projets présentés" },
+    { value: `${YEAR - 2013} ans`, label: "D'agence, depuis 2013" },
+    { value: `${YEAR - 1999} ans`, label: "Architecte DPLG, depuis 1999" },
+    { value: "4", label: "Domaines d'intervention" },
+];
 
 export default function AccueilV2() {
     const count = (category: string) => PROJECTS.filter((p) => p.category === category).length;
@@ -113,7 +113,7 @@ export default function AccueilV2() {
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small">
-                            Agence d&apos;architecture DPLG fondée en 2013. Villas, logements, commerces et équipements publics, pensés pour leur site, leurs usages et leur budget.
+                            Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                         </p>
                     </div>
                 </div>
@@ -127,18 +127,31 @@ export default function AccueilV2() {
                 />
             </section>
 
-            {/* À propos */}
+            {/* L'agence : mêmes textes que l'accueil actuel (référencement) */}
             <section className="v2-section v2-about">
                 <div className="v2-row">
-                    <h2 className="v2-h2 v2-fade" data-reveal>L&apos;agence</h2>
-                    <p className="v2-statement" data-scrub aria-label={STATEMENT}>
-                        <span aria-hidden="true"><Letters text={STATEMENT} /></span>
+                    <div className="v2-fade" data-reveal>
+                        <p className="v2-tag">Agence d&apos;architecture à Aix-en-Provence</p>
+                        <h2 className="v2-h2">L&apos;agence</h2>
+                    </div>
+                    <p className="v2-statement" data-scrub aria-label={INTRO}>
+                        <span aria-hidden="true"><Letters text={INTRO} /></span>
                     </p>
                 </div>
+                <dl className="v2-figures">
+                    {FIGURES.map((f) => (
+                        <div key={f.label} className="v2-fade" data-reveal>
+                            <dd>{f.value}</dd>
+                            <dt>{f.label}</dt>
+                        </div>
+                    ))}
+                </dl>
                 <div className="v2-about-body">
-                    <p className="v2-small v2-fade" data-reveal>
-                        L&apos;agence est dirigée par Serge Ettore, architecte DPLG depuis 1999, ancien responsable des projets d&apos;architecture de Cacharel. Chaque projet part d&apos;un contexte précis : orientation, lumière, structure existante, règles d&apos;urbanisme, économie de moyens.
-                    </p>
+                    <div className="v2-about-text v2-fade" data-reveal>
+                        {AGENCY_PARAGRAPHS.map((p) => (
+                            <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
+                        ))}
+                    </div>
                     <div className="v2-about-photo v2-fade" data-reveal>
                         <AfterLoad>
                             <Image
@@ -152,74 +165,124 @@ export default function AccueilV2() {
                 </div>
             </section>
 
-            {/* Projets empilés */}
-            <section className="v2-projects" aria-label="Projets">
-                {FEATURED.map(({ project, img, kind, text }, i) => {
-                    const facts = [sheet(project, "Lieu"), sheet(project, "Surface"), sheet(project, "Année")].filter(Boolean);
-                    return (
-                        <article className={`v2-card v2-card-${i % 2 ? "dark" : "light"}`} key={project.id}>
-                            <div className="v2-card-inner">
-                                <div className="v2-card-info">
-                                    <div>
-                                        <h3 className="v2-h3">{project.title}</h3>
-                                        <p className="v2-tag">{kind}</p>
-                                    </div>
-                                    <div className="v2-card-bottom">
-                                        <div className="v2-card-text">
-                                            <p className="v2-small">{text}</p>
-                                            {facts.length > 0 && <p className="v2-facts-line">{facts.join(" · ")}</p>}
-                                        </div>
-                                        <Link href={projectHref(project)} className="v2-btn">Voir le projet</Link>
-                                    </div>
-                                </div>
-                                <div className="v2-card-photo">
-                                    <AfterLoad>
-                                        <Image src={img} alt={`${project.title}, ${kind.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 100vw, 50vw" />
-                                    </AfterLoad>
-                                </div>
-                            </div>
-                        </article>
-                    );
-                })}
-            </section>
-
-            {/* Domaines */}
+            {/* Domaines : ce que fait l'agence, avec des exemples et le lien vers chaque catégorie */}
             <section className="v2-section">
                 <div className="v2-row">
-                    <h2 className="v2-h2 v2-fade" data-reveal>Domaines</h2>
+                    <h2 className="v2-h2 v2-fade" data-reveal>Ce que nous faisons</h2>
                     <p className="v2-small v2-fade" data-reveal>
-                        De la première esquisse à la réception du chantier, conception, permis et suivi des travaux forment un seul et même travail, avec un seul interlocuteur.
+                        Quatre domaines, une même méthode : de la faisabilité au suivi de chantier, un interlocuteur unique et responsable.
                     </p>
                 </div>
-                <ol className="v2-list">
+                <div className="v2-domains">
                     {DOMAINS.map((d, i) => (
-                        <li key={d.href} className="v2-fade" data-reveal>
-                            <Link href={d.href} className="v2-list-row">
-                                <span className="v2-list-num">{String(i + 1).padStart(2, "0")}</span>
-                                <span className="v2-list-label">{d.label}</span>
-                                <span className="v2-list-count">{count(d.category)} projets</span>
+                        <article className="v2-domain v2-fade" data-reveal key={d.href}>
+                            <div className="v2-domain-text">
+                                <p className="v2-list-num">{String(i + 1).padStart(2, "0")}</p>
+                                <div>
+                                    <p className="v2-tag">{d.eyebrow}</p>
+                                    <h3 className="v2-h3">{d.label}</h3>
+                                </div>
+                                <p className="v2-small">{d.text}</p>
+                                <p className="v2-facts-line">{count(d.category)} projets</p>
+                                <Link href={d.href} className="v2-btn">Voir toutes les réalisations</Link>
+                            </div>
+                            <ul className="v2-domain-examples">
+                                {d.examples.map((p) => (
+                                    <li key={p.id}>
+                                        <Link href={projectHref(p)}>
+                                            <span className="v2-domain-photo">
+                                                <AfterLoad>
+                                                    <Image src={p.heroImages[0]} alt={`${p.title}, ${d.label.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 45vw, 18vw" />
+                                                </AfterLoad>
+                                            </span>
+                                            <span className="v2-domain-caption">{p.title}</span>
+                                            <span className="v2-domain-place">{p.subtitle}</span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
+            </section>
+
+            {/* Réalisations locales : mêmes textes que l'accueil actuel */}
+            <section className="v2-section">
+                <div className="v2-row">
+                    <div className="v2-fade" data-reveal>
+                        <p className="v2-tag">Projets dans les Bouches-du-Rhône</p>
+                        <h2 className="v2-h2">Nos réalisations à Aix-en-Provence et alentours</h2>
+                    </div>
+                    <p className="v2-small v2-fade" data-reveal>
+                        Maison de ville, commerces, équipements publics : l&apos;agence conçoit des projets à Aix-en-Provence, Puyricard, Bouc-Bel-Air, Vitrolles et Salon-de-Provence, pour des particuliers comme pour les communes.
+                    </p>
+                </div>
+                <ul className="v2-local">
+                    {LOCAL_PROJECTS.map(({ project, place, summary }) => (
+                        <li key={project.id} className="v2-fade" data-reveal>
+                            <Link href={projectHref(project)} className="v2-local-item">
+                                <span className="v2-local-photo">
+                                    <AfterLoad>
+                                        <Image src={project.heroImages[0]} alt={`${project.title} à ${place}`} fill sizes="(max-width: 768px) 50vw, 16vw" />
+                                    </AfterLoad>
+                                </span>
+                                <span className="v2-label">{project.title}</span>
+                                <span className="v2-domain-place">{place} · {summary}</span>
                             </Link>
                         </li>
                     ))}
-                </ol>
+                </ul>
             </section>
 
-            {/* Citation */}
-            <section className="v2-section v2-quote">
-                <div className="v2-quote-head v2-fade" data-reveal>
-                    <div className="v2-quote-portrait">
+            {/* L'architecte et les avis Archidvisor (mêmes contenus que les landing pages) */}
+            <section className="v2-section">
+                <div className="v2-architect">
+                    <div className="v2-architect-photo v2-fade" data-reveal>
                         <AfterLoad>
-                            <Image src="/images/serge-ettore.webp" alt="Serge Ettore" fill sizes="64px" />
+                            <Image
+                                src="/images/serge-ettore.webp"
+                                alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 34vw"
+                            />
                         </AfterLoad>
                     </div>
-                    <div>
-                        <p className="v2-label">Serge Ettore</p>
-                        <p className="v2-tag">Architecte DPLG, fondateur</p>
+                    <div className="v2-architect-text v2-fade" data-reveal>
+                        <p className="v2-tag">L&apos;architecte</p>
+                        <h2 className="v2-h2">Serge Ettore</h2>
+                        <p className="v2-small">
+                            L&apos;agence est dirigée par Serge Ettore, architecte DPLG depuis 1999. D&apos;une double culture, architecturale et scénographique (projets pour la maison Cacharel, workshops internationaux), il aborde chaque projet comme une situation unique : un site, un programme, un budget, des usages réels. L&apos;objectif n&apos;est pas la signature, mais la justesse.
+                        </p>
+                        <div className="v2-reviews">
+                            <div className="v2-reviews-head">
+                                <Image src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} className="v2-reviews-logo" />
+                                <span className="v2-reviews-score">5,0<span>/5</span></span>
+                                <span className="v2-reviews-count">7 avis vérifiés</span>
+                            </div>
+                            <ul>
+                                <li><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite></li>
+                                <li><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite></li>
+                                <li><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite></li>
+                            </ul>
+                            <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Voir tous les avis</a>
+                        </div>
                     </div>
                 </div>
-                <blockquote className="v2-quote-text v2-fade" data-reveal>
-                    « L&apos;objectif n&apos;est pas la signature. Il est la justesse. »
-                </blockquote>
+            </section>
+
+            {/* FAQ : mêmes questions que l'accueil actuel */}
+            <section className="v2-section">
+                <div className="v2-row">
+                    <h2 className="v2-h2 v2-fade" data-reveal>Architecte à Aix-en-Provence : questions fréquentes</h2>
+                    <div className="v2-faq v2-fade" data-reveal>
+                        {FAQ_ITEMS.map((f) => (
+                            <details key={f.q}>
+                                <summary>{f.q}</summary>
+                                <p className="v2-small">{f.a}</p>
+                            </details>
+                        ))}
+                    </div>
+                </div>
             </section>
 
             {/* Contact */}
