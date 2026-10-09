@@ -152,16 +152,6 @@ export default function AccueilV2() {
                             <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
                         ))}
                     </div>
-                    <div className="v2-about-photo v2-fade" data-reveal>
-                        <AfterLoad>
-                            <Image
-                                src="/images/projects/1-villas/villa T/villaT_1.jpg"
-                                alt="Villa T, maison de ville rénovée à Aix-en-Provence"
-                                fill
-                                sizes="(max-width: 768px) 70vw, 24vw"
-                            />
-                        </AfterLoad>
-                    </div>
                 </div>
             </section>
 

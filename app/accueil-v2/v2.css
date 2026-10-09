@@ -482,3 +482,9 @@ body:has(.v2) .main-container { overflow-x: clip; }
 @media (max-width: 768px) {
     .v2-faq summary { font-size: 16px; padding: 18px 0; }
 }
+
+/* L'agence sans photo : les paragraphes sur deux colonnes */
+.v2-about .v2-about-body { display: block; margin-top: clamp(40px, 5vw, 72px); }
+.v2-about .v2-about-text { display: block; columns: 2; column-gap: 48px; }
+.v2-about .v2-about-text .v2-small { max-width: none; margin: 0 0 14px; break-inside: avoid; }
+@media (max-width: 768px) { .v2-about .v2-about-text { columns: 1; } }
