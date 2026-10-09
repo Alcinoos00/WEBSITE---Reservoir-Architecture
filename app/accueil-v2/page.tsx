@@ -273,7 +273,7 @@ export default function AccueilV2() {
             {/* FAQ : mêmes questions que l'accueil actuel */}
             <section className="v2-section">
                 <div className="v2-row">
-                    <h2 className="v2-h2 v2-fade" data-reveal>Architecte à Aix-en-Provence : questions fréquentes</h2>
+                    <h2 className="v2-h2 v2-fade" data-reveal>Architecte à <span className="v2-nowrap">Aix-en-Provence</span> : questions fréquentes</h2>
                     <div className="v2-faq v2-fade" data-reveal>
                         {FAQ_ITEMS.map((f) => (
                             <details key={f.q}>

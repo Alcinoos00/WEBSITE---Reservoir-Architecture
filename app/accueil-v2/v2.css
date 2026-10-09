@@ -454,3 +454,31 @@ body:has(.v2) .main-container { overflow-x: clip; }
     .v2-local { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .v2-architect { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------- FAQ ---------- */
+.v2-nowrap { white-space: nowrap; }
+.v2-faq { border-top: 1px solid var(--v2-line); }
+.v2-faq details { border-bottom: 1px solid var(--v2-line); }
+.v2-faq summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+    padding: 22px 0;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--v2-ink);
+}
+.v2-faq summary::-webkit-details-marker { display: none; }
+.v2-faq summary::marker { content: ""; }
+.v2-faq summary::after { content: "+"; flex: none; font-size: 22px; font-weight: 300; line-height: 1; transition: transform 0.3s var(--v2-ease); }
+.v2-faq details[open] summary::after { transform: rotate(45deg); }
+.v2-faq summary:hover { opacity: 0.7; }
+.v2-faq summary:focus-visible { outline: 1px solid var(--v2-ink); outline-offset: 4px; }
+.v2-faq details .v2-small { padding: 0 40px 24px 0; max-width: 64ch; }
+@media (max-width: 768px) {
+    .v2-faq summary { font-size: 16px; padding: 18px 0; }
+}
