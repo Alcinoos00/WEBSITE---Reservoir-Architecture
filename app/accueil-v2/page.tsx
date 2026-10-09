@@ -146,13 +146,6 @@ export default function AccueilV2() {
                         </div>
                     ))}
                 </dl>
-                <div className="v2-about-body">
-                    <div className="v2-about-text v2-fade" data-reveal>
-                        {AGENCY_PARAGRAPHS.map((p) => (
-                            <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
-                        ))}
-                    </div>
-                </div>
             </section>
 
             {/* Domaines : ce que fait l'agence, avec des exemples et le lien vers chaque catégorie */}
@@ -272,6 +265,15 @@ export default function AccueilV2() {
                             </details>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Texte de l'agence (repris de l'accueil actuel), placé en fin de page */}
+            <section className="v2-section v2-about v2-about-end">
+                <div className="v2-about-text v2-fade" data-reveal>
+                    {AGENCY_PARAGRAPHS.map((p) => (
+                        <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
+                    ))}
                 </div>
             </section>
 
