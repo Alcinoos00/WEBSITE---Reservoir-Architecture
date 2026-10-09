@@ -44,7 +44,7 @@ export default function V2Nav() {
         <>
             <header className={`v2-nav${hidden && !open ? " is-hidden" : ""}`}>
                 <Link href="/" className="v2-nav-logo" aria-label="Reservoir Architecture, accueil">
-                    <Image src="/images/ui/icon_dark.svg" alt="" width={28} height={28} />
+                    <Image src="/images/ui/logo-navbar.svg" alt="" width={335} height={74} className="v2-nav-logo-img" priority />
                 </Link>
                 <div className="v2-nav-right">
                     <Link href="/contact" className="v2-nav-link">Contact</Link>

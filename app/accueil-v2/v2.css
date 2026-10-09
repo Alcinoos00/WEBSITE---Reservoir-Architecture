@@ -5,6 +5,8 @@
 /* La page a sa propre barre et son propre pied de page */
 body:has(.v2) .navbar-container,
 body:has(.v2) .footer-container { display: none; }
+/* overflow-x: hidden sur .main-container empêche position: sticky ; clip coupe pareil sans créer de zone de défilement */
+body:has(.v2) .main-container { overflow-x: clip; }
 
 .v2 {
     --v2-bg: #fdfdfd;
@@ -89,6 +91,8 @@ body:has(.v2) .footer-container { display: none; }
 }
 .v2-nav.is-hidden { transform: translateY(-100%); }
 .v2-nav-logo { display: flex; }
+.v2-nav-logo-img { width: auto; height: 34px; }
+@media (max-width: 768px) { .v2-nav-logo-img { height: 26px; } }
 .v2-nav-right { display: flex; align-items: center; gap: 20px; }
 .v2-nav-link { font-size: 13px; font-weight: 500; text-transform: uppercase; color: var(--v2-ink); }
 .v2-burger {
@@ -380,8 +384,10 @@ body:has(.v2) .footer-container { display: none; }
 .v2-panel:focus-visible { outline: 2px solid var(--v2-ink); outline-offset: 3px; }
 
 @media (max-width: 768px) {
-    /* Même principe à la verticale : le panneau touché s'agrandit */
-    .v2-cats-panels { flex-direction: column; height: 72svh; gap: 6px; }
+    /* Même principe à la verticale : les panneaux restent collés à l'écran pendant
+       ~1,6 écran de défilement, et chaque quart agrandit la catégorie suivante. */
+    .v2-cats-scroll { height: 260svh; }
+    .v2-cats-panels { position: sticky; top: 12px; flex-direction: column; height: calc(100svh - 24px); gap: 6px; }
     .v2-panel { transition: flex-grow 0.6s var(--v2-ease); }
     .v2-panel.is-active { flex-grow: 3.6; }
     .v2-panel-label { left: 14px; right: 14px; bottom: 10px; }
