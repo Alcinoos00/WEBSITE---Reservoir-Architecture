@@ -634,3 +634,7 @@ body:has(.v2) .main-container { overflow-x: clip; }
 
 /* Panneaux du haut : pas de zoom sur la photo quand le panneau s'agrandit */
 .v2 .v2-panel img, .v2 .v2-panel.is-active img { transform: none; transition: none; }
+
+/* Fond blanc pur */
+.v2 { --v2-bg: #ffffff; }
+body:has(.v2) { background: #ffffff; }
