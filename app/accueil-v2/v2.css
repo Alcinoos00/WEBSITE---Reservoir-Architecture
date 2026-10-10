@@ -631,3 +631,6 @@ body:has(.v2) .main-container { overflow-x: clip; }
 .v2 .v2-hero-logo { display: none; }
 .v2[data-brand="4"] .v2-hero-logo { display: block; width: min(100%, 820px); height: auto; align-self: end; }
 .v2[data-brand="4"] .v2-wordmark { display: none; }
+
+/* Panneaux du haut : pas de zoom sur la photo quand le panneau s'agrandit */
+.v2 .v2-panel img, .v2 .v2-panel.is-active img { transform: none; transition: none; }
