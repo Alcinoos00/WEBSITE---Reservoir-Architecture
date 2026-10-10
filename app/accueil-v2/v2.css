@@ -488,3 +488,58 @@ body:has(.v2) .main-container { overflow-x: clip; }
 .v2-about .v2-about-text { display: block; columns: 2; column-gap: 48px; }
 .v2-about .v2-about-text .v2-small { max-width: none; margin: 0 0 14px; break-inside: avoid; }
 @media (max-width: 768px) { .v2-about .v2-about-text { columns: 1; } }
+
+/* =====================================================================
+   Échelle typographique unique (ratio ~1,25) : toutes les tailles de la page
+   viennent de ces 7 pas, rien d'autre.
+   ===================================================================== */
+.v2 {
+    --fs-xs: 12px;     /* étiquettes, légendes */
+    --fs-sm: 14px;     /* texte secondaire, boutons */
+    --fs-md: 16px;     /* texte courant */
+    --fs-lg: clamp(18px, 1.4vw, 20px);  /* chapô, questions FAQ */
+    --fs-xl: clamp(20px, 1.8vw, 26px);  /* titres de bloc (h3) */
+    --fs-2xl: clamp(26px, 2.6vw, 38px); /* titres de section (h2) */
+    --fs-3xl: clamp(30px, 4vw, 56px);   /* chiffres */
+}
+.v2-tag, .v2-facts-line, .v2-domain-place, .v2-reviews cite, .v2-figures dt { font-size: var(--fs-xs); }
+.v2-label, .v2-btn, .v2-nav-link, .v2-domain-caption, .v2-reviews-count { font-size: var(--fs-sm); }
+.v2-small, .v2 p.v2-small { font-size: var(--fs-md); }
+.v2-faq summary, .v2-reviews blockquote, .v2-cta-actions .v2-btn { font-size: var(--fs-lg); }
+.v2-h3 { font-size: var(--fs-xl); }
+.v2-h2, .v2-cta-title { font-size: var(--fs-2xl); }
+/* Le chapô de l'agence n'est plus un titre : taille « lg », en casse normale */
+.v2-statement { font-size: var(--fs-lg); line-height: 1.45; font-weight: 400; text-transform: none; letter-spacing: 0; max-width: 60ch; }
+.v2-cta-actions .v2-btn { font-size: var(--fs-sm); }
+
+/* Hero : le logo en grand à la place du mot */
+.v2-hero-logo { width: min(100%, 780px); height: auto; display: block; }
+.v2-hero-top { align-items: end; }
+
+/* Chiffres : compacts, sur une seule ligne même sur téléphone */
+.v2-figures { grid-template-columns: repeat(4, minmax(0, 1fr)) !important; gap: 12px; }
+.v2-figures dd { font-size: var(--fs-3xl); }
+.v2-figures dt { text-transform: uppercase; line-height: 1.25; }
+
+/* L'architecte : portrait réduit à côté du nom, texte et avis dessous */
+.v2-architect { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); align-items: start; }
+.v2-architect-head { display: grid; gap: 18px; align-content: start; }
+.v2-architect-head .v2-architect-photo { width: min(100%, 300px); aspect-ratio: 4 / 5; }
+.v2-architect-head .v2-h2 { margin: 4px 0; }
+
+/* Pied de page : logo d'origine, photo moins haute */
+.v2-footer-logo { width: 220px; height: auto; }
+.v2-footer-photo { height: clamp(180px, 32vh, 380px); }
+
+@media (max-width: 768px) {
+    .v2-hero-logo { width: 100%; }
+    .v2-figures { gap: 8px; }
+    .v2-figures > div { padding-top: 14px; gap: 4px; }
+    .v2-figures dd { font-size: 26px; letter-spacing: -0.03em; }
+    .v2-figures dt { font-size: 10px; }
+    .v2-architect { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .v2-architect-head { grid-template-columns: 112px minmax(0, 1fr); align-items: end; gap: 16px; }
+    .v2-architect-head .v2-architect-photo { width: 112px; }
+    .v2-footer-logo { width: 180px; }
+    .v2-footer-photo { height: 200px; }
+}

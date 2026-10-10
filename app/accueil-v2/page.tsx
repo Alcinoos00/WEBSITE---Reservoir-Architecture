@@ -13,7 +13,7 @@ import {
     SAMARITAINE_PROJECT,
 } from "@/lib/projects";
 import { ARCHIDVISOR_URL, categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
-import { FAQ_ITEMS, LOCAL_PROJECTS } from "@/lib/homeContent";
+import { FAQ_ITEMS } from "@/lib/homeContent";
 import V2Motion from "./V2Motion";
 import V2Nav from "./V2Nav";
 import HeroCategories from "./HeroCategories";
@@ -56,22 +56,18 @@ const pick = (...ids: string[]) => ids.map((id) => PROJECTS.find((p) => p.id ===
 const DOMAINS = [
     {
         label: "Villas et maisons", eyebrow: "Villas et maisons d'architecte", href: "/villas", category: "VILLAS",
-        text: "Depuis Aix-en-Provence, Reservoir Architecture accompagne la conception, la rénovation et l'extension de villas contemporaines dans des contextes méditerranéens variés.",
         examples: pick("villa-t", "villa-f", "villa-c"),
     },
     {
         label: "Logements collectifs", eyebrow: "Logements collectifs et résidences", href: "/logements", category: "LOGEMENTS",
-        text: "Reservoir Architecture conçoit résidences et opérations de logements collectifs pour promoteurs, bailleurs et maîtres d'ouvrage, de l'étude de faisabilité à la livraison, en PACA et dans le Gard.",
         examples: pick("samaritaine", "jacou", "vacquerolles"),
     },
     {
         label: "Commerces et showrooms", eyebrow: "Commerces et lieux de marque", href: "/commerces", category: "COMMERCES",
-        text: "L'agence conçoit des espaces commerciaux, boutiques, showrooms et lieux de marque où l'architecture sert autant l'usage que la perception.",
         examples: pick("puyricard", "wauquiez", "garons"),
     },
     {
         label: "Équipements publics", eyebrow: "Équipements publics", href: "/equipements", category: "ÉQUIPEMENTS",
-        text: "Reservoir Architecture accompagne des collectivités et maîtres d'ouvrage publics sur des projets de réhabilitation, extension, transformation et construction d'équipements.",
         examples: pick("regie-des-eaux", "salon-de-provence", "vitrolles"),
     },
 ];
@@ -87,10 +83,10 @@ const AGENCY_PARAGRAPHS = [
 ];
 const YEAR = new Date().getFullYear();
 const FIGURES = [
-    { value: String(PROJECTS.length), label: "Projets présentés" },
-    { value: `${YEAR - 2013} ans`, label: "D'agence, depuis 2013" },
-    { value: `${YEAR - 1999} ans`, label: "Architecte DPLG, depuis 1999" },
-    { value: "4", label: "Domaines d'intervention" },
+    { value: String(PROJECTS.length), label: "Projets" },
+    { value: String(YEAR - 2013), label: "Ans d'agence" },
+    { value: String(YEAR - 1999), label: "Ans DPLG" },
+    { value: "4", label: "Domaines" },
 ];
 
 export default function AccueilV2() {
@@ -103,13 +99,15 @@ export default function AccueilV2() {
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
-                    <p className="v2-wordmark" aria-label="Reservoir" data-rise>
-                        {Array.from("RESERVOIR").map((ch, i) => (
-                            <span className="v2-rise" key={i}>
-                                <span style={{ ["--i" as string]: i }}>{ch}</span>
-                            </span>
-                        ))}
-                    </p>
+                    <Image
+                        src="/images/ui/logo-navbar.svg"
+                        alt="Reservoir Architecture"
+                        width={335}
+                        height={74}
+                        priority
+                        className="v2-hero-logo v2-fade"
+                        data-reveal
+                    />
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small">
@@ -165,7 +163,6 @@ export default function AccueilV2() {
                                     <p className="v2-tag">{d.eyebrow}</p>
                                     <h3 className="v2-h3">{d.label}</h3>
                                 </div>
-                                <p className="v2-small">{d.text}</p>
                                 <p className="v2-facts-line">{count(d.category)} projets</p>
                                 <Link href={d.href} className="v2-btn">Voir toutes les réalisations</Link>
                             </div>
@@ -189,50 +186,27 @@ export default function AccueilV2() {
                 </div>
             </section>
 
-            {/* Réalisations locales : mêmes textes que l'accueil actuel */}
-            <section className="v2-section">
-                <div className="v2-row">
-                    <div className="v2-fade" data-reveal>
-                        <p className="v2-tag">Projets dans les Bouches-du-Rhône</p>
-                        <h2 className="v2-h2">Nos réalisations à Aix-en-Provence et alentours</h2>
-                    </div>
-                    <p className="v2-small v2-fade" data-reveal>
-                        Maison de ville, commerces, équipements publics : l&apos;agence conçoit des projets à Aix-en-Provence, Puyricard, Bouc-Bel-Air, Vitrolles et Salon-de-Provence, pour des particuliers comme pour les communes.
-                    </p>
-                </div>
-                <ul className="v2-local">
-                    {LOCAL_PROJECTS.map(({ project, place, summary }) => (
-                        <li key={project.id} className="v2-fade" data-reveal>
-                            <Link href={projectHref(project)} className="v2-local-item">
-                                <span className="v2-local-photo">
-                                    <AfterLoad>
-                                        <Image src={project.heroImages[0]} alt={`${project.title} à ${place}`} fill sizes="(max-width: 768px) 50vw, 16vw" />
-                                    </AfterLoad>
-                                </span>
-                                <span className="v2-label">{project.title}</span>
-                                <span className="v2-domain-place">{place} · {summary}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </section>
-
             {/* L'architecte et les avis Archidvisor (mêmes contenus que les landing pages) */}
             <section className="v2-section">
                 <div className="v2-architect">
-                    <div className="v2-architect-photo v2-fade" data-reveal>
-                        <AfterLoad>
-                            <Image
-                                src="/images/serge-ettore.webp"
-                                alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
-                                fill
-                                sizes="(max-width: 768px) 100vw, 34vw"
-                            />
-                        </AfterLoad>
+                    <div className="v2-architect-head v2-fade" data-reveal>
+                        <div className="v2-architect-photo">
+                            <AfterLoad>
+                                <Image
+                                    src="/images/serge-ettore.webp"
+                                    alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
+                                    fill
+                                    sizes="(max-width: 768px) 120px, 220px"
+                                />
+                            </AfterLoad>
+                        </div>
+                        <div>
+                            <p className="v2-tag">L&apos;architecte</p>
+                            <h2 className="v2-h2">Serge Ettore</h2>
+                            <p className="v2-tag">Architecte DPLG, fondateur</p>
+                        </div>
                     </div>
                     <div className="v2-architect-text v2-fade" data-reveal>
-                        <p className="v2-tag">L&apos;architecte</p>
-                        <h2 className="v2-h2">Serge Ettore</h2>
                         <p className="v2-small">
                             L&apos;agence est dirigée par Serge Ettore, architecte DPLG depuis 1999. D&apos;une double culture, architecturale et scénographique (projets pour la maison Cacharel, workshops internationaux), il aborde chaque projet comme une situation unique : un site, un programme, un budget, des usages réels. L&apos;objectif n&apos;est pas la signature, mais la justesse.
                         </p>
@@ -299,7 +273,7 @@ export default function AccueilV2() {
             {/* Pied de page */}
             <footer className="v2-footer">
                 <div className="v2-footer-top">
-                    <Image src="/images/ui/icon_dark.svg" alt="Reservoir Architecture" width={64} height={64} className="v2-footer-icon" />
+                    <Image src="/images/ui/logo-navbar.svg" alt="Reservoir Architecture" width={335} height={74} className="v2-footer-logo" />
                     <div className="v2-footer-col">
                         <p className="v2-label">Découvrir</p>
                         <Link href="/villas">Villas</Link>
