@@ -218,9 +218,9 @@ export default function AccueilV2() {
                                 <span className="v2-reviews-count">7 avis vérifiés</span>
                             </div>
                             <ul>
-                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite></li>
-                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite></li>
-                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite></li>
+                                <li><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
+                                <li><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
+                                <li><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
                             </ul>
                             <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Voir tous les avis</a>
                         </div>

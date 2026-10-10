@@ -577,3 +577,7 @@ body:has(.v2) .main-container { overflow-x: clip; }
 /* Étoiles des avis, en noir (pas de couleur d'accent sur le site) */
 .v2-stars { display: block; font-size: 15px; letter-spacing: 2px; color: var(--v2-ink); line-height: 1; margin-bottom: 6px; }
 .v2-reviews-head .v2-stars { display: inline-block; margin: 0; font-size: 18px; }
+
+/* Étoiles aux couleurs d'Archidvisor (cuivre de leur logo), sous chaque avis */
+.v2-stars { color: #c55c47; margin: 6px 0 0; }
+.v2-reviews-head .v2-stars { color: #c55c47; }
