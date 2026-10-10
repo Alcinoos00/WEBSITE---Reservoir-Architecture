@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope } from "next/font/google";
+import { Manrope, Roboto_Condensed } from "next/font/google";
 import AfterLoad from "@/components/AfterLoad";
 import type { ProjectData } from "@/types/project";
 import {
@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     title: { absolute: "Accueil v2 | Reservoir Architecture" },
     robots: { index: false, follow: false },
 };
+
+// Le grand « RESERVOIR » : Arial Nova Condensed si elle est installée chez le visiteur,
+// sinon Roboto Condensed, la police libre la plus proche (Arial Nova n'est pas hébergeable sans licence web).
+const condensed = Roboto_Condensed({ subsets: ["latin"], weight: ["400"], variable: "--v2-cond" });
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--v2-font" });
 
@@ -92,7 +96,7 @@ const FIGURES = [
 export default function AccueilV2() {
     const count = (category: string) => PROJECTS.filter((p) => p.category === category).length;
     return (
-        <div className={`v2 ${manrope.variable}`}>
+        <div className={`v2 ${manrope.variable} ${condensed.variable}`}>
             <V2Motion />
             <V2Nav />
 

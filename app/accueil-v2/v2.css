@@ -656,3 +656,15 @@ body:has(.v2) { background: #ffffff; }
         transform: translateY(-50%) !important;
     }
 }
+
+/* Grand « RESERVOIR » en Arial Nova Condensed (repli : Roboto Condensed).
+   Police plus étroite : la largeur du mot vaut au plus ~4,8 fois la taille. */
+.v2 .v2-wordmark {
+    font-family: "Arial Nova Cond", "Arial Nova Condensed", var(--v2-cond), "Arial Narrow", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-size: min(300px, calc((100vw - 2 * var(--v2-gutter) - var(--v2-side) - 32px) / 4.8));
+}
+@media (max-width: 768px) {
+    .v2 .v2-wordmark { font-size: calc((100vw - 2 * var(--v2-gutter)) / 4.8); }
+}
