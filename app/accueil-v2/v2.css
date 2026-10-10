@@ -638,3 +638,33 @@ body:has(.v2) .main-container { overflow-x: clip; }
 /* Fond blanc pur */
 .v2 { --v2-bg: #ffffff; }
 body:has(.v2) { background: #ffffff; }
+
+/* Grand « RESERVOIR » en Arial Nova Condensed (repli : Roboto Condensed).
+   Police plus étroite : la largeur du mot vaut ~3,9 fois la taille. */
+.v2 .v2-wordmark {
+    font-family: "Arial Nova Cond", "Arial Nova Condensed", var(--v2-cond), "Arial Narrow", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-size: min(300px, calc((100vw - 2 * var(--v2-gutter) - var(--v2-side) - 32px) / 3.9));
+}
+@media (max-width: 768px) {
+    .v2 .v2-wordmark { font-size: calc((100vw - 2 * var(--v2-gutter)) / 3.9); }
+}
+
+/* Panneaux du haut : la photo garde la taille du panneau agrandi et reste centrée.
+   Quand un panneau grandit, on découvre plus de photo au lieu de la zoomer. */
+.v2 .v2-panel img {
+    inset: 0 auto auto 50% !important;
+    width: calc((100vw - 2 * var(--v2-gutter) - 24px) * 3.2 / 6.2) !important;
+    height: 100% !important;
+    max-width: none;
+    transform: translateX(-50%) !important;
+}
+@media (max-width: 768px) {
+    .v2 .v2-panel img {
+        inset: 50% 0 auto 0 !important;
+        width: 100% !important;
+        height: calc((72svh - 18px) * 3.6 / 6.6) !important;
+        transform: translateY(-50%) !important;
+    }
+}
