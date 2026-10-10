@@ -99,15 +99,13 @@ export default function AccueilV2() {
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
-                    <Image
-                        src="/images/ui/logo-navbar.svg"
-                        alt="Reservoir Architecture"
-                        width={335}
-                        height={74}
-                        priority
-                        className="v2-hero-logo v2-fade"
-                        data-reveal
-                    />
+                    <p className="v2-wordmark" aria-label="Reservoir" data-rise>
+                        {Array.from("RESERVOIR").map((ch, i) => (
+                            <span className="v2-rise" key={i}>
+                                <span style={{ ["--i" as string]: i }}>{ch}</span>
+                            </span>
+                        ))}
+                    </p>
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small">
