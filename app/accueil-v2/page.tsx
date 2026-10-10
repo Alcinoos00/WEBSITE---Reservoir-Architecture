@@ -214,12 +214,13 @@ export default function AccueilV2() {
                             <div className="v2-reviews-head">
                                 <Image src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} className="v2-reviews-logo" />
                                 <span className="v2-reviews-score">5,0<span>/5</span></span>
+                                <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
                                 <span className="v2-reviews-count">7 avis vérifiés</span>
                             </div>
                             <ul>
-                                <li><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite></li>
-                                <li><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite></li>
-                                <li><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite></li>
+                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite></li>
+                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite></li>
+                                <li><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite></li>
                             </ul>
                             <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Voir tous les avis</a>
                         </div>
