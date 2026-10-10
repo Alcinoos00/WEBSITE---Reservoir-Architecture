@@ -164,7 +164,6 @@ export default function AccueilV2() {
                                     <h3 className="v2-h3">{d.label}</h3>
                                 </div>
                                 <p className="v2-facts-line">{count(d.category)} projets</p>
-                                <Link href={d.href} className="v2-btn">Voir toutes les réalisations</Link>
                             </div>
                             <ul className="v2-domain-examples">
                                 {d.examples.map((p) => (
@@ -181,6 +180,7 @@ export default function AccueilV2() {
                                     </li>
                                 ))}
                             </ul>
+                            <Link href={d.href} className="v2-btn v2-domain-btn">Voir toutes les réalisations</Link>
                         </article>
                     ))}
                 </div>
@@ -296,12 +296,7 @@ export default function AccueilV2() {
                         <a href="https://www.facebook.com/reservoir.architecture/" target="_blank" rel="noopener noreferrer">Facebook</a>
                     </div>
                 </div>
-                <div className="v2-footer-photo">
-                    <AfterLoad>
-                        <Image src="/images/projects/1-villas/villa C/villaC_2.jpg" alt="" fill sizes="100vw" />
-                    </AfterLoad>
-                    <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence</p>
-                </div>
+                <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence</p>
             </footer>
         </div>
     );

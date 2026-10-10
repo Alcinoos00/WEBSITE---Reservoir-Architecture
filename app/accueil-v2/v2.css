@@ -543,3 +543,23 @@ body:has(.v2) .main-container { overflow-x: clip; }
     .v2-footer-logo { width: 180px; }
     .v2-footer-photo { height: 200px; }
 }
+
+/* Bouton « Voir toutes les réalisations » sous les exemples */
+.v2-domain { grid-template-areas: "text examples" ". btn"; }
+.v2-domain-text { grid-area: text; }
+.v2-domain-examples { grid-area: examples; }
+.v2-domain-btn { grid-area: btn; justify-self: start; }
+
+/* Chapô de l'agence de nouveau en capitales */
+.v2-statement { text-transform: uppercase; font-weight: 500; letter-spacing: -0.01em; line-height: 1.3; }
+
+/* Photo du bloc contact nettement moins haute */
+.v2-cta-photo { height: clamp(200px, 38vh, 420px); }
+
+/* Pied de page sans photo */
+.v2-footer-copy { position: static; margin: 0; padding-top: 20px; border-top: 1px solid var(--v2-line); color: var(--v2-muted); text-shadow: none; font-size: var(--fs-xs); }
+
+@media (max-width: 768px) {
+    .v2-domain { grid-template-areas: "text" "examples" "btn"; }
+    .v2-cta-photo { height: 220px; }
+}
