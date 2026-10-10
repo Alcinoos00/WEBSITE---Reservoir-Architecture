@@ -581,3 +581,7 @@ body:has(.v2) .main-container { overflow-x: clip; }
 /* Étoiles aux couleurs d'Archidvisor (cuivre de leur logo), sous chaque avis */
 .v2-stars { color: #c55c47; margin: 6px 0 0; }
 .v2-reviews-head .v2-stars { color: #c55c47; }
+
+/* Menu ouvert : liens centrés au milieu de l'écran */
+.v2-menu { align-items: center; justify-content: center; padding: 96px var(--v2-gutter); }
+.v2-menu ul { justify-items: center; text-align: center; }
