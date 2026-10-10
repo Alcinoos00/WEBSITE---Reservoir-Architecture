@@ -106,6 +106,14 @@ export default function AccueilV2() {
                             </span>
                         ))}
                     </p>
+                    <Image
+                        src="/images/ui/brand/logo-dark.svg"
+                        alt="Reservoir Architecture"
+                        width={391}
+                        height={86}
+                        priority
+                        className="v2-hero-logo"
+                    />
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small">

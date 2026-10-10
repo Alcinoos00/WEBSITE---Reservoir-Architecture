@@ -626,3 +626,8 @@ body:has(.v2) .main-container { overflow-x: clip; }
 .v2-switch span { margin-right: 6px; }
 .v2-switch button { width: 36px; height: 32px; border: 1px solid #555; background: transparent; color: #fff; cursor: pointer; font: inherit; }
 .v2-switch button[aria-pressed="true"] { background: #fff; color: var(--v2-ink); }
+
+/* Variante 4 : icône claire dans la barre + logo long en grand à la place du mot */
+.v2 .v2-hero-logo { display: none; }
+.v2[data-brand="4"] .v2-hero-logo { display: block; width: min(100%, 820px); height: auto; align-self: end; }
+.v2[data-brand="4"] .v2-wordmark { display: none; }
