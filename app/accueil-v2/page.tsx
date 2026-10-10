@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Manrope, Roboto_Condensed } from "next/font/google";
+import { Manrope } from "next/font/google";
 import AfterLoad from "@/components/AfterLoad";
 import type { ProjectData } from "@/types/project";
 import {
@@ -26,10 +26,6 @@ export const metadata: Metadata = {
     title: { absolute: "Accueil v2 | Reservoir Architecture" },
     robots: { index: false, follow: false },
 };
-
-// Le grand « RESERVOIR » : Arial Nova Condensed si elle est installée chez le visiteur,
-// sinon Roboto Condensed, la police libre la plus proche (Arial Nova n'est pas hébergeable sans licence web).
-const condensed = Roboto_Condensed({ subsets: ["latin"], weight: ["400"], variable: "--v2-cond" });
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--v2-font" });
 
@@ -96,20 +92,21 @@ const FIGURES = [
 export default function AccueilV2() {
     const count = (category: string) => PROJECTS.filter((p) => p.category === category).length;
     return (
-        <div className={`v2 ${manrope.variable} ${condensed.variable}`}>
+        <div className={`v2 ${manrope.variable}`}>
             <V2Motion />
             <V2Nav />
 
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
-                    <p className="v2-wordmark" aria-label="Reservoir" data-rise>
-                        {Array.from("RESERVOIR").map((ch, i) => (
-                            <span className="v2-rise" key={i}>
-                                <span style={{ ["--i" as string]: i }}>{ch}</span>
-                            </span>
-                        ))}
-                    </p>
+                    <Image
+                        src="/images/ui/brand/wordmark.svg"
+                        alt="Reservoir"
+                        width={930}
+                        height={151}
+                        priority
+                        className="v2-wordmark-img"
+                    />
                     <Image
                         src="/images/ui/brand/logo-dark.svg"
                         alt="Reservoir Architecture"
