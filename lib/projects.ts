@@ -36,8 +36,8 @@ export const VILLA_F_PROJECT: ProjectData = {
     category: "VILLAS",
     heroImages: [
         "/images/projects/1-villas/villa F/villaF_1.jpg",
-        "/images/projects/1-villas/villa F/villaF_2.jpg",
         "/images/projects/1-villas/villa F/villaF_3.jpg",
+        "/images/projects/1-villas/villa F/villaF_2.jpg",
         "/images/projects/1-villas/villa F/villaF_4.jpg",
         "/images/projects/1-villas/villa F/villaF_5.jpg",
         "/images/projects/1-villas/villa F/villaF_6.jpg",
