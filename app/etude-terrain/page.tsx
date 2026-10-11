@@ -57,7 +57,12 @@ const DOCS_USEFUL = [
 ];
 
 const STEPS = [
-    { title: "Commande et paiement.", text: `Vous réglez l’étude en ligne (${PRICE}).` },
+    {
+        title: "Commande et paiement.",
+        text: ETUDE_TERRAIN_PAYMENT_URL
+            ? `Vous réglez l’étude en ligne (${PRICE}).`
+            : `Vous commandez l’étude par email, nous vous envoyons le moyen de paiement (${PRICE}).`,
+    },
     { title: "Envoi des documents.", text: `Vous nous envoyez vos documents et vos photos par email à ${SITE_EMAIL}.` },
     { title: "Analyse.", text: "Nous étudions le PLU, le cadastre, les risques et les servitudes à partir de vos documents et des sources publiques." },
     { title: "Rapport.", text: "Vous recevez un rapport écrit en PDF, sous 10 jours ouvrés après réception du dossier complet, et nous pouvons en parler par téléphone." },
