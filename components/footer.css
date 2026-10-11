@@ -72,6 +72,14 @@
 
 .footer-copyright {
     color: #a0a0a0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    align-items: center;
+}
+
+.footer-copyright p {
+    margin: 0;
 }
 
 @media (max-width: 1024px) {
