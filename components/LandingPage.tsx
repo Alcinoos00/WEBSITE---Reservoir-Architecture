@@ -40,6 +40,7 @@ export type LandingData = {
         steps: Step[];
         cta: string;
         ctaLoc: string;
+        secondaryCta?: { label: string; href: string };
     };
     local: {
         img: string;
@@ -311,6 +312,11 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         <a className="lp-btn lp-btn--solid" href={TEL} data-cta="appel" data-loc={data.reassurance.ctaLoc}>
                             {data.reassurance.cta} <ArrowIcon />
                         </a>
+                        {data.reassurance.secondaryCta && (
+                            <a className="lp-btn lp-btn--ghost" href={data.reassurance.secondaryCta.href}>
+                                {data.reassurance.secondaryCta.label} <ArrowIcon />
+                            </a>
+                        )}
                     </div>
                 </div>
             </section>

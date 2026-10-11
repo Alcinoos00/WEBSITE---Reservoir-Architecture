@@ -20,6 +20,9 @@ export const ARCHIDVISOR_URL =
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const SITE_FOUNDED = "2013";
+// Lien de paiement (ex. Stripe Payment Link) pour l’étude de terrain à 250 € TTC.
+// Tant qu’il est vide, la page /etude-terrain propose de commander par email.
+export const ETUDE_TERRAIN_PAYMENT_URL = "";
 export const SITE_FOUNDER = "Serge Ettore";
 export const SITE_FOUNDER_TITLE = "Architecte DPLG";
 export const SITE_DEFAULT_IMAGE = `${SITE_URL}/images/projects/1-villas/villa%20F/villaF_1.jpg`;

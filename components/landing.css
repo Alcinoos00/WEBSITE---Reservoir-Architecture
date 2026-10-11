@@ -376,6 +376,8 @@
 
 .lp-center-cta {
     display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     justify-content: center;
     margin-top: 3.5rem;
 }

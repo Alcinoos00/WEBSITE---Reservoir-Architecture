@@ -1,0 +1,125 @@
+/* Page offre « Étude de terrain avant achat ». Réutilise les variables et classes .lp-. */
+
+.et-hero-price {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0 0 1.75rem;
+}
+
+.et-offer {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: start;
+}
+
+.et-gap {
+    margin-top: 3rem;
+}
+
+.et-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.et-list li {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    gap: 0.85rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+}
+
+.et-list svg {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.15rem;
+}
+
+.et-list--out li {
+    color: var(--lp-muted);
+}
+
+.et-card {
+    position: sticky;
+    top: 6rem;
+    border: 1px solid var(--lp-line);
+    background: var(--lp-cream);
+    padding: 2.25rem 2rem;
+}
+
+.et-card-price {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.et-card-note {
+    color: var(--lp-muted);
+    font-size: 0.8125rem;
+    margin: 0.5rem 0 1.5rem;
+}
+
+.et-card-points {
+    margin: 0 0 1.75rem;
+    padding: 0 0 0 1.1rem;
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.et-card .lp-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.et-card-small {
+    color: var(--lp-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin: 1rem 0 0;
+    overflow-wrap: anywhere;
+}
+
+.et-docs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 4rem;
+}
+
+.et-h {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    margin: 0 0 1.25rem;
+}
+
+.et-steps {
+    max-width: 44rem;
+}
+
+.et-legal {
+    max-width: 52rem;
+    margin: 3.5rem auto 0;
+    color: var(--lp-muted);
+    font-size: 0.75rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .et-offer,
+    .et-docs {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .et-card {
+        position: static;
+    }
+}

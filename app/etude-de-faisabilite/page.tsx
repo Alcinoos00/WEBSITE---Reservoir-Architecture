@@ -6,12 +6,12 @@ export const metadata: Metadata = {
     title: "Étude de faisabilité et étude capacitaire : investisseurs, entreprises, particuliers",
     description:
         "Architecte DPLG à Aix-en-Provence : études de faisabilité et capacitaires pour investisseurs, projets commerciaux et d’activité en ZAC, et particuliers avant l’achat d’un terrain.",
-    alternates: { canonical: `${SITE_URL}/investisseurs` },
+    alternates: { canonical: `${SITE_URL}/etude-de-faisabilite` },
     openGraph: {
         title: "Étude de faisabilité et étude capacitaire - Reservoir Architecture",
         description:
             "Connaître le potentiel d’un terrain ou d’un bâtiment avant d’acheter ou d’investir, en Provence et dans le Gard.",
-        url: `${SITE_URL}/investisseurs`,
+        url: `${SITE_URL}/etude-de-faisabilite`,
         type: "website",
         images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
     },
@@ -30,7 +30,7 @@ const data: LandingData = {
     },
     realisations: {
         eyebrow: "Des projets qui partent d’une étude",
-        lead: "Logements sur une parcelle de centre-ville, ensemble commercial, extension d’un supermarché, maison sur un terrain contraint : chaque projet a commencé par la même question, que permet ce site ?",
+        lead: "Logements sur une parcelle de centre-ville, ensemble commercial, extension d’un supermarché, entrepôt d’activité, maison sur un terrain contraint : chaque projet a commencé par la même question, que permet ce site ?",
         projects: [
             {
                 title: "Le Guillot",
@@ -81,6 +81,18 @@ const data: LandingData = {
                 ],
                 cta: "Étudier mon projet commercial",
                 loc: "inv_card_superu",
+            },
+            {
+                title: "Entrepôt Ferrigno",
+                img: "/images/projects/4-equipements/ferrigno/ferrigno_1.jpg",
+                alt: "Entrepôt de stockage et conserverie à Port-Saint-Louis-du-Rhône par Reservoir Architecture",
+                desc: "Entrepôt de stockage et conserverie dans le delta du Rhône : un bâtiment d’activité implanté dans un site naturel sensible.",
+                specs: [
+                    { icon: "surface", label: "3 000 m²" },
+                    { icon: "mission", label: "ESQ à DPC" },
+                ],
+                cta: "Étudier mon projet d’activité",
+                loc: "inv_card_ferrigno",
             },
             {
                 title: "Villa T",
@@ -136,6 +148,7 @@ const data: LandingData = {
         ],
         cta: "Faire étudier mon projet",
         ctaLoc: "inv_reassurance",
+        secondaryCta: { label: "Particulier : étude de terrain à 250 € TTC", href: "/etude-terrain" },
     },
     local: {
         img: "/images/projects/3-commerces/puyricard/puyricard_2.jpg",
@@ -155,7 +168,7 @@ const data: LandingData = {
             { q: "Pouvez-vous étudier un terrain ou un bien avant que je l’achète ?", a: "Oui, c’est le meilleur moment. L’étude vous indique ce que le site permet réellement avant de signer, voire avant de faire une offre." },
             { q: "Qu’est-ce qu’une étude capacitaire ?", a: "C’est l’étude de ce qu’un terrain ou un bâtiment peut accueillir : surface de plancher, nombre de logements ou de locaux, implantation et stationnement, selon les règles d’urbanisme." },
             { q: "Intervenez-vous pour des projets commerciaux ou industriels en ZAC ?", a: "Oui. Nous étudions les projets de commerces, de locaux d’activité et d’entrepôts, en tenant compte du PLU et, en ZAC, du cahier des charges et des prescriptions de la zone." },
-            { q: "Particulier, j’hésite à acheter un terrain. Que vérifiez-vous ?", a: "La zone du PLU et ce qu’elle autorise, la surface constructible, les reculs et hauteurs, les risques (inondation, incendie), les servitudes, les accès et les réseaux." },
+            { q: "Particulier, j’hésite à acheter un terrain. Que vérifiez-vous ?", a: "La zone du PLU et ce qu’elle autorise, la surface constructible, les reculs et hauteurs, les risques (inondation, incendie), les servitudes, les accès et les réseaux. Nous proposons pour cela une étude de terrain à prix fixe, 250 € TTC, sans visite sur place." },
             { q: "Peut-on diviser une maison ou un immeuble en plusieurs logements ?", a: "Souvent, mais cela dépend du PLU, du stationnement exigé, de la structure et des réseaux. Nous vérifions ces points au cas par cas." },
             { q: "Faut-il obligatoirement un architecte ?", a: "Pour un particulier, oui dès que le projet soumis à permis de construire dépasse 150 m² de surface de plancher. Si vous investissez via une société, comme une SCI, l’architecte est obligatoire pour tout permis de construire, quelle que soit la surface." },
             { q: "Quels sont vos honoraires ?", a: "Ils dépendent du site et du niveau d’étude. Nous vous remettons une proposition après un premier échange." },
@@ -172,6 +185,6 @@ const data: LandingData = {
     },
 };
 
-export default function InvestisseursPage() {
+export default function EtudeFaisabilitePage() {
     return <LandingPage data={data} />;
 }
