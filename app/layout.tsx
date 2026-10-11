@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
 import GtagLoader from "@/components/GtagLoader";
+import CookieBanner from "@/components/CookieBanner";
 import { LeadTracking } from "@/components/LeadButtons";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -101,6 +102,7 @@ export default function RootLayout({
           <div className="content-wrapper">{children}</div>
           <Footer />
         </div>
+        <CookieBanner />
       </body>
     </html>
   );

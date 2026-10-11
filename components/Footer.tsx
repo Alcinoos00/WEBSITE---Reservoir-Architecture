@@ -1,6 +1,7 @@
 ﻿import "./footer.css";
 import Image from "next/image";
 import Link from "next/link";
+import { CookieSettingsLink } from "./CookieBanner";
 import { FACEBOOK_URL, INSTAGRAM_URL, SITE_ADDRESS, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 
 export default function Footer() {
@@ -44,6 +45,7 @@ export default function Footer() {
                     <Link href="/villas-nice" className="footer-link-small">Villa Nice</Link>
                     <Link href="/etude-de-faisabilite" className="footer-link-small">Étude de faisabilité</Link>
                     <Link href="/etude-terrain" className="footer-link-small">Étude de terrain</Link>
+                    <CookieSettingsLink className="footer-link-small" />
                 </div>
                 <div className="footer-copyright">
                     <p className="footer-link-small">© {currentYear} Reservoir Architecture</p>

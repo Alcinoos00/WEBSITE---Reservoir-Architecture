@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { onConsentGranted, readConsent } from "@/lib/consent";
 
 // Librairie GA4 (190 Ko) injectée au premier de ces trois moments :
 // - premier geste du visiteur (toucher, clic, clavier, défilement) : une conversion
@@ -9,10 +10,22 @@ import { useEffect } from "react";
 // - 3 secondes au plus tard.
 // Elle ne concurrence donc plus la photo principale pendant l'affichage, sans perdre les
 // page_view des visiteurs qui restent quelques secondes.
+// Rien n'est chargé tant que le visiteur n'a pas accepté les cookies ; s'il accepte en
+// cours de visite, la librairie est injectée aussitôt.
 const INTERACTIONS = ["pointerdown", "keydown", "touchstart", "scroll"] as const;
 
 export default function GtagLoader({ id }: { id: string }) {
   useEffect(() => {
+    if (readConsent() !== "granted") {
+      return onConsentGranted(() => {
+        if (document.getElementById("gtag-js")) return;
+        const script = document.createElement("script");
+        script.id = "gtag-js";
+        script.async = true;
+        script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+        document.head.appendChild(script);
+      });
+    }
     let done = false;
     const inject = () => {
       if (done) return;
