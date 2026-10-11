@@ -29,6 +29,7 @@ const INCLUDED = [
     "Règles de construction : emprise au sol, hauteur, reculs par rapport aux voies et aux voisins, espaces verts, stationnement",
     "Estimation de la surface constructible et du nombre de logements possible (maison ou petits logements)",
     "Si une construction existe déjà : possibilités d’extension, de surélévation ou d’annexes (garage, abri, pool house, piscine), et surface encore disponible",
+    "Si une construction existe déjà : comparaison entre ce qui est construit et les autorisations obtenues, pour repérer d’éventuels travaux non déclarés",
     "Servitudes et protections : périmètre de monument historique, orientations d’aménagement, emplacements réservés",
     "Risques connus : inondation, feux de forêt, retrait-gonflement des argiles, mouvements de terrain",
     "Accès, réseaux et assainissement, d’après les documents disponibles",
@@ -67,13 +68,13 @@ const STEPS = [
     },
     { title: "Envoi des documents.", text: `Vous nous envoyez vos documents et vos photos par email à ${SITE_EMAIL}.` },
     { title: "Analyse.", text: "Nous étudions le PLU, le cadastre, les risques et les servitudes à partir de vos documents et des sources publiques." },
-    { title: "Rapport.", text: "Vous recevez un rapport écrit en PDF, sous 10 jours ouvrés après réception du dossier complet, et nous pouvons en parler par téléphone." },
+    { title: "Rapport.", text: "Vous recevez un rapport écrit en PDF, sous 15 jours ouvrés après réception du dossier complet, et nous pouvons en parler par téléphone." },
 ];
 
 const FAQ = [
     { q: "Pourquoi faire cette étude avant de signer ?", a: "Une fois le terrain acheté, il est trop tard pour découvrir qu’on ne peut pas y construire la maison ou le nombre de logements prévu. L’étude vous aide à négocier ou à prévoir les bonnes conditions suspensives." },
     { q: "Est-ce que l’étude garantit l’obtention du permis de construire ?", a: "Non. Elle donne une analyse sérieuse des règles applicables à la date de l’étude, mais seule la mairie délivre le permis. Nous vous conseillons aussi de demander un certificat d’urbanisme opérationnel." },
-    { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU, reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : si l’agrandissement porte la surface de plancher totale au-delà de 150 m², le recours à un architecte devient obligatoire pour le permis." },
+    { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU, reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : un particulier doit faire appel à un architecte si l’agrandissement exige un permis de construire et porte la surface de plancher totale au-delà de 150 m². Une simple déclaration préalable ne l’impose pas." },
     { q: "Pourquoi n’y a-t-il pas de visite ?", a: "Pour garder un prix accessible. Les photos, le cadastre et les documents d’urbanisme suffisent pour l’essentiel. Si une visite ou une esquisse est utile ensuite, nous vous ferons une proposition." },
     { q: "Et si je décide ensuite de construire avec vous ?", a: "Nous pouvons poursuivre avec la conception et le permis de construire. Une proposition d’honoraires vous sera alors remise." },
     { q: "Où intervenez-vous ?", a: "En Provence et dans le Gard. L’étude se faisant à distance, contactez-nous pour un terrain situé ailleurs en France." },
@@ -161,11 +162,11 @@ export default function EtudeTerrainPage() {
                     <aside className="et-card" aria-label="Tarif de l’étude">
                         <p className="lp-eyebrow">Étude de terrain avant achat</p>
                         <p className="et-card-price">{PRICE}</p>
-                        <p className="et-card-note">Prix fixe, payé à la commande</p>
+                        <p className="et-card-note">Soit 208,33 € HT + TVA 20 %. Prix fixe, payé à la commande</p>
                         <ul className="et-card-points">
                             <li>Analyse du PLU et de la constructibilité</li>
                             <li>Sur photos, cadastre et documents publics</li>
-                            <li>Rapport écrit en PDF</li>
+                            <li>Rapport écrit en PDF sous 15 jours ouvrés</li>
                             <li>Maison, petits logements, extension ou annexes</li>
                         </ul>
                         <OrderButton loc="et_card" />

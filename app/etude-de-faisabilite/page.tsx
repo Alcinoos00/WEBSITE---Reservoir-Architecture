@@ -95,18 +95,6 @@ const data: LandingData = {
                 loc: "inv_card_ferrigno",
             },
             {
-                title: "Villa T",
-                img: "/images/projects/1-villas/villa T/villaT_1.jpg",
-                alt: "Rénovation de la maison de ville Villa T à Aix-en-Provence par Reservoir Architecture",
-                desc: "Rénovation complète d’une maison de ville à Aix-en-Provence, de la conception à la réception du chantier.",
-                specs: [
-                    { icon: "surface", label: "202 m²" },
-                    { icon: "mission", label: "Mission complète" },
-                ],
-                cta: "Échanger avec l’agence",
-                loc: "inv_card_villa_t",
-            },
-            {
                 title: "Villa P2",
                 img: "/images/projects/1-villas/villa P2/villaD_1.jpg",
                 alt: "Villa contemporaine sur un terrain en pente et inondable à Nîmes par Reservoir Architecture",
