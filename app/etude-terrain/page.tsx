@@ -11,9 +11,9 @@ const ORDER_MAILTO = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent("Command
 )}`;
 
 export const metadata: Metadata = {
-    title: "Étude de terrain avant achat : PLU et constructibilité, 250 € TTC",
+    title: "Étude de terrain avant achat : PLU, constructibilité, extension, 250 € TTC",
     description:
-        "Avant d’acheter un terrain pour faire construire une maison ou de petits logements, un architecte DPLG analyse le PLU, les risques et la constructibilité. 250 € TTC, sans visite.",
+        "Avant d’acheter un terrain ou une maison, un architecte DPLG analyse le PLU, les risques et ce que vous pourrez construire : maison, petits logements, extension ou annexes. 250 € TTC, sans visite.",
     alternates: { canonical: `${SITE_URL}/etude-terrain` },
     openGraph: {
         title: "Étude de terrain avant achat - Reservoir Architecture",
@@ -28,6 +28,7 @@ const INCLUDED = [
     "Zone du PLU et règlement applicable : ce qui est autorisé ou interdit sur le terrain",
     "Règles de construction : emprise au sol, hauteur, reculs par rapport aux voies et aux voisins, espaces verts, stationnement",
     "Estimation de la surface constructible et du nombre de logements possible (maison ou petits logements)",
+    "Si une construction existe déjà : possibilités d’extension, de surélévation ou d’annexes (garage, abri, pool house, piscine), et surface encore disponible",
     "Servitudes et protections : périmètre de monument historique, orientations d’aménagement, emplacements réservés",
     "Risques connus : inondation, feux de forêt, retrait-gonflement des argiles, mouvements de terrain",
     "Accès, réseaux et assainissement, d’après les documents disponibles",
@@ -45,11 +46,12 @@ const DOCS_REQUIRED = [
     "L’adresse du terrain et, si vous les avez, ses références cadastrales (section et numéro de parcelle)",
     "L’annonce ou la fiche descriptive du terrain (surface, prix)",
     "Des photos du terrain : vues d’ensemble, accès depuis la rue, limites, pente, constructions voisines",
-    "Une courte description de votre projet : maison (surface souhaitée, nombre de niveaux, piscine) ou petits logements (combien, de quelle taille)",
+    "Une courte description de votre projet : maison (surface souhaitée, nombre de niveaux, piscine), petits logements (combien, de quelle taille), ou extension et annexes d’une maison existante",
 ];
 
 const DOCS_USEFUL = [
     "Le plan de division ou de bornage, si le terrain est issu d’une division",
+    "Si une maison existe déjà : ses plans ou un croquis, sa surface habitable, et les permis ou déclarations de travaux déjà obtenus",
     "Si le terrain est en lotissement : le règlement, le cahier des charges et le plan de composition",
     "Le certificat d’urbanisme, s’il a déjà été demandé",
     "Le compromis ou la promesse de vente, ou son projet",
@@ -71,6 +73,7 @@ const STEPS = [
 const FAQ = [
     { q: "Pourquoi faire cette étude avant de signer ?", a: "Une fois le terrain acheté, il est trop tard pour découvrir qu’on ne peut pas y construire la maison ou le nombre de logements prévu. L’étude vous aide à négocier ou à prévoir les bonnes conditions suspensives." },
     { q: "Est-ce que l’étude garantit l’obtention du permis de construire ?", a: "Non. Elle donne une analyse sérieuse des règles applicables à la date de l’étude, mais seule la mairie délivre le permis. Nous vous conseillons aussi de demander un certificat d’urbanisme opérationnel." },
+    { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU, reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : si l’agrandissement porte la surface totale au-delà de 150 m², le recours à un architecte devient obligatoire pour le permis." },
     { q: "Pourquoi n’y a-t-il pas de visite ?", a: "Pour garder un prix accessible. Les photos, le cadastre et les documents d’urbanisme suffisent pour l’essentiel. Si une visite ou une esquisse est utile ensuite, nous vous ferons une proposition." },
     { q: "Et si je décide ensuite de construire avec vous ?", a: "Nous pouvons poursuivre avec la conception et le permis de construire. Une proposition d’honoraires vous sera alors remise." },
     { q: "Où intervenez-vous ?", a: "En Provence et dans le Gard. L’étude se faisant à distance, contactez-nous pour un terrain situé ailleurs en France." },
@@ -124,10 +127,10 @@ export default function EtudeTerrainPage() {
                 <Image className="lp-hero-bg" src="/images/projects/1-villas/villa P2/villaD_1.jpg" alt="Villa construite sur un terrain en pente par Reservoir Architecture" fill sizes="100vw" loading="eager" fetchPriority="high" />
                 <div className="lp-hero-overlay" />
                 <div className="lp-inner lp-hero-inner">
-                    <p className="lp-eyebrow lp-hero-eyebrow">Particuliers · Avant l’achat d’un terrain</p>
+                    <p className="lp-eyebrow lp-hero-eyebrow">Particuliers · Avant l’achat d’un terrain ou d’une maison</p>
                     <h1>Que pourrez-vous construire sur ce terrain ?</h1>
                     <p className="lp-hero-sub">
-                        Avant de signer, un architecte DPLG analyse le PLU et les contraintes du terrain que vous voulez acheter, pour y faire construire une maison ou de petits logements. Un rapport clair, à prix fixe, sans visite sur place.
+                        Avant de signer, un architecte DPLG analyse le PLU et les contraintes du terrain que vous voulez acheter : pour y faire construire une maison ou de petits logements, ou, si une maison existe déjà, pour savoir si vous pourrez l’agrandir ou ajouter des annexes. Un rapport clair, à prix fixe, sans visite sur place.
                     </p>
                     <p className="et-hero-price">{PRICE}</p>
                     <div className="lp-cta-row">
@@ -163,7 +166,7 @@ export default function EtudeTerrainPage() {
                             <li>Analyse du PLU et de la constructibilité</li>
                             <li>Sur photos, cadastre et documents publics</li>
                             <li>Rapport écrit en PDF</li>
-                            <li>Maison ou petits logements</li>
+                            <li>Maison, petits logements, extension ou annexes</li>
                         </ul>
                         <OrderButton loc="et_card" />
                         <p className="et-card-small">Après la commande, envoyez vos documents à {SITE_EMAIL}.</p>
