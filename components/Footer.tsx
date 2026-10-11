@@ -42,6 +42,7 @@ export default function Footer() {
                     <Link href="/villas-marseille" className="footer-link-small">Villa Marseille</Link>
                     <Link href="/villas-nimes" className="footer-link-small">Villa Nîmes</Link>
                     <Link href="/villas-nice" className="footer-link-small">Villa Nice</Link>
+                    <Link href="/investisseurs" className="footer-link-small">Investisseurs</Link>
                 </div>
                 <div className="footer-copyright">
                     <p className="footer-link-small">© {currentYear} Reservoir Architecture</p>
