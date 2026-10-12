@@ -932,7 +932,7 @@ export const GRANS_PROJECT: ProjectData = {
     slug: "grans",
     category: "ÉQUIPEMENTS",
     heroImages: [
-        "/images/projects/4-equipements/grans/grans_1.jpg",
+        "/images/projects/4-equipements/grans/grans_1_recadree.jpg",
         "/images/projects/4-equipements/grans/grans_2.jpg",
         "/images/projects/4-equipements/grans/grans_3.jpg",
         "/images/projects/4-equipements/grans/grans_4.jpg",

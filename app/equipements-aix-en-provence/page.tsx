@@ -86,7 +86,7 @@ const data: LandingData = {
             },
             {
                 title: "Maison des jeunes",
-                img: "/images/projects/4-equipements/grans/grans_1.jpg",
+                img: "/images/projects/4-equipements/grans/grans_1_recadree.jpg",
                 alt: "Maison des jeunes de Grans par Reservoir Architecture",
                 desc: "Réhabilitation d’une maison de ville en maison des jeunes pour la Ville de Grans. Espaces décloisonnés, transparence et mobilier sur-mesure pour la jeunesse.",
                 specs: [
