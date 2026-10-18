@@ -754,3 +754,7 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-panel img { width: 100% !important; }
 }
+
+/* Chiffres clés juste sous les panneaux du haut */
+.v2 .v2-figures-hero { margin-top: 0; border-top: 0; padding-top: 4px; }
+.v2 .v2-figures-hero + .v2-hero-below { padding-top: 40px; }

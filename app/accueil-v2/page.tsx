@@ -119,6 +119,14 @@ export default function AccueilV2() {
                         { label: "Équipements", href: "/equipements", count: count("ÉQUIPEMENTS"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
                     ]}
                 />
+                <dl className="v2-figures v2-figures-hero">
+                    {FIGURES.map((f) => (
+                        <div key={f.label} className="v2-fade" data-reveal>
+                            <dd>{f.value}</dd>
+                            <dt>{f.label}</dt>
+                        </div>
+                    ))}
+                </dl>
                 <div className="v2-hero-side v2-hero-below v2-fade" data-reveal>
                     <h1 className="v2-h2">Architecte à Aix-en-Provence</h1>
                     <p className="v2-small">
@@ -138,14 +146,6 @@ export default function AccueilV2() {
                         <span aria-hidden="true"><Letters text={INTRO} /></span>
                     </p>
                 </div>
-                <dl className="v2-figures">
-                    {FIGURES.map((f) => (
-                        <div key={f.label} className="v2-fade" data-reveal>
-                            <dd>{f.value}</dd>
-                            <dt>{f.label}</dt>
-                        </div>
-                    ))}
-                </dl>
             </section>
 
             {/* Domaines : ce que fait l'agence, avec des exemples et le lien vers chaque catégorie */}
