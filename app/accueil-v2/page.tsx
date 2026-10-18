@@ -139,7 +139,6 @@ export default function AccueilV2() {
             <section className="v2-section v2-about">
                 <div className="v2-row">
                     <div className="v2-fade" data-reveal>
-                        <p className="v2-tag">Agence d&apos;architecture à Aix-en-Provence</p>
                         <h2 className="v2-h2">L&apos;agence</h2>
                     </div>
                     <p className="v2-statement" data-scrub aria-label={INTRO}>

@@ -758,3 +758,16 @@ body:has(.v2) { background: #ffffff; }
 /* Chiffres clés juste sous les panneaux du haut */
 .v2 .v2-figures-hero { margin-top: 0; border-top: 0; padding-top: 4px; }
 .v2 .v2-figures-hero + .v2-hero-below { padding-top: 40px; }
+
+/* Harmonisation du haut de page : une seule grille à 2 colonnes pour tous les blocs titre + texte,
+   chiffres calés sur cette grille, espacements verticaux réguliers. */
+.v2 .v2-hero-below { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: start; }
+.v2 .v2-hero-below .v2-small, .v2 .v2-row > .v2-small { max-width: 52ch; margin: 0; }
+.v2 .v2-figures { gap: 32px; }
+.v2 .v2-figures-hero + .v2-hero-below { padding-top: 56px; }
+.v2 .v2-section { padding-top: clamp(64px, 7vw, 112px); }
+@media (max-width: 768px) {
+    .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+    .v2 .v2-figures { gap: 8px; }
+    .v2 .v2-figures-hero + .v2-hero-below { padding-top: 32px; }
+}
