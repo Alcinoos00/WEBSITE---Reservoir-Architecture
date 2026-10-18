@@ -714,3 +714,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-panel img { height: calc((60svh - 18px) * 3.6 / 6.6) !important; }
     .v2-wordmark-sub { margin-top: 6px; font-size: var(--t1); }
 }
+
+/* Grand mot réduit : environ 70 % de la colonne (85 % sur téléphone) */
+.v2 .v2-wordmark-wrap { width: 70%; justify-self: start; }
+@media (max-width: 768px) {
+    .v2 .v2-wordmark-wrap { width: 85%; }
+}
