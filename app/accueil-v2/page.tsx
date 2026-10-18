@@ -127,19 +127,12 @@ export default function AccueilV2() {
                         </div>
                     ))}
                 </dl>
-                <div className="v2-hero-side v2-hero-below v2-fade" data-reveal>
-                    <h1 className="v2-h2">Architecte à Aix-en-Provence</h1>
-                    <p className="v2-small">
-                        Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
-                    </p>
-                </div>
-            </section>
-
-            {/* L'agence : mêmes textes que l'accueil actuel (référencement) */}
-            <section className="v2-section v2-about">
-                <div className="v2-row">
+                <div className="v2-hero-below">
                     <div className="v2-fade" data-reveal>
-                        <h2 className="v2-h2">L&apos;agence</h2>
+                        <h1 className="v2-h2">Architecte à Aix-en-Provence</h1>
+                        <p className="v2-small v2-hero-intro">
+                            Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
+                        </p>
                     </div>
                     <p className="v2-statement" data-scrub aria-label={INTRO}>
                         <span aria-hidden="true"><Letters text={INTRO} /></span>

@@ -774,3 +774,11 @@ body:has(.v2) { background: #ffffff; }
 
 /* Photo du bas sur toute la largeur de l'écran (bord à bord) */
 .v2 .v2-cta-photo { margin-left: calc(-1 * var(--v2-pad)); margin-right: calc(-1 * var(--v2-pad)); }
+
+/* Bloc unique sous les chiffres : titre + présentation à gauche, texte de l'agence à droite */
+.v2 .v2-hero-below { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; align-items: start; }
+.v2 .v2-hero-intro { margin-top: 18px; max-width: 46ch; }
+.v2 .v2-hero-below .v2-statement { margin: 0; }
+@media (max-width: 768px) {
+    .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}
