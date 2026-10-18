@@ -89,12 +89,12 @@ const FIGURES = [
     { value: "4", label: "Domaines" },
 ];
 
-export default async function AccueilV2({ searchParams }: { searchParams: Promise<{ chiffres?: string }> }) {
-    // Variante d'intégration des chiffres clés, à comparer via ?chiffres=1, 2 ou 3 (1 par défaut)
-    const { chiffres } = await searchParams;
-    const fv = chiffres === "2" || chiffres === "3" ? chiffres : "1";
+export default async function AccueilV2({ searchParams }: { searchParams: Promise<{ style?: string }> }) {
+    // Chiffres clés sous la présentation ; 3 designs à comparer via ?style=a, b ou c (a par défaut)
+    const { style } = await searchParams;
+    const fs = style === "b" || style === "c" ? style : "a";
     const figures = (
-        <dl className={`v2-figures v2-figs v2-figs-${fv}`}>
+        <dl className={`v2-figures v2-figs v2-figs-2 v2-figs-${fs}`}>
             {FIGURES.map((f) => (
                 <div key={f.label} className="v2-fade" data-reveal>
                     <dd>{f.value}</dd>
@@ -123,7 +123,6 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
                         />
                         <span className="v2-wordmark-sub">Architecture</span>
                     </div>
-                    {fv === "3" && figures}
                 </div>
                 <HeroCategories
                     items={[
@@ -133,14 +132,13 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
                         { label: "Équipements", href: "/equipements", count: count("ÉQUIPEMENTS"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
                     ]}
                 />
-                {fv === "1" && figures}
                 <div className="v2-hero-below">
                     <div className="v2-fade" data-reveal>
                         <h1 className="v2-h2">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small v2-hero-intro">
                             Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                         </p>
-                        {fv === "2" && figures}
+                        {figures}
                     </div>
                     <p className="v2-statement" data-scrub aria-label={INTRO}>
                         <span aria-hidden="true"><Letters text={INTRO} /></span>
