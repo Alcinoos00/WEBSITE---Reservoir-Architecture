@@ -731,3 +731,9 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark-sub { font-size: var(--t2); }
 }
+
+/* Titre et présentation sous les panneaux */
+.v2 .v2-hero-below { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 560px); gap: 32px; padding: 22px 0 0; align-items: start; }
+@media (max-width: 768px) {
+    .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 10px; padding-top: 18px; }
+}
