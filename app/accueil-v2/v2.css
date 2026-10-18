@@ -693,3 +693,24 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark { font-size: calc((100vw - 2 * var(--v2-gutter)) / 4.8); }
 }
+
+/* « Architecture » en petit, sous le grand mot, calé à droite */
+.v2-wordmark-wrap { display: flex; flex-direction: column; align-self: end; min-width: 0; }
+.v2-wordmark-sub {
+    align-self: flex-end;
+    margin-top: 10px;
+    font-size: var(--t2);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--v2-ink);
+}
+.v2-js .v2-wordmark-sub { opacity: 0; transition: opacity 0.8s var(--v2-ease) 0.7s; }
+.v2-js.v2-loaded .v2-wordmark-sub { opacity: 1; }
+
+/* Panneaux du haut moins hauts */
+.v2 .v2-cats-panels { height: clamp(300px, 52vh, 640px); }
+@media (max-width: 768px) {
+    .v2 .v2-cats-panels { height: 60svh; }
+    .v2 .v2-panel img { height: calc((60svh - 18px) * 3.6 / 6.6) !important; }
+    .v2-wordmark-sub { margin-top: 6px; font-size: var(--t1); }
+}

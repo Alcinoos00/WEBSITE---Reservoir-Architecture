@@ -99,14 +99,17 @@ export default function AccueilV2() {
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
-                    <Image
-                        src="/images/ui/brand/wordmark.svg"
-                        alt="Reservoir"
-                        width={930}
-                        height={151}
-                        priority
-                        className="v2-wordmark-img"
-                    />
+                    <div className="v2-wordmark-wrap">
+                        <Image
+                            src="/images/ui/brand/wordmark.svg"
+                            alt="Reservoir"
+                            width={930}
+                            height={151}
+                            priority
+                            className="v2-wordmark-img"
+                        />
+                        <span className="v2-wordmark-sub">Architecture</span>
+                    </div>
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
                         <p className="v2-small">
