@@ -15,7 +15,6 @@ import {
 import { ARCHIDVISOR_URL, categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { FAQ_ITEMS } from "@/lib/homeContent";
 import V2Motion from "./V2Motion";
-import FigSwitch from "./FigSwitch";
 import V2Nav from "./V2Nav";
 import HeroCategories from "./HeroCategories";
 import "./v2.css";
@@ -90,12 +89,10 @@ const FIGURES = [
     { value: "4", label: "Domaines" },
 ];
 
-export default async function AccueilV2({ searchParams }: { searchParams: Promise<{ style?: string }> }) {
-    // Chiffres clés sous la présentation ; 3 designs à comparer via ?style=a, b ou c (a par défaut)
-    const { style } = await searchParams;
-    const fs = ["a", "b", "c", "d", "e", "f"].includes(style ?? "") ? (style as string) : "a";
+export default function AccueilV2() {
+    // Chiffres clés sous la présentation, en tuiles
     const figures = (
-        <dl className={`v2-figures v2-figs v2-figs-2 v2-figs-${fs}`}>
+        <dl className="v2-figures v2-figs v2-figs-2 v2-figs-f">
             {FIGURES.map((f) => (
                 <div key={f.label} className="v2-fade" data-reveal>
                     <dd>{f.value}</dd>
@@ -109,7 +106,6 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
         <div className={`v2 ${manrope.variable}`}>
             <V2Motion />
             <V2Nav />
-            <FigSwitch initial={fs} />
 
             {/* Hero */}
             <section className="v2-hero">
@@ -150,7 +146,7 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
 
             {/* Domaines : ce que fait l'agence, avec des exemples et le lien vers chaque catégorie */}
             <section className="v2-section">
-                <div className="v2-row">
+                <div className="v2-stack">
                     <h2 className="v2-h2 v2-fade" data-reveal>Ce que nous faisons</h2>
                     <p className="v2-small v2-fade" data-reveal>
                         Quatre domaines, une même méthode : de la faisabilité au suivi de chantier, un interlocuteur unique et responsable.
@@ -203,8 +199,8 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
                             </AfterLoad>
                         </div>
                         <div>
-                            <p className="v2-tag">L&apos;architecte</p>
-                            <h2 className="v2-h2">Serge Ettore</h2>
+                            <h2 className="v2-h2">L&apos;architecte</h2>
+                            <p className="v2-h3 v2-architect-name">Serge Ettore</p>
                             <p className="v2-tag">Architecte DPLG, fondateur</p>
                         </div>
                     </div>
