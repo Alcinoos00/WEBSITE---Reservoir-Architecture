@@ -720,3 +720,14 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark-wrap { width: 85%; }
 }
+
+/* « Architecture » un peu plus grand, et le texte de droite collé au grand mot */
+.v2 .v2-wordmark-sub { font-size: var(--t3); letter-spacing: 0.3em; }
+@media (min-width: 769px) {
+    .v2 .v2-hero-top { display: flex; align-items: flex-end; gap: 40px; }
+    .v2 .v2-wordmark-wrap { width: min(56vw, 1000px); flex: 0 0 auto; }
+    .v2 .v2-hero-side { max-width: var(--v2-side); padding-bottom: 6px; }
+}
+@media (max-width: 768px) {
+    .v2 .v2-wordmark-sub { font-size: var(--t2); }
+}

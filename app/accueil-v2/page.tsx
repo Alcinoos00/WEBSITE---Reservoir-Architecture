@@ -101,13 +101,14 @@ export default function AccueilV2() {
                 <div className="v2-hero-top">
                     <div className="v2-wordmark-wrap">
                         <Image
-                            src="/images/ui/brand/logo-light.svg"
-                            alt="Reservoir Architecture"
-                            width={391}
-                            height={87}
+                            src="/images/ui/brand/wordmark.svg"
+                            alt="Reservoir"
+                            width={930}
+                            height={151}
                             priority
                             className="v2-wordmark-img"
                         />
+                        <span className="v2-wordmark-sub">Architecture</span>
                     </div>
                     <div className="v2-hero-side v2-fade" data-reveal>
                         <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
