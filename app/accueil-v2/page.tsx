@@ -93,7 +93,7 @@ const FIGURES = [
 export default async function AccueilV2({ searchParams }: { searchParams: Promise<{ style?: string }> }) {
     // Chiffres clés sous la présentation ; 3 designs à comparer via ?style=a, b ou c (a par défaut)
     const { style } = await searchParams;
-    const fs = style === "b" || style === "c" ? style : "a";
+    const fs = ["a", "b", "c", "d", "e", "f"].includes(style ?? "") ? (style as string) : "a";
     const figures = (
         <dl className={`v2-figures v2-figs v2-figs-2 v2-figs-${fs}`}>
             {FIGURES.map((f) => (
