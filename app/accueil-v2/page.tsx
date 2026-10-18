@@ -214,9 +214,10 @@ export default function AccueilV2() {
                                 <Image src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} className="v2-reviews-logo" />
                                 <span className="v2-reviews-score">5,0<span>/5</span></span>
                                 <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
-                                <span className="v2-reviews-count">7 avis vérifiés</span>
+                                <span className="v2-reviews-count">8 avis vérifiés</span>
                             </div>
                             <ul>
+                                <li><blockquote>« Très professionnel et force de proposition. Très bon contact. »</blockquote><cite>Arnaud M.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
                                 <li><blockquote>« Très disponible, rapide, de bons conseils. »</blockquote><cite>Celsio C.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
                                 <li><blockquote>« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »</blockquote><cite>Hamid Y.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>
                                 <li><blockquote>« Bien à l&apos;écoute, a parfaitement compris ce que j&apos;attendais. »</blockquote><cite>Axel A.</cite><span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span></li>

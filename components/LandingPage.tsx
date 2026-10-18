@@ -216,11 +216,11 @@ export default function LandingPage({ data }: { data: LandingData }) {
                         </a>
                         <EmailButton loc="hero" className="lp-btn lp-btn--on-dark lp-btn--ghost lp-btn--email" />
                     </div>
-                    <a className="lp-archidvisor" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Note 5 sur 5, 7 avis sur Archidvisor">
+                    <a className="lp-archidvisor" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" aria-label="Note 5 sur 5, 8 avis sur Archidvisor">
                         <img className="lp-archidvisor-logo" src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} />
                         <span className="lp-stars" aria-hidden="true"><StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon /></span>
                         <span className="lp-archidvisor-rating">5,0<span className="lp-archidvisor-max">/5</span></span>
-                        <span className="lp-archidvisor-count">7 avis</span>
+                        <span className="lp-archidvisor-count">8 avis</span>
                     </a>
                     <p className="lp-hero-trust">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -353,12 +353,13 @@ export default function LandingPage({ data }: { data: LandingData }) {
                             <span className="lp-stars" aria-label="Note 5 sur 5">
                                 <StarIcon /><StarIcon /><StarIcon /><StarIcon /><StarIcon />
                             </span>
-                            <span className="lp-reviews-label">7 avis vérifiés</span>
+                            <span className="lp-reviews-label">8 avis vérifiés</span>
                             <a className="lp-reviews-link" href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer">
                                 Voir tous les avis <ArrowIcon />
                             </a>
                         </div>
                         <div className="lp-reviews-list">
+                            <blockquote className="lp-review">« Très professionnel et force de proposition. Très bon contact. »<cite>Arnaud M.</cite></blockquote>
                             <blockquote className="lp-review">« Très disponible, rapide, de bons conseils. »<cite>Celsio C.</cite></blockquote>
                             <blockquote className="lp-review">« Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence. »<cite>Hamid Y.</cite></blockquote>
                             <blockquote className="lp-review">« Bien à l’écoute, a parfaitement compris ce que j’attendais. »<cite>Axel A.</cite></blockquote>
