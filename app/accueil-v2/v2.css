@@ -737,3 +737,12 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 10px; padding-top: 18px; }
 }
+
+/* Largeur max du contenu sur grand écran : 1440px, centré (les marges grandissent au-delà) */
+.v2 { --v2-pad: max(var(--v2-gutter), calc((100vw - 1440px) / 2)); }
+.v2 .v2-hero, .v2 .v2-section, .v2 .v2-cta, .v2 .v2-footer { padding-left: var(--v2-pad); padding-right: var(--v2-pad); }
+.v2 .v2-panel img { width: calc((100vw - 2 * var(--v2-pad) - 24px) * 3.2 / 6.2) !important; }
+@media (max-width: 768px) {
+    .v2 .v2-panel img { width: 100% !important; }
+}
+.v2 .v2-hero-below { align-items: end; }

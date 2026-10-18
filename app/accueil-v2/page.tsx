@@ -120,7 +120,7 @@ export default function AccueilV2() {
                     ]}
                 />
                 <div className="v2-hero-side v2-hero-below v2-fade" data-reveal>
-                    <h1 className="v2-label">Architecte à Aix-en-Provence</h1>
+                    <h1 className="v2-h2">Architecte à Aix-en-Provence</h1>
                     <p className="v2-small">
                         Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                     </p>
