@@ -782,3 +782,44 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
+
+/* ── Chiffres clés : 3 variantes (?chiffres=1|2|3) ── */
+.v2 .v2-figs { margin: 0; }
+.v2 .v2-figs dd { line-height: 1; }
+
+/* 1. Bandeau sous les photos : chiffre et libellé côte à côte, filets fins */
+.v2 .v2-figs-1 { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 0; border-bottom: 1px solid var(--v2-line); }
+.v2 .v2-figs-1 > div { display: flex; align-items: baseline; gap: 12px; padding: 22px 0 22px 20px; border-left: 1px solid var(--v2-line); }
+.v2 .v2-figs-1 > div:first-child { border-left: 0; padding-left: 0; }
+.v2 .v2-figs-1 dd { font-size: var(--t4); }
+.v2 .v2-figs-1 + .v2-hero-below { padding-top: 56px; }
+
+/* 2. Dans le bloc titre, sous la présentation : 4 chiffres compacts sur une ligne */
+.v2 .v2-figs-2 { grid-template-columns: repeat(4, max-content); gap: 0 36px; margin-top: 32px; padding-top: 18px; border-top: 1px solid var(--v2-line); }
+.v2 .v2-figs-2 > div { padding-top: 0; gap: 4px; }
+.v2 .v2-figs-2 dd { font-size: var(--t4); }
+
+/* 3. À côté du grand mot, en haut à droite : grille 2 × 2 */
+.v2 .v2-hero-top:has(.v2-figs-3) { justify-content: space-between; }
+.v2 .v2-figs-3 { grid-template-columns: repeat(2, max-content); gap: 22px 48px; border-top: 0; align-self: end; padding-bottom: 6px; }
+.v2 .v2-figs-3 > div { padding-top: 0; gap: 4px; }
+.v2 .v2-figs-3 dd { font-size: var(--t4); }
+.v2 .v2-hero-top:has(.v2-figs-3) + .v2-cats-panels + .v2-hero-below,
+.v2 .v2-cats-panels + .v2-hero-below { padding-top: 56px; }
+
+@media (max-width: 768px) {
+    .v2 .v2-figs-1 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .v2 .v2-figs-1 > div { padding: 14px 0 14px 14px; flex-direction: column; gap: 4px; }
+    .v2 .v2-figs-1 > div:nth-child(3) { border-left: 0; padding-left: 0; border-top: 1px solid var(--v2-line); }
+    .v2 .v2-figs-1 > div:nth-child(4) { border-top: 1px solid var(--v2-line); }
+    .v2 .v2-figs-2 { grid-template-columns: repeat(2, max-content); gap: 16px 36px; }
+    .v2 .v2-figs-3 { grid-template-columns: repeat(4, max-content); gap: 0 20px; margin-top: 18px; }
+    .v2 .v2-figs-3 dd { font-size: 26px; }
+}
+.v2 .v2-figs-2 { grid-template-columns: repeat(4, max-content) !important; }
+.v2 .v2-figs-3 { grid-template-columns: repeat(2, max-content) !important; }
+@media (max-width: 768px) {
+    .v2 .v2-figs-1 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .v2 .v2-figs-2 { grid-template-columns: repeat(2, max-content) !important; }
+    .v2 .v2-figs-3 { grid-template-columns: repeat(4, max-content) !important; }
+}
