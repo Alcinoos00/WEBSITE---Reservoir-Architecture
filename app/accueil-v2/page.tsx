@@ -15,6 +15,7 @@ import {
 import { ARCHIDVISOR_URL, categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { FAQ_ITEMS } from "@/lib/homeContent";
 import V2Motion from "./V2Motion";
+import FigSwitch from "./FigSwitch";
 import V2Nav from "./V2Nav";
 import HeroCategories from "./HeroCategories";
 import "./v2.css";
@@ -108,6 +109,7 @@ export default async function AccueilV2({ searchParams }: { searchParams: Promis
         <div className={`v2 ${manrope.variable}`}>
             <V2Motion />
             <V2Nav />
+            <FigSwitch initial={fs} />
 
             {/* Hero */}
             <section className="v2-hero">
