@@ -747,3 +747,10 @@ body:has(.v2) { background: #ffffff; }
 }
 .v2 .v2-hero-below { align-items: end; }
 .v2 .v2-nav { padding-left: var(--v2-pad); padding-right: var(--v2-pad); }
+
+/* Panneaux du haut sur toute la largeur de l'écran (bord à bord) */
+.v2 .v2-cats-panels { margin-left: calc(-1 * var(--v2-pad)); margin-right: calc(-1 * var(--v2-pad)); }
+.v2 .v2-panel img { width: calc((100vw - 24px) * 3.2 / 6.2) !important; }
+@media (max-width: 768px) {
+    .v2 .v2-panel img { width: 100% !important; }
+}
