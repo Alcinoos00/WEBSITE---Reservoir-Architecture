@@ -874,3 +874,16 @@ body:has(.v2) { background: #ffffff; }
 
 /* L'architecte : grand titre, nom en dessous */
 .v2 .v2-architect-name { margin: 6px 0 2px; }
+.v2 .v2-stack + .v2-architect { margin-top: clamp(40px, 5vw, 72px); }
+
+/* Réalisations à Aix et alentours */
+.v2 .v2-local { list-style: none; margin: clamp(40px, 5vw, 72px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 14px; }
+.v2 .v2-local a { display: grid; gap: 6px; color: var(--v2-ink); text-decoration: none; }
+.v2 .v2-local .v2-domain-photo { aspect-ratio: 4 / 3; margin-bottom: 6px; }
+.v2 .v2-local a:hover img { transform: scale(1.04); }
+.v2 .v2-local h3 { margin: 0; }
+.v2 .v2-local-links { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--v2-line); }
+.v2 .v2-local-links a { font-size: var(--t1); font-weight: 500; text-transform: uppercase; color: var(--v2-ink); text-decoration: underline; text-underline-offset: 4px; }
+@media (max-width: 768px) {
+    .v2 .v2-local { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 10px; }
+}
