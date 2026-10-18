@@ -746,3 +746,4 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-panel img { width: 100% !important; }
 }
 .v2 .v2-hero-below { align-items: end; }
+.v2 .v2-nav { padding-left: var(--v2-pad); padding-right: var(--v2-pad); }
