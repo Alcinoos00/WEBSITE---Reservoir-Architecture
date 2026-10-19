@@ -1,6 +1,13 @@
-import { permanentRedirect } from "next/navigation";
+import type { Metadata } from "next";
+import HomeV2 from "./HomeV2";
 
-// L'ancienne page de travail « accueil v2 » est devenue l'accueil : on renvoie vers /.
+// Version de travail de l'accueil (refonte façon Teras), hors index tant qu'Emeric ne l'a pas validée.
+// L'accueil en ligne reste app/page.tsx.
+export const metadata: Metadata = {
+    title: { absolute: "Accueil v2 | Reservoir Architecture" },
+    robots: { index: false, follow: false },
+};
+
 export default function AccueilV2() {
-    permanentRedirect("/");
+    return <HomeV2 />;
 }

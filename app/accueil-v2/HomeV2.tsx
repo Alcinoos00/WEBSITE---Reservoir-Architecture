@@ -18,7 +18,7 @@ import V2Nav from "./V2Nav";
 import HeroCategories from "./HeroCategories";
 import "./v2.css";
 
-// Accueil du site (refonte façon template Teras), rendu par app/page.tsx.
+// Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
 
 const manrope = Manrope({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--v2-font" });
