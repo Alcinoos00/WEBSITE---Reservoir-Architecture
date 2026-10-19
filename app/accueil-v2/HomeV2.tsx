@@ -11,7 +11,7 @@ import {
     PUYRICARD_PROJECT,
     SAMARITAINE_PROJECT,
 } from "@/lib/projects";
-import { ARCHIDVISOR_URL, categoryToPath, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
+import { ARCHIDVISOR_URL, categoryToPath, FACEBOOK_URL, HOUZZ_URL, INSTAGRAM_URL, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { FAQ_ITEMS, LOCAL_PROJECTS } from "@/lib/homeContent";
 import V2Motion from "./V2Motion";
 import V2Nav from "./V2Nav";
@@ -328,8 +328,9 @@ export default function HomeV2() {
                         <p className="v2-label">Contact</p>
                         <a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a>
                         <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
-                        <a href="https://www.instagram.com/reservoirarchitecture/" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://www.facebook.com/reservoir.architecture/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer">Facebook</a>
+                        <a href={HOUZZ_URL} target="_blank" rel="noopener noreferrer">Houzz</a>
                     </div>
                 </div>
                 <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence</p>
