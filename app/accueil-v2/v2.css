@@ -909,3 +909,6 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-sv { width: calc(100% + 2 * var(--v2-pad)); }
 }
+
+/* Pas de filet sous le dernier domaine : la section suivante a déjà le sien au-dessus de son titre */
+.v2 .v2-domain:last-child { border-bottom: 0; }
