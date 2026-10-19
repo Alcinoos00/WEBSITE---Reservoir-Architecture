@@ -912,3 +912,6 @@ body:has(.v2) { background: #ffffff; }
 
 /* Pas de filet sous le dernier domaine : la section suivante a déjà le sien au-dessus de son titre */
 .v2 .v2-domain:last-child { border-bottom: 0; }
+
+/* Moins de blanc entre l'intro de section et le premier domaine */
+.v2 .v2-stack + .v2-domains { margin-top: 8px; }
