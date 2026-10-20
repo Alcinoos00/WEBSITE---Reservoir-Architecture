@@ -1040,3 +1040,12 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-cat[data-cstyle="panels"] .v2-cat-grid, .v2 .v2-cat[data-cstyle="panels"] .v2-cat-band { display: none; }
 .v2 .v2-cat-panels { margin-top: clamp(40px, 5vw, 72px); padding: 0 var(--v2-pad); }
 .v2 .v2-cat-panels .v2-panel:not(.is-active) .v2-panel-count { display: none; }
+
+/* Panneaux de catégorie : au plus ~6 visibles à l'écran (1 ouvert + 5 fermés), les autres
+   se découvrent en faisant défiler le bandeau horizontalement. */
+@media (min-width: 769px) {
+    .v2 .v2-cat-panels .v2-cats-panels { overflow-x: auto; overflow-y: hidden; scrollbar-width: thin; }
+    .v2 .v2-cat-panels .v2-panel { flex: 0 0 calc(100vw / 8 - 8px); transition: flex-basis 0.6s var(--v2-ease); }
+    .v2 .v2-cat-panels .v2-panel.is-active { flex-basis: calc(100vw * 3 / 8 - 8px); }
+    .v2 .v2-cat-panels .v2-panel img { width: calc(100vw * 3 / 8) !important; }
+}
