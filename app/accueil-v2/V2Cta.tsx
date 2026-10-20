@@ -10,8 +10,8 @@ type Props = { title?: string; text?: string; img?: string; alt?: string };
 export default function V2Cta({
     title = "Parlons du projet qui conviendra à votre terrain.",
     text,
-    img = "/images/projects/1-villas/villa S/villaS_1.jpg",
-    alt = "Villa S, maison entre les pins à Langlade",
+    img = "/images/projects/1-villas/villa C/villaC_1.jpg",
+    alt = "Villa C, villa contemporaine avec piscine à Nîmes",
 }: Props) {
     return (
         <section className="v2-cta">
