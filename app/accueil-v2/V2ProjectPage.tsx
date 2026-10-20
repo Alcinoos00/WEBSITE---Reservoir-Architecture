@@ -5,7 +5,12 @@ import { PROJECTS } from "@/lib/projects";
 import { getProjectAlt, typologyLabel } from "@/lib/seo";
 import type { ProjectData } from "@/types/project";
 import { v2ProjectHref } from "./v2Links";
-import ProjectStyleSwitch from "./ProjectStyleSwitch";
+import StyleSwitch from "./StyleSwitch";
+
+const STYLES = [
+    { id: "a", label: "Style Teras" },
+    { id: "b", label: "Style actuel" },
+];
 import V2Cta from "./V2Cta";
 
 function nextProject(project: ProjectData) {
@@ -24,7 +29,7 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
 
     return (
         <div className="v2-project" data-pstyle="a">
-            <ProjectStyleSwitch />
+            <StyleSwitch target=".v2-project" attr="pstyle" storageKey="v2-project-style" options={STYLES} />
 
             {/* ---------- Style A : Teras ---------- */}
             <div className="v2-pa">

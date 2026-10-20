@@ -1015,3 +1015,22 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-pb-strip-item { height: 46svh; }
 }
+
+/* Page catégorie : grille ou bandeau défilant (sélecteur temporaire) */
+.v2 .v2-cat[data-cstyle="grid"] .v2-cat-band, .v2 .v2-cat[data-cstyle="band"] .v2-cat-grid { display: none; }
+.v2 .v2-cat-band { margin-top: clamp(40px, 5vw, 72px); }
+.v2 .v2-carousel-track { list-style: none; margin: 0; padding: 0 var(--v2-pad); display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--v2-pad); scrollbar-width: none; }
+.v2 .v2-carousel-track::-webkit-scrollbar { display: none; }
+.v2 .v2-carousel-track li { flex: 0 0 min(42vw, 640px); scroll-snap-align: start; }
+.v2 .v2-carousel-track a { display: grid; gap: 8px; color: var(--v2-ink); text-decoration: none; }
+.v2 .v2-carousel-photo { position: relative; display: block; height: clamp(320px, 62vh, 680px); overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-carousel-photo img { object-fit: cover; transition: transform 0.8s var(--v2-ease); }
+.v2 .v2-carousel-track a:hover img { transform: scale(1.04); }
+.v2 .v2-carousel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 16px var(--v2-pad) 0; }
+.v2 .v2-carousel-nav > div { display: flex; gap: 8px; }
+.v2 .v2-carousel-nav button { width: 44px; height: 44px; border: 1px solid var(--v2-ink); border-radius: 0; background: var(--v2-bg); color: var(--v2-ink); font-size: 18px; cursor: pointer; }
+.v2 .v2-carousel-nav button:hover { background: var(--v2-ink); color: #fff; }
+@media (max-width: 768px) {
+    .v2 .v2-carousel-track li { flex-basis: 85vw; }
+    .v2 .v2-carousel-photo { height: 52svh; }
+}

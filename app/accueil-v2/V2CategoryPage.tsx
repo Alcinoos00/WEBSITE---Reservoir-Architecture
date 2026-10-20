@@ -6,19 +6,28 @@ import { PROJECTS } from "@/lib/projects";
 import type { V2Category } from "./v2Categories";
 import { v2, v2ProjectHref } from "./v2Links";
 import V2Cta from "./V2Cta";
+import V2Carousel from "./V2Carousel";
+import StyleSwitch from "./StyleSwitch";
 
-// Page catégorie v2 : titre, grille des projets, texte de la catégorie, liens, contact.
+const STYLES = [
+    { id: "grid", label: "Grille" },
+    { id: "band", label: "Bandeau" },
+];
+
+// Page catégorie v2 : titre, projets (grille ou bandeau défilant, au choix via le sélecteur),
+// texte de la catégorie, liens, contact.
 export default function V2CategoryPage({ c }: { c: V2Category }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
     return (
-        <>
+        <div className="v2-cat" data-cstyle="grid">
+            <StyleSwitch target=".v2-cat" attr="cstyle" storageKey="v2-category-style" options={STYLES} />
             <section className="v2-section v2-page-top">
                 <div className="v2-stack v2-stack-top v2-fade" data-reveal>
                     <p className="v2-tag">{c.eyebrow}</p>
                     <h1 className="v2-h2">{noBreakHyphens(c.title)}</h1>
                     <p className="v2-small">{c.subtitle}</p>
                 </div>
-                <ul className="v2-works">
+                <ul className="v2-works v2-cat-grid">
                     {projects.map((p, i) => (
                         <li key={p.id} className="v2-fade" data-reveal>
                             <Link href={v2ProjectHref(p)}>
@@ -37,6 +46,11 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                     ))}
                 </ul>
             </section>
+            <div className="v2-cat-band">
+                <V2Carousel
+                    items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: `${p.title}, ${p.subtitle}`, title: p.title, place: p.subtitle }))}
+                />
+            </div>
 
             <section className="v2-section">
                 <div className="v2-stack v2-fade" data-reveal>
@@ -57,6 +71,6 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
             </section>
 
             <V2Cta />
-        </>
+        </div>
     );
 }
