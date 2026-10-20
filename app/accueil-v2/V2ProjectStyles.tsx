@@ -225,3 +225,88 @@ export function StyleHorizontal({ p }: { p: ProjectData }) {
         />
     );
 }
+
+// Bande de photos horizontale (comme la fiche en ligne), réutilisée par les styles I et J.
+function Strip({ p, top }: { p: ProjectData; top?: boolean }) {
+    return (
+        <div className={`v2-pb-strip${top ? "" : " v2-strip-inline"}`}>
+            {p.heroImages.map((src, i) => (
+                <div key={src} className="v2-pb-strip-item">
+                    <Image src={src} alt={getProjectAlt(p, i)} width={1200} height={800} sizes="(max-width: 768px) 200vw, 90vh" loading={i < 3 ? "eager" : "lazy"} />
+                </div>
+            ))}
+        </div>
+    );
+}
+
+function Text({ p }: { p: ProjectData }) {
+    return (
+        <>
+            {p.descriptionHeader && <h2 className="v2-h3">{p.descriptionHeader}</h2>}
+            {p.descriptionParagraphs.map((t) => (
+                <p className="v2-small" key={t.slice(0, 24)}>{t}</p>
+            ))}
+        </>
+    );
+}
+
+// I. Bande + colonne : bande de photos en haut ; dessous, les photos défilent à gauche
+// pendant que le titre et le bloc de texte restent fixes à droite.
+export function StyleBandeColonne({ p }: { p: ProjectData }) {
+    return (
+        <>
+            <Strip p={p} top />
+            <section className="v2-section v2-colfix v2-colfix-rev">
+                <div className="v2-colfix-photos">
+                    {p.heroImages.slice(1).map((src, k) => (
+                        <figure key={src}>
+                            <Image src={src} alt={getProjectAlt(p, k + 1)} width={1600} height={1066} sizes="(max-width: 768px) 100vw, 60vw" />
+                        </figure>
+                    ))}
+                </div>
+                <div className="v2-colfix-info">
+                    <Head p={p} />
+                    <Text p={p} />
+                    <Tech p={p} className="v2-pb-tech" />
+                </div>
+            </section>
+        </>
+    );
+}
+
+// J. Titre, bande, récit : le titre en haut, la bande de photos dessous, puis le texte
+// paragraphe par paragraphe avec une photo à chaque étape, en alternance gauche / droite.
+export function StyleTitreBandeRecit({ p }: { p: ProjectData }) {
+    const paras = [p.descriptionHeader, ...p.descriptionParagraphs].filter(Boolean) as string[];
+    const photos = p.heroImages.slice(1);
+    const n = Math.max(paras.length, photos.length);
+    return (
+        <>
+            <section className="v2-section v2-page-top v2-tbr-head">
+                <div className="v2-row v2-fade" data-reveal>
+                    <div>
+                        <Head p={p} />
+                    </div>
+                    <Tech p={p} className="v2-pb-tech" />
+                </div>
+            </section>
+            <Strip p={p} />
+            <section className="v2-section">
+                <ol className="v2-recit-list v2-recit-flush">
+                    {Array.from({ length: n }, (_, k) => (
+                        <li key={k} className={`v2-fade${k % 2 ? " is-right" : ""}`} data-reveal>
+                            {k < photos.length && (
+                                <span className="v2-recit-photo">
+                                    <Photo p={p} i={k + 1} sizes="(max-width: 768px) 100vw, 50vw" />
+                                </span>
+                            )}
+                            {k < paras.length && (
+                                <p className={k === 0 && p.descriptionHeader ? "v2-h3 v2-recit-text" : "v2-small v2-recit-text"}>{paras[k]}</p>
+                            )}
+                        </li>
+                    ))}
+                </ol>
+            </section>
+        </>
+    );
+}

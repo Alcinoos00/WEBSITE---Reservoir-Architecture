@@ -8,7 +8,7 @@ import { v2ProjectHref } from "./v2Links";
 import StyleSwitch from "./StyleSwitch";
 
 import V2Cta from "./V2Cta";
-import { StyleColonne, StyleDiptyque, StyleHorizontal, StyleMagazine, StylePlein, StyleRecit } from "./V2ProjectStyles";
+import { StyleBandeColonne, StyleColonne, StyleDiptyque, StyleHorizontal, StyleMagazine, StylePlein, StyleRecit, StyleTitreBandeRecit } from "./V2ProjectStyles";
 
 const STYLES = [
     { id: "a", label: "Teras" },
@@ -19,6 +19,8 @@ const STYLES = [
     { id: "f", label: "Magazine" },
     { id: "g", label: "Diptyques" },
     { id: "h", label: "Horizontal" },
+    { id: "i", label: "Bande + colonne" },
+    { id: "j", label: "Titre, bande, récit" },
 ];
 
 function nextProject(project: ProjectData) {
@@ -125,6 +127,8 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
             <div className="v2-pf"><StyleMagazine p={project} /></div>
             <div className="v2-pg"><StyleDiptyque p={project} /></div>
             <div className="v2-ph"><StyleHorizontal p={project} /></div>
+            <div className="v2-pi"><StyleBandeColonne p={project} /></div>
+            <div className="v2-pj"><StyleTitreBandeRecit p={project} /></div>
 
             {/* Projet suivant (commun à tous les styles) */}
             <section className="v2-section">
