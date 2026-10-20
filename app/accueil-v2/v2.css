@@ -731,6 +731,8 @@ body:has(.v2) { background: #ffffff; }
 
 /* Largeur max du contenu : 1320px (choisie par Emeric le 2026-10-21), centré (les marges grandissent au-delà), y compris sur un portable 14 pouces */
 .v2 { --v2-max: 1320px; --v2-pad: max(var(--v2-gutter), calc((100vw - var(--v2-max)) / 2)); }
+/* Grands écrans (à partir de 1800px de large) : on revient à 1440px comme avant */
+@media (min-width: 1800px) { .v2 { --v2-max: 1440px; } }
 .v2 .v2-hero, .v2 .v2-section, .v2 .v2-cta, .v2 .v2-footer { padding-left: var(--v2-pad); padding-right: var(--v2-pad); }
 .v2 .v2-panel img { width: calc((100vw - 2 * var(--v2-pad) - 24px) * 3.2 / 6.2) !important; }
 @media (max-width: 768px) {
