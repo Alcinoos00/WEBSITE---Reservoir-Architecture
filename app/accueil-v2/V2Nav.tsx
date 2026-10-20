@@ -3,13 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { v2 } from "./v2Links";
 
 const LINKS = [
-    { href: "/villas", label: "Villas" },
-    { href: "/logements", label: "Logements" },
-    { href: "/commerces", label: "Commerces" },
-    { href: "/equipements", label: "Équipements" },
-    { href: "/contact", label: "Contact" },
+    { href: v2("/villas"), label: "Villas" },
+    { href: v2("/logements"), label: "Logements" },
+    { href: v2("/commerces"), label: "Commerces" },
+    { href: v2("/equipements"), label: "Équipements" },
+    { href: v2("/contact"), label: "Contact" },
 ];
 
 // Barre du haut façon Teras : icône à gauche, « Contact » et menu à droite.
@@ -43,11 +44,11 @@ export default function V2Nav() {
     return (
         <>
             <header className={`v2-nav${hidden && !open ? " is-hidden" : ""}`}>
-                <Link href="/" className="v2-nav-logo" aria-label="Reservoir Architecture, accueil">
+                <Link href={v2("/")} className="v2-nav-logo" aria-label="Reservoir Architecture, accueil">
                     <Image src="/images/ui/brand/icon-light.svg" alt="" width={206} height={212} className="v2-nav-icon-img" priority />
                 </Link>
                 <div className="v2-nav-right">
-                    <Link href="/contact" className="v2-nav-link">Contact</Link>
+                    <Link href={v2("/contact")} className="v2-nav-link">Contact</Link>
                     <button
                         type="button"
                         className={`v2-burger${open ? " is-open" : ""}`}
