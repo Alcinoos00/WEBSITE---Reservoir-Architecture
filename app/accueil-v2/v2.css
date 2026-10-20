@@ -1034,3 +1034,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-carousel-track li { flex-basis: 85vw; }
     .v2 .v2-carousel-photo { height: 52svh; }
 }
+
+/* Page catégorie, variante « Panneaux » (comme le haut de l'accueil) */
+.v2 .v2-cat:not([data-cstyle="panels"]) .v2-cat-panels { display: none; }
+.v2 .v2-cat[data-cstyle="panels"] .v2-cat-grid, .v2 .v2-cat[data-cstyle="panels"] .v2-cat-band { display: none; }
+.v2 .v2-cat-panels { margin-top: clamp(40px, 5vw, 72px); padding: 0 var(--v2-pad); }
+.v2 .v2-cat-panels .v2-panel:not(.is-active) .v2-panel-count { display: none; }

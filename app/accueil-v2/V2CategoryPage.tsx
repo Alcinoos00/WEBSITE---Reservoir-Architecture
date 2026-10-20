@@ -8,13 +8,15 @@ import { v2, v2ProjectHref } from "./v2Links";
 import V2Cta from "./V2Cta";
 import V2Carousel from "./V2Carousel";
 import StyleSwitch from "./StyleSwitch";
+import HeroCategories from "./HeroCategories";
 
 const STYLES = [
     { id: "grid", label: "Grille" },
     { id: "band", label: "Bandeau" },
+    { id: "panels", label: "Panneaux" },
 ];
 
-// Page catégorie v2 : titre, projets (grille ou bandeau défilant, au choix via le sélecteur),
+// Page catégorie v2 : titre, projets (grille, bandeau défilant ou panneaux comme l'accueil, au choix via le sélecteur),
 // texte de la catégorie, liens, contact.
 export default function V2CategoryPage({ c }: { c: V2Category }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
@@ -46,6 +48,11 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                     ))}
                 </ul>
             </section>
+            <div className="v2-cat-panels">
+                <HeroCategories
+                    items={projects.map((p) => ({ label: p.title, href: v2ProjectHref(p), meta: p.subtitle, img: p.heroImages[0], alt: `${p.title}, ${p.subtitle}` }))}
+                />
+            </div>
             <div className="v2-cat-band">
                 <V2Carousel
                     items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: `${p.title}, ${p.subtitle}`, title: p.title, place: p.subtitle }))}

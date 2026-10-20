@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
-export type HeroCategory = { label: string; href: string; count: number; img: string; alt: string };
+export type HeroCategory = { label: string; href: string; count?: number; meta?: string; img: string; alt: string };
 
 // Les 4 catégories à la place de la photo du hero : des panneaux dont celui survolé s'élargit.
 // Sur ordinateur, côte à côte ; sur téléphone, empilés, et le premier appui agrandit le panneau
@@ -57,7 +57,7 @@ export default function HeroCategories({ items }: { items: HeroCategory[] }) {
                     />
                     <span className="v2-panel-label">
                         <span className="v2-panel-name">{c.label}</span>
-                        <span className="v2-panel-count">{c.count} projets</span>
+                        <span className="v2-panel-count">{c.meta ?? `${c.count} projets`}</span>
                     </span>
                 </Link>
             ))}
