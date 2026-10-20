@@ -1036,23 +1036,18 @@ body:has(.v2) { background: #ffffff; }
 /* Page catégorie : la grille magazine suit directement le titre */
 .v2 .v2-cat-projects { padding-top: 0 !important; }
 
-/* Magazine : rangées flexibles ; au survol, le projet s'élargit et ses voisins se resserrent.
-   La photo garde la largeur du projet élargi et reste centrée : on découvre l'image au lieu de la zoomer. */
-.v2 .v2-mag { margin-top: clamp(40px, 5vw, 72px); display: grid; gap: 12px; --mag-w: calc(min(100vw, 1440px + 2 * var(--v2-gutter)) - 2 * var(--v2-pad)); }
+/* Magazine : rangées aux largeurs qui alternent, sans animation au survol. */
+.v2 .v2-mag { margin-top: clamp(40px, 5vw, 72px); display: grid; gap: 12px; }
 .v2 .v2-mag-row { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; height: clamp(300px, 30vw, 460px); }
 .v2 .v2-mag-row.is-tall { height: clamp(420px, 45vw, 690px); }
-.v2 .v2-mag-row li { flex: var(--grow) 1 0; min-width: 0; transition: flex-grow 0.7s var(--v2-ease); }
-.v2 .v2-mag-row li:hover { flex-grow: calc(var(--grow) + 2); }
+.v2 .v2-mag-row li { flex: var(--grow) 1 0; min-width: 0; }
+.v2 .v2-mag-row img { object-fit: cover; }
 .v2 .v2-mag-row a { position: relative; display: block; height: 100%; overflow: hidden; color: #fff; text-decoration: none; background: var(--v2-stone); }
-.v2 .v2-mag-row img { inset: 0 auto auto 50% !important; width: max(100%, calc(var(--mag-w) * var(--open))) !important; max-width: none; height: 100% !important; transform: translateX(-50%); object-fit: cover; }
 .v2 .v2-mag-row a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0) 40%); }
 .v2 .v2-mag-row .v2-bento-cap span { white-space: nowrap; }
 @media (max-width: 768px) {
     .v2 .v2-mag-row, .v2 .v2-mag-row.is-tall { flex-direction: column; height: auto; gap: 12px; }
     .v2 .v2-mag-row li { flex: none; height: 62vw; }
     .v2 .v2-mag-row.is-tall li:first-child { height: 90vw; }
-    .v2 .v2-mag-row img { width: 100% !important; inset: 0 !important; transform: none; }
     .v2 .v2-bento-cap { flex-direction: column; gap: 2px; left: 12px; bottom: 10px; }
 }
-/* Le plus grand projet de sa rangée ne bouge pas au survol (comme le panneau déjà ouvert du carousel) */
-.v2 .v2-mag-row li.is-big:hover { flex-grow: var(--grow); }
