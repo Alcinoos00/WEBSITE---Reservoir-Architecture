@@ -10,7 +10,7 @@ export function StyleImageColonne({ p }: { p: ProjectData }) {
     return (
         <>
             <div className="v2-banner is-top">
-                <Image src={p.heroImages[0]} alt={getProjectAlt(p, 0)} fill priority sizes="(max-width: 1440px) 100vw, 1440px" />
+                <Image src={p.heroImages[0]} alt={getProjectAlt(p, 0)} fill priority sizes="(max-width: 1200px) 100vw, 1200px" />
             </div>
             <section className="v2-section v2-colfix v2-colfix-rev">
                 <div className="v2-colfix-photos">
