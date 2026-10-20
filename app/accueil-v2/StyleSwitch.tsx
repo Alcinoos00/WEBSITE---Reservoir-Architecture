@@ -7,7 +7,7 @@ type Option = { id: string; label: string };
 // Sélecteur temporaire pour comparer deux mises en page : pose `data-<attr>` sur l'élément ciblé.
 // Le choix est retenu d'une page à l'autre (localStorage, simple confort de comparaison).
 // À retirer une fois le style choisi.
-export default function StyleSwitch({ target, attr, storageKey, options }: { target: string; attr: string; storageKey: string; options: Option[] }) {
+export default function StyleSwitch({ target, attr, storageKey, options, className, label = "Choix de la mise en page" }: { target: string; attr: string; storageKey: string; options: Option[]; className?: string; label?: string }) {
     const [current, setCurrent] = useState(options[0].id);
 
     const apply = (id: string) => {
@@ -35,7 +35,7 @@ export default function StyleSwitch({ target, attr, storageKey, options }: { tar
     };
 
     return (
-        <div className="v2-switch" role="group" aria-label="Choix de la mise en page">
+        <div className={`v2-switch${className ? " " + className : ""}`} role="group" aria-label={label}>
             {options.map((o) => (
                 <button key={o.id} type="button" className={current === o.id ? "is-on" : ""} onClick={() => pick(o.id)}>
                     {o.label}
