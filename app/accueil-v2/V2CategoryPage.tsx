@@ -52,12 +52,15 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                 <div className="v2-mag">
                     {toRows(projects).map((row, r) => {
                         const total = row.items.reduce((n, it) => n + it.span, 0);
+                        const max = Math.max(...row.items.map((it) => it.span));
+                        const bigCount = row.items.filter((it) => it.span === max).length;
                         return (
                             <ul key={r} className={`v2-mag-row${row.tall ? " is-tall" : ""}`}>
                                 {row.items.map(({ p, span }) => (
                                     // --grow : part de la rangée ; --open : largeur de la photo, égale à la taille du
-                                    // projet une fois élargi au survol, pour que l'image s'agrandisse sans zoomer.
-                                    <li key={p.id} style={{ ["--grow" as string]: span, ["--open" as string]: (span + 2) / (total + 2) }}>
+                                    // projet une fois élargi au survol, pour que l'image s'agrandisse sans zoomer. Le plus grand projet
+                                    // d'une rangée (is-big) ne s'élargit pas au survol, comme le panneau ouvert du carousel.
+                                    <li key={p.id} className={span === max && bigCount === 1 && row.items.length > 1 ? "is-big" : undefined} style={{ ["--grow" as string]: span, ["--open" as string]: (span + 2) / (total + 2) }}>
                                         <Link href={v2ProjectHref(p)}>
                                             <AfterLoad>
                                                 <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 70vw" priority={r === 0} />

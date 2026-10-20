@@ -1054,3 +1054,5 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-mag-row img { width: 100% !important; inset: 0 !important; transform: none; }
     .v2 .v2-bento-cap { flex-direction: column; gap: 2px; left: 12px; bottom: 10px; }
 }
+/* Le plus grand projet de sa rangée ne bouge pas au survol (comme le panneau déjà ouvert du carousel) */
+.v2 .v2-mag-row li.is-big:hover { flex-grow: var(--grow); }
