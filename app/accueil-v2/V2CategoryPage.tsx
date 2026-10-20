@@ -8,8 +8,7 @@ import type { V2Category } from "./v2Categories";
 import { v2, v2ProjectHref } from "./v2Links";
 import V2Cta from "./V2Cta";
 import V2Carousel from "./V2Carousel";
-import V2Split from "./V2Split";
-import V2Slideshow from "./V2Slideshow";
+import V2Columns from "./V2Columns";
 import StyleSwitch from "./StyleSwitch";
 import HeroCategories from "./HeroCategories";
 
@@ -17,9 +16,9 @@ const STYLES = [
     { id: "grid", label: "Grille" },
     { id: "band", label: "Bandeau" },
     { id: "panels", label: "Panneaux" },
-    { id: "split", label: "Défilé" },
+    { id: "cols", label: "Colonnes" },
+    { id: "mosaic", label: "Mosaïque" },
     { id: "bento", label: "Magazine" },
-    { id: "slides", label: "Diaporama" },
     { id: "time", label: "Chronologie" },
 ];
 
@@ -31,7 +30,7 @@ const firstYear = (p: ProjectData) => Number(yearOf(p)?.match(/\d{4}/)?.[0] ?? 0
 const alt = (p: ProjectData) => `${p.title}, ${p.subtitle}`;
 
 // Page catégorie v2 : titre, projets selon la vue choisie avec le sélecteur (grille, bandeau, panneaux,
-// défilé avec photo fixe, mise en page magazine, diaporama, chronologie), texte, liens, contact.
+// colonnes décalées, mosaïque, mise en page magazine, chronologie), texte, liens, contact.
 export default function V2CategoryPage({ c }: { c: V2Category }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
     const byYear = [...projects].sort((a, b) => firstYear(b) - firstYear(a));
@@ -79,11 +78,28 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                 <HeroCategories items={projects.map((p) => ({ label: p.title, href: v2ProjectHref(p), meta: p.subtitle, img: p.heroImages[0], alt: alt(p) }))} />
             </div>
 
-            {/* Défilé : texte qui défile à gauche, grande photo fixe à droite */}
-            <section className="v2-section v2-cat-view" data-view="split">
-                <V2Split
-                    items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: alt(p), title: p.title, place: p.subtitle, mission: p.optionalSubtitle, year: yearOf(p) }))}
-                />
+            {/* Colonnes : trois colonnes qui glissent à des vitesses différentes */}
+            <section className="v2-section v2-cat-view" data-view="cols">
+                <V2Columns items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: alt(p), title: p.title, place: p.subtitle }))} />
+            </section>
+
+            {/* Mosaïque : tous les projets d'un coup d'oeil en vignettes carrées */}
+            <section className="v2-section v2-cat-view" data-view="mosaic">
+                <ul className="v2-mosaic">
+                    {projects.map((p) => (
+                        <li key={p.id}>
+                            <Link href={v2ProjectHref(p)}>
+                                <AfterLoad>
+                                    <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 50vw, 25vw" />
+                                </AfterLoad>
+                                <span className="v2-mosaic-cap">
+                                    <span className="v2-bento-title">{p.title}</span>
+                                    <span>{p.subtitle}</span>
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
             </section>
 
             {/* Magazine : grille éditoriale aux tailles variées */}
@@ -103,11 +119,6 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                         </li>
                     ))}
                 </ul>
-            </section>
-
-            {/* Diaporama */}
-            <section className="v2-section v2-cat-view" data-view="slides">
-                <V2Slideshow items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: alt(p), title: p.title, place: p.subtitle }))} />
             </section>
 
             {/* Chronologie : les projets sur une frise, du plus récent au plus ancien */}
