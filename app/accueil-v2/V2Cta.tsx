@@ -28,7 +28,7 @@ export default function V2Cta({
             </div>
             <div className="v2-cta-photo">
                 <AfterLoad>
-                    <Image src={img} alt={alt} fill sizes="100vw" data-parallax />
+                    <Image src={img} alt={alt} fill sizes="100vw" quality={90} />
                 </AfterLoad>
             </div>
         </section>
