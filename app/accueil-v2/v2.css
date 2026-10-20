@@ -1140,3 +1140,12 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-colfix-rev { grid-template-columns: minmax(0, 1fr); }
     .v2 .v2-colfix-rev .v2-colfix-info { order: -1; }
 }
+
+/* Photo panoramique (styles I et J) : pleine largeur du contenu, peu haute */
+.v2 .v2-banner { position: relative; height: clamp(240px, 42vh, 460px); margin: 0 var(--v2-pad); overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-banner.is-top { margin-top: 96px; }
+.v2 .v2-banner img { object-fit: cover; }
+@media (max-width: 768px) {
+    .v2 .v2-banner { height: 34svh; }
+    .v2 .v2-banner.is-top { margin-top: 76px; }
+}

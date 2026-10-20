@@ -19,8 +19,8 @@ const STYLES = [
     { id: "f", label: "Magazine" },
     { id: "g", label: "Diptyques" },
     { id: "h", label: "Horizontal" },
-    { id: "i", label: "Bande + colonne" },
-    { id: "j", label: "Titre, bande, récit" },
+    { id: "i", label: "Image + colonne" },
+    { id: "j", label: "Titre, image, récit" },
 ];
 
 function nextProject(project: ProjectData) {

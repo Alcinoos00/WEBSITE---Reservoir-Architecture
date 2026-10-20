@@ -226,15 +226,11 @@ export function StyleHorizontal({ p }: { p: ProjectData }) {
     );
 }
 
-// Bande de photos horizontale (comme la fiche en ligne), réutilisée par les styles I et J.
-function Strip({ p, top }: { p: ProjectData; top?: boolean }) {
+// Une seule photo en format panoramique (large et peu haute), réutilisée par les styles I et J.
+function Banner({ p, top }: { p: ProjectData; top?: boolean }) {
     return (
-        <div className={`v2-pb-strip${top ? "" : " v2-strip-inline"}`}>
-            {p.heroImages.map((src, i) => (
-                <div key={src} className="v2-pb-strip-item">
-                    <Image src={src} alt={getProjectAlt(p, i)} width={1200} height={800} sizes="(max-width: 768px) 200vw, 90vh" loading={i < 3 ? "eager" : "lazy"} />
-                </div>
-            ))}
+        <div className={`v2-banner${top ? " is-top" : ""}`}>
+            <Image src={p.heroImages[0]} alt={getProjectAlt(p, 0)} fill priority sizes="(max-width: 1440px) 100vw, 1440px" />
         </div>
     );
 }
@@ -250,12 +246,12 @@ function Text({ p }: { p: ProjectData }) {
     );
 }
 
-// I. Bande + colonne : bande de photos en haut ; dessous, les photos défilent à gauche
+// I. Image + colonne : une photo panoramique en haut ; dessous, les photos défilent à gauche
 // pendant que le titre et le bloc de texte restent fixes à droite.
 export function StyleBandeColonne({ p }: { p: ProjectData }) {
     return (
         <>
-            <Strip p={p} top />
+            <Banner p={p} top />
             <section className="v2-section v2-colfix v2-colfix-rev">
                 <div className="v2-colfix-photos">
                     {p.heroImages.slice(1).map((src, k) => (
@@ -274,7 +270,7 @@ export function StyleBandeColonne({ p }: { p: ProjectData }) {
     );
 }
 
-// J. Titre, bande, récit : le titre en haut, la bande de photos dessous, puis le texte
+// J. Titre, image, récit : le titre en haut, une photo panoramique dessous, puis le texte
 // paragraphe par paragraphe avec une photo à chaque étape, en alternance gauche / droite.
 export function StyleTitreBandeRecit({ p }: { p: ProjectData }) {
     const paras = [p.descriptionHeader, ...p.descriptionParagraphs].filter(Boolean) as string[];
@@ -290,7 +286,7 @@ export function StyleTitreBandeRecit({ p }: { p: ProjectData }) {
                     <Tech p={p} className="v2-pb-tech" />
                 </div>
             </section>
-            <Strip p={p} />
+            <Banner p={p} />
             <section className="v2-section">
                 <ol className="v2-recit-list v2-recit-flush">
                     {Array.from({ length: n }, (_, k) => (
