@@ -9,6 +9,7 @@ import { v2, v2ProjectHref } from "./v2Links";
 import V2Cta from "./V2Cta";
 import V2Carousel from "./V2Carousel";
 import V2Columns from "./V2Columns";
+import V2Board from "./V2Board";
 import StyleSwitch from "./StyleSwitch";
 import HeroCategories from "./HeroCategories";
 
@@ -20,6 +21,9 @@ const STYLES = [
     { id: "mosaic", label: "Mosaïque" },
     { id: "bento", label: "Magazine" },
     { id: "time", label: "Chronologie" },
+    { id: "strips", label: "Bandes" },
+    { id: "marquee", label: "Défilant" },
+    { id: "board", label: "Planche" },
 ];
 
 const yearOf = (p: ProjectData) => {
@@ -30,7 +34,7 @@ const firstYear = (p: ProjectData) => Number(yearOf(p)?.match(/\d{4}/)?.[0] ?? 0
 const alt = (p: ProjectData) => `${p.title}, ${p.subtitle}`;
 
 // Page catégorie v2 : titre, projets selon la vue choisie avec le sélecteur (grille, bandeau, panneaux,
-// colonnes décalées, mosaïque, mise en page magazine, chronologie), texte, liens, contact.
+// colonnes décalées, mosaïque, mise en page magazine, chronologie, bandes, défilant, planche), texte, liens, contact.
 export default function V2CategoryPage({ c }: { c: V2Category }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
     const byYear = [...projects].sort((a, b) => firstYear(b) - firstYear(a));
@@ -139,6 +143,56 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                         </li>
                     ))}
                 </ol>
+            </section>
+
+            {/* Bandes : une bande fine par projet, celle survolée s'ouvre en grand */}
+            <section className="v2-section v2-cat-view" data-view="strips">
+                <ul className="v2-strips">
+                    {projects.map((p, i) => (
+                        <li key={p.id}>
+                            <Link href={v2ProjectHref(p)}>
+                                <AfterLoad>
+                                    <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="100vw" />
+                                </AfterLoad>
+                                <span className="v2-strips-cap">
+                                    <span className="v2-strips-num">{String(i + 1).padStart(2, "0")}</span>
+                                    <span className="v2-strips-title">{p.title}</span>
+                                    <span className="v2-strips-place">{p.subtitle}</span>
+                                </span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            {/* Défilant : deux rangées de photos qui défilent en continu, en sens contraire */}
+            <div className="v2-cat-view v2-marquee" data-view="marquee">
+                {[projects.filter((_, i) => i % 2 === 0), projects.filter((_, i) => i % 2 === 1)].map((row, r) => (
+                    <div key={r} className={`v2-marquee-row${r ? " is-reverse" : ""}`} style={{ ["--d" as string]: `${Math.max(row.length, 3) * 7}s` }}>
+                        {[0, 1].map((copy) => (
+                            <ul key={copy} aria-hidden={copy === 1}>
+                                {row.map((p) => (
+                                    <li key={p.id}>
+                                        <Link href={v2ProjectHref(p)} tabIndex={copy === 1 ? -1 : undefined}>
+                                            <span className="v2-marquee-photo">
+                                                <Image src={p.heroImages[0]} alt={copy ? "" : alt(p)} fill sizes="34vw" />
+                                            </span>
+                                            <span className="v2-works-meta">
+                                                <span className="v2-domain-caption">{p.title}</span>
+                                                <span className="v2-domain-place">{p.subtitle}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        ))}
+                    </div>
+                ))}
+            </div>
+
+            {/* Planche : toutes les vignettes + grand aperçu du projet survolé */}
+            <section className="v2-section v2-cat-view" data-view="board">
+                <V2Board items={projects.map((p) => ({ href: v2ProjectHref(p), img: p.heroImages[0], alt: alt(p), title: p.title, place: p.subtitle, mission: p.optionalSubtitle }))} />
             </section>
 
             <section className="v2-section">
