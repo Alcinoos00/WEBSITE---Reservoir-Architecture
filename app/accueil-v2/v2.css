@@ -956,7 +956,11 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-cta-text { margin: 14px 0 0; max-width: 52ch; }
 
 /* Fiche projet : deux styles, un seul visible à la fois */
-.v2 .v2-project[data-pstyle="a"] .v2-pb, .v2 .v2-project[data-pstyle="b"] .v2-pa { display: none; }
+.v2 .v2-project .v2-pa, .v2 .v2-project .v2-pb, .v2 .v2-project .v2-pc, .v2 .v2-project .v2-pd,
+.v2 .v2-project .v2-pe, .v2 .v2-project .v2-pf, .v2 .v2-project .v2-pg, .v2 .v2-project .v2-ph { display: none; }
+.v2 .v2-project[data-pstyle="a"] .v2-pa, .v2 .v2-project[data-pstyle="b"] .v2-pb, .v2 .v2-project[data-pstyle="c"] .v2-pc,
+.v2 .v2-project[data-pstyle="d"] .v2-pd, .v2 .v2-project[data-pstyle="e"] .v2-pe, .v2 .v2-project[data-pstyle="f"] .v2-pf,
+.v2 .v2-project[data-pstyle="g"] .v2-pg, .v2 .v2-project[data-pstyle="h"] .v2-ph { display: block; }
 .v2 .v2-project-title { font-size: clamp(40px, 5vw, 72px) !important; letter-spacing: -0.02em; margin: 8px 0 !important; }
 .v2 .v2-project-desc { display: grid; gap: 14px; align-content: start; }
 .v2 .v2-project-desc .v2-h3, .v2 .v2-project-desc .v2-small { margin: 0; max-width: 58ch; }
@@ -1050,4 +1054,75 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-mag-row li { flex: none; height: 62vw; }
     .v2 .v2-mag-row.is-tall li:first-child { height: 90vw; }
     .v2 .v2-bento-cap { flex-direction: column; gap: 2px; left: 12px; bottom: 10px; }
+}
+
+/* ---------- Fiche projet : styles C à H ---------- */
+/* C. Récit : texte et photos en alternance gauche / droite */
+.v2 .v2-recit-head { max-width: 720px; }
+.v2 .v2-recit-list { list-style: none; margin: clamp(48px, 6vw, 96px) 0 0; padding: 0; display: grid; gap: clamp(48px, 7vw, 120px); }
+.v2 .v2-recit-list li { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(32px, 5vw, 88px); align-items: center; }
+.v2 .v2-recit-list li.is-right { grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); }
+.v2 .v2-recit-list li.is-right .v2-recit-photo { order: 2; }
+.v2 .v2-recit-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-recit-photo img { object-fit: cover; }
+.v2 .v2-recit-text { margin: 0; max-width: 46ch; }
+.v2 .v2-recit-list li:not(:has(.v2-recit-text)) { grid-template-columns: minmax(0, 0.7fr); justify-content: start; }
+.v2 .v2-recit-list li.is-right:not(:has(.v2-recit-text)) { justify-content: end; }
+
+/* D. Plein écran */
+.v2 .v2-plein-hero { position: relative; height: 100vh; background: var(--v2-stone); }
+.v2 .v2-plein-hero img { object-fit: cover; }
+.v2 .v2-plein-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0) 50%); }
+.v2 .v2-plein-title { position: absolute; z-index: 1; left: var(--v2-pad); right: var(--v2-pad); bottom: clamp(32px, 5vw, 64px); color: #fff; }
+.v2 .v2-plein-title .v2-tag { color: rgba(255, 255, 255, 0.85); }
+.v2 .v2-plein-title .v2-project-title { font-size: clamp(56px, 9vw, 140px) !important; }
+.v2 .v2-plein-text { max-width: calc(760px + 2 * var(--v2-pad)); margin: 0 auto; display: grid; gap: 16px; }
+.v2 .v2-plein-text .v2-small { max-width: none; margin: 0; }
+.v2 .v2-plein-photos { display: grid; gap: 12px; margin-top: clamp(64px, 7vw, 112px); }
+.v2 .v2-plein-photos figure { position: relative; margin: 0; height: 92vh; background: var(--v2-stone); }
+.v2 .v2-plein-photos img { object-fit: cover; }
+
+/* E. Colonne fixe */
+.v2 .v2-colfix { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: clamp(32px, 4vw, 72px); align-items: start; }
+.v2 .v2-colfix-info { position: sticky; top: 110px; display: grid; gap: 14px; }
+.v2 .v2-colfix-info .v2-small, .v2 .v2-colfix-info .v2-h3 { margin: 0; }
+.v2 .v2-colfix-photos { display: grid; gap: 12px; }
+.v2 .v2-colfix-photos figure { margin: 0; }
+.v2 .v2-colfix-photos img { display: block; width: 100%; height: auto; }
+
+/* F. Magazine (photos du projet en rangées) */
+.v2 .v2-pmag-cell { position: relative; display: block; height: 100%; overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-pmag-cell img { object-fit: cover; }
+
+/* G. Diptyques */
+.v2 .v2-dipt { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: clamp(40px, 5vw, 72px); }
+.v2 .v2-dipt.is-single { grid-template-columns: minmax(0, 1fr); }
+.v2 .v2-dipt figure { margin: 0; display: grid; gap: 8px; }
+.v2 .v2-dipt-photo { position: relative; display: block; height: clamp(320px, 62vh, 720px); overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-dipt-photo img { object-fit: cover; }
+.v2 .v2-dipt figcaption { margin: 0; }
+.v2 .v2-dipt-text { margin-top: clamp(48px, 6vw, 96px); }
+
+/* H. Horizontal (défilement piloté par la page) */
+.v2 .v2-hs { position: relative; }
+.v2 .v2-hs-sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; }
+.v2 .v2-hs-track { display: flex; gap: 16px; align-items: center; padding: 70px var(--v2-pad) 0; will-change: transform; }
+.v2 .v2-hs-intro { flex: 0 0 min(440px, 80vw); display: grid; gap: 12px; align-content: center; padding-right: 32px; }
+.v2 .v2-hs-intro .v2-small, .v2 .v2-hs-intro .v2-h3 { margin: 0; }
+.v2 .v2-hs-photo { position: relative; flex: 0 0 auto; display: block; height: 72vh; aspect-ratio: 3 / 2; overflow: hidden; background: var(--v2-stone); }
+.v2 .v2-hs-photo img { object-fit: cover; }
+
+@media (max-width: 768px) {
+    .v2 .v2-recit-list li, .v2 .v2-recit-list li.is-right { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+    .v2 .v2-recit-list li.is-right .v2-recit-photo { order: 0; }
+    .v2 .v2-plein-hero { height: 78svh; }
+    .v2 .v2-plein-photos figure { height: 62svh; }
+    .v2 .v2-colfix { grid-template-columns: minmax(0, 1fr); }
+    .v2 .v2-colfix-info { position: static; }
+    .v2 .v2-dipt { grid-template-columns: minmax(0, 1fr); }
+    .v2 .v2-dipt-photo { height: 58svh; }
+    .v2 .v2-hs-sticky { position: static; height: auto; display: block; }
+    .v2 .v2-hs-track { overflow-x: auto; padding-top: 96px; scroll-snap-type: x mandatory; }
+    .v2 .v2-hs-intro, .v2 .v2-hs-photo { scroll-snap-align: start; }
+    .v2 .v2-hs-photo { height: 52svh; }
 }

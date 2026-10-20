@@ -7,11 +7,19 @@ import type { ProjectData } from "@/types/project";
 import { v2ProjectHref } from "./v2Links";
 import StyleSwitch from "./StyleSwitch";
 
-const STYLES = [
-    { id: "a", label: "Style Teras" },
-    { id: "b", label: "Style actuel" },
-];
 import V2Cta from "./V2Cta";
+import { StyleColonne, StyleDiptyque, StyleHorizontal, StyleMagazine, StylePlein, StyleRecit } from "./V2ProjectStyles";
+
+const STYLES = [
+    { id: "a", label: "Teras" },
+    { id: "b", label: "Actuel" },
+    { id: "c", label: "Récit" },
+    { id: "d", label: "Plein écran" },
+    { id: "e", label: "Colonne fixe" },
+    { id: "f", label: "Magazine" },
+    { id: "g", label: "Diptyques" },
+    { id: "h", label: "Horizontal" },
+];
 
 function nextProject(project: ProjectData) {
     const same = PROJECTS.filter((p) => p.category === project.category);
@@ -19,7 +27,7 @@ function nextProject(project: ProjectData) {
     return same[(i + 1) % same.length];
 }
 
-// Fiche projet v2, en deux styles à comparer (sélecteur flottant) :
+// Fiche projet v2, en plusieurs styles à comparer (sélecteur flottant) ; les styles C à H sont dans V2ProjectStyles :
 // A « Teras » : titre, fiche technique en colonnes, grande photo, galerie pleine largeur ;
 // B « actuel » : même ordre que la fiche en ligne (bande de photos puis texte), habillé en v2.
 export default function V2ProjectPage({ project }: { project: ProjectData }) {
@@ -111,7 +119,14 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
                 </section>
             </div>
 
-            {/* Projet suivant (commun aux deux styles) */}
+            <div className="v2-pc"><StyleRecit p={project} /></div>
+            <div className="v2-pd"><StylePlein p={project} /></div>
+            <div className="v2-pe"><StyleColonne p={project} /></div>
+            <div className="v2-pf"><StyleMagazine p={project} /></div>
+            <div className="v2-pg"><StyleDiptyque p={project} /></div>
+            <div className="v2-ph"><StyleHorizontal p={project} /></div>
+
+            {/* Projet suivant (commun à tous les styles) */}
             <section className="v2-section">
                 <Link href={v2ProjectHref(next)} className="v2-next">
                     <span className="v2-stack">
