@@ -10,7 +10,30 @@ import V2Cta from "./V2Cta";
 
 const alt = (p: ProjectData) => `${p.title}, ${p.subtitle}`;
 
-// Page catégorie v2 : titre, projets en grille « magazine » (tailles qui alternent), texte, liens, contact.
+// Rangées de la grille magazine : largeurs relatives des projets de chaque rangée (motif qui se répète),
+// et hauteur de la rangée. La dernière rangée peut être incomplète : ses projets se partagent la largeur.
+const ROWS = [
+    { spans: [4, 2], tall: true },
+    { spans: [2, 2, 2], tall: false },
+    { spans: [3, 3], tall: false },
+];
+
+function toRows(projects: ProjectData[]) {
+    const rows: { tall: boolean; items: { p: ProjectData; span: number }[] }[] = [];
+    let i = 0;
+    let r = 0;
+    while (i < projects.length) {
+        const { spans, tall } = ROWS[r % ROWS.length];
+        const items = projects.slice(i, i + spans.length).map((p, k) => ({ p, span: spans[k] }));
+        rows.push({ tall, items });
+        i += items.length;
+        r++;
+    }
+    return rows;
+}
+
+// Page catégorie v2 : titre, projets en grille « magazine » (rangées aux tailles qui alternent ; au survol,
+// le projet s'élargit dans sa rangée comme les panneaux de l'accueil), texte, liens, contact.
 // Vue retenue par Emeric le 2026-10-20 parmi une dizaine de variantes.
 export default function V2CategoryPage({ c }: { c: V2Category }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
@@ -26,21 +49,30 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
             </section>
 
             <section className="v2-section v2-cat-projects">
-                <ul className="v2-bento">
-                    {projects.map((p, i) => (
-                        <li key={p.id} className={`v2-bento-${i % 7}`}>
-                            <Link href={v2ProjectHref(p)}>
-                                <AfterLoad>
-                                    <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 60vw" priority={i < 2} />
-                                </AfterLoad>
-                                <span className="v2-bento-cap">
-                                    <span className="v2-bento-title">{p.title}</span>
-                                    <span>{p.subtitle}</span>
-                                </span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
+                <div className="v2-mag">
+                    {toRows(projects).map((row, r) => {
+                        const total = row.items.reduce((n, it) => n + it.span, 0);
+                        return (
+                            <ul key={r} className={`v2-mag-row${row.tall ? " is-tall" : ""}`}>
+                                {row.items.map(({ p, span }) => (
+                                    // --grow : part de la rangée ; --open : largeur de la photo, égale à la taille du
+                                    // projet une fois élargi au survol, pour que l'image s'agrandisse sans zoomer.
+                                    <li key={p.id} style={{ ["--grow" as string]: span, ["--open" as string]: (span + 2) / (total + 2) }}>
+                                        <Link href={v2ProjectHref(p)}>
+                                            <AfterLoad>
+                                                <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 70vw" priority={r === 0} />
+                                            </AfterLoad>
+                                            <span className="v2-bento-cap">
+                                                <span className="v2-bento-title">{p.title}</span>
+                                                <span>{p.subtitle}</span>
+                                            </span>
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        );
+                    })}
+                </div>
             </section>
 
             <section className="v2-section">
