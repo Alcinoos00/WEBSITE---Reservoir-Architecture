@@ -729,13 +729,8 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 10px; padding-top: 18px; }
 }
 
-/* Largeur max du contenu : 1200px, centré (les marges grandissent au-delà), y compris sur un portable 14 pouces */
-.v2 { --v2-max: 1200px; --v2-pad: max(var(--v2-gutter), calc((100vw - var(--v2-max)) / 2)); }
-/* Largeurs à comparer (sélecteur temporaire) */
-.v2[data-width="1320"] { --v2-max: 1320px; }
-.v2[data-width="1440"] { --v2-max: 1440px; }
-.v2[data-width="1600"] { --v2-max: 1600px; }
-.v2[data-width="fluid"] { --v2-pad: max(var(--v2-gutter), 5vw); }
+/* Largeur max du contenu : 1320px (choisie par Emeric le 2026-10-21), centré (les marges grandissent au-delà), y compris sur un portable 14 pouces */
+.v2 { --v2-max: 1320px; --v2-pad: max(var(--v2-gutter), calc((100vw - var(--v2-max)) / 2)); }
 .v2 .v2-hero, .v2 .v2-section, .v2 .v2-cta, .v2 .v2-footer { padding-left: var(--v2-pad); padding-right: var(--v2-pad); }
 .v2 .v2-panel img { width: calc((100vw - 2 * var(--v2-pad) - 24px) * 3.2 / 6.2) !important; }
 @media (max-width: 768px) {
@@ -1067,7 +1062,3 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-banner.is-top { margin-top: 76px; }
 }
 
-/* Sélecteur de largeur : en bas à gauche, pour ne pas gêner celui des fiches projet */
-.v2 .v2-switch.v2-switch-width { left: 16px; transform: none; }
-.v2 .v2-switch.v2-switch-width::before { content: "Largeur"; align-self: center; padding: 0 8px 0 10px; font: 500 11px/1 var(--v2-font, sans-serif); text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
-@media (max-width: 768px) { .v2 .v2-switch.v2-switch-width { display: none; } }
