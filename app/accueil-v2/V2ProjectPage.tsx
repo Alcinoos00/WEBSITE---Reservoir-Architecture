@@ -1,10 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import AfterLoad from "@/components/AfterLoad";
-import { PROJECTS } from "@/lib/projects";
 import { getProjectAlt, typologyLabel } from "@/lib/seo";
 import type { ProjectData } from "@/types/project";
-import { v2ProjectHref } from "./v2Links";
 import StyleSwitch from "./StyleSwitch";
 
 import V2Cta from "./V2Cta";
@@ -23,17 +20,10 @@ const STYLES = [
     { id: "j", label: "Titre, image, récit" },
 ];
 
-function nextProject(project: ProjectData) {
-    const same = PROJECTS.filter((p) => p.category === project.category);
-    const i = same.findIndex((p) => p.id === project.id);
-    return same[(i + 1) % same.length];
-}
-
 // Fiche projet v2, en plusieurs styles à comparer (sélecteur flottant) ; les styles C à H sont dans V2ProjectStyles :
 // A « Teras » : titre, fiche technique en colonnes, grande photo, galerie pleine largeur ;
 // B « actuel » : même ordre que la fiche en ligne (bande de photos puis texte), habillé en v2.
 export default function V2ProjectPage({ project }: { project: ProjectData }) {
-    const next = nextProject(project);
     const [first, ...rest] = project.heroImages;
     const tech = project.techSheet ?? [];
 
@@ -129,22 +119,6 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
             <div className="v2-ph"><StyleHorizontal p={project} /></div>
             <div className="v2-pi"><StyleBandeColonne p={project} /></div>
             <div className="v2-pj"><StyleTitreBandeRecit p={project} /></div>
-
-            {/* Projet suivant (commun à tous les styles) */}
-            <section className="v2-section">
-                <Link href={v2ProjectHref(next)} className="v2-next">
-                    <span className="v2-stack">
-                        <span className="v2-tag">Projet suivant</span>
-                        <span className="v2-h2">{next.title}</span>
-                        <span className="v2-domain-place">{next.subtitle}</span>
-                    </span>
-                    <span className="v2-next-photo">
-                        <AfterLoad>
-                            <Image src={next.heroImages[0]} alt={`${next.title}, ${next.subtitle}`} fill sizes="(max-width: 768px) 100vw, 40vw" />
-                        </AfterLoad>
-                    </span>
-                </Link>
-            </section>
 
             <V2Cta />
         </div>
