@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 // Animations de l'accueil v2 (reprises du template Teras, sans GSAP) :
 // - [data-rise]   : lettres du nom qui montent une à une au chargement ;
@@ -8,7 +9,11 @@ import { useEffect } from "react";
 // - [data-scrub]  : lettres qui passent de 20 % à 100 % d'opacité au fil du défilement ;
 // - [data-parallax] : image qui glisse plus lentement que la page.
 // Sans JavaScript ou avec « réduire les animations », tout reste visible et immobile.
+// Le composant vit dans le gabarit commun (V2Shell) : il ne se remonte pas d'une page à l'autre et la page
+// peut arriver après lui. Il relance donc la recherche des blocs à chaque changement de page et à chaque
+// ajout d'éléments dans le DOM, sinon les blocs [data-reveal] d'une nouvelle page resteraient invisibles.
 export default function V2Motion() {
+    const pathname = usePathname();
     useEffect(() => {
         const root = document.querySelector<HTMLElement>(".v2");
         if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -28,12 +33,26 @@ export default function V2Motion() {
             },
             { rootMargin: "0px 0px -12% 0px" },
         );
-        root.querySelectorAll("[data-reveal]").forEach((el) => io.observe(el));
-
-        const scrubs = Array.from(root.querySelectorAll<HTMLElement>("[data-scrub]")).map((el) => ({
-            el,
-            letters: Array.from(el.querySelectorAll<HTMLElement>(".v2-l")),
-        }));
+        let scrubs: { el: HTMLElement; letters: HTMLElement[] }[] = [];
+        const scan = () => {
+            root.querySelectorAll<HTMLElement>("[data-reveal]:not(.is-in)").forEach((el) => io.observe(el));
+            scrubs = Array.from(root.querySelectorAll<HTMLElement>("[data-scrub]")).map((el) => ({
+                el,
+                letters: Array.from(el.querySelectorAll<HTMLElement>(".v2-l")),
+            }));
+        };
+        scan();
+        let pending = false;
+        const mo = new MutationObserver(() => {
+            if (pending) return;
+            pending = true;
+            window.setTimeout(() => {
+                pending = false;
+                scan();
+                update();
+            }, 50);
+        });
+        mo.observe(root, { childList: true, subtree: true });
         let ticking = false;
         const update = () => {
             ticking = false;
@@ -66,9 +85,10 @@ export default function V2Motion() {
         return () => {
             window.clearTimeout(t);
             io.disconnect();
+            mo.disconnect();
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", onScroll);
         };
-    }, []);
+    }, [pathname]);
     return null;
 }
