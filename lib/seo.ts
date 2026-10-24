@@ -20,6 +20,8 @@ export const ARCHIDVISOR_URL =
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const HOUZZ_URL = "https://www.houzz.fr/pro/reservoir-architecture";
+export const PINTEREST_URL = "https://fr.pinterest.com/reservoirarchi/";
+export const ARCHITECTES_POUR_TOUS_URL = "https://www.architectes-pour-tous.fr/architectes-pour-tous/reservoir-architecture";
 export const SITE_FOUNDED = "2013";
 export const SITE_FOUNDER = "Serge Ettore";
 export const SITE_FOUNDER_TITLE = "Architecte DPLG";
@@ -106,16 +108,32 @@ export function truncateAtWord(text: string, maxLen: number): string {
     return (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced) + "...";
 }
 
+// "NÎMES (30)" -> "Nîmes (30)", "AIX-EN-PROVENCE (13)" -> "Aix-en-Provence (13)"
+const LOWER_WORDS = new Set(["de", "du", "des", "la", "le", "les", "en", "et", "sur", "sous", "d", "l"]);
+
+export function titleCase(text: string): string {
+    return text
+        .toLocaleLowerCase("fr-FR")
+        .replace(/(^|[\s\-'’(])(\p{L}+)/gu, (match: string, sep: string, word: string, offset: number) =>
+            offset > 0 && LOWER_WORDS.has(word) ? sep + word : sep + word.charAt(0).toLocaleUpperCase("fr-FR") + word.slice(1),
+        );
+}
+
+// Lieu du projet précédé de sa préposition : "à Nîmes (30)", "en France et à l'international".
+export function projectAt(project: ProjectData): string {
+    if (/international/i.test(project.subtitle)) return "en France et à l'international";
+    return `à ${titleCase(project.subtitle)}`;
+}
+
 export function getProjectMetadata(project: ProjectData): Metadata {
     const typology = typologyLabel(project.category);
     const title = `${project.title} - ${typology} à ${project.subtitle}`;
     const ogTitle = `${title} | ${SITE_NAME}`;
-    const rawDesc =
-        project.descriptionHeader ??
-        project.descriptionParagraphs[0] ??
-        project.optionalSubtitle ??
-        `${typology} ${project.title} à ${project.subtitle} par ${SITE_NAME}.`;
-    const description = truncateAtWord(rawDesc.replace(/\s+/g, " "), 160);
+    // Description lisible par Google et les assistants IA : type de projet + lieu d'abord,
+    // puis l'accroche du projet (seule, elle ne disait ni quoi ni où).
+    const header = project.descriptionHeader ?? project.optionalSubtitle;
+    const rawDesc = `${typology} ${projectAt(project)} par ${SITE_NAME}, architecte à ${SITE_LOCATION}. ${titleCase(project.title)}${header ? ` : ${header.replace(/\s+/g, " ").trim()}` : ""}.`;
+    const description = truncateAtWord(rawDesc, 160);
     const url = getProjectUrl(project);
     const image = project.heroImages[0]
         ? absoluteImageUrl(project.heroImages[0])
@@ -193,7 +211,7 @@ export function getOrganizationJsonLd() {
             longitude: SITE_GEO.longitude,
         },
         hasMap: `https://www.google.com/maps/search/?api=1&query=${SITE_GEO.latitude},${SITE_GEO.longitude}`,
-        sameAs: [ARCHIDVISOR_URL, INSTAGRAM_URL, FACEBOOK_URL, HOUZZ_URL],
+        sameAs: [ARCHIDVISOR_URL, HOUZZ_URL, ARCHITECTES_POUR_TOUS_URL, INSTAGRAM_URL, FACEBOOK_URL, PINTEREST_URL],
         areaServed: [
             ...AREA_SERVED_CITIES.map((name) => ({ "@type": "City", name })),
             ...AREA_SERVED_REGIONS.map((name) => ({ "@type": "AdministrativeArea", name })),
