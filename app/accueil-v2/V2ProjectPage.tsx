@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { getProjectAlt } from "@/lib/seo";
 import type { ProjectData } from "@/types/project";
 import StyleSwitch from "./StyleSwitch";
 import V2Cta from "./V2Cta";
+import V2Strip from "./V2Strip";
 import { StyleImageColonne } from "./V2ProjectStyles";
 
 // « Image + colonne » par défaut (retenu par Emeric le 2026-10-20) ; « Actuel » reste comparable via le sélecteur.
@@ -25,13 +25,7 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
 
             {/* ---------- Style B : structure actuelle ---------- */}
             <div className="v2-pb">
-                <div className="v2-pb-strip v2-page-top-strip">
-                    {project.heroImages.map((src, i) => (
-                        <div key={src} className="v2-pb-strip-item">
-                            <Image src={src} alt={getProjectAlt(project, i)} width={1200} height={800} sizes="(max-width: 768px) 200vw, 90vh" loading={i < 3 ? "eager" : "lazy"} />
-                        </div>
-                    ))}
-                </div>
+                <V2Strip project={project} />
                 <section className="v2-section v2-pb-body">
                     <div className="v2-row">
                         <div className="v2-fade" data-reveal>
