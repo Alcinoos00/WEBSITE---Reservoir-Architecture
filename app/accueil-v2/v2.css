@@ -960,6 +960,12 @@ body:has(.v2) { background: #ffffff; }
 /* Fiche projet : deux styles, un seul visible à la fois */
 .v2 .v2-project .v2-pi, .v2 .v2-project .v2-pb { display: none; }
 .v2 .v2-project[data-pstyle="i"] .v2-pi, .v2 .v2-project[data-pstyle="b"] .v2-pb { display: block; }
+/* Mobile : trop de texte avant les photos en « Image + colonne », on garde le carrousel (style Actuel) et pas de sélecteur */
+@media (max-width: 768px) {
+    .v2 .v2-project[data-pstyle] .v2-pi { display: none; }
+    .v2 .v2-project[data-pstyle] .v2-pb { display: block; }
+    .v2 .v2-project .v2-switch { display: none; }
+}
 .v2 .v2-project-title { font-size: clamp(40px, 5vw, 72px) !important; letter-spacing: -0.02em; margin: 8px 0 !important; }
 .v2 .v2-project-desc { display: grid; gap: 14px; align-content: start; }
 .v2 .v2-project-desc .v2-h3, .v2 .v2-project-desc .v2-small { margin: 0; max-width: 58ch; }
