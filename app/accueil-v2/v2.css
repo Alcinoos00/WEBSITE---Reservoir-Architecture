@@ -1093,3 +1093,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-pb-strip-wrap .v2-pb-strip { padding-top: 0; }
     .v2 .v2-strip-nav { bottom: auto; top: calc(50% + 38px); transform: translateY(-50%); }
 }
+/* Flèches en verre dépoli */
+@media (max-width: 768px) {
+    .v2 .v2-strip-nav { background: rgba(20, 20, 20, 0.22); color: #fff; border: 1px solid rgba(255, 255, 255, 0.35); -webkit-backdrop-filter: blur(10px) saturate(140%); backdrop-filter: blur(10px) saturate(140%); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18); text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+}
+/* Les photos du bandeau sont des boutons (ouverture plein écran) : on efface le style de bouton */
+.v2 button.v2-pb-strip-item { padding: 0; border: 0; background: none; cursor: zoom-in; width: auto; }
