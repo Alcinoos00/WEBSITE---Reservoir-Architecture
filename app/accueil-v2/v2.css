@@ -1115,3 +1115,11 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-cat-head { padding-top: 28px !important; }
     .v2 .v2-cat-projects { display: none; }
 }
+
+/* Mobile : hauteur des panneaux calée sur la largeur d'écran, pas sur la hauteur. Dans Chrome mobile,
+   la barre du bas disparaît au défilement et change la hauteur visible : les panneaux (et leurs photos)
+   se redimensionnaient alors en plein défilement, ce qui donnait un léger zoom. 130vw ≈ 60 % d'un écran 375 × 812. */
+@media (max-width: 768px) {
+    .v2 .v2-cats-panels { --cats-h: clamp(380px, 130vw, 600px); height: var(--cats-h); }
+    .v2 .v2-panel img { height: calc((var(--cats-h) - 18px) * 3.6 / 6.6) !important; }
+}
