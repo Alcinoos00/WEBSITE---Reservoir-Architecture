@@ -74,26 +74,7 @@ const FAQ_JSON_LD = {
     "@type": "FAQPage",
     mainEntity: FAQ_ITEMS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
-const YEAR = new Date().getFullYear();
-const FIGURES = [
-    { value: String(PROJECTS.length), label: "Projets" },
-    { value: String(YEAR - 2013), label: "Ans d'agence" },
-    { value: String(YEAR - 1999), label: "Ans DPLG" },
-    { value: "4", label: "Domaines" },
-];
-
 export default function HomeV2() {
-    // Chiffres clés sous la présentation, en tuiles
-    const figures = (
-        <dl className="v2-figures v2-figs v2-figs-2 v2-figs-f">
-            {FIGURES.map((f) => (
-                <div key={f.label} className="v2-fade" data-reveal>
-                    <dd>{f.value}</dd>
-                    <dt>{f.label}</dt>
-                </div>
-            ))}
-        </dl>
-    );
     const count = (category: string) => PROJECTS.filter((p) => p.category === category).length;
     return (
         <>
@@ -127,7 +108,6 @@ export default function HomeV2() {
                         <p className="v2-small v2-hero-intro">
                             Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                         </p>
-                        {figures}
                     </div>
                     <p className="v2-statement" data-scrub aria-label={INTRO}>
                         <span aria-hidden="true"><Letters text={INTRO} /></span>

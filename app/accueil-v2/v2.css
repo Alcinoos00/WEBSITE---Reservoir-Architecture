@@ -1099,3 +1099,8 @@ body:has(.v2) { background: #ffffff; }
 }
 /* Les photos du bandeau sont des boutons (ouverture plein écran) : on efface le style de bouton */
 .v2 button.v2-pb-strip-item { padding: 0; border: 0; background: none; cursor: zoom-in; width: auto; }
+
+/* Mobile : paragraphe d'accroche de l'accueil plus petit */
+@media (max-width: 768px) {
+    .v2 .v2-hero-below .v2-statement { font-size: 16px; line-height: 1.35; }
+}
