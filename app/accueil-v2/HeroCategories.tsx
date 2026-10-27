@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import AfterLoad from "@/components/AfterLoad";
 import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 export type HeroCategory = { label: string; href: string; img: string; alt: string };
@@ -47,18 +48,25 @@ export default function HeroCategories({ items }: { items: HeroCategory[] }) {
                     onFocus={() => setActive(i)}
                     onClick={(e) => onClick(e, i)}
                 >
-                    <Image
-                        src={c.img}
-                        alt={c.alt}
-                        fill
-                        priority={i === 0}
-                        loading={i === 0 ? undefined : "eager"}
-                        // Next 16 n'ajoute plus fetchpriority="high" avec priority : on le pose nous-mêmes (comme le Hero v1).
-                        fetchPriority={i === 0 ? "high" : "low"}
-                        // Panneaux hauts en object-fit: cover : la photo paysage est mise à l'échelle sur la hauteur,
-                        // donc sa largeur réelle dépasse celle du panneau. 60vw donnait une image floue (qualité 75 : 90 alourdissait l'accueil).
-                        sizes="100vw"
-                    />
+                    {/* Seule la 1re photo part tout de suite : les 3 autres attendent la fin du chargement
+                        pour ne pas lui prendre de bande passante (le fond pierre du panneau s'affiche en attendant). */}
+                    {i === 0 ? (
+                        <Image
+                            src={c.img}
+                            alt={c.alt}
+                            fill
+                            priority
+                            // Next 16 n'ajoute plus fetchpriority="high" avec priority : on le pose nous-mêmes (comme le Hero v1).
+                            fetchPriority="high"
+                            // Panneaux hauts en object-fit: cover : la photo paysage est mise à l'échelle sur la hauteur,
+                            // donc sa largeur réelle dépasse celle du panneau. 60vw donnait une image floue (qualité 75 : 90 alourdissait l'accueil).
+                            sizes="100vw"
+                        />
+                    ) : (
+                        <AfterLoad delayMs={0}>
+                            <Image src={c.img} alt={c.alt} fill sizes="100vw" />
+                        </AfterLoad>
+                    )}
                     <span className="v2-panel-label">
                         <span className="v2-panel-name">{c.label}</span>
                     </span>

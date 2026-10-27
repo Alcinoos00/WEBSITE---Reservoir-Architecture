@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
 import GtagLoader from "@/components/GtagLoader";
@@ -13,11 +12,6 @@ import {
   getWebsiteJsonLd,
 } from "@/lib/seo";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -80,7 +74,7 @@ export default function RootLayout({
   const jsonLd = [getOrganizationJsonLd(), getWebsiteJsonLd()];
   return (
     <html lang="fr">
-      <body className={inter.variable}>
+      <body>
         <ClarityInit />
         {/* Suivi des clics téléphone et email sur tout le site (conversions Google Ads). */}
         <LeadTracking />
