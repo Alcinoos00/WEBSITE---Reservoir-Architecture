@@ -53,7 +53,8 @@ export default function HeroCategories({ items }: { items: HeroCategory[] }) {
                         fill
                         priority={i === 0}
                         loading={i === 0 ? undefined : "eager"}
-                        fetchPriority={i === 0 ? undefined : "low"}
+                        // Next 16 n'ajoute plus fetchpriority="high" avec priority : on le pose nous-mêmes (comme le Hero v1).
+                        fetchPriority={i === 0 ? "high" : "low"}
                         // Panneaux hauts en object-fit: cover : la photo paysage est mise à l'échelle sur la hauteur,
                         // donc sa largeur réelle dépasse celle du panneau. 60vw donnait une image floue (qualité 75 : 90 alourdissait l'accueil).
                         sizes="100vw"
