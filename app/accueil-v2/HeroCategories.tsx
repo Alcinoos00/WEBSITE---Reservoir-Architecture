@@ -53,10 +53,10 @@ export default function HeroCategories({ items }: { items: HeroCategory[] }) {
                         fill
                         priority={i === 0}
                         loading={i === 0 ? undefined : "eager"}
+                        fetchPriority={i === 0 ? undefined : "low"}
                         // Panneaux hauts en object-fit: cover : la photo paysage est mise à l'échelle sur la hauteur,
-                        // donc sa largeur réelle dépasse celle du panneau. 60vw donnait une image floue.
+                        // donc sa largeur réelle dépasse celle du panneau. 60vw donnait une image floue (qualité 75 : 90 alourdissait l'accueil).
                         sizes="100vw"
-                        quality={90}
                     />
                     <span className="v2-panel-label">
                         <span className="v2-panel-name">{c.label}</span>

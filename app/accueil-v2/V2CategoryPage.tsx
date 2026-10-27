@@ -61,9 +61,15 @@ export default function V2CategoryPage({ c, faq }: { c: V2Category; faq?: Faq })
                                     // --grow : part de la largeur de la rangée.
                                     <li key={p.id} style={{ ["--grow" as string]: span }}>
                                         <Link href={v2ProjectHref(p)}>
-                                            <AfterLoad>
-                                                <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 70vw" priority={r === 0} />
-                                            </AfterLoad>
+                                            {/* 1re rangée : affichée tout de suite, sans préchargement forcé (la grille est
+                                                masquée sur téléphone). Les suivantes attendent la fin du chargement. */}
+                                            {r === 0 ? (
+                                                <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 70vw" loading="lazy" fetchPriority="high" />
+                                            ) : (
+                                                <AfterLoad>
+                                                    <Image src={p.heroImages[0]} alt={alt(p)} fill sizes="(max-width: 768px) 100vw, 70vw" />
+                                                </AfterLoad>
+                                            )}
                                             <span className="v2-bento-cap">
                                                 <span className="v2-bento-title">{p.title}</span>
                                                 <span>{p.subtitle}</span>

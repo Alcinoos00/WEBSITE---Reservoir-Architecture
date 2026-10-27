@@ -23,7 +23,7 @@ export default function V2CatCarousel({ projects }: { projects: ProjectData[] })
             <div className="v2-pb-strip" ref={ref}>
                 {projects.map((p, i) => (
                     <Link key={p.id} href={v2ProjectHref(p)} className="v2-pb-strip-item">
-                        <Image src={p.heroImages[0]} alt={`${p.title}, ${p.subtitle}`} fill sizes="90vw" priority={i === 0} />
+                        <Image src={p.heroImages[0]} alt={`${p.title}, ${p.subtitle}`} fill sizes="90vw" loading="lazy" fetchPriority={i === 0 ? "high" : "auto"} />
                         <span className="v2-bento-cap">
                             <span className="v2-bento-title">{p.title}</span>
                             <span>{p.subtitle}</span>

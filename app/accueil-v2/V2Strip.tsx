@@ -53,7 +53,7 @@ export default function V2Strip({ project }: { project: ProjectData }) {
                         onClick={() => setOpen(i)}
                         aria-label={`Agrandir l'image ${i + 1} sur ${count}`}
                     >
-                        <Image src={src} alt={getProjectAlt(project, i)} width={1200} height={800} sizes="(max-width: 768px) 200vw, 90vh" loading={i < 3 ? "eager" : "lazy"} />
+                        <Image src={src} alt={getProjectAlt(project, i)} width={1200} height={800} sizes="(max-width: 768px) 90vw, 90vh" loading="lazy" fetchPriority={i === 0 ? "high" : "auto"} />
                     </button>
                 ))}
             </div>
