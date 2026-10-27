@@ -7,6 +7,7 @@ import type { ProjectData } from "@/types/project";
 import type { V2Category } from "./v2Categories";
 import { v2, v2ProjectHref } from "./v2Links";
 import V2Cta from "./V2Cta";
+import V2CatCarousel from "./V2CatCarousel";
 
 const alt = (p: ProjectData) => `${p.title}, ${p.subtitle}`;
 
@@ -39,6 +40,8 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
 
     return (
         <>
+            <V2CatCarousel projects={projects} />
+
             <section className="v2-section v2-page-top v2-cat-head">
                 <div className="v2-stack v2-stack-top v2-fade" data-reveal>
                     <p className="v2-tag">{c.eyebrow}</p>

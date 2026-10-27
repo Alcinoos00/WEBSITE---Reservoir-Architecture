@@ -1104,3 +1104,14 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-hero-below .v2-statement { font-size: 16px; line-height: 1.35; }
 }
+
+/* Pages catégorie : carrousel de projets en tête sur mobile, texte dessous, grille masquée */
+.v2 .v2-cat-carousel { display: none; }
+@media (max-width: 768px) {
+    .v2 .v2-cat-carousel { display: block; }
+    .v2 .v2-cat-carousel .v2-pb-strip-item { position: relative; display: block; overflow: hidden; }
+    .v2 .v2-cat-carousel .v2-pb-strip-item::after { content: ""; position: absolute; inset: 50% 0 0; background: linear-gradient(transparent, rgba(0, 0, 0, 0.45)); pointer-events: none; }
+    .v2 .v2-cat-carousel .v2-bento-cap { color: #fff; }
+    .v2 .v2-cat-head { padding-top: 28px !important; }
+    .v2 .v2-cat-projects { display: none; }
+}
