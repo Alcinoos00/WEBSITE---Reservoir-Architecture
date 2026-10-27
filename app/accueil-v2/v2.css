@@ -1123,3 +1123,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-cats-panels { --cats-h: clamp(380px, 130vw, 600px); height: var(--cats-h); }
     .v2 .v2-panel img { height: calc((var(--cats-h) - 18px) * 3.6 / 6.6) !important; }
 }
+
+/* Animation des panneaux du haut plus fluide sur téléphone : chaque photo et son dégradé ont leur
+   propre calque (dessinés une fois, puis simplement recadrés), et un panneau qui change de taille
+   ne fait pas redessiner le reste de la page. */
+.v2 .v2-panel { contain: layout paint; }
+.v2 .v2-panel img, .v2 .v2-panel::after { will-change: transform; backface-visibility: hidden; }
