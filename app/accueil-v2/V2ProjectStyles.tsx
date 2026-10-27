@@ -24,9 +24,11 @@ export function StyleImageColonne({ p }: { p: ProjectData }) {
                 </div>
                 <div className="v2-colfix-info">
                     <p className="v2-tag">{typologyLabel(p.category)} · {p.subtitle}</p>
-                    <h1 className="v2-h2 v2-project-title">{p.title}</h1>
+                    {/* Pas de h1/h2 ici : la page rend aussi le style « Actuel » (seul visible sur mobile, donc lu par Google),
+                        qui porte le vrai h1. Un seul h1 par page. */}
+                    <p className="v2-h2 v2-project-title">{p.title}</p>
                     {p.optionalSubtitle && <p className="v2-tag">{p.optionalSubtitle}</p>}
-                    {p.descriptionHeader && <h2 className="v2-h3">{p.descriptionHeader}</h2>}
+                    {p.descriptionHeader && <p className="v2-h3">{p.descriptionHeader}</p>}
                     {p.descriptionParagraphs.map((t) => (
                         <p className="v2-small" key={t.slice(0, 24)}>{t}</p>
                     ))}
