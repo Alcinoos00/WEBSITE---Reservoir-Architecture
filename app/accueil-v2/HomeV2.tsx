@@ -115,6 +115,37 @@ export default function HomeV2() {
                 </div>
             </section>
 
+            {/* L'architecte et les avis Archidvisor (mêmes contenus que les landing pages) */}
+            <section className="v2-section">
+                <div className="v2-stack v2-fade" data-reveal>
+                    <h2 className="v2-h2">L&apos;architecte</h2>
+                </div>
+                <div className="v2-architect">
+                    <div className="v2-architect-head v2-fade" data-reveal>
+                        <div className="v2-architect-photo">
+                            <AfterLoad>
+                                <Image
+                                    src="/images/serge-ettore.webp"
+                                    alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
+                                    fill
+                                    sizes="(max-width: 768px) 120px, 220px"
+                                />
+                            </AfterLoad>
+                        </div>
+                        <div>
+                            <p className="v2-h3 v2-architect-name">Serge Ettore</p>
+                            <p className="v2-tag">Architecte DPLG, fondateur</p>
+                        </div>
+                    </div>
+                    <div className="v2-architect-text v2-fade" data-reveal>
+                        <p className="v2-small">
+                            L&apos;agence est dirigée par Serge Ettore, architecte DPLG depuis 1999. D&apos;une double culture, architecturale et scénographique (projets pour la maison Cacharel, workshops internationaux), il aborde chaque projet comme une situation unique : un site, un programme, un budget, des usages réels. L&apos;objectif n&apos;est pas la signature, mais la justesse.
+                        </p>
+                        <V2Reviews />
+                    </div>
+                </div>
+            </section>
+
             {/* Domaines : ce que fait l'agence, avec des exemples et le lien vers chaque catégorie */}
             <section className="v2-section">
                 <div className="v2-stack">
@@ -155,36 +186,24 @@ export default function HomeV2() {
                 </div>
             </section>
 
-            {/* L'architecte et les avis Archidvisor (mêmes contenus que les landing pages) */}
+            {/* FAQ : mêmes questions que l'accueil actuel */}
             <section className="v2-section">
-                <div className="v2-stack v2-fade" data-reveal>
-                    <h2 className="v2-h2">L&apos;architecte</h2>
-                </div>
-                <div className="v2-architect">
-                    <div className="v2-architect-head v2-fade" data-reveal>
-                        <div className="v2-architect-photo">
-                            <AfterLoad>
-                                <Image
-                                    src="/images/serge-ettore.webp"
-                                    alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence"
-                                    fill
-                                    sizes="(max-width: 768px) 120px, 220px"
-                                />
-                            </AfterLoad>
-                        </div>
-                        <div>
-                            <p className="v2-h3 v2-architect-name">Serge Ettore</p>
-                            <p className="v2-tag">Architecte DPLG, fondateur</p>
-                        </div>
-                    </div>
-                    <div className="v2-architect-text v2-fade" data-reveal>
-                        <p className="v2-small">
-                            L&apos;agence est dirigée par Serge Ettore, architecte DPLG depuis 1999. D&apos;une double culture, architecturale et scénographique (projets pour la maison Cacharel, workshops internationaux), il aborde chaque projet comme une situation unique : un site, un programme, un budget, des usages réels. L&apos;objectif n&apos;est pas la signature, mais la justesse.
-                        </p>
-                        <V2Reviews />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
+                <div className="v2-row">
+                    <h2 className="v2-h2 v2-fade" data-reveal>Architecte à <span className="v2-nowrap">Aix-en-Provence</span> : questions fréquentes</h2>
+                    <div className="v2-faq v2-fade" data-reveal>
+                        {FAQ_ITEMS.map((f) => (
+                            <details key={f.q}>
+                                <summary>{f.q}</summary>
+                                <p className="v2-small">{f.a}</p>
+                            </details>
+                        ))}
                     </div>
                 </div>
             </section>
+
+            {/* Contact juste après la FAQ, même bloc que le bas de page avec une autre photo */}
+            <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
 
             {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix */}
             <section className="v2-section">
@@ -217,22 +236,6 @@ export default function HomeV2() {
                     <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
                     <Link href={v2("/equipements-aix-en-provence")}>Architecte équipements publics</Link>
                 </nav>
-            </section>
-
-            {/* FAQ : mêmes questions que l'accueil actuel */}
-            <section className="v2-section">
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }} />
-                <div className="v2-row">
-                    <h2 className="v2-h2 v2-fade" data-reveal>Architecte à <span className="v2-nowrap">Aix-en-Provence</span> : questions fréquentes</h2>
-                    <div className="v2-faq v2-fade" data-reveal>
-                        {FAQ_ITEMS.map((f) => (
-                            <details key={f.q}>
-                                <summary>{f.q}</summary>
-                                <p className="v2-small">{f.a}</p>
-                            </details>
-                        ))}
-                    </div>
-                </div>
             </section>
 
             {/* Texte de l'agence (repris de l'accueil actuel), placé en fin de page */}
