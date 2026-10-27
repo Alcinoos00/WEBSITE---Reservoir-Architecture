@@ -35,7 +35,9 @@ function toRows(projects: ProjectData[]) {
 
 // Page catégorie v2 : titre, projets en grille « magazine » (rangées aux tailles qui alternent), texte, liens, contact.
 // Vue retenue par Emeric le 2026-10-20 parmi une dizaine de variantes.
-export default function V2CategoryPage({ c }: { c: V2Category }) {
+type Faq = { title: string; items: { q: string; a: string }[] };
+
+export default function V2CategoryPage({ c, faq }: { c: V2Category; faq?: Faq }) {
     const projects = PROJECTS.filter((p) => p.category === c.category);
 
     return (
@@ -92,6 +94,33 @@ export default function V2CategoryPage({ c }: { c: V2Category }) {
                     ))}
                 </nav>
             </section>
+
+            {/* FAQ optionnelle (page Logements), avec ses données structurées comme sur la v1 */}
+            {faq && (
+                <section className="v2-section">
+                    <script
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{
+                            __html: JSON.stringify({
+                                "@context": "https://schema.org",
+                                "@type": "FAQPage",
+                                mainEntity: faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+                            }),
+                        }}
+                    />
+                    <div className="v2-row">
+                        <h2 className="v2-h2 v2-fade" data-reveal>{faq.title}</h2>
+                        <div className="v2-faq v2-fade" data-reveal>
+                            {faq.items.map((f) => (
+                                <details key={f.q}>
+                                    <summary>{f.q}</summary>
+                                    <p className="v2-small">{f.a}</p>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             <V2Cta />
         </>

@@ -13,8 +13,15 @@ const TEL = `tel:${SITE_PHONE}`;
 // Landing v2 : mêmes contenus que la landing en ligne (lib/landings/*), mise en page v2.
 export default function V2LandingPage({ data }: { data: LandingData }) {
     const { hero, realisations, reassurance, local, faq, finalCta } = data;
+    // Données structurées FAQ, comme sur la landing v1 (résultats enrichis Google)
+    const faqJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.items.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    };
     return (
         <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
             <section className="v2-section v2-page-top">
                 <div className="v2-row v2-fade" data-reveal>
                     <div>

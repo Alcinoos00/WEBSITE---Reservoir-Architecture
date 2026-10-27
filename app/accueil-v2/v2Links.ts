@@ -1,11 +1,10 @@
 import type { ProjectData } from "@/types/project";
 import { categoryToPath } from "@/lib/seo";
 
-// Le site v2 vit sous /v2 (non indexé) : tous ses liens internes restent dans la v2.
-export const V2_HOME = "/v2";
-
+// Le site v2 est à la racine depuis le 2026-10-27 (la v1 vit sous /v1).
+// Helper gardé pour ne pas toucher à tous les liens des composants v2.
 export function v2(path: string) {
-    return path === "/" ? V2_HOME : `${V2_HOME}${path}`;
+    return path;
 }
 
 export function v2ProjectHref(project: ProjectData) {

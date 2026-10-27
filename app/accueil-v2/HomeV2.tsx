@@ -96,10 +96,10 @@ export default function HomeV2() {
                 </div>
                 <HeroCategories
                     items={[
-                        { label: "Villas", href: v2("/villas"), count: count("VILLAS"), img: VILLA_F_PROJECT.heroImages[0], alt: "Villa F, villa contemporaine avec piscine" },
-                        { label: "Logements", href: v2("/logements"), count: count("LOGEMENTS"), img: SAMARITAINE_PROJECT.heroImages[0], alt: "Résidence Samaritaine, logements collectifs" },
-                        { label: "Commerces", href: v2("/commerces"), count: count("COMMERCES"), img: PUYRICARD_PROJECT.heroImages[0], alt: "Esprit Bastide, commerces à Puyricard" },
-                        { label: "Équipements", href: v2("/equipements"), count: count("ÉQUIPEMENTS"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
+                        { label: "Villas", href: v2("/villas"), img: VILLA_F_PROJECT.heroImages[0], alt: "Villa F, villa contemporaine avec piscine" },
+                        { label: "Logements", href: v2("/logements"), img: SAMARITAINE_PROJECT.heroImages[0], alt: "Résidence Samaritaine, logements collectifs" },
+                        { label: "Commerces", href: v2("/commerces"), img: PUYRICARD_PROJECT.heroImages[0], alt: "Esprit Bastide, commerces à Puyricard" },
+                        { label: "Équipements", href: v2("/equipements"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
                     ]}
                 />
                 <div className="v2-hero-below">

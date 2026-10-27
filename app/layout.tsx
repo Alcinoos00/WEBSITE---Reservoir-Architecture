@@ -1,11 +1,9 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
 import GtagLoader from "@/components/GtagLoader";
 import { LeadTracking } from "@/components/LeadButtons";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import {
   SITE_DEFAULT_IMAGE,
   SITE_DEFAULT_IMAGE_ALT,
@@ -96,11 +94,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <Navbar />
-        <div className="main-container">
-          <div className="content-wrapper">{children}</div>
-          <Footer />
-        </div>
+        {/* Habillage dans app/(site)/layout.tsx (site v2) et app/v1/layout.tsx (ancienne version). */}
+        {children}
       </body>
     </html>
   );

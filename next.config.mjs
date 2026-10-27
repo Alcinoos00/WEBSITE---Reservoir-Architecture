@@ -23,6 +23,11 @@ const nextConfig = {
       { source: "/architecture-commerciale-cjoo", destination: "/commerces", permanent: true },
       { source: "/copie-de-tertiaire", destination: "/logements", permanent: true },
       { source: "/copie-de-architecture-commerciale", destination: "/commerces", permanent: true },
+      // La v2 a remplacé la v1 à la racine le 2026-10-27 : anciennes adresses de test vers les vraies.
+      { source: "/v2", destination: "/", permanent: true },
+      { source: "/v2/:path*", destination: "/:path*", permanent: true },
+      { source: "/accueil-v2", destination: "/", permanent: true },
+      { source: "/template", destination: "/v1/template", permanent: false },
     ];
   },
 };
