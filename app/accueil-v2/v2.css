@@ -1141,3 +1141,23 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-pb .v2-strip-nav.is-prev { left: 12px; }
     .v2 .v2-pb .v2-strip-nav.is-next { right: 12px; }
 }
+
+/* Formulaire de demande de projet (page contact + bloc de contact de fin de page) : lignes seules, sans cases (variante C) */
+.v2 .v2-form { display: grid; gap: 22px; margin-top: 32px; max-width: 560px; }
+.v2 .v2-form-field { display: grid; gap: 6px; }
+.v2 .v2-form-field label { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em; color: var(--v2-muted); }
+.v2 .v2-form-field input, .v2 .v2-form-field textarea {
+    width: 100%; padding: 10px 0; border: 0; border-bottom: 1px solid var(--v2-ink); border-radius: 0; background: transparent;
+    font: inherit; font-size: 16px; color: var(--v2-ink); transition: border-color 0.2s;
+}
+.v2 .v2-form-field textarea { resize: vertical; min-height: 120px; }
+.v2 .v2-form-field input:focus, .v2 .v2-form-field textarea:focus { outline: none; border-bottom-width: 2px; padding-bottom: 9px; }
+.v2 .v2-form-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.v2 .v2-form-actions .v2-btn { cursor: pointer; }
+.v2 .v2-form-actions .v2-btn:disabled { opacity: 0.6; cursor: wait; }
+.v2 .v2-form-error { margin: 0; font-size: 14px; color: #a3261b; }
+.v2 .v2-form-error a { color: inherit; }
+.v2 .v2-form-done { margin: 28px 0 0; padding: 16px 18px; border: 1px solid var(--v2-ink); max-width: 560px; }
+.v2 .v2-contact-coords { margin-top: 48px; }
+/* Bouton email : l'adresse en entier, en minuscules, et coupable sur petit écran */
+.v2 .v2-btn.v2-btn-email { text-transform: none; white-space: normal; overflow-wrap: anywhere; text-align: center; }

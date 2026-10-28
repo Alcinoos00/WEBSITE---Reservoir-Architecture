@@ -1,3 +1,5 @@
+import { CONTACT_FORM_ENABLED } from "@/lib/contactForm";
+import V2ContactForm from "./V2ContactForm";
 import { SITE_ADDRESS, SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 
 // Corps de la page contact (mise en page v2). Métadonnées et données structurées : app/(site)/contact/page.tsx.
@@ -8,18 +10,24 @@ export default function V2Contact() {
                 <p className="v2-tag">Contact</p>
                 <h1 className="v2-h2">Contacter un architecte à <span className="v2-nowrap">Aix-en-Provence</span></h1>
                 <p className="v2-small">
-                    Pour présenter un projet de villa, logement, commerce ou équipement public en PACA, privilégiez l&apos;email avec les premières informations utiles.
+                    Pour présenter un projet de villa, logement, commerce ou équipement public en PACA, {CONTACT_FORM_ENABLED ? <>décrivez-le dans le formulaire ci-dessous, l&apos;agence vous répond par email.</> : <>privilégiez l&apos;email avec les premières informations utiles.</>}
                 </p>
             </div>
             <div className="v2-row v2-contact">
                 <div className="v2-fade" data-reveal>
-                    <p className="v2-label">Coordonnées</p>
+                    {CONTACT_FORM_ENABLED && (
+                        <>
+                            <p className="v2-label">Décrire votre projet</p>
+                            <V2ContactForm loc="page_contact" />
+                        </>
+                    )}
+                    <p className={`v2-label${CONTACT_FORM_ENABLED ? " v2-contact-coords" : ""}`}>Coordonnées</p>
                     <a className="v2-contact-big" href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a>
                     <a className="v2-contact-big" href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
                     <p className="v2-small">{SITE_NAME}<br />{SITE_ADDRESS}</p>
                     <div className="v2-cta-actions">
-                        <a href={`tel:${SITE_PHONE}`} className="v2-btn">Appeler l&apos;agence</a>
-                        <a href={`mailto:${SITE_EMAIL}`} className="v2-btn v2-btn-ghost">Envoyer un email</a>
+                        <a href={`tel:${SITE_PHONE}`} className="v2-btn">Appeler le {SITE_PHONE_DISPLAY}</a>
+                        <a href={`mailto:${SITE_EMAIL}`} className="v2-btn v2-btn-ghost v2-btn-email">{SITE_EMAIL}</a>
                     </div>
                 </div>
                 <div className="v2-about-text v2-fade" data-reveal>
