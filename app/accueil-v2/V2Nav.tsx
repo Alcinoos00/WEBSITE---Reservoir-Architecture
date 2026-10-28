@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { v2 } from "./v2Links";
 
 const LINKS = [
+    { href: v2("/"), label: "Accueil" },
     { href: v2("/villas"), label: "Villas" },
     { href: v2("/logements"), label: "Logements" },
     { href: v2("/commerces"), label: "Commerces" },

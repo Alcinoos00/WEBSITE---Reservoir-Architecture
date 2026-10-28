@@ -84,10 +84,10 @@ export default function HomeV2() {
                 <div className="v2-hero-top">
                     <div className="v2-wordmark-wrap">
                         <Image
-                            src="/images/ui/brand/wordmark.svg"
+                            src="/images/ui/brand/wordmark-boxed.svg"
                             alt="Reservoir"
-                            width={930}
-                            height={151}
+                            width={1247}
+                            height={176}
                             priority
                             className="v2-wordmark-img"
                         />

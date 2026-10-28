@@ -706,7 +706,7 @@ body:has(.v2) { background: #ffffff; }
     .v2-wordmark-sub { margin-top: 6px; font-size: var(--t1); }
 }
 
-/* Grand mot réduit : environ 70 % de la colonne (85 % sur téléphone) */
+/* Grand mot encadré (lettres en cadres comme le logo) : environ 70 % de la colonne (85 % sur téléphone) */
 .v2 .v2-wordmark-wrap { width: 70%; justify-self: start; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark-wrap { width: 85%; }
@@ -1085,7 +1085,8 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-strip-nav { display: flex; align-items: center; justify-content: center; position: absolute; bottom: 12px; width: 36px; height: 36px; padding: 0 0 3px; border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.9); color: var(--v2-ink); font: 400 24px/1 var(--v2-font, sans-serif); cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); }
     .v2 .v2-strip-nav.is-prev { left: calc(var(--v2-gutter) + 10px); }
-    .v2 .v2-strip-nav.is-next { right: calc(var(--v2-gutter) + 10px); }
+    /* Flèche droite sur la photo affichée (84 % de la largeur utile), pas sur l'aperçu de la suivante */
+    .v2 .v2-strip-nav.is-next { right: calc(var(--v2-gutter) + (100% - 2 * var(--v2-gutter)) * 0.16 + 10px); }
 }
 /* Flèches centrées verticalement sur les photos : l'espace sous la barre passe du bandeau à son conteneur */
 @media (max-width: 768px) {
@@ -1112,6 +1113,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-cat-carousel .v2-pb-strip-item { position: relative; display: block; overflow: hidden; }
     .v2 .v2-cat-carousel .v2-pb-strip-item::after { content: ""; position: absolute; inset: 50% 0 0; background: linear-gradient(transparent, rgba(0, 0, 0, 0.45)); pointer-events: none; }
     .v2 .v2-cat-carousel .v2-bento-cap { color: #fff; }
+    /* Photos plus grandes : 90 % de la largeur, presque carrées (au lieu de 84 % en 4/3) */
+    .v2 .v2-cat-carousel .v2-pb-strip-item { flex-basis: 90%; aspect-ratio: 1 / 1; }
+    .v2 .v2-cat-carousel .v2-strip-nav.is-next { right: calc(var(--v2-gutter) + (100% - 2 * var(--v2-gutter)) * 0.1 + 10px); }
     .v2 .v2-cat-head { padding-top: 28px !important; }
     .v2 .v2-cat-projects { display: none; }
 }
@@ -1129,3 +1133,11 @@ body:has(.v2) { background: #ffffff; }
    ne fait pas redessiner le reste de la page. */
 .v2 .v2-panel { contain: layout paint; }
 .v2 .v2-panel img, .v2 .v2-panel::after { will-change: transform; backface-visibility: hidden; }
+
+/* Fiches projet, mobile : chaque photo du carrousel prend toute la largeur du téléphone (pas d'aperçu de la suivante) */
+@media (max-width: 768px) {
+    .v2 .v2-pb .v2-pb-strip { padding-left: 0; padding-right: 0; scroll-padding-left: 0; }
+    .v2 .v2-pb .v2-pb-strip-item { flex-basis: 100%; }
+    .v2 .v2-pb .v2-strip-nav.is-prev { left: 12px; }
+    .v2 .v2-pb .v2-strip-nav.is-next { right: 12px; }
+}
