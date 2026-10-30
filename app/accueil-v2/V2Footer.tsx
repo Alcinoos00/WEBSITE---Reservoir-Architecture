@@ -11,6 +11,7 @@ import {
     SITE_PHONE_DISPLAY,
 } from "@/lib/seo";
 import { v2 } from "./v2Links";
+import FooterStyleSwitch from "./FooterStyleSwitch";
 
 // Réseaux : icônes officielles (Simple Icons, CC0) dans public/images/ui/social.
 // LinkedIn à ajouter quand l'adresse de la page sera connue (icône absente de Simple Icons).
@@ -29,7 +30,6 @@ export default function V2Footer() {
             <div className="v2-foot-grid">
                 <div className="v2-foot-brand">
                     <Image src="/images/ui/logo-navbar.svg" alt="Reservoir Architecture" width={335} height={74} className="v2-footer-logo" />
-                    <p className="v2-foot-tagline">Agence d&apos;architecture à Aix-en-Provence, depuis 2013.</p>
                 </div>
 
                 <div className="v2-foot-col v2-foot-contact">
@@ -71,6 +71,7 @@ export default function V2Footer() {
             <p className="v2-footer-copy">
                 © {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG · Ordre des architectes S16033 · <Link href={v2("/mentions-legales")}>Mentions légales</Link>
             </p>
+            <FooterStyleSwitch />
         </footer>
     );
 }

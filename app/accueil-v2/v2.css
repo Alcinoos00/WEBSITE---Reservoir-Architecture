@@ -1278,3 +1278,16 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-foot-grid { gap: 32px 20px; }
     .v2 .v2-foot-contact a { font-size: 20px; }
 }
+
+/* Pied de page : variante « Titres encadrés » (par défaut) — titres dans un cadre fin, comme les lettres du logo */
+.v2 .v2-foot .v2-foot-col .v2-label { display: inline-block; width: fit-content; padding: 6px 10px 5px; border: 1px solid var(--v2-ink); letter-spacing: 0.08em; }
+/* Variante « Fond noir » : tout le pied de page en noir, texte blanc, logo et icônes inversés */
+.v2 .v2-foot[data-foot="noir"] { background: var(--v2-ink); color: #fff; margin-top: 0; padding-top: 56px; }
+.v2 .v2-foot[data-foot="noir"] .v2-foot-col .v2-label { border: 0; padding: 0; color: #fff; }
+.v2 .v2-foot[data-foot="noir"] .v2-foot-col a, .v2 .v2-foot[data-foot="noir"] .v2-foot-contact a { color: #fff; }
+.v2 .v2-foot[data-foot="noir"] .v2-footer-logo, .v2 .v2-foot[data-foot="noir"] .v2-foot-social img { filter: invert(1); }
+.v2 .v2-foot[data-foot="noir"] .v2-foot-social a { border-color: rgba(255, 255, 255, 0.35); }
+.v2 .v2-foot[data-foot="noir"] .v2-foot-social a:hover { border-color: #fff; }
+.v2 .v2-foot[data-foot="noir"] .v2-footer-copy { color: rgba(255, 255, 255, 0.65); border-top-color: rgba(255, 255, 255, 0.2); }
+/* TEMPORAIRE : position du sélecteur */
+.v2 .v2-foot-switch { bottom: 70px; }
