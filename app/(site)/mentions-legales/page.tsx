@@ -57,7 +57,7 @@ export default function MentionsLegalesPage() {
                     Formulaire de contact : les informations saisies (nom, email, budget, description du projet) sont envoyées par email à l&apos;agence, uniquement pour répondre à votre demande et, le cas échéant, préparer une proposition. Elles ne sont ni vendues ni cédées. Sans suite donnée à la demande, elles sont conservées au plus 3 ans après le dernier contact.
                 </p>
                 <p className="v2-small">
-                    Mesure d&apos;audience : le site utilise Google Analytics (Google) et Microsoft Clarity (Microsoft) pour mesurer sa fréquentation et améliorer ses pages. Ces outils déposent des cookies et ne sont activés qu&apos;avec votre accord, donné ou refusé dans le bandeau affiché à votre arrivée. Votre choix est conservé 6 mois dans votre navigateur ; vous pouvez le modifier à tout moment avec le lien « Gérer les cookies » en bas de page.
+                    Mesure d&apos;audience : le site utilise Google Analytics (Google) et Microsoft Clarity (Microsoft) pour mesurer sa fréquentation et améliorer ses pages. Ces outils déposent des cookies dans votre navigateur ; vous pouvez les bloquer ou les supprimer dans les réglages de celui-ci.
                 </p>
                 <p className="v2-small">
                     Les prestataires techniques du site (hébergement, messagerie, mesure d&apos;audience) peuvent traiter des données hors de l&apos;Union européenne, notamment aux États-Unis.

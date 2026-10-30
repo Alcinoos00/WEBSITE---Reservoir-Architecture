@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FACEBOOK_URL, HOUZZ_URL, INSTAGRAM_URL, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
 import { v2 } from "./v2Links";
-import { CookieSettingsLink } from "@/components/CookieBanner";
 
 export default function V2Footer() {
     return (
@@ -32,7 +31,7 @@ export default function V2Footer() {
                     <a href={HOUZZ_URL} target="_blank" rel="noopener noreferrer">Houzz</a>
                 </div>
             </div>
-            <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence · <Link href={v2("/mentions-legales")}>Mentions légales</Link> · <CookieSettingsLink /></p>
+            <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence · <Link href={v2("/mentions-legales")}>Mentions légales</Link></p>
         </footer>
     );
 }

@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import Clarity from "@microsoft/clarity";
-import { onConsentGranted } from "@/lib/consent";
 
 type ClarityQueue = ((...args: unknown[]) => void) & { q?: unknown[] };
 
@@ -10,7 +9,6 @@ type ClarityQueue = ((...args: unknown[]) => void) & { q?: unknown[] };
 // son script ne concurrence plus l'image principale sur mobile. La file d'attente
 // window.clarity est créée tout de suite, pour que les événements de lead déclenchés
 // avant le chargement (trackLead) soient conservés et envoyés ensuite.
-// Clarity n'est lancé qu'après l'accord du visiteur (bandeau cookies).
 export default function ClarityInit() {
   useEffect(() => {
     const w = window as Window & { clarity?: ClarityQueue };
@@ -36,13 +34,10 @@ export default function ClarityInit() {
       }
     };
 
-    const stopWaiting = onConsentGranted(() => {
-      if (document.readyState === "complete") schedule();
-      else window.addEventListener("load", schedule, { once: true });
-    });
+    if (document.readyState === "complete") schedule();
+    else window.addEventListener("load", schedule, { once: true });
 
     return () => {
-      stopWaiting();
       window.removeEventListener("load", schedule);
       if (idleId !== undefined) window.cancelIdleCallback(idleId);
       if (timeoutId !== undefined) window.clearTimeout(timeoutId);

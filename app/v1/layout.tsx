@@ -4,7 +4,6 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import V1Links from "./V1Links";
-import CookieBanner from "@/components/CookieBanner";
 
 // Ancienne version du site, gardée en ligne sous /v1 pour comparer. Hors index :
 // les pages gardent leur balise canonique vers l'adresse en ligne (sans /v1).
@@ -25,7 +24,6 @@ export default function V1Layout({ children }: { children: ReactNode }) {
                 <div className="content-wrapper">{children}</div>
                 <Footer />
             </div>
-            <CookieBanner />
         </div>
     );
 }

@@ -3,7 +3,6 @@ import { Manrope } from "next/font/google";
 import V2Motion from "./V2Motion";
 import V2Nav from "./V2Nav";
 import V2Footer from "./V2Footer";
-import CookieBanner from "@/components/CookieBanner";
 
 import "./v2.css";
 
@@ -18,7 +17,6 @@ export default function V2Shell({ children }: { children: ReactNode }) {
             <V2Nav />
             {children}
             <V2Footer />
-            <CookieBanner />
         </div>
     );
 }
