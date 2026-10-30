@@ -1385,3 +1385,4 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-dossier-form-grid { grid-template-columns: minmax(0, 1fr); }
 }
+.v2 .v2-faq .v2-offer-body .v2-offer-list li.v2-small { padding: 0 0 0 20px; }
