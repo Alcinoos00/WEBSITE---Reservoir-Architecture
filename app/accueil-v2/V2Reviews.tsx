@@ -45,7 +45,7 @@ export default function V2Reviews() {
                     </li>
                 ))}
             </ul>
-            <p className="v2-reviews-note">Avis classés du plus récent au plus ancien. Les avis Google ne font l&apos;objet d&apos;aucun contrôle par Google ni par l&apos;agence.</p>
+            <p className="v2-reviews-note">Avis classés du plus récent au plus ancien. Google indique que ses avis ne sont pas vérifiés ; l&apos;agence ne les contrôle pas non plus.</p>
             <div className="v2-reviews-links">
                 <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Google</a>
                 <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Archidvisor</a>
