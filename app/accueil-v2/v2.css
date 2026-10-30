@@ -1291,3 +1291,6 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-foot[data-foot="noir"] .v2-footer-copy { color: rgba(255, 255, 255, 0.65); border-top-color: rgba(255, 255, 255, 0.2); }
 /* TEMPORAIRE : position du sélecteur */
 .v2 .v2-foot-switch { bottom: 70px; }
+@media (max-width: 768px) {
+    .v2 .v2-foot .v2-foot-col .v2-label { white-space: nowrap; letter-spacing: 0.02em; padding: 6px 8px 5px; }
+}
