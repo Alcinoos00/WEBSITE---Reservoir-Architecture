@@ -2,38 +2,22 @@
 
 import { useEffect, useRef, useState } from "react";
 
-// Effet « VOIR » de l'accueil, sur une seule ligne : RESERVOIR → VOIR → PREVOIR → PERCEVOIR → ENTREVOIR → CONCEVOIR → RESERVOIR,
-// « VOIR » toujours en gras, puis « architecture » en petit sous le dernier mot, comme sur le logo.
-// Déclenché une seule fois, quand le bloc arrive à l'écran.
-// TEMPORAIRE (aperçu du 2026-10-30) : sélecteur pour comparer 6 transitions. À retirer avant publication.
-const WORDS = ["RESERVOIR", "VOIR", "PREVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
+// Effet « VOIR fixe » de l'accueil (choisi par Emeric le 2026-10-30), sur une seule ligne :
+// « VOIR » reste immobile, en gras ; seul le début du mot change en fondu enchaîné devant lui :
+// RESER → PRE → PERCE → ENTRE → CONCE → RESER. Puis « architecture » apparaît sous le dernier mot,
+// accroché à son R, comme sur le logo. Déclenché une seule fois, quand le bloc arrive à l'écran.
+const STEMS = ["RESER", "PRE", "PERCE", "ENTRE", "CONCE", "RESER"];
 const HOLD_MS = 1000; // mot affiché
-const TRANS_MS = 1900; // durée d'une transition (doit correspondre à v2.css)
-
-const EFFECTS = [
-    { id: "balayage", label: "Balayage" },
-    { id: "voirfixe", label: "VOIR fixe" },
-    { id: "focus", label: "Mise au point" },
-    { id: "tracking", label: "Lettres" },
-    { id: "montee", label: "Montée" },
-    { id: "reveal", label: "Révélation" },
-] as const;
-type Fx = (typeof EFFECTS)[number]["id"];
-
-const stem = (w: string) => w.slice(0, -4);
+const TRANS_MS = 1900; // fondu enchaîné (doit correspondre à v2.css)
 
 export default function V2VoirCascade() {
     const ref = useRef<HTMLDivElement>(null);
-    const [fx, setFx] = useState<Fx>("balayage");
-    const [run, setRun] = useState(0); // 0 = pas encore lancé
+    const [run, setRun] = useState(false);
     const [cur, setCur] = useState(0);
     const [prev, setPrev] = useState<number | null>(null);
     const [entering, setEntering] = useState(false);
-    const [started, setStarted] = useState(false);
     const [done, setDone] = useState(false);
-    const stackRef = useRef<HTMLSpanElement>(null);
 
-    // Premier lancement quand le bloc arrive à l'écran
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
@@ -41,7 +25,7 @@ export default function V2VoirCascade() {
             (entries) => {
                 if (entries.some((e) => e.isIntersecting)) {
                     io.disconnect();
-                    setRun((r) => (r === 0 ? 1 : r));
+                    setRun(true);
                 }
             },
             { threshold: 0.6 },
@@ -51,22 +35,15 @@ export default function V2VoirCascade() {
     }, []);
 
     useEffect(() => {
-        if (run === 0) return;
-        const last = WORDS.length - 1;
+        if (!run) return;
+        const last = STEMS.length - 1;
         const timers: number[] = [];
         const at = (ms: number, fn: () => void) => timers.push(window.setTimeout(fn, ms));
-
-        setPrev(null);
-        setCur(0);
-        setDone(false);
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-            setStarted(true);
-            setEntering(false);
             setCur(last);
             setDone(true);
             return;
         }
-        setStarted(true);
         setEntering(true);
         let t = TRANS_MS;
         at(t, () => setEntering(false));
@@ -86,74 +63,33 @@ export default function V2VoirCascade() {
         }
         at(t + 200, () => setDone(true));
         return () => timers.forEach((id) => window.clearTimeout(id));
-    }, [run, fx]);
+    }, [run]);
 
-    const voirFixe = fx === "voirfixe";
-    // VOIR fixe : quand l'un des deux mots est « VOIR » seul (rien à fondre devant), VOIR lui-même respire en fondu
-    const pulse = voirFixe && prev !== null && (stem(WORDS[prev]) === "" || stem(WORDS[cur]) === "");
-    const layerText = (w: string) =>
-        voirFixe ? (
-            stem(w)
-        ) : (
-            <>
-                {stem(w)}
-                <strong>VOIR</strong>
-            </>
-        );
+    const last = STEMS.length - 1;
 
     return (
-        <div ref={ref} className={`v2-voir fx-${fx}`}>
-            <div role="img" aria-label="Reservoir : voir, prévoir, percevoir, entrevoir, concevoir. Reservoir Architecture.">
-                <p className="v2-voir-word" aria-hidden="true">
-                    <span className="v2-voir-stack" ref={stackRef}>
-                        {/* VOIR fixe : débuts de mots invisibles qui donnent sa largeur exacte à la pile (la position de VOIR ne bouge pas) */}
-                        {voirFixe &&
-                            Array.from(new Set(WORDS.map(stem))).map((st) => (
-                                <span key={`sizer-${st}`} className="v2-voir-layer v2-voir-sizer" aria-hidden="true">
-                                    {st}
-                                </span>
-                            ))}
-                        {prev !== null && (
-                            <span key={`out-${run}-${prev}`} className="v2-voir-layer is-out">
-                                {layerText(WORDS[prev])}
-                            </span>
-                        )}
-                        <span
-                            key={`in-${run}-${cur}`}
-                            className={`v2-voir-layer${!started ? " is-hidden" : entering ? " is-in" : ""}`}
-                        >
-                            {layerText(WORDS[cur])}
-                            {"​"}
-                            {/* « architecture » accroché au début du dernier mot : toujours aligné sur le R de RESERVOIR */}
-                            {cur === WORDS.length - 1 && (
-                                <span className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true">
-                                    architecture
-                                </span>
-                            )}
+        <div ref={ref} className="v2-voir fx-voirfixe" role="img" aria-label="Reservoir : prévoir, percevoir, entrevoir, concevoir. Reservoir Architecture.">
+            <p className="v2-voir-word" aria-hidden="true">
+                <span className="v2-voir-stack">
+                    {/* Débuts de mots invisibles : donnent sa largeur exacte à la pile, pour que VOIR ne bouge pas */}
+                    {Array.from(new Set(STEMS)).map((st) => (
+                        <span key={`sizer-${st}`} className="v2-voir-layer v2-voir-sizer">
+                            {st}
                         </span>
-                    </span>
-                        {voirFixe && (
-                        <strong key={`fixed-${run}-${pulse ? cur : "s"}`} className={`v2-voir-fixed${started ? "" : " is-hidden"}${pulse ? " is-pulse" : ""}`}>
-                            VOIR
-                        </strong>
+                    ))}
+                    {prev !== null && (
+                        <span key={`out-${prev}`} className="v2-voir-layer is-out">
+                            {STEMS[prev]}
+                        </span>
                     )}
-                </p>
-            </div>
-            <div className="v2-voir-switch" role="group" aria-label="Choix de l'effet (aperçu)">
-                {EFFECTS.map((e) => (
-                    <button
-                        key={e.id}
-                        type="button"
-                        className={fx === e.id ? "is-on" : ""}
-                        onClick={() => {
-                            setFx(e.id);
-                            setRun((r) => r + 1);
-                        }}
-                    >
-                        {e.label}
-                    </button>
-                ))}
-            </div>
+                    <span key={`in-${cur}`} className={`v2-voir-layer${!run ? " is-hidden" : entering ? " is-in" : ""}`}>
+                        {STEMS[cur]}
+                        {/* « architecture » accroché au début du dernier mot : aligné sur le R de RESERVOIR */}
+                        {cur === last && <span className={`v2-voir-sub${done ? " is-on" : ""}`}>architecture</span>}
+                    </span>
+                </span>
+                <strong className={`v2-voir-fixed${run ? "" : " is-hidden"}`}>VOIR</strong>
+            </p>
         </div>
     );
 }
