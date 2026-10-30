@@ -1302,7 +1302,9 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-voir-stack { display: grid; }
 .v2 .v2-voir-layer { grid-area: 1 / 1; }
 .v2 .v2-voir-layer.is-hidden, .v2 .v2-voir-fixed.is-hidden { opacity: 0; }
-.v2 .v2-voir-sub { margin: 0.18em 0 0 0.05em; font-family: var(--v2-font), sans-serif; font-size: 0.3em; font-weight: 400; letter-spacing: 0.62em; text-transform: none; line-height: 1.2; white-space: nowrap; opacity: 0; transform: translateY(4px); transition: opacity 1.6s cubic-bezier(0.37, 0, 0.63, 1), transform 1.6s cubic-bezier(0.37, 0, 0.63, 1); }
+.v2 .v2-voir-layer { position: relative; }
+.v2 .v2-voir-word { padding-bottom: 0.55em; }
+.v2 .v2-voir-sub { position: absolute; left: 0; top: 100%; margin-top: 0.12em; font-family: var(--v2-font), sans-serif; font-size: 0.3em; font-weight: 400; letter-spacing: 0.62em; text-transform: none; line-height: 1.2; white-space: nowrap; opacity: 0; transform: translateY(4px); transition: opacity 1.6s cubic-bezier(0.37, 0, 0.63, 1), transform 1.6s cubic-bezier(0.37, 0, 0.63, 1); }
 .v2 .v2-voir-sub.is-on { opacity: 1; transform: none; }
 @media (max-width: 768px) { .v2 .v2-voir { margin-top: 28px; font-size: clamp(34px, 10vw, 44px); } }
 
@@ -1324,6 +1326,8 @@ body:has(.v2) { background: #ffffff; }
 .v2 .fx-voirfixe .v2-voir-stack { justify-items: end; }
 .v2 .v2-voir-sizer { visibility: hidden; }
 .v2 .fx-voirfixe .v2-voir-fixed { font-weight: 600; transition: opacity 1.2s cubic-bezier(0.37, 0, 0.63, 1); }
+.v2 .fx-voirfixe .v2-voir-fixed.is-pulse { animation: v2-voir-pulse 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
+@keyframes v2-voir-pulse { 0% { opacity: 1; } 50% { opacity: 0.2; } 100% { opacity: 1; } }
 .v2 .fx-voirfixe .v2-voir-layer.is-out { animation: v2-voir-stemout 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 .v2 .fx-voirfixe .v2-voir-layer.is-in { animation: v2-voir-stemin 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 @keyframes v2-voir-stemout { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(-0.25em); } }
@@ -1342,7 +1346,7 @@ body:has(.v2) { background: #ffffff; }
 @keyframes v2-voir-gather { from { opacity: 0; letter-spacing: 0.5em; } to { opacity: 1; letter-spacing: 0.06em; } }
 
 /* 5. Montée : le mot sort par le haut, le suivant monte du bas */
-.v2 .fx-montee .v2-voir-stack { overflow: hidden; padding: 0.08em 0; }
+/* (pas de découpe : « architecture » est sous le mot) */
 .v2 .fx-montee .v2-voir-layer.is-out { animation: v2-voir-up-out 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 .v2 .fx-montee .v2-voir-layer.is-in { animation: v2-voir-up-in 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 @keyframes v2-voir-up-out { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateY(-70%); } }

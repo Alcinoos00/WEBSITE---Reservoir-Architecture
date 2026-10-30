@@ -32,22 +32,6 @@ export default function V2VoirCascade() {
     const [started, setStarted] = useState(false);
     const [done, setDone] = useState(false);
     const stackRef = useRef<HTMLSpanElement>(null);
-    const [subOffset, setSubOffset] = useState(0);
-
-    // VOIR fixe : « architecture » commence sous le début du dernier RESERVOIR (aligné à droite dans la pile)
-    useEffect(() => {
-        if (fx !== "voirfixe" || !done) {
-            setSubOffset(0);
-            return;
-        }
-        const stack = stackRef.current;
-        const last = stack?.querySelector<HTMLElement>(".v2-voir-layer:not(.v2-voir-sizer)");
-        if (!stack || !last) return;
-        const range = document.createRange();
-        range.selectNodeContents(last);
-        const textW = range.getBoundingClientRect().width;
-        setSubOffset(Math.max(0, Math.round(stack.getBoundingClientRect().width - textW)));
-    }, [fx, done]);
 
     // Premier lancement quand le bloc arrive à l'écran
     useEffect(() => {
@@ -105,6 +89,8 @@ export default function V2VoirCascade() {
     }, [run, fx]);
 
     const voirFixe = fx === "voirfixe";
+    // VOIR fixe : quand l'un des deux mots est « VOIR » seul (rien à fondre devant), VOIR lui-même respire en fondu
+    const pulse = voirFixe && prev !== null && (stem(WORDS[prev]) === "" || stem(WORDS[cur]) === "");
     const layerText = (w: string) =>
         voirFixe ? (
             stem(w)
@@ -138,12 +124,19 @@ export default function V2VoirCascade() {
                         >
                             {layerText(WORDS[cur])}
                             {"​"}
+                            {/* « architecture » accroché au début du dernier mot : toujours aligné sur le R de RESERVOIR */}
+                            {cur === WORDS.length - 1 && (
+                                <span className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true">
+                                    architecture
+                                </span>
+                            )}
                         </span>
                     </span>
-                    {voirFixe && <strong className={`v2-voir-fixed${started ? "" : " is-hidden"}`}>VOIR</strong>}
-                </p>
-                <p className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true" style={subOffset ? { marginLeft: subOffset } : undefined}>
-                    architecture
+                        {voirFixe && (
+                        <strong key={`fixed-${run}-${pulse ? cur : "s"}`} className={`v2-voir-fixed${started ? "" : " is-hidden"}${pulse ? " is-pulse" : ""}`}>
+                            VOIR
+                        </strong>
+                    )}
                 </p>
             </div>
             <div className="v2-voir-switch" role="group" aria-label="Choix de l'effet (aperçu)">
