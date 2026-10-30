@@ -10,7 +10,7 @@ const WORDS = ["RESERVOIR", "VOIR", "PRÉVOIR", "PERCEVOIR", "ENTREVOIR", "CONCE
 const SUB = "architecture";
 const LETTER_MS = 90; // une image par lettre
 const HOLD_MS = 1000; // mot terminé : affiché une seconde
-const FADE_MS = 700; // fondu de sortie
+const FADE_MS = 1600; // fondu de sortie, lent et « cinématographique » (flou + lettres qui s'écartent)
 const GAP_MS = 120; // ligne vide entre deux mots
 
 export default function V2VoirCascade() {
