@@ -31,7 +31,7 @@ export default function V2Footer() {
                     <a href={HOUZZ_URL} target="_blank" rel="noopener noreferrer">Houzz</a>
                 </div>
             </div>
-            <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence</p>
+            <p className="v2-footer-copy">© {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG à Aix-en-Provence · <Link href={v2("/mentions-legales")}>Mentions légales</Link></p>
         </footer>
     );
 }

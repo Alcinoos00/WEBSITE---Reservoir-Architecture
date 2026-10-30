@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ARCHIDVISOR_URL, GOOGLE_REVIEWS_URL } from "@/lib/seo";
 
-// Avis clients : Archidvisor (avis vérifiés) et Google (avis non vérifiés par Google),
+// Avis clients : Archidvisor et Google (avis contrôlés par l'agence, procédure décrite dans /mentions-legales#avis),
 // réutilisés sur l'accueil et les landing pages v2.
 // Avis Google recopiés à la main le 2026-10-30 : extraits courts, prénom et initiale, lien vers la fiche.
 // À mettre à jour quand la note ou le nombre d'avis change sur la fiche Google.
@@ -33,7 +33,7 @@ export default function V2Reviews() {
                     <span className="v2-reviews-google">Google</span>
                     <span className="v2-reviews-score">{GOOGLE_RATING}<span>/5</span></span>
                     <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
-                    <span className="v2-reviews-count">{GOOGLE_COUNT} avis non vérifiés</span>
+                    <span className="v2-reviews-count">{GOOGLE_COUNT} avis vérifiés</span>
                 </div>
             </div>
             <ul>
@@ -45,7 +45,7 @@ export default function V2Reviews() {
                     </li>
                 ))}
             </ul>
-            <p className="v2-reviews-note">Avis classés du plus récent au plus ancien. Google indique que ses avis ne sont pas vérifiés ; l&apos;agence ne les contrôle pas non plus.</p>
+            <p className="v2-reviews-note">Avis classés du plus récent au plus ancien. Avis Google rapprochés de nos dossiers clients avant publication, sans contrepartie : <a href="/mentions-legales#avis">en savoir plus</a>.</p>
             <div className="v2-reviews-links">
                 <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Google</a>
                 <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Archidvisor</a>

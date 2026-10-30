@@ -1246,3 +1246,7 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-reviews-logo, .v2 .v2-reviews-google { width: 104px; }
 }
 .v2 .v2-reviews-note { font-size: var(--t1); color: var(--v2-muted); max-width: 60ch; }
+.v2 .v2-reviews-note a, .v2 .v2-footer-copy a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.v2 .v2-legal { display: grid; gap: 16px; max-width: 72ch; }
+.v2 .v2-legal h2 { margin: 24px 0 0; }
+.v2 .v2-legal a { color: var(--v2-ink); text-decoration: underline; text-underline-offset: 3px; }
