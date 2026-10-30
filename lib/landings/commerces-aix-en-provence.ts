@@ -122,6 +122,7 @@ export const data: LandingData = {
         ],
         cta: "Échanger avec un architecte",
         ctaLoc: "reassurance",
+        secondaryCta: { label: "Avant d’acheter : l’étude de faisabilité", href: "/etude-de-faisabilite" },
     },
     local: {
         img: "/images/projects/3-commerces/cacharel/cacharel_2.jpg",

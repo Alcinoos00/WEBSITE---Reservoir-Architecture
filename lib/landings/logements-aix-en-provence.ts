@@ -124,6 +124,7 @@ export const data: LandingData = {
         ],
         cta: "Échanger avec l’agence",
         ctaLoc: "reassurance",
+        secondaryCta: { label: "Avant d’acheter : l’étude de faisabilité", href: "/etude-de-faisabilite" },
     },
     local: {
         img: "/images/projects/2-logements/romi/rosalie_2.jpg",

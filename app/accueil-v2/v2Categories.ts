@@ -22,6 +22,10 @@ export const V2_CATEGORIES: V2Category[] = [
         "description": "Conception, rénovation et extension de villas contemporaines en PACA. Reservoir Architecture accompagne les maisons d'architecte depuis Aix-en-Provence.",
         "links": [
             {
+                "href": "/etude-terrain",
+                "label": "Étude de terrain avant achat"
+            },
+            {
                 "href": "/villas-aix-en-provence",
                 "label": "Architecte villa à Aix-en-Provence"
             },
@@ -59,6 +63,10 @@ export const V2_CATEGORIES: V2Category[] = [
         "description": "Architecte pour vos opérations de logements collectifs et résidences en PACA. Promoteurs, bailleurs et maîtres d'ouvrage, de l'étude de faisabilité au permis et à la livraison.",
         "links": [
             {
+                "href": "/etude-de-faisabilite",
+                "label": "Étude de faisabilité et capacitaire"
+            },
+            {
                 "href": "/contact",
                 "label": "Parler d'une opération"
             },
@@ -85,6 +93,10 @@ export const V2_CATEGORIES: V2Category[] = [
         "metaTitle": "Architecte commerce et showroom en PACA",
         "description": "Architecture commerciale, boutiques, showrooms et espaces de vente en PACA. Reservoir Architecture conçoit des lieux de marque et de parcours client.",
         "links": [
+            {
+                "href": "/etude-de-faisabilite",
+                "label": "Étude de faisabilité et capacitaire"
+            },
             {
                 "href": "/contact",
                 "label": "Présenter un projet"

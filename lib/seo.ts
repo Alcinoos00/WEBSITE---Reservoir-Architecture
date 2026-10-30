@@ -63,6 +63,9 @@ export const KNOWS_ABOUT = [
     "Équipements publics",
     "Réhabilitation",
     "Architecture en PACA",
+    "Étude de faisabilité",
+    "Étude capacitaire",
+    "Analyse de PLU avant achat de terrain",
 ];
 
 export const TYPOLOGY_LABEL: Record<string, string> = {
@@ -315,5 +318,32 @@ export function getProjectJsonLd(project: ProjectData) {
         },
         about: typologyLabel(project.category),
         ...(year ? { dateCreated: year } : {}),
+    };
+}
+
+// Études avant achat (/etude-terrain, /etude-de-faisabilite) : chaque offre décrite comme un service de l'agence.
+// La localisation passe par l'agence (adresse à Aix-en-Provence) ; la zone est la France, l'étude se faisant à distance.
+export function getServiceJsonLd(args: { path: string; name: string; serviceType: string; description: string; audience: string }) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": `${SITE_URL}${args.path}#service`,
+        name: args.name,
+        serviceType: args.serviceType,
+        description: args.description,
+        url: `${SITE_URL}${args.path}`,
+        provider: { "@id": `${SITE_URL}/#organization` },
+        areaServed: { "@type": "Country", name: "France" },
+        audience: { "@type": "Audience", audienceType: args.audience },
+        offers: { "@type": "Offer", priceSpecification: { "@type": "PriceSpecification", description: "Sur devis" } },
+    };
+}
+
+// Fil d'Ariane (Accueil › … › page) pour les données structurées.
+export function getBreadcrumbJsonLd(items: { name: string; path: string }[]) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: `${SITE_URL}${it.path}` })),
     };
 }

@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { noBreakHyphens } from "@/components/noBreakHyphens";
 import V2Cta from "@/app/accueil-v2/V2Cta";
 import V2EtudesOffers from "@/app/accueil-v2/V2EtudesOffers";
-import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
+import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, getBreadcrumbJsonLd } from "@/lib/seo";
 
 // Page d'entrée du menu « Études » : oriente vers l'offre particuliers et l'offre investisseurs / entreprises.
 
 export const metadata: Metadata = {
-    title: "Études avant achat : terrain, faisabilité, capacitaire",
+    title: { absolute: "Étude de terrain et de faisabilité | Reservoir Architecture" },
     description:
-        "Avant d’acheter un terrain, une maison ou un bâtiment, Serge Ettore, architecte DPLG à Aix-en-Provence, étudie ce que le site permet : étude de terrain pour les particuliers, étude de faisabilité et capacitaire pour les investisseurs et les entreprises.",
+        "Avant d’acheter, savoir ce que permet un site : étude de terrain pour les particuliers, étude de faisabilité et capacitaire pour investisseurs et entreprises.",
     alternates: { canonical: `${SITE_URL}/etudes` },
     openGraph: {
         title: "Études avant achat - Reservoir Architecture",
@@ -24,6 +24,10 @@ export const metadata: Metadata = {
 export default function EtudesPage() {
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd([{ name: "Accueil", path: "/" }, { name: "Études", path: "/etudes" }])) }}
+            />
             <section className="v2-section v2-page-top">
                 <div className="v2-row v2-fade" data-reveal>
                     <div>

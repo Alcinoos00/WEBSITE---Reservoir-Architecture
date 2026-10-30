@@ -118,6 +118,7 @@ export const data: LandingData = {
         ],
         cta: "Échanger avec un expert architecte",
         ctaLoc: "reassurance",
+        secondaryCta: { label: "Pas encore de terrain ? L’étude de terrain avant achat", href: "/etude-terrain" },
     },
     local: {
         img: "/images/projects/1-villas/villa L/villaL_2.jpg",

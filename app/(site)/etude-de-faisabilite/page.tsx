@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import V2LandingPage from "@/app/accueil-v2/V2LandingPage";
 import V2DossierForm from "@/app/accueil-v2/V2DossierForm";
 import { data } from "@/lib/landings/etude-de-faisabilite";
-import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
+import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, getServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Étude de faisabilité et étude capacitaire : investisseurs, entreprises",
+    title: { absolute: "Étude de faisabilité et capacitaire | Reservoir Architecture" },
     description:
-        "Serge Ettore, architecte DPLG à Aix-en-Provence : études de faisabilité et capacitaires pour investisseurs, projets commerciaux et d’activité en ZAC, avant l’achat d’un terrain ou d’un bâtiment.",
+        "Étude de faisabilité et capacitaire par un architecte DPLG : logements, division, surélévation, commerces, locaux d’activité, ZAC. Devis sur dossier.",
     alternates: { canonical: `${SITE_URL}/etude-de-faisabilite` },
     openGraph: {
         title: "Étude de faisabilité et étude capacitaire - Reservoir Architecture",
-        description: "Connaître le potentiel d’un terrain ou d’un bâtiment avant d’acheter ou d’investir, avec un architecte DPLG d’Aix-en-Provence.",
+        description: "Connaître le potentiel d’un terrain ou d’un bâtiment avant d’acheter ou d’investir, avec un architecte DPLG.",
         url: `${SITE_URL}/etude-de-faisabilite`,
         type: "website",
         images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
@@ -19,7 +19,23 @@ export const metadata: Metadata = {
 };
 
 export default function EtudeFaisabilitePage() {
+    const jsonLd = [
+        getServiceJsonLd({
+            path: "/etude-de-faisabilite",
+            name: "Étude de faisabilité et étude capacitaire",
+            serviceType: "Étude de faisabilité architecturale",
+            description: "Étude de la constructibilité d’un terrain ou d’un bâtiment avant achat ou investissement : PLU ou règlement de ZAC, surface constructible, nombre de logements ou de locaux, premières esquisses.",
+            audience: "Investisseurs, promoteurs et entreprises",
+        }),
+        getBreadcrumbJsonLd([
+            { name: "Accueil", path: "/" },
+            { name: "Études", path: "/etudes" },
+            { name: "Étude de faisabilité", path: "/etude-de-faisabilite" },
+        ]),
+    ];
     return (
+        <>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <V2LandingPage
             data={data}
             afterSteps={
@@ -37,5 +53,6 @@ export default function EtudeFaisabilitePage() {
                 </section>
             }
         />
+        </>
     );
 }

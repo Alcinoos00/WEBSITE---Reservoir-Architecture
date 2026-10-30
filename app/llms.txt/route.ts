@@ -40,6 +40,12 @@ export function GET() {
         `- [Architecte villa à Nice](${SITE_URL}/villas-nice)`,
         `- [Contact](${SITE_URL}/contact)`,
         "",
+        "## Études avant achat",
+        "",
+        `- [Études avant achat : vue d'ensemble](${SITE_URL}/etudes)`,
+        `- [Étude de terrain avant achat (particuliers)](${SITE_URL}/etude-terrain) : analyse du PLU, de la constructibilité, des servitudes et des risques d'un terrain ou d'une maison avant l'achat ; extension et annexes possibles ; rapport écrit sous 15 jours ouvrés, sans visite, sur devis.`,
+        `- [Étude de faisabilité et capacitaire (investisseurs et entreprises)](${SITE_URL}/etude-de-faisabilite) : division, surélévation, changement d'usage, petits collectifs, commerces, locaux d'activité, entrepôts, en ville ou en ZAC ; sur devis.`,
+        "",
     ];
 
     for (const c of CATEGORIES) {

@@ -6,7 +6,7 @@ import { noBreakHyphens } from "@/components/noBreakHyphens";
 import V2Reviews from "@/app/accueil-v2/V2Reviews";
 import V2Cta from "@/app/accueil-v2/V2Cta";
 import { v2 } from "@/app/accueil-v2/v2Links";
-import { SITE_URL, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
+import { SITE_URL, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, getServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 import V2DossierForm from "@/app/accueil-v2/V2DossierForm";
 import "./etude-terrain.css";
 
@@ -16,13 +16,13 @@ import "./etude-terrain.css";
 const TEL = `tel:${SITE_PHONE}`;
 
 export const metadata: Metadata = {
-    title: "Étude de terrain avant achat : PLU(i), constructibilité, extension",
+    title: { absolute: "Étude de terrain avant achat (PLU) | Reservoir Architecture" },
     description:
-        "Avant d’acheter un terrain ou une maison, Serge Ettore, architecte DPLG à Aix-en-Provence, analyse le PLU(i), les risques et ce que vous pourrez construire : maison, petits logements, extension ou annexes. Sans visite, rapport sous 15 jours ouvrés.",
+        "Avant d’acheter un terrain ou une maison, Serge Ettore, architecte DPLG, vérifie le PLU et ce que vous pourrez construire ou agrandir. Rapport en 15 jours.",
     alternates: { canonical: `${SITE_URL}/etude-terrain` },
     openGraph: {
         title: "Étude de terrain avant achat - Reservoir Architecture",
-        description: "Analyse du PLU(i) et de la constructibilité d’un terrain ou d’une maison avant la signature, par Serge Ettore, architecte DPLG à Aix-en-Provence.",
+        description: "Vérifier le PLU et ce que vous pourrez construire avant d’acheter un terrain ou une maison, avec Serge Ettore, architecte DPLG.",
         url: `${SITE_URL}/etude-terrain`,
         type: "website",
         images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
@@ -90,6 +90,25 @@ export default function EtudeTerrainPage() {
     return (
         <>
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        getServiceJsonLd({
+                            path: "/etude-terrain",
+                            name: "Étude de terrain avant achat",
+                            serviceType: "Analyse de PLU et de constructibilité avant achat",
+                            description: "Analyse du PLU, des règles de construction, des servitudes et des risques d’un terrain ou d’une maison avant l’achat : surface constructible, extension et annexes possibles. Rapport écrit sous 15 jours ouvrés, sans visite.",
+                            audience: "Particuliers",
+                        }),
+                        getBreadcrumbJsonLd([
+                            { name: "Accueil", path: "/" },
+                            { name: "Études", path: "/etudes" },
+                            { name: "Étude de terrain avant achat", path: "/etude-terrain" },
+                        ]),
+                    ]),
+                }}
+            />
 
             <section className="v2-section v2-page-top">
                 <div className="v2-row v2-fade" data-reveal>
