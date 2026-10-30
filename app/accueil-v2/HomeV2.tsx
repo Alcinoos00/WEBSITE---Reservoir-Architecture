@@ -45,8 +45,6 @@ const DOMAINS = [
 ];
 
 // Textes identiques à ceux de l'accueil en ligne (app/page.tsx), pour garder le même référencement.
-const INTRO =
-    "Un site. Un usage. Un budget. Une architecture qui dure. Pour les particuliers, les promoteurs, les commerçants et les collectivités, de la Provence à l'Occitanie.";
 const AGENCY_PARAGRAPHS = [
     "Le travail de l'agence couvre la conception de maisons et villas contemporaines, la rénovation, l'extension, les logements collectifs, les espaces commerciaux, les showrooms et les équipements publics. Cette diversité correspond à la réalité de l'agence : une pratique large, mais une même exigence de justesse constructive.",
     "Chaque projet part d'un contexte précis : orientation, lumière, structure existante, contraintes réglementaires, économie de moyens, parcours et matérialité. L'objectif est de produire une réponse claire, durable et lisible, sans réduire l'architecture à un style répétitif.",
@@ -237,7 +235,6 @@ export default function HomeV2() {
                     sur ordinateur, toujours ouvert comme avant. */}
                 <V2AboutFold summary="À propos de l'agence">
                     <div className="v2-about-text v2-fade" data-reveal>
-                        <p className="v2-small v2-mob-only">{INTRO}</p>
                         {AGENCY_PARAGRAPHS.map((p) => (
                             <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
                         ))}

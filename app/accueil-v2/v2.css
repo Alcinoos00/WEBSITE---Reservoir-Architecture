@@ -1309,12 +1309,12 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-voir-layer.is-out {
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 70%, #000 100%);
     mask-image: linear-gradient(90deg, transparent 0%, transparent 30%, #000 70%, #000 100%);
-    animation: v2-voir-wipe 2.4s cubic-bezier(0.37, 0, 0.63, 1) both, v2-voir-out 2.4s cubic-bezier(0.37, 0, 0.63, 1) both;
+    animation: v2-voir-wipe 1.9s cubic-bezier(0.37, 0, 0.63, 1) both, v2-voir-out 1.9s cubic-bezier(0.37, 0, 0.63, 1) both;
 }
 .v2 .v2-voir-layer.is-in {
     -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 30%, transparent 70%, transparent 100%);
     mask-image: linear-gradient(90deg, #000 0%, #000 30%, transparent 70%, transparent 100%);
-    animation: v2-voir-wipe 2.4s cubic-bezier(0.37, 0, 0.63, 1) both, v2-voir-in 2.4s cubic-bezier(0.37, 0, 0.63, 1) both;
+    animation: v2-voir-wipe 1.9s cubic-bezier(0.37, 0, 0.63, 1) both, v2-voir-in 1.9s cubic-bezier(0.37, 0, 0.63, 1) both;
 }
 @keyframes v2-voir-wipe {
     from { -webkit-mask-position: 100% 0; mask-position: 100% 0; }

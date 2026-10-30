@@ -8,8 +8,8 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 // À la fin, « architecture » apparaît en fondu sous le dernier RESERVOIR, plus petit, comme sur le logo.
 // Déclenché une seule fois, quand le bloc arrive à l'écran.
 const WORDS = ["RESERVOIR", "VOIR", "PRÉVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
-const HOLD_MS = 1200; // mot affiché
-const WIPE_MS = 2400; // fondu enchaîné horizontal (doit correspondre à v2.css)
+const HOLD_MS = 1000; // mot affiché
+const WIPE_MS = 1900; // fondu enchaîné horizontal (doit correspondre à v2.css)
 
 function Word({ text }: { text: string }): ReactNode {
     return (
