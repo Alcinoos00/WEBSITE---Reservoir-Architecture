@@ -31,6 +31,23 @@ export default function V2VoirCascade() {
     const [entering, setEntering] = useState(false);
     const [started, setStarted] = useState(false);
     const [done, setDone] = useState(false);
+    const stackRef = useRef<HTMLSpanElement>(null);
+    const [subOffset, setSubOffset] = useState(0);
+
+    // VOIR fixe : « architecture » commence sous le début du dernier RESERVOIR (aligné à droite dans la pile)
+    useEffect(() => {
+        if (fx !== "voirfixe" || !done) {
+            setSubOffset(0);
+            return;
+        }
+        const stack = stackRef.current;
+        const last = stack?.querySelector<HTMLElement>(".v2-voir-layer:not(.v2-voir-sizer)");
+        if (!stack || !last) return;
+        const range = document.createRange();
+        range.selectNodeContents(last);
+        const textW = range.getBoundingClientRect().width;
+        setSubOffset(Math.max(0, Math.round(stack.getBoundingClientRect().width - textW)));
+    }, [fx, done]);
 
     // Premier lancement quand le bloc arrive à l'écran
     useEffect(() => {
@@ -102,7 +119,14 @@ export default function V2VoirCascade() {
         <div ref={ref} className={`v2-voir fx-${fx}`}>
             <div role="img" aria-label="Reservoir : voir, prévoir, percevoir, entrevoir, concevoir. Reservoir Architecture.">
                 <p className="v2-voir-word" aria-hidden="true">
-                    <span className="v2-voir-stack">
+                    <span className="v2-voir-stack" ref={stackRef}>
+                        {/* VOIR fixe : débuts de mots invisibles qui donnent sa largeur exacte à la pile (la position de VOIR ne bouge pas) */}
+                        {voirFixe &&
+                            Array.from(new Set(WORDS.map(stem))).map((st) => (
+                                <span key={`sizer-${st}`} className="v2-voir-layer v2-voir-sizer" aria-hidden="true">
+                                    {st}
+                                </span>
+                            ))}
                         {prev !== null && (
                             <span key={`out-${run}-${prev}`} className="v2-voir-layer is-out">
                                 {layerText(WORDS[prev])}
@@ -118,7 +142,7 @@ export default function V2VoirCascade() {
                     </span>
                     {voirFixe && <strong className={`v2-voir-fixed${started ? "" : " is-hidden"}`}>VOIR</strong>}
                 </p>
-                <p className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true">
+                <p className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true" style={subOffset ? { marginLeft: subOffset } : undefined}>
                     architecture
                 </p>
             </div>

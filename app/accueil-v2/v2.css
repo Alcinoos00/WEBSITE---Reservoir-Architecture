@@ -1321,7 +1321,8 @@ body:has(.v2) { background: #ffffff; }
 @keyframes v2-voir-fadein { from { opacity: 0; } to { opacity: 1; } }
 
 /* 2. VOIR fixe : « VOIR » ne bouge pas, seul le début du mot change en fondu */
-.v2 .fx-voirfixe .v2-voir-stack { justify-items: end; min-width: 5.2em; }
+.v2 .fx-voirfixe .v2-voir-stack { justify-items: end; }
+.v2 .v2-voir-sizer { visibility: hidden; }
 .v2 .fx-voirfixe .v2-voir-fixed { font-weight: 600; transition: opacity 1.2s cubic-bezier(0.37, 0, 0.63, 1); }
 .v2 .fx-voirfixe .v2-voir-layer.is-out { animation: v2-voir-stemout 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 .v2 .fx-voirfixe .v2-voir-layer.is-in { animation: v2-voir-stemin 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
