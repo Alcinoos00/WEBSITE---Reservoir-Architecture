@@ -144,13 +144,15 @@ export default function HomeV2() {
                                     <h3 className="v2-h3">{d.label}</h3>
                                 </div>
                             </div>
+                            {/* Photos très panoramiques (1920 × 815) dans un cadre vertical : la photo est agrandie pour remplir le cadre,
+                                il faut donc demander une version bien plus large que le cadre, sinon elle est floue. */}
                             <ul className="v2-domain-examples">
                                 {[...d.examples, ...(d.mobileExtra ?? [])].map((p) => (
                                     <li key={p.id} className={d.mobileExtra?.includes(p) ? "v2-mob-only" : undefined}>
                                         <Link href={v2ProjectHref(p)}>
                                             <span className="v2-domain-photo">
                                                 <AfterLoad>
-                                                    <Image src={p.heroImages[0]} alt={`${p.title}, ${d.label.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 82vw, 18vw" />
+                                                    <Image src={p.heroImages[0]} alt={`${p.title}, ${d.label.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 250vw, 56vw" quality={85} />
                                                 </AfterLoad>
                                             </span>
                                             <span className="v2-domain-caption">{p.title}</span>
