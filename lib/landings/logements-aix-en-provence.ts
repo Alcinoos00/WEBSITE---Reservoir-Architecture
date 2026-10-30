@@ -107,7 +107,7 @@ export const data: LandingData = {
             {
                 icon: "shield",
                 title: "Insertion et conformité.",
-                text: "Maîtrise des PLU, de la densité, du stationnement et des normes en vigueur sur le territoire aixois.",
+                text: "Maîtrise des PLU(i), de la densité, du stationnement et des normes en vigueur sur le territoire aixois.",
             },
             {
                 icon: "award",
@@ -117,7 +117,7 @@ export const data: LandingData = {
         ],
         stepsEyebrow: "Comment se passe votre opération",
         steps: [
-            { title: "Échange et faisabilité.", text: "Analyse du foncier, du PLU et du potentiel constructible. Estimation sous 48h." },
+            { title: "Échange et faisabilité.", text: "Analyse du foncier, du PLU(i) et du potentiel constructible. Estimation sous 48h." },
             { title: "Esquisse et capacitaire.", text: "Définition du nombre de logements, des typologies et de l’équilibre du programme." },
             { title: "Conception et permis de construire.", text: "Plans, pièces réglementaires, dépôt et suivi du permis." },
             { title: "Réalisation.", text: "Consultation des entreprises et suivi de chantier jusqu’à la livraison." },
@@ -141,7 +141,7 @@ export const data: LandingData = {
         eyebrow: "Questions fréquentes",
         items: [
             { q: "Travaillez-vous avec les promoteurs et bailleurs ?", a: "Oui. Nous intervenons pour des opérateurs privés sur des opérations de logements collectifs, du montage à la livraison." },
-            { q: "Réalisez-vous des études de faisabilité ?", a: "Oui. À partir du foncier et du PLU, nous étudions le potentiel constructible et le nombre de logements envisageable, pour cadrer votre opération dès le départ." },
+            { q: "Réalisez-vous des études de faisabilité ?", a: "Oui. À partir du foncier et du PLU(i), nous étudions le potentiel constructible et le nombre de logements envisageable, pour cadrer votre opération dès le départ." },
             { q: "Intégrez-vous les normes en vigueur (RE2020, accessibilité) ?", a: "Oui, la conformité réglementaire est intégrée dès la conception." },
             { q: "Quels délais pour une opération de logements ?", a: "Ils dépendent de la taille de l’opération et de l’instruction du permis. Nous établissons un calendrier prévisionnel dès l’étude de faisabilité." },
             { q: "Quelle taille d’opération traitez-vous ?", a: "Du petit collectif à la résidence de 30 logements et plus, en neuf comme en extension." },

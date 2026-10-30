@@ -9,7 +9,7 @@ import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo"
 export const metadata: Metadata = {
     title: "Études avant achat : terrain, faisabilité, capacitaire",
     description:
-        "Avant d’acheter un terrain, une maison ou un bâtiment, Serge Ettore, architecte à Aix-en-Provence, étudie ce que le site permet : étude de terrain pour les particuliers, étude de faisabilité et capacitaire pour les investisseurs et les entreprises.",
+        "Avant d’acheter un terrain, une maison ou un bâtiment, Serge Ettore, architecte DPLG à Aix-en-Provence, étudie ce que le site permet : étude de terrain pour les particuliers, étude de faisabilité et capacitaire pour les investisseurs et les entreprises.",
     alternates: { canonical: `${SITE_URL}/etudes` },
     openGraph: {
         title: "Études avant achat - Reservoir Architecture",
@@ -32,9 +32,9 @@ export default function EtudesPage() {
                     </div>
                     <div>
                         <p className="v2-small">
-                            Un terrain, une maison ou un bâtiment ne se juge pas seulement sur son prix. Les règles d’urbanisme, les risques et les contraintes du site décident de ce que vous pourrez y faire. Serge Ettore, architecte de l’agence, les étudie pour vous avant la signature.
+                            Un terrain, une maison ou un bâtiment ne se juge pas seulement sur son prix. Les règles d’urbanisme, les risques et les contraintes du site décident de ce que vous pourrez y faire. Serge Ettore, architecte DPLG de l’agence, les étudie pour vous avant la signature.
                         </p>
-                        <p className="v2-tag v2-landing-trust">Architecte depuis 1999 · Agence fondée en 2013 à Aix-en-Provence</p>
+                        <p className="v2-tag v2-landing-trust">Architecte DPLG depuis 1999 · Agence fondée en 2013 à Aix-en-Provence</p>
                     </div>
                 </div>
             </section>

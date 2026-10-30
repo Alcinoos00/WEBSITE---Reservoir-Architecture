@@ -17,7 +17,7 @@ const OFFERS = [
         alt: "Villa construite par Reservoir Architecture sur un terrain en pente à Nîmes",
         checksTitle: "Ce que nous vérifions",
         checks: [
-            "Le PLU et les règles de construction : emprise, hauteur, reculs, stationnement",
+            "Le PLU(i) et les règles de construction : emprise, hauteur, reculs, stationnement",
             "La surface constructible, ou l’extension et les annexes possibles pour une maison existante",
             "Les servitudes, les risques, les accès et les réseaux",
             "Les travaux déjà réalisés au regard des autorisations obtenues",

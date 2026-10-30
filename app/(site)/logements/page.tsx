@@ -25,7 +25,7 @@ const FAQ_ITEMS = [
     },
     {
         q: "Réalisez-vous des études de faisabilité et du capacitaire ?",
-        a: "Oui. À partir du foncier et du PLU, nous étudions le potentiel constructible, le nombre de logements et les typologies envisageables, pour cadrer votre opération et son équilibre économique dès le départ.",
+        a: "Oui. À partir du foncier et du PLU(i), nous étudions le potentiel constructible, le nombre de logements et les typologies envisageables, pour cadrer votre opération et son équilibre économique dès le départ.",
     },
     {
         q: "Quelle taille d'opération traitez-vous ?",

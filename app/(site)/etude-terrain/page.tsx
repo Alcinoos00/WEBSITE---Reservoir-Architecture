@@ -16,13 +16,13 @@ import "./etude-terrain.css";
 const TEL = `tel:${SITE_PHONE}`;
 
 export const metadata: Metadata = {
-    title: "Étude de terrain avant achat : PLU, constructibilité, extension",
+    title: "Étude de terrain avant achat : PLU(i), constructibilité, extension",
     description:
-        "Avant d’acheter un terrain ou une maison, Serge Ettore, architecte à Aix-en-Provence, analyse le PLU, les risques et ce que vous pourrez construire : maison, petits logements, extension ou annexes. Sans visite, rapport sous 15 jours ouvrés.",
+        "Avant d’acheter un terrain ou une maison, Serge Ettore, architecte DPLG à Aix-en-Provence, analyse le PLU(i), les risques et ce que vous pourrez construire : maison, petits logements, extension ou annexes. Sans visite, rapport sous 15 jours ouvrés.",
     alternates: { canonical: `${SITE_URL}/etude-terrain` },
     openGraph: {
         title: "Étude de terrain avant achat - Reservoir Architecture",
-        description: "Analyse du PLU et de la constructibilité d’un terrain ou d’une maison avant la signature, par Serge Ettore, architecte à Aix-en-Provence.",
+        description: "Analyse du PLU(i) et de la constructibilité d’un terrain ou d’une maison avant la signature, par Serge Ettore, architecte DPLG à Aix-en-Provence.",
         url: `${SITE_URL}/etude-terrain`,
         type: "website",
         images: [{ url: SITE_DEFAULT_IMAGE, width: 1200, height: 800, alt: SITE_DEFAULT_IMAGE_ALT }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const INCLUDED = [
-    { title: "Le PLU applicable", text: "La zone du terrain et son règlement : ce qui est autorisé, interdit ou soumis à conditions." },
+    { title: "Le PLU(i) applicable", text: "La zone du terrain et son règlement : ce qui est autorisé, interdit ou soumis à conditions." },
     { title: "Les règles de construction", text: "Emprise au sol, hauteur, reculs par rapport aux voies et aux voisins, espaces verts, stationnement." },
     { title: "Ce que vous pourrez construire", text: "Une estimation de la surface constructible et du nombre de logements possible, pour une maison ou de petits logements." },
     { title: "Extension et annexes", text: "Si une maison existe déjà : possibilité de l’agrandir, de la surélever ou d’ajouter un garage, un abri, un pool house ou une piscine, et surface encore disponible." },
@@ -66,14 +66,14 @@ const STEPS = [
     { title: "Premier échange.", text: "Vous nous présentez le terrain ou la maison, votre projet et votre calendrier, par téléphone ou par le formulaire." },
     { title: "Envoi des documents.", text: `Vous nous transmettez vos photos et documents par le formulaire de cette page, ou à ${SITE_EMAIL}.` },
     { title: "Établissement du devis.", text: "À partir de votre dossier, nous vous adressons un devis forfaitaire. L’étude ne commence qu’après votre accord." },
-    { title: "Analyse.", text: "Nous étudions le PLU, le cadastre, les risques et les servitudes à partir de votre dossier et des sources publiques." },
+    { title: "Analyse.", text: "Nous étudions le PLU(i), le cadastre, les risques et les servitudes à partir de votre dossier et des sources publiques." },
     { title: "Rapport.", text: "Vous recevez un rapport écrit en PDF sous 15 jours ouvrés après l’accord sur le devis et la réception du dossier complet, et nous en parlons par téléphone si vous le souhaitez." },
 ];
 
 const FAQ = [
     { q: "Pourquoi faire cette étude avant de signer ?", a: "Une fois le terrain acheté, il est trop tard pour découvrir qu’on ne peut pas y construire la maison ou le nombre de logements prévu. L’étude vous aide à négocier ou à prévoir les bonnes conditions suspensives." },
     { q: "Combien coûte l’étude ?", a: "Le prix dépend du bien : terrain nu ou maison existante, complexité des règles d’urbanisme. Nous vous adressons un devis forfaitaire à réception de votre dossier, avant tout engagement." },
-    { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU, reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : un particulier doit faire appel à un architecte si l’agrandissement exige un permis de construire et porte la surface de plancher totale au-delà de 150 m²." },
+    { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU(i), reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : un particulier doit faire appel à un architecte si l’agrandissement exige un permis de construire et porte la surface de plancher totale au-delà de 150 m²." },
     { q: "L’étude garantit-elle l’obtention du permis de construire ?", a: "Non. Elle donne une analyse sérieuse des règles applicables à sa date, mais seule la mairie délivre le permis. Nous vous conseillons aussi de demander un certificat d’urbanisme opérationnel." },
     { q: "Pourquoi n’y a-t-il pas de visite ?", a: "Pour aller vite et garder un coût accessible. Les photos, le cadastre et les documents d’urbanisme suffisent pour l’essentiel. Si une visite ou une esquisse est utile ensuite, nous vous ferons une proposition." },
     { q: "Et si je décide ensuite de construire avec vous ?", a: "Nous pouvons poursuivre avec la conception et le permis de construire. Une proposition d’honoraires vous sera alors remise." },
@@ -99,9 +99,9 @@ export default function EtudeTerrainPage() {
                     </div>
                     <div>
                         <p className="v2-small">
-                            Avant de signer, Serge Ettore, architecte à Aix-en-Provence, analyse le PLU et les contraintes du bien que vous voulez acheter : pour y faire construire une maison ou de petits logements, ou, si une maison existe déjà, pour savoir si vous pourrez l’agrandir ou ajouter des annexes. Un rapport clair, sans visite sur place.
+                            Avant de signer, Serge Ettore, architecte DPLG à Aix-en-Provence, analyse le PLU(i) et les contraintes du bien que vous voulez acheter : pour y faire construire une maison ou de petits logements, ou, si une maison existe déjà, pour savoir si vous pourrez l’agrandir ou ajouter des annexes. Un rapport clair, sans visite sur place.
                         </p>
-                        <p className="v2-tag v2-landing-trust">Architecte depuis 1999 · Agence fondée en 2013 à Aix-en-Provence · Rapport sous 15 jours ouvrés</p>
+                        <p className="v2-tag v2-landing-trust">Architecte DPLG depuis 1999 · Agence fondée en 2013 à Aix-en-Provence · Rapport sous 15 jours ouvrés</p>
                         <div className="v2-cta-actions">
                             <a href={TEL} className="v2-btn">Faire étudier mon terrain · {SITE_PHONE_DISPLAY}</a>
                             <a href="#dossier" className="v2-btn v2-btn-ghost">Envoyer mon dossier</a>
@@ -205,15 +205,16 @@ export default function EtudeTerrainPage() {
                     <div className="v2-architect-head v2-fade" data-reveal>
                         <div className="v2-architect-photo">
                             <AfterLoad>
-                                <Image src="/images/serge-ettore.webp" alt="Serge Ettore, architecte et fondateur de Reservoir Architecture, devant une bastide en Provence" fill sizes="(max-width: 768px) 120px, 220px" />
+                                <Image src="/images/serge-ettore.webp" alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence" fill sizes="(max-width: 768px) 120px, 220px" />
                             </AfterLoad>
                         </div>
                         <div>
                             <p className="v2-h3 v2-architect-name">Serge Ettore</p>
+                            <p className="v2-tag">Architecte DPLG, fondateur</p>
                         </div>
                     </div>
                     <div className="v2-architect-text v2-fade" data-reveal>
-                        <p className="v2-small">C’est moi, Serge Ettore, qui mène chaque étude. Architecte depuis 1999, je lis votre PLU comme si je devais déposer le permis : avec l’œil de celui qui devra ensuite concevoir et construire.</p>
+                        <p className="v2-small">C’est moi, Serge Ettore, qui mène chaque étude. Architecte DPLG depuis 1999, je lis votre PLU(i) comme si je devais déposer le permis : avec l’œil de celui qui devra ensuite concevoir et construire.</p>
                         <p className="v2-small">Pas de plateforme ni d’intermédiaire : vous échangez directement avec l’architecte, à l’agence d’Aix-en-Provence.</p>
                         <V2Reviews />
                     </div>

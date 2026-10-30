@@ -107,7 +107,7 @@ export const data: LandingData = {
             {
                 icon: "pin",
                 title: "Ancré à Aix-en-Provence.",
-                text: "Connaissance du terrain, des PLU locaux et des contraintes du Pays d’Aix. Nous avons déjà conçu à Aix.",
+                text: "Connaissance du terrain, des PLU(i) locaux et des contraintes du Pays d’Aix. Nous avons déjà conçu à Aix.",
             },
             {
                 icon: "building",

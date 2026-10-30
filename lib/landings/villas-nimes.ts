@@ -101,7 +101,7 @@ export const data: LandingData = {
             {
                 icon: "pin",
                 title: "Une connaissance fine du territoire nîmois.",
-                text: "Terrains en restanques, garrigue, PLU du Gard : nous avons déjà conçu de nombreuses villas dans la région.",
+                text: "Terrains en restanques, garrigue, PLU(i) du Gard : nous avons déjà conçu de nombreuses villas dans la région.",
             },
             {
                 icon: "building",
