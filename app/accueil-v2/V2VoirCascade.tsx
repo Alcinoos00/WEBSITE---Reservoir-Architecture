@@ -2,16 +2,14 @@
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-// Effet « VOIR » de l'accueil (2026-10-30), sur une seule ligne :
-// le premier RESERVOIR s'écrit lettre par lettre ; ensuite chaque mot reste une seconde, puis un fondu horizontal
-// (de gauche à droite) l'efface en faisant apparaître le mot suivant à la même place. « VOIR » est toujours en gras.
-// À la fin, « architecture » s'écrit sous le dernier RESERVOIR, plus petit, comme sur le logo.
+// Effet « VOIR » de l'accueil (2026-10-30), sur une seule ligne, tout en fondus doux :
+// chaque mot apparaît par un balayage lent de gauche à droite, reste affiché, puis s'efface dans le même mouvement
+// pendant que le suivant apparaît à la même place. « VOIR » est toujours en gras.
+// À la fin, « architecture » apparaît en fondu sous le dernier RESERVOIR, plus petit, comme sur le logo.
 // Déclenché une seule fois, quand le bloc arrive à l'écran.
 const WORDS = ["RESERVOIR", "VOIR", "PRÉVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
-const SUB = "architecture";
-const LETTER_MS = 90; // écriture du premier mot
-const HOLD_MS = 1000; // mot affiché une seconde
-const WIPE_MS = 1600; // fondu horizontal (doit correspondre à v2.css)
+const HOLD_MS = 1200; // mot affiché
+const WIPE_MS = 2400; // fondu enchaîné horizontal (doit correspondre à v2.css)
 
 function Word({ text }: { text: string }): ReactNode {
     return (
@@ -24,10 +22,11 @@ function Word({ text }: { text: string }): ReactNode {
 
 export default function V2VoirCascade() {
     const ref = useRef<HTMLDivElement>(null);
+    const [started, setStarted] = useState(false);
     const [cur, setCur] = useState(0);
     const [prev, setPrev] = useState<number | null>(null);
-    const [chars, setChars] = useState(0); // lettres visibles du premier mot
-    const [sub, setSub] = useState(0);
+    const [entering, setEntering] = useState(false);
+    const [done, setDone] = useState(false);
 
     useEffect(() => {
         const el = ref.current;
@@ -37,26 +36,33 @@ export default function V2VoirCascade() {
         const at = (ms: number, fn: () => void) => timers.push(window.setTimeout(fn, ms));
 
         if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setStarted(true);
             setCur(last);
-            setChars(WORDS[last].length);
-            setSub(SUB.length);
+            setDone(true);
             return;
         }
 
         const play = () => {
-            let t = 0;
-            for (let c = 1; c <= WORDS[0].length; c++) at(c * LETTER_MS, () => setChars(c));
-            t = WORDS[0].length * LETTER_MS + HOLD_MS;
+            // Premier mot : apparition par balayage, sans mot sortant
+            setStarted(true);
+            setEntering(true);
+            let t = WIPE_MS;
+            at(t, () => setEntering(false));
+            t += HOLD_MS;
             for (let i = 1; i <= last; i++) {
                 at(t, () => {
                     setPrev(i - 1);
                     setCur(i);
+                    setEntering(true);
                 });
                 t += WIPE_MS;
-                at(t, () => setPrev(null));
+                at(t, () => {
+                    setPrev(null);
+                    setEntering(false);
+                });
                 if (i < last) t += HOLD_MS;
             }
-            for (let c = 1; c <= SUB.length; c++) at(t + 300 + c * 60, () => setSub(c));
+            at(t + 200, () => setDone(true));
         };
 
         const io = new IntersectionObserver(
@@ -75,8 +81,6 @@ export default function V2VoirCascade() {
         };
     }, []);
 
-    const first = cur === 0;
-
     return (
         <div ref={ref} className="v2-voir" role="img" aria-label="Reservoir : voir, prévoir, percevoir, entrevoir, concevoir. Reservoir Architecture.">
             <p className="v2-voir-word" aria-hidden="true">
@@ -85,21 +89,12 @@ export default function V2VoirCascade() {
                         <Word text={WORDS[prev]} />
                     </span>
                 )}
-                <span key={`in-${cur}`} className={`v2-voir-layer${prev !== null ? " is-in" : ""}`}>
-                    {first ? (
-                        <>
-                            {WORDS[0].slice(0, chars).slice(0, WORDS[0].length - 4)}
-                            <strong>{WORDS[0].slice(0, chars).slice(WORDS[0].length - 4)}</strong>
-                        </>
-                    ) : (
-                        <Word text={WORDS[cur]} />
-                    )}
-                    {"​"}
+                <span key={`in-${cur}`} className={`v2-voir-layer${!started ? " is-hidden" : entering ? " is-in" : ""}`}>
+                    <Word text={WORDS[cur]} />
                 </span>
             </p>
-            <p className="v2-voir-sub" aria-hidden="true">
-                {SUB.slice(0, sub)}
-                {"​"}
+            <p className={`v2-voir-sub${done ? " is-on" : ""}`} aria-hidden="true">
+                architecture
             </p>
         </div>
     );
