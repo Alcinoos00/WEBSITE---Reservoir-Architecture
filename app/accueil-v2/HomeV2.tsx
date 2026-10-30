@@ -52,11 +52,11 @@ const DOMAINS = [
     },
     {
         label: "Commerces et showrooms", eyebrow: "Commerces et lieux de marque", href: v2("/commerces"), category: "COMMERCES",
-        examples: pick("puyricard", "wauquiez", "garons"),
+        examples: pick("wauquiez", "food-village", "puyricard"),
     },
     {
         label: "Équipements publics", eyebrow: "Équipements publics", href: v2("/equipements"), category: "ÉQUIPEMENTS",
-        examples: pick("regie-des-eaux", "salon-de-provence", "vitrolles"),
+        examples: pick("vitrolles", "regie-des-eaux", "salon-de-provence"),
         // Téléphone uniquement : 4e photo du carrousel (la section « réalisations autour d'Aix » y est masquée)
         mobileExtra: pick("gendarmerie"),
     },
