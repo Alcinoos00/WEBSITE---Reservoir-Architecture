@@ -3,20 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 
 // Effet « stop motion » de l'accueil (2026-10-30), sur une seule ligne :
-// chaque mot s'écrit lettre par lettre (« VOIR » en gras), reste affiché une seconde, puis disparaît pour le suivant.
+// chaque mot s'écrit lettre par lettre (« VOIR » en gras), reste affiché une seconde, puis s'efface en fondu pour le suivant.
 // Le dernier RESERVOIR reste, et « architecture » s'écrit dessous, plus petit, comme sur le logo.
 // Déclenché une seule fois, quand le bloc arrive à l'écran.
 const WORDS = ["RESERVOIR", "VOIR", "PRÉVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
 const SUB = "architecture";
 const LETTER_MS = 90; // une image par lettre
 const HOLD_MS = 1000; // mot terminé : affiché une seconde
-const GAP_MS = 160; // ligne vide entre deux mots
+const FADE_MS = 700; // fondu de sortie
+const GAP_MS = 120; // ligne vide entre deux mots
 
 export default function V2VoirCascade() {
     const ref = useRef<HTMLDivElement>(null);
     const [word, setWord] = useState(0);
     const [chars, setChars] = useState(0);
     const [sub, setSub] = useState(0);
+    const [fading, setFading] = useState(false);
 
     useEffect(() => {
         const el = ref.current;
@@ -42,7 +44,12 @@ export default function V2VoirCascade() {
                 for (let c = 1; c <= w.length; c++) at(t + c * LETTER_MS, () => setChars(c));
                 t += w.length * LETTER_MS + HOLD_MS;
                 if (i < last) {
-                    at(t, () => setChars(0));
+                    at(t, () => setFading(true));
+                    t += FADE_MS;
+                    at(t, () => {
+                        setChars(0);
+                        setFading(false);
+                    });
                     t += GAP_MS;
                 }
             });
@@ -72,7 +79,7 @@ export default function V2VoirCascade() {
 
     return (
         <div ref={ref} className="v2-voir" role="img" aria-label="Reservoir : voir, prévoir, percevoir, entrevoir, concevoir. Reservoir Architecture.">
-            <p className="v2-voir-word" aria-hidden="true">
+            <p className={`v2-voir-word${fading ? " is-fading" : ""}`} aria-hidden="true">
                 {shown.slice(0, stemLen)}
                 <strong>{shown.slice(stemLen)}</strong>
                 {"​"}
