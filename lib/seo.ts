@@ -17,6 +17,8 @@ export const SITE_ADDRESS = `${SITE_STREET_ADDRESS}, ${SITE_POSTAL_CODE} ${SITE_
 export const SITE_GEO = { latitude: 43.478817, longitude: 5.371065 };
 export const ARCHIDVISOR_URL =
     "https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture";
+// Fiche Google de l'agence (lien de partage donné par Emeric le 2026-10-30)
+export const GOOGLE_REVIEWS_URL = "https://share.google/DirUVGBGHu9twK7XL";
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const HOUZZ_URL = "https://www.houzz.fr/pro/reservoir-architecture";

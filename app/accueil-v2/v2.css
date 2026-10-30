@@ -1235,3 +1235,13 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-about-fold .v2-about-text { padding-bottom: 20px; }
     .v2 .v2-about-fold .v2-fade { opacity: 1; transform: none; }
 }
+
+/* Avis : Archidvisor et Google côte à côte (2026-10-30) */
+.v2 .v2-reviews-sources { display: flex; flex-wrap: wrap; gap: 14px 40px; }
+.v2 .v2-reviews-google { font-size: var(--t3); font-weight: 500; letter-spacing: -0.02em; color: var(--v2-ink); }
+.v2 .v2-reviews-links { display: flex; flex-wrap: wrap; gap: 10px; }
+@media (max-width: 768px) {
+    .v2 .v2-reviews-sources { flex-direction: column; gap: 10px; }
+    .v2 .v2-reviews-head { gap: 10px; }
+    .v2 .v2-reviews-logo, .v2 .v2-reviews-google { width: 104px; }
+}
