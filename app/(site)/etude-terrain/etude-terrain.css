@@ -1,0 +1,24 @@
+/* Page « Étude de terrain avant achat » : compléments au style v2 (listes à puces fines, blocs exclusions et documents). */
+
+.v2 .et-included { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.v2 .et-excluded { margin-top: clamp(56px, 6vw, 96px); padding-top: 32px; border-top: 1px solid var(--v2-line); }
+.v2 .et-excluded .v2-h3 { margin: 0; }
+
+.v2 .et-docs { margin-top: clamp(32px, 4vw, 56px); }
+.v2 .et-docs .v2-h3 { margin: 0 0 16px; }
+
+.v2 .et-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--v2-line); }
+.v2 .et-list li { max-width: none; padding: 14px 0 14px 22px; border-bottom: 1px solid var(--v2-line); position: relative; }
+.v2 .et-list li::before { content: "—"; position: absolute; left: 0; color: var(--v2-muted); }
+
+.v2 .et-legal { margin-top: 24px; color: var(--v2-muted); max-width: 64ch; }
+
+@media (max-width: 1100px) {
+    .v2 .et-included { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .v2 .et-included { grid-template-columns: minmax(0, 1fr); }
+    .v2 .et-excluded, .v2 .et-docs { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+}

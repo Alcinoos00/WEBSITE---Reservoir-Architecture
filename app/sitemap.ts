@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/villas-marseille`, lastModified, priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/villas-nimes`, lastModified, priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/villas-nice`, lastModified, priority: 0.9, changeFrequency: "monthly" },
+        { url: `${SITE_URL}/etude-terrain`, lastModified, priority: 0.8, changeFrequency: "monthly" },
     ];
 
     const projectUrls: MetadataRoute.Sitemap = PROJECTS.map((p) => ({
