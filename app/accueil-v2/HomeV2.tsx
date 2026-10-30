@@ -57,6 +57,8 @@ const DOMAINS = [
     {
         label: "Équipements publics", eyebrow: "Équipements publics", href: v2("/equipements"), category: "ÉQUIPEMENTS",
         examples: pick("regie-des-eaux", "salon-de-provence", "vitrolles"),
+        // Téléphone uniquement : 4e photo du carrousel (la section « réalisations autour d'Aix » y est masquée)
+        mobileExtra: pick("gendarmerie"),
     },
 ];
 
@@ -165,8 +167,8 @@ export default function HomeV2() {
                                 </div>
                             </div>
                             <ul className="v2-domain-examples">
-                                {d.examples.map((p) => (
-                                    <li key={p.id}>
+                                {[...d.examples, ...(d.mobileExtra ?? [])].map((p) => (
+                                    <li key={p.id} className={d.mobileExtra?.includes(p) ? "v2-mob-only" : undefined}>
                                         <Link href={v2ProjectHref(p)}>
                                             <span className="v2-domain-photo">
                                                 <AfterLoad>
@@ -183,6 +185,14 @@ export default function HomeV2() {
                         </article>
                     ))}
                 </div>
+                {/* Téléphone uniquement : les liens vers les pages Aix, repris de la section masquée plus bas */}
+                <nav className="v2-local-links v2-mob-only" aria-label="Votre projet à Aix-en-Provence (mobile)">
+                    <span className="v2-tag">Votre projet à Aix-en-Provence :</span>
+                    <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
+                    <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
+                    <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
+                    <Link href={v2("/equipements-aix-en-provence")}>Architecte équipements publics</Link>
+                </nav>
             </section>
 
             {/* FAQ : mêmes questions que l'accueil actuel */}
@@ -207,8 +217,9 @@ export default function HomeV2() {
                 <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
             </div>
 
-            {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix */}
-            <section className="v2-section">
+            {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix.
+                Ordinateur uniquement : sur téléphone, ses projets sont dans les carrousels et ses liens sous les domaines. */}
+            <section className="v2-section v2-desk-only">
                 <div className="v2-stack v2-fade" data-reveal>
                     <h2 className="v2-h2">Nos réalisations à Aix-en-Provence et alentours</h2>
                     <p className="v2-small">
