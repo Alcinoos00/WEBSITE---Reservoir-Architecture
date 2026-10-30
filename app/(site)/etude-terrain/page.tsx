@@ -215,7 +215,7 @@ export default function EtudeTerrainPage() {
                     </div>
                     <div className="v2-architect-text v2-fade" data-reveal>
                         <p className="v2-small">C’est moi, Serge Ettore, qui mène chaque étude. Architecte DPLG depuis 1999, je lis votre PLU(i) comme si je devais déposer le permis : avec l’œil de celui qui devra ensuite concevoir et construire.</p>
-                        <p className="v2-small">Pas de plateforme ni d’intermédiaire : vous échangez directement avec l’architecte, à l’agence d’Aix-en-Provence.</p>
+                        <p className="v2-small">Pas de plateforme ni d’intermédiaire : vous échangez directement avec l’architecte de l’agence.</p>
                         <V2Reviews />
                     </div>
                 </div>
