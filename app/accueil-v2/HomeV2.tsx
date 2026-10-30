@@ -64,7 +64,7 @@ const DOMAINS = [
 
 // Textes identiques à ceux de l'accueil en ligne (app/page.tsx), pour garder le même référencement.
 const INTRO =
-    "Implantée à Aix-en-Provence, Reservoir Architecture intervient dans le Pays d'Aix, les Bouches-du-Rhône et l'ensemble de la région PACA, ainsi qu'en Occitanie (Gard, Hérault), auprès de particuliers, promoteurs, commerçants et collectivités. L'agence développe une architecture attentive au site, aux usages, au budget et à la durée de vie des bâtiments.";
+    "Un site. Un usage. Un budget. Une architecture qui dure. Architecte à Aix-en-Provence, Reservoir Architecture conçoit chaque projet sur mesure, pour les particuliers, les promoteurs, les commerçants et les collectivités, de la Provence à l'Occitanie.";
 const AGENCY_PARAGRAPHS = [
     "Le travail de l'agence couvre la conception de maisons et villas contemporaines, la rénovation, l'extension, les logements collectifs, les espaces commerciaux, les showrooms et les équipements publics. Cette diversité correspond à la réalité de l'agence : une pratique large, mais une même exigence de justesse constructive.",
     "Chaque projet part d'un contexte précis : orientation, lumière, structure existante, contraintes réglementaires, économie de moyens, parcours et matérialité. L'objectif est de produire une réponse claire, durable et lisible, sans réduire l'architecture à un style répétitif.",
