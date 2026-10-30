@@ -7,7 +7,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 // pendant que le suivant apparaît à la même place. « VOIR » est toujours en gras.
 // À la fin, « architecture » apparaît en fondu sous le dernier RESERVOIR, plus petit, comme sur le logo.
 // Déclenché une seule fois, quand le bloc arrive à l'écran.
-const WORDS = ["RESERVOIR", "VOIR", "PRÉVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
+const WORDS = ["RESERVOIR", "VOIR", "PREVOIR", "PERCEVOIR", "ENTREVOIR", "CONCEVOIR", "RESERVOIR"];
 const HOLD_MS = 1000; // mot affiché
 const WIPE_MS = 1900; // fondu enchaîné horizontal (doit correspondre à v2.css)
 
