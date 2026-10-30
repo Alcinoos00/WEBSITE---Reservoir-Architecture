@@ -1254,9 +1254,5 @@ body:has(.v2) { background: #ffffff; }
 /* Titres en Josefin Sans (choix d'Emeric, 2026-10-30) */
 .v2 :is(.v2-h2, .v2-h3, .v2-cta-title, .v2-panel-name, .v2-project-title) { font-family: var(--tf-josefin), sans-serif; font-weight: 300; letter-spacing: 0.06em; }
 
-/* TEMPORAIRE (2026-10-30) : comparaison de polices pour le texte courant. À retirer avant publication. */
-.v2 .v2-tf-switch { bottom: 70px; }
-.v2 .v2-tf-switch button { padding: 8px 11px; font-size: 11px; }
-.v2[data-bf="jost"] { --v2-font: var(--bf-jost); }
-.v2[data-bf="dmsans"] { --v2-font: var(--bf-dmsans); }
-.v2[data-bf="sourceserif"] { --v2-font: var(--bf-sourceserif); }
+/* Petits titres (noms de catégories, sous-titres) un peu plus marqués pour rester lisibles sur téléphone */
+.v2 :is(.v2-h3, .v2-panel-name) { font-weight: 400; }

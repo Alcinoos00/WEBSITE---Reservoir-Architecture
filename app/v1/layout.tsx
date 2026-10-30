@@ -7,7 +7,7 @@ import V1Links from "./V1Links";
 
 // Ancienne version du site, gardée en ligne sous /v1 pour comparer. Hors index :
 // les pages gardent leur balise canonique vers l'adresse en ligne (sans /v1).
-// Police de la v1, chargée seulement ici : le site v2 utilise Manrope (gain d'un fichier de police sur chaque page).
+// Police de la v1, chargée seulement ici : le site v2 utilise Jost et Josefin Sans (gain d'un fichier de police sur chaque page).
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 
 export const metadata: Metadata = {
