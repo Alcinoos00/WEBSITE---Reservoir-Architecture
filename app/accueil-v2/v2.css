@@ -1318,3 +1318,23 @@ body:has(.v2) { background: #ffffff; }
 .v2 .fx-voirfixe .v2-voir-layer.is-in { animation: v2-voir-stemin 1.9s cubic-bezier(0.37, 0, 0.63, 1) both; }
 @keyframes v2-voir-stemout { from { opacity: 1; } to { opacity: 0; } }
 @keyframes v2-voir-stemin { from { opacity: 0; } to { opacity: 1; } }
+
+/* Menu : entrée « Études » repliable (sous-menu masqué par défaut, ajouté le 2026-10-30) */
+.v2-menu .v2-menu-toggle {
+    display: inline-flex; align-items: center; gap: 0.25em;
+    font: inherit; font-size: clamp(40px, 7vw, 96px); line-height: 1.02; font-weight: 400;
+    text-transform: uppercase; letter-spacing: -0.04em; color: var(--v2-ink);
+    background: none; border: 0; padding: 0; cursor: pointer;
+    transform: translateY(105%); transition: transform 0.6s var(--v2-ease); transition-delay: calc(var(--i) * 60ms);
+}
+.v2-menu.is-open .v2-menu-toggle { transform: none; transition-delay: calc(200ms + var(--i) * 60ms); }
+.v2-menu .v2-menu-toggle::after { content: "+"; font-weight: 300; font-size: 0.6em; transition: transform 0.3s var(--v2-ease); }
+.v2-menu .v2-menu-toggle.is-open::after { transform: rotate(45deg); }
+.v2-menu .v2-menu-toggle:hover { opacity: 0.55; }
+.v2-menu .v2-menu-toggle:focus-visible { outline: 2px solid var(--v2-ink); outline-offset: 2px; }
+.v2 .v2-menu .v2-menu-toggle { font-size: var(--t4); line-height: 1.1; }
+.v2-menu .v2-menu-group { overflow: visible; }
+.v2-menu .v2-submenu { list-style: none; margin: 8px 0 14px; padding: 0; display: grid; gap: 8px; }
+.v2-menu .v2-submenu[hidden] { display: none; }
+.v2 .v2-menu .v2-submenu a { transform: none; font-size: var(--t2); letter-spacing: 0.02em; text-transform: uppercase; color: var(--v2-muted); }
+.v2 .v2-menu .v2-submenu a:hover { color: var(--v2-ink); opacity: 1; }

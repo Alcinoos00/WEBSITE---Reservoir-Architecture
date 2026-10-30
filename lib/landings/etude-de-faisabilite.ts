@@ -5,8 +5,8 @@ export const data: LandingData = {
     hero: {
         eyebrow: "Étude de faisabilité · Étude capacitaire",
         h1: "Connaître le potentiel avant d’acheter ou d’investir",
-        sub: "Terrain à bâtir, immeuble à diviser, local commercial ou bâtiment d’activité : avant de vous engager, Reservoir Architecture étudie ce que le site permet vraiment. Règles d’urbanisme, surface constructible, contraintes du terrain et budget, pour décider en connaissance de cause.",
-        trust: "Architecte DPLG · Agence fondée en 2013 · Investisseurs, entreprises et particuliers · PACA et Occitanie",
+        sub: "Terrain à bâtir, immeuble à diviser, local commercial ou bâtiment d’activité : avant de vous engager, Serge Ettore, architecte à Aix-en-Provence, étudie ce que le site permet vraiment. Règles d’urbanisme, surface constructible, contraintes du terrain et budget, pour décider en connaissance de cause.",
+        trust: "Architecte depuis 1999 · Agence fondée en 2013 à Aix-en-Provence · Investisseurs et entreprises",
         img: "/images/projects/2-logements/martin-pierre/guillot_1.jpg",
         alt: "Petit collectif de logements conçu par Reservoir Architecture",
         ctaPrimary: "Faire étudier mon projet",
@@ -114,6 +114,8 @@ export const data: LandingData = {
         stepsEyebrow: "Comment se passe l’étude",
         steps: [
             { title: "Premier échange.", text: "Vous nous présentez le terrain ou le bâtiment, votre projet et votre budget." },
+            { title: "Transmission des éléments.", text: "Annonce ou titre de propriété, plans existants, règlement de ZAC ou de lotissement, photos : tout ce qui permet de cerner le site." },
+            { title: "Établissement du devis.", text: "Nous vous adressons un devis adapté au site et au niveau d’étude. L’étude ne commence qu’après votre accord." },
             { title: "Analyse du site et des règles.", text: "PLU ou règlement de ZAC, risques, servitudes, réseaux, accès, bâti existant." },
             { title: "Capacitaire et esquisse.", text: "Surface constructible, implantation, nombre de logements ou de locaux, premières esquisses." },
             { title: "Conclusions et suite.", text: "Un rendu clair pour décider. Si vous le souhaitez, nous poursuivons jusqu’au permis de construire et au chantier." },
@@ -128,7 +130,7 @@ export const data: LandingData = {
         eyebrow: "Un architecte installé à",
         city: "Aix-en-Provence",
         paragraphs: [
-            "Notre agence est basée à Aix-en-Provence. Nous réalisons des études de faisabilité en Provence-Alpes-Côte d’Azur et en Occitanie.",
+            "Notre agence est basée à Aix-en-Provence. Chaque étude est menée personnellement par Serge Ettore, architecte depuis 1999 : vous échangez directement avec celui qui pourra ensuite concevoir le projet.",
             "Nous travaillons aussi avec les agents immobiliers, notaires, marchands de biens et conseillers en patrimoine qui accompagnent vos acquisitions.",
         ],
         cta: "Parler de mon projet",
@@ -143,7 +145,7 @@ export const data: LandingData = {
             { q: "Particulier, j’hésite à acheter un terrain. Que vérifiez-vous ?", a: "La zone du PLU et ce qu’elle autorise, la surface constructible, les reculs et hauteurs, les risques (inondation, incendie), les servitudes, les accès et les réseaux. Nous proposons pour cela une étude de terrain avant achat, réalisée à distance, avec un rapport sous 15 jours ouvrés." },
             { q: "Peut-on diviser une maison ou un immeuble en plusieurs logements ?", a: "Souvent, mais cela dépend du PLU, du stationnement exigé, de la structure et des réseaux. Nous vérifions ces points au cas par cas." },
             { q: "Faut-il obligatoirement un architecte ?", a: "Pour un particulier, oui dès que le projet soumis à permis de construire dépasse 150 m² de surface de plancher. Si vous investissez via une société, comme une SCI, l’architecte est obligatoire pour tout permis de construire, quelle que soit la surface." },
-            { q: "Quels sont vos honoraires ?", a: "Ils dépendent du site, de la taille du projet et du niveau d’étude. Nous vous remettons une proposition après un premier échange, avant tout engagement." },
+            { q: "Quels sont vos honoraires ?", a: "Ils dépendent du site, de la taille du projet et du niveau d’étude. Nous vous adressons un devis après un premier échange et la transmission des éléments, avant tout engagement." },
         ],
         cta: "Poser une question",
         ctaLoc: "inv_faq",

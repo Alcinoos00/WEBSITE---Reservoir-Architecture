@@ -5,13 +5,24 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { v2 } from "./v2Links";
 
-const LINKS = [
+type NavLink = { href: string; label: string; children?: { href: string; label: string }[] };
+
+const LINKS: NavLink[] = [
     { href: v2("/"), label: "Accueil" },
     { href: v2("/villas"), label: "Villas" },
     { href: v2("/logements"), label: "Logements" },
     { href: v2("/commerces"), label: "Commerces" },
     { href: v2("/equipements"), label: "Équipements" },
-    { href: v2("/etudes"), label: "Études" },
+    {
+        href: v2("/etudes"),
+        label: "Études",
+        // Sous-menu replié par défaut, pour ne pas allonger le menu
+        children: [
+            { href: v2("/etudes"), label: "Vue d’ensemble" },
+            { href: v2("/etude-terrain"), label: "Particuliers · Étude de terrain" },
+            { href: v2("/etude-de-faisabilite"), label: "Investisseurs · Étude de faisabilité" },
+        ],
+    },
     { href: v2("/contact"), label: "Contact" },
 ];
 
@@ -19,6 +30,7 @@ const LINKS = [
 // Elle se cache quand on descend et revient dès qu'on remonte.
 export default function V2Nav() {
     const [open, setOpen] = useState(false);
+    const [subOpen, setSubOpen] = useState<string | null>(null);
     const [hidden, setHidden] = useState(false);
     const last = useRef(0);
 
@@ -33,7 +45,10 @@ export default function V2Nav() {
     }, []);
 
     useEffect(() => {
-        if (!open) return;
+        if (!open) {
+            setSubOpen(null);
+            return;
+        }
         const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
         document.addEventListener("keydown", onKey);
         document.body.style.overflow = "hidden";
@@ -68,11 +83,32 @@ export default function V2Nav() {
             <div id="v2-menu" className={`v2-menu${open ? " is-open" : ""}`} inert={!open}>
                 <nav aria-label="Menu principal">
                     <ul>
-                        {LINKS.map((l, i) => (
-                            <li key={l.href} style={{ ["--i" as string]: i }}>
-                                <Link href={l.href} onClick={() => setOpen(false)}>{l.label}</Link>
-                            </li>
-                        ))}
+                        {LINKS.map((l, i) =>
+                            l.children ? (
+                                <li key={l.href} style={{ ["--i" as string]: i }} className="v2-menu-group">
+                                    <button
+                                        type="button"
+                                        className={`v2-menu-toggle${subOpen === l.href ? " is-open" : ""}`}
+                                        aria-expanded={subOpen === l.href}
+                                        aria-controls={`v2-sub-${i}`}
+                                        onClick={() => setSubOpen((s) => (s === l.href ? null : l.href))}
+                                    >
+                                        {l.label}
+                                    </button>
+                                    <ul id={`v2-sub-${i}`} className="v2-submenu" hidden={subOpen !== l.href}>
+                                        {l.children.map((c) => (
+                                            <li key={c.href}>
+                                                <Link href={c.href} onClick={() => setOpen(false)}>{c.label}</Link>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </li>
+                            ) : (
+                                <li key={l.href} style={{ ["--i" as string]: i }}>
+                                    <Link href={l.href} onClick={() => setOpen(false)}>{l.label}</Link>
+                                </li>
+                            ),
+                        )}
                     </ul>
                 </nav>
             </div>

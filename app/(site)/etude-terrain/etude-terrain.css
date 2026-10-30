@@ -22,3 +22,30 @@
     .v2 .et-included { grid-template-columns: minmax(0, 1fr); }
     .v2 .et-excluded, .v2 .et-docs { grid-template-columns: minmax(0, 1fr); gap: 24px; }
 }
+
+/* Formulaire « Votre dossier » */
+.v2 .et-dossier { scroll-margin-top: 80px; }
+.v2 .et-form { max-width: none; margin-top: 0; }
+.v2 .et-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 24px; }
+.v2 .et-form-wide { grid-column: 1 / -1; }
+.v2 .et-form select {
+    font: inherit; font-size: 16px; color: var(--v2-ink); background: transparent;
+    border: 0; border-bottom: 1px solid var(--v2-ink); border-radius: 0; padding: 10px 0; appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--v2-ink) 50%), linear-gradient(135deg, var(--v2-ink) 50%, transparent 50%);
+    background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55%; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.v2 .et-form select:focus { outline: none; border-bottom-width: 2px; }
+.v2 .et-form input[type="file"] { font: inherit; font-size: 14px; border: 1px dashed var(--v2-line); padding: 18px 14px; cursor: pointer; }
+.v2 .et-form input[type="file"]::file-selector-button { font: inherit; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 14px; padding: 9px 14px; border: 1px solid var(--v2-ink); background: var(--v2-bg); color: var(--v2-ink); cursor: pointer; }
+.v2 .et-form-help { margin: 0; font-size: 13px; line-height: 1.45; color: var(--v2-muted); }
+.v2 .et-files { list-style: none; margin: 4px 0 0; padding: 0; border-top: 1px solid var(--v2-line); }
+.v2 .et-files li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--v2-line); font-size: 14px; }
+.v2 .et-files li span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v2 .et-files-size { color: var(--v2-muted); font-variant-numeric: tabular-nums; }
+.v2 .et-files button { font: inherit; font-size: 12px; text-transform: uppercase; background: none; border: 0; padding: 0; color: var(--v2-ink); text-decoration: underline; cursor: pointer; }
+.v2 .et-files-total { grid-template-columns: 1fr !important; color: var(--v2-muted); }
+.v2 .et-files-total.is-over { color: #a3261b; }
+
+@media (max-width: 768px) {
+    .v2 .et-form-grid { grid-template-columns: minmax(0, 1fr); }
+}
