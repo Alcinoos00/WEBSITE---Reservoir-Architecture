@@ -22,6 +22,8 @@ export const GOOGLE_REVIEWS_URL = "https://share.google/DirUVGBGHu9twK7XL";
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const HOUZZ_URL = "https://www.houzz.fr/pro/reservoir-architecture";
+// Page LinkedIn de l'agence : adresse à renseigner (le lien n'apparaît pas tant qu'elle est vide).
+export const LINKEDIN_URL = "";
 export const PINTEREST_URL = "https://fr.pinterest.com/reservoirarchi/";
 export const ARCHITECTES_POUR_TOUS_URL = "https://www.architectes-pour-tous.fr/architectes-pour-tous/reservoir-architecture";
 export const SITE_FOUNDED = "2013";

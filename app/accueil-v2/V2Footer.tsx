@@ -5,6 +5,7 @@ import {
     GOOGLE_REVIEWS_URL,
     HOUZZ_URL,
     INSTAGRAM_URL,
+    LINKEDIN_URL,
     PINTEREST_URL,
     SITE_EMAIL,
     SITE_PHONE,
@@ -13,10 +14,11 @@ import {
 import { v2 } from "./v2Links";
 
 // Réseaux : icônes officielles (Simple Icons, CC0) dans public/images/ui/social.
-// LinkedIn à ajouter quand l'adresse de la page sera connue (icône absente de Simple Icons).
+// LinkedIn : icône Bootstrap Icons (MIT) ; affiché dès que LINKEDIN_URL est renseigné dans lib/seo.ts.
 const SOCIALS = [
     { name: "Instagram", href: INSTAGRAM_URL, icon: "instagram" },
     { name: "Facebook", href: FACEBOOK_URL, icon: "facebook" },
+    { name: "LinkedIn", href: LINKEDIN_URL, icon: "linkedin" },
     { name: "Houzz", href: HOUZZ_URL, icon: "houzz" },
     { name: "Pinterest", href: PINTEREST_URL, icon: "pinterest" },
     { name: "Avis Google", href: GOOGLE_REVIEWS_URL, icon: "google" },
@@ -56,7 +58,7 @@ export default function V2Footer() {
                 <div className="v2-foot-col v2-foot-social">
                     <p className="v2-label">Suivre l&apos;agence</p>
                     <ul>
-                        {SOCIALS.map((s) => (
+                        {SOCIALS.filter((s) => s.href).map((s) => (
                             <li key={s.icon}>
                                 <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} title={s.name}>
                                     <Image src={`/images/ui/social/${s.icon}.svg`} alt="" width={22} height={22} unoptimized />

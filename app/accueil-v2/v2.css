@@ -1284,3 +1284,9 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-foot .v2-foot-col .v2-label { white-space: nowrap; letter-spacing: 0.02em; padding: 6px 8px 5px; }
 }
+
+/* Jost paraît plus petit que Manrope : texte courant et petites étiquettes agrandis d'un cran (2026-10-30) */
+.v2 { --t1: 14px; --t2: 17px; }
+/* Logo Archidvisor plus grand dans les avis (il paraissait pâle à 104 px) */
+.v2 .v2-reviews-logo { width: 140px; }
+@media (max-width: 768px) { .v2 .v2-reviews-logo { width: 140px; } .v2 .v2-reviews-google { width: auto; } }
