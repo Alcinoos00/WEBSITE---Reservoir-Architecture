@@ -1338,3 +1338,50 @@ body:has(.v2) { background: #ffffff; }
 .v2-menu .v2-submenu[hidden] { display: none; }
 .v2 .v2-menu .v2-submenu a { transform: none; font-size: var(--t2); letter-spacing: 0.02em; text-transform: uppercase; color: var(--v2-muted); }
 .v2 .v2-menu .v2-submenu a:hover { color: var(--v2-ink); opacity: 1; }
+
+/* Deux offres d'études (accueil et /etudes) : détail replié sous « En savoir davantage » (ajouté le 2026-10-30) */
+.v2 .v2-offers { list-style: none; margin: clamp(40px, 5vw, 72px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
+.v2 .v2-offers > li { display: grid; gap: 12px; align-content: start; }
+.v2 .v2-offers > li > .v2-tag, .v2 .v2-offers > li > .v2-small, .v2 .v2-offers > li > .v2-h3 { margin: 0; }
+.v2 .v2-offer-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--v2-stone); margin-bottom: 8px; }
+.v2 .v2-offer-photo img { object-fit: cover; transition: transform 0.9s var(--v2-ease); }
+.v2 .v2-offer-photo:hover img { transform: scale(1.03); }
+.v2 .v2-offer-more { margin-top: 8px; }
+.v2 .v2-offer-more summary { font-size: var(--t1); text-transform: uppercase; letter-spacing: 0.04em; padding: 16px 0; }
+.v2 .v2-offer-body { display: grid; gap: 10px; padding: 0 0 24px; }
+.v2 .v2-offer-body .v2-tag { margin: 8px 0 0; }
+.v2 .v2-offer-list, .v2 .v2-offer-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.v2 .v2-offer-list li { position: relative; padding-left: 20px; max-width: none; }
+.v2 .v2-offer-list li::before { content: "—"; position: absolute; left: 0; color: var(--v2-muted); }
+.v2 .v2-offer-steps li { max-width: none; }
+.v2 .v2-offer-steps li span { display: inline-block; width: 28px; color: var(--v2-muted); font-variant-numeric: tabular-nums; }
+.v2 .v2-faq .v2-offer-body .v2-small { padding: 0; }
+.v2 .v2-offer-note { color: var(--v2-muted); }
+@media (max-width: 768px) { .v2 .v2-offers { grid-template-columns: minmax(0, 1fr); } }
+
+/* Formulaire « Votre dossier » (études de terrain et de faisabilité) */
+.v2 .v2-dossier-section { scroll-margin-top: 80px; }
+.v2 .v2-dossier-form { max-width: none; margin-top: 0; }
+.v2 .v2-dossier-form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 24px; }
+.v2 .v2-dossier-form-wide { grid-column: 1 / -1; }
+.v2 .v2-dossier-form select {
+    font: inherit; font-size: 16px; color: var(--v2-ink); background: transparent;
+    border: 0; border-bottom: 1px solid var(--v2-ink); border-radius: 0; padding: 10px 0; appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--v2-ink) 50%), linear-gradient(135deg, var(--v2-ink) 50%, transparent 50%);
+    background-position: calc(100% - 12px) 55%, calc(100% - 7px) 55%; background-size: 5px 5px; background-repeat: no-repeat;
+}
+.v2 .v2-dossier-form select:focus { outline: none; border-bottom-width: 2px; }
+.v2 .v2-dossier-form input[type="file"] { font: inherit; font-size: 14px; border: 1px dashed var(--v2-line); padding: 18px 14px; cursor: pointer; }
+.v2 .v2-dossier-form input[type="file"]::file-selector-button { font: inherit; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 14px; padding: 9px 14px; border: 1px solid var(--v2-ink); background: var(--v2-bg); color: var(--v2-ink); cursor: pointer; }
+.v2 .v2-dossier-form-help { margin: 0; font-size: 13px; line-height: 1.45; color: var(--v2-muted); }
+.v2 .v2-dossier-files { list-style: none; margin: 4px 0 0; padding: 0; border-top: 1px solid var(--v2-line); }
+.v2 .v2-dossier-files li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--v2-line); font-size: 14px; }
+.v2 .v2-dossier-files li span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.v2 .v2-dossier-files-size { color: var(--v2-muted); font-variant-numeric: tabular-nums; }
+.v2 .v2-dossier-files button { font: inherit; font-size: 12px; text-transform: uppercase; background: none; border: 0; padding: 0; color: var(--v2-ink); text-decoration: underline; cursor: pointer; }
+.v2 .v2-dossier-files-total { grid-template-columns: 1fr !important; color: var(--v2-muted); }
+.v2 .v2-dossier-files-total.is-over { color: #a3261b; }
+
+@media (max-width: 768px) {
+    .v2 .v2-dossier-form-grid { grid-template-columns: minmax(0, 1fr); }
+}

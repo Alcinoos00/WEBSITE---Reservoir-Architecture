@@ -46,6 +46,8 @@ export type LandingData = {
     local: {
         img: string;
         alt: string;
+        // Légende sous le nom de Serge Ettore (landing v2) ; chaîne vide = pas de légende. Défaut : « Architecte DPLG, fondateur ».
+        role?: string;
         eyebrow: string;
         city: string;
         paragraphs: string[];

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import AfterLoad from "@/components/AfterLoad";
 import { noBreakHyphens } from "@/components/noBreakHyphens";
 import V2Cta from "@/app/accueil-v2/V2Cta";
-import { v2 } from "@/app/accueil-v2/v2Links";
+import V2EtudesOffers from "@/app/accueil-v2/V2EtudesOffers";
 import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
-import "./etudes.css";
 
 // Page d'entrée du menu « Études » : oriente vers l'offre particuliers et l'offre investisseurs / entreprises.
 
@@ -24,28 +20,6 @@ export const metadata: Metadata = {
     },
 };
 
-const OFFERS = [
-    {
-        tag: "Particuliers",
-        title: "Étude de terrain avant achat",
-        text: "Vous voulez acheter un terrain pour faire construire une maison ou de petits logements, ou une maison à agrandir ? Nous vérifions le PLU, les risques et ce que vous pourrez réellement construire, avant que vous ne signiez.",
-        points: "Sans visite · Rapport écrit sous 15 jours ouvrés",
-        href: "/etude-terrain",
-        cta: "Découvrir l’étude de terrain",
-        img: "/images/projects/1-villas/villa P2/villaD_1.jpg",
-        alt: "Villa construite par Reservoir Architecture sur un terrain en pente à Nîmes",
-    },
-    {
-        tag: "Investisseurs et entreprises",
-        title: "Étude de faisabilité et capacitaire",
-        text: "Division, surélévation, changement d’usage, petit collectif, commerce, local d’activité ou entrepôt, en ville ou en ZAC : nous évaluons la surface constructible, le nombre de logements ou de locaux, et les règles qui s’appliquent.",
-        points: "Analyse du site · Capacitaire · Premières esquisses",
-        href: "/etude-de-faisabilite",
-        cta: "Découvrir l’étude de faisabilité",
-        img: "/images/projects/2-logements/martin-pierre/guillot_1.jpg",
-        alt: "Petit collectif de logements conçu par Reservoir Architecture",
-    },
-];
 
 export default function EtudesPage() {
     return (
@@ -66,24 +40,7 @@ export default function EtudesPage() {
             </section>
 
             <section className="v2-section et-offers-section">
-                <ul className="et-offers">
-                    {OFFERS.map((o) => (
-                        <li key={o.href} className="v2-fade" data-reveal>
-                            <Link href={v2(o.href)} className="et-offer-photo" aria-label={o.title}>
-                                <AfterLoad>
-                                    <Image src={o.img} alt={o.alt} fill sizes="(max-width: 768px) 100vw, 50vw" />
-                                </AfterLoad>
-                            </Link>
-                            <p className="v2-tag">{o.tag}</p>
-                            <h2 className="v2-h3">{o.title}</h2>
-                            <p className="v2-small">{o.text}</p>
-                            <p className="v2-tag">{o.points}</p>
-                            <div className="v2-cta-actions">
-                                <Link href={v2(o.href)} className="v2-btn">{o.cta}</Link>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
+                <V2EtudesOffers photos />
             </section>
 
             <V2Cta

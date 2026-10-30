@@ -7,7 +7,7 @@ import V2Reviews from "@/app/accueil-v2/V2Reviews";
 import V2Cta from "@/app/accueil-v2/V2Cta";
 import { v2 } from "@/app/accueil-v2/v2Links";
 import { SITE_URL, SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
-import EtudeTerrainForm from "./EtudeTerrainForm";
+import V2DossierForm from "@/app/accueil-v2/V2DossierForm";
 import "./etude-terrain.css";
 
 // Offre « Étude de terrain avant achat » pour les particuliers. Sans prix affiché :
@@ -162,7 +162,7 @@ export default function EtudeTerrainPage() {
                 </div>
             </section>
 
-            <section className="v2-section et-dossier" id="dossier">
+            <section className="v2-section v2-dossier-section" id="dossier">
                 <div className="v2-row">
                     <div className="v2-stack v2-fade" data-reveal>
                         <p className="v2-tag">Votre dossier</p>
@@ -170,7 +170,7 @@ export default function EtudeTerrainPage() {
                         <p className="v2-small">Remplissez ce formulaire et joignez vos photos et documents. Nous revenons vers vous avec un devis forfaitaire ; l’étude ne commence qu’après votre accord.</p>
                     </div>
                     <div className="v2-fade" data-reveal>
-                        <EtudeTerrainForm />
+                        <V2DossierForm variant="terrain" />
                     </div>
                 </div>
             </section>
@@ -205,12 +205,11 @@ export default function EtudeTerrainPage() {
                     <div className="v2-architect-head v2-fade" data-reveal>
                         <div className="v2-architect-photo">
                             <AfterLoad>
-                                <Image src="/images/serge-ettore.webp" alt="Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence" fill sizes="(max-width: 768px) 120px, 220px" />
+                                <Image src="/images/serge-ettore.webp" alt="Serge Ettore, architecte et fondateur de Reservoir Architecture, devant une bastide en Provence" fill sizes="(max-width: 768px) 120px, 220px" />
                             </AfterLoad>
                         </div>
                         <div>
                             <p className="v2-h3 v2-architect-name">Serge Ettore</p>
-                            <p className="v2-tag">Architecte DPLG, fondateur</p>
                         </div>
                     </div>
                     <div className="v2-architect-text v2-fade" data-reveal>

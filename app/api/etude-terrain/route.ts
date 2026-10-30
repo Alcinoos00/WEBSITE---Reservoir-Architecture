@@ -3,7 +3,7 @@ import { SITE_EMAIL } from "@/lib/seo";
 
 export const runtime = "nodejs";
 
-// Formulaire « Étude de terrain avant achat » : dossier + pièces jointes envoyés par email à l'agence,
+// Formulaires « Étude de terrain » et « Étude de faisabilité » : dossier + pièces jointes envoyés par email à l'agence,
 // avec le même SMTP que le formulaire de contact (SMTP_USER, SMTP_PASS, CONTACT_TO facultatif).
 // Vercel limite le corps d'une requête à 4,5 Mo : le navigateur compresse les photos avant l'envoi
 // et refuse au-delà de MAX_TOTAL ; le reste peut être envoyé par email.
@@ -35,9 +35,10 @@ export async function POST(req: Request) {
     const signature = clean(form.get("signature"), 60);
     const project = clean(form.get("project"), 5000);
     const page = clean(form.get("page"), 300);
+    const offer = clean(form.get("offer"), 60) || "Étude de terrain";
 
     if (!name || !address || !project || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return Response.json({ ok: false, error: "Merci d’indiquer votre nom, un email valide, l’adresse du terrain et votre projet." }, { status: 400 });
+        return Response.json({ ok: false, error: "Merci d’indiquer votre nom, un email valide, l’adresse et votre projet." }, { status: 400 });
     }
 
     const files = form.getAll("files").filter((f): f is File => typeof f === "object" && f !== null && "arrayBuffer" in f && f.size > 0);
@@ -72,9 +73,10 @@ export async function POST(req: Request) {
         ["Email", email],
         ["Téléphone", phone || "Non précisé"],
         ["Bien", kind || "Non précisé"],
-        ["Adresse du terrain", address],
+        ["Offre", offer],
+        ["Adresse", address],
         ["Références cadastrales", cadastre || "Non précisées"],
-        ["Signature prévue", signature || "Non précisée"],
+        ["Date / calendrier", signature || "Non précisé"],
         ["Pièces jointes", files.length ? `${files.length} fichier(s)` : "Aucune"],
         ["Page", page || "Non précisée"],
     ];
@@ -85,7 +87,7 @@ export async function POST(req: Request) {
             from: `"Site Reservoir Architecture" <${user}>`,
             to: process.env.CONTACT_TO || SITE_EMAIL,
             replyTo: `"${name.replace(/"/g, "")}" <${email}>`,
-            subject: `Étude de terrain : ${name} – ${address.slice(0, 80)}`,
+            subject: `${offer} : ${name} – ${address.slice(0, 80)}`,
             text: `${rows.map(([k, v]) => `${k} : ${v}`).join("\n")}\n\nProjet :\n${project}`,
             html: `<table cellpadding="4">${rows.map(([k, v]) => `<tr><td><b>${k}</b></td><td>${esc(v)}</td></tr>`).join("")}</table><p><b>Projet</b></p><p style="white-space:pre-wrap">${esc(project)}</p>`,
             attachments,

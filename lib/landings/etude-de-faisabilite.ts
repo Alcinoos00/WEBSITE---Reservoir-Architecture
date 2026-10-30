@@ -114,7 +114,7 @@ export const data: LandingData = {
         stepsEyebrow: "Comment se passe l’étude",
         steps: [
             { title: "Premier échange.", text: "Vous nous présentez le terrain ou le bâtiment, votre projet et votre budget." },
-            { title: "Transmission des éléments.", text: "Annonce ou titre de propriété, plans existants, règlement de ZAC ou de lotissement, photos : tout ce qui permet de cerner le site." },
+            { title: "Transmission des éléments.", text: "Par le formulaire de cette page ou par email : annonce ou titre de propriété, plans existants, règlement de ZAC ou de lotissement, photos." },
             { title: "Établissement du devis.", text: "Nous vous adressons un devis adapté au site et au niveau d’étude. L’étude ne commence qu’après votre accord." },
             { title: "Analyse du site et des règles.", text: "PLU ou règlement de ZAC, risques, servitudes, réseaux, accès, bâti existant." },
             { title: "Capacitaire et esquisse.", text: "Surface constructible, implantation, nombre de logements ou de locaux, premières esquisses." },
@@ -126,7 +126,8 @@ export const data: LandingData = {
     },
     local: {
         img: "/images/serge-ettore.webp",
-        alt: "Serge Ettore, architecte DPLG et fondateur de Reservoir Architecture, devant une bastide en Provence",
+        alt: "Serge Ettore, architecte et fondateur de Reservoir Architecture, devant une bastide en Provence",
+        role: "",
         eyebrow: "Un architecte installé à",
         city: "Aix-en-Provence",
         paragraphs: [

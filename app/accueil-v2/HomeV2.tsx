@@ -12,6 +12,7 @@ import {
 import { FAQ_ITEMS, LOCAL_PROJECTS } from "@/lib/homeContent";
 import { v2, v2ProjectHref } from "./v2Links";
 import V2Reviews from "./V2Reviews";
+import V2EtudesOffers from "./V2EtudesOffers";
 import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
 import V2AboutFold from "./V2AboutFold";
@@ -173,6 +174,17 @@ export default function HomeV2() {
                     <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
                     <Link href={v2("/equipements-aix-en-provence")}>Architecte équipements publics</Link>
                 </nav>
+            </section>
+
+            {/* Études avant achat : les deux offres, détail replié sous « En savoir davantage » */}
+            <section className="v2-section">
+                <div className="v2-stack">
+                    <h2 className="v2-h2 v2-fade" data-reveal>Études avant achat</h2>
+                    <p className="v2-small v2-fade" data-reveal>
+                        Avant d’acheter un terrain, une maison ou un bâtiment, savoir ce que le site permet vraiment.
+                    </p>
+                </div>
+                <V2EtudesOffers />
             </section>
 
             {/* FAQ : mêmes questions que l'accueil actuel */}

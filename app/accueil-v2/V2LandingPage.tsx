@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
 import AfterLoad from "@/components/AfterLoad";
 import { noBreakHyphens } from "@/components/noBreakHyphens";
 import type { LandingData } from "@/components/LandingPage";
@@ -11,7 +12,8 @@ import V2Cta from "./V2Cta";
 const TEL = `tel:${SITE_PHONE}`;
 
 // Landing v2 : mêmes contenus que la landing en ligne (lib/landings/*), mise en page v2.
-export default function V2LandingPage({ data }: { data: LandingData }) {
+// afterSteps : bloc facultatif inséré après le déroulé (ex. formulaire d’envoi du dossier).
+export default function V2LandingPage({ data, afterSteps }: { data: LandingData; afterSteps?: ReactNode }) {
     const { hero, realisations, reassurance, local, faq, finalCta } = data;
     // Données structurées FAQ, comme sur la landing v1 (résultats enrichis Google)
     const faqJsonLd = {
@@ -99,6 +101,8 @@ export default function V2LandingPage({ data }: { data: LandingData }) {
                 </div>
             </section>
 
+            {afterSteps}
+
             <section className="v2-section">
                 <div className="v2-stack v2-fade" data-reveal>
                     <p className="v2-tag">{local.eyebrow}</p>
@@ -113,7 +117,7 @@ export default function V2LandingPage({ data }: { data: LandingData }) {
                         </div>
                         <div>
                             <p className="v2-h3 v2-architect-name">Serge Ettore</p>
-                            <p className="v2-tag">Architecte DPLG, fondateur</p>
+                            {(local.role ?? "Architecte DPLG, fondateur") && <p className="v2-tag">{local.role ?? "Architecte DPLG, fondateur"}</p>}
                         </div>
                     </div>
                     <div className="v2-architect-text v2-fade" data-reveal>
