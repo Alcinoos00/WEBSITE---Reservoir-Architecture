@@ -22,8 +22,8 @@ export const GOOGLE_REVIEWS_URL = "https://share.google/DirUVGBGHu9twK7XL";
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const HOUZZ_URL = "https://www.houzz.fr/pro/reservoir-architecture";
-// Page LinkedIn de l'agence : adresse à renseigner (le lien n'apparaît pas tant qu'elle est vide).
-export const LINKEDIN_URL = "";
+// Page LinkedIn de l'agence (adresse publique, sans la partie /admin/edit/ donnée par Emeric).
+export const LINKEDIN_URL = "https://www.linkedin.com/company/25555491/";
 export const PINTEREST_URL = "https://fr.pinterest.com/reservoirarchi/";
 export const ARCHITECTES_POUR_TOUS_URL = "https://www.architectes-pour-tous.fr/architectes-pour-tous/reservoir-architecture";
 export const SITE_FOUNDED = "2013";
@@ -215,7 +215,7 @@ export function getOrganizationJsonLd() {
             longitude: SITE_GEO.longitude,
         },
         hasMap: `https://www.google.com/maps/search/?api=1&query=${SITE_GEO.latitude},${SITE_GEO.longitude}`,
-        sameAs: [ARCHIDVISOR_URL, HOUZZ_URL, ARCHITECTES_POUR_TOUS_URL, INSTAGRAM_URL, FACEBOOK_URL, PINTEREST_URL],
+        sameAs: [ARCHIDVISOR_URL, HOUZZ_URL, ARCHITECTES_POUR_TOUS_URL, INSTAGRAM_URL, FACEBOOK_URL, PINTEREST_URL, LINKEDIN_URL],
         areaServed: [
             ...AREA_SERVED_CITIES.map((name) => ({ "@type": "City", name })),
             ...AREA_SERVED_REGIONS.map((name) => ({ "@type": "AdministrativeArea", name })),

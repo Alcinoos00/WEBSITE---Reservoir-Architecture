@@ -44,7 +44,7 @@ const pick = (...ids: string[]) => ids.map((id) => PROJECTS.find((p) => p.id ===
 const DOMAINS = [
     {
         label: "Villas et maisons", eyebrow: "Villas et maisons d'architecte", href: v2("/villas"), category: "VILLAS",
-        examples: pick("villa-t", "villa-f", "villa-c"),
+        examples: pick("villa-f", "villa-t", "villa-c"),
     },
     {
         label: "Logements collectifs", eyebrow: "Logements collectifs et résidences", href: v2("/logements"), category: "LOGEMENTS",
