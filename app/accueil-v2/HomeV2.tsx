@@ -85,15 +85,15 @@ export default function HomeV2() {
             <section className="v2-hero">
                 <div className="v2-hero-top">
                     <div className="v2-wordmark-wrap">
+                        {/* Version blanche du logo du pied de page (mêmes proportions : cases, lettres et « architecture ») */}
                         <Image
-                            src="/images/ui/brand/wordmark-boxed.svg"
-                            alt="Reservoir"
-                            width={1247}
-                            height={176}
+                            src="/images/ui/logo_light_outline.svg"
+                            alt="Reservoir Architecture"
+                            width={391}
+                            height={87}
                             priority
                             className="v2-wordmark-img"
                         />
-                        <span className="v2-wordmark-sub">Architecture</span>
                     </div>
                 </div>
                 <HeroCategories
