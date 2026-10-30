@@ -40,6 +40,8 @@ export type LandingData = {
         steps: Step[];
         cta: string;
         ctaLoc: string;
+        // Bouton secondaire facultatif vers une autre page (ex. l’offre particuliers depuis /etude-de-faisabilite)
+        secondaryCta?: { label: string; href: string };
     };
     local: {
         img: string;

@@ -93,6 +93,9 @@ export default function V2LandingPage({ data }: { data: LandingData }) {
                 </ol>
                 <div className="v2-cta-actions">
                     <a href={TEL} className="v2-btn">{reassurance.cta}</a>
+                    {reassurance.secondaryCta && (
+                        <Link href={v2(reassurance.secondaryCta.href)} className="v2-btn v2-btn-ghost">{reassurance.secondaryCta.label}</Link>
+                    )}
                 </div>
             </section>
 

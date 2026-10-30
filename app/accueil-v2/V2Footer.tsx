@@ -53,7 +53,7 @@ export default function V2Footer() {
                     <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
                     <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
                     <Link href={v2("/equipements-aix-en-provence")}>Équipements publics</Link>
-                    <Link href={v2("/etude-terrain")}>Étude de terrain avant achat</Link>
+                    <Link href={v2("/etudes")}>Études avant achat</Link>
                 </nav>
 
                 <div className="v2-foot-col v2-foot-social">

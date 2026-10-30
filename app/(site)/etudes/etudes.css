@@ -1,0 +1,12 @@
+/* Page /etudes : deux offres côte à côte (particuliers, investisseurs et entreprises). */
+.v2 .et-offers { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px 32px; }
+.v2 .et-offers li { display: grid; gap: 12px; align-content: start; }
+.v2 .et-offers .v2-tag, .v2 .et-offers .v2-small, .v2 .et-offers .v2-h3 { margin: 0; }
+.v2 .et-offers .v2-cta-actions { margin-top: 8px; }
+.v2 .et-offer-photo { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; background: var(--v2-stone); margin-bottom: 8px; }
+.v2 .et-offer-photo img { object-fit: cover; transition: transform 0.9s var(--v2-ease); }
+.v2 .et-offer-photo:hover img { transform: scale(1.03); }
+
+@media (max-width: 768px) {
+    .v2 .et-offers { grid-template-columns: minmax(0, 1fr); }
+}

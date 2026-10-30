@@ -11,6 +11,7 @@ const LINKS = [
     { href: v2("/logements"), label: "Logements" },
     { href: v2("/commerces"), label: "Commerces" },
     { href: v2("/equipements"), label: "Équipements" },
+    { href: v2("/etudes"), label: "Études" },
     { href: v2("/contact"), label: "Contact" },
 ];
 
