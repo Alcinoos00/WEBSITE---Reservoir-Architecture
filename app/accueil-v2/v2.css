@@ -1250,3 +1250,11 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-legal { display: grid; gap: 16px; max-width: 72ch; }
 .v2 .v2-legal h2 { margin: 24px 0 0; }
 .v2 .v2-legal a { color: var(--v2-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* TEMPORAIRE (2026-10-30) : comparaison de polices pour les titres. À retirer avant publication. */
+.v2 .v2-tf-switch { bottom: 70px; }
+.v2 .v2-tf-switch button { padding: 8px 11px; font-size: 11px; }
+.v2[data-tf="cormorant"] :is(.v2-h2, .v2-h3, .v2-cta-title, .v2-panel-name, .v2-project-title) { font-family: var(--tf-cormorant), serif; font-weight: 500; letter-spacing: 0.03em; }
+.v2[data-tf="italiana"] :is(.v2-h2, .v2-h3, .v2-cta-title, .v2-panel-name, .v2-project-title) { font-family: var(--tf-italiana), serif; font-weight: 400; letter-spacing: 0.05em; }
+.v2[data-tf="barlow"] :is(.v2-h2, .v2-h3, .v2-cta-title, .v2-panel-name, .v2-project-title) { font-family: var(--tf-barlow), sans-serif; font-weight: 400; letter-spacing: 0.02em; }
+.v2[data-tf="josefin"] :is(.v2-h2, .v2-h3, .v2-cta-title, .v2-panel-name, .v2-project-title) { font-family: var(--tf-josefin), sans-serif; font-weight: 300; letter-spacing: 0.06em; }
