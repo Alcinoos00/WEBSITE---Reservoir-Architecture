@@ -1161,3 +1161,77 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-contact-coords { margin-top: 48px; }
 /* Bouton email : l'adresse en entier, en minuscules, et coupable sur petit écran */
 .v2 .v2-btn.v2-btn-email { text-transform: none; white-space: normal; overflow-wrap: anywhere; text-align: center; }
+
+/* =====================================================================
+   ACCUEIL ALLÉGÉ SUR TÉLÉPHONE (2026-10-30)
+   Moins de texte visible, photos plus grandes. Rien ne change sur ordinateur.
+   Aucun texte n'est supprimé du HTML : il est seulement replié ou masqué sur téléphone.
+   ===================================================================== */
+@media (min-width: 769px) {
+    .v2 .v2-mob-only { display: none !important; }
+    .v2 .v2-about-fold > summary { display: none; }
+}
+@media (max-width: 768px) {
+    .v2 .v2-desk-only { display: none !important; }
+
+    /* Moins de blanc entre les sections de l'accueil */
+    .v2 .v2-home .v2-section { padding-top: 56px; }
+
+    /* Avis : un à la fois, on fait glisser (l'avis suivant dépasse à droite) */
+    .v2 .v2-home .v2-reviews { justify-items: stretch; min-width: 0; }
+    .v2 .v2-home .v2-reviews ul {
+        display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+        scrollbar-width: none; overscroll-behavior-x: contain;
+        margin-right: calc(-1 * var(--v2-pad)); padding-right: var(--v2-pad);
+    }
+    .v2 .v2-home .v2-reviews ul::-webkit-scrollbar { display: none; }
+    .v2 .v2-home .v2-reviews li {
+        flex: 0 0 82%; scroll-snap-align: start;
+        padding: 18px; border: 1px solid var(--v2-line);
+    }
+    .v2 .v2-home .v2-reviews .v2-btn { justify-self: start; }
+
+    /* Domaines : grandes photos pleine largeur qu'on fait glisser */
+    .v2 .v2-home .v2-domain { gap: 16px; padding: 28px 0; }
+    .v2 .v2-home .v2-domain-text { grid-template-columns: auto minmax(0, 1fr); align-items: baseline; column-gap: 12px; row-gap: 0; }
+    .v2 .v2-home .v2-domain-text .v2-tag { display: none; }
+    .v2 .v2-home .v2-domain-examples {
+        display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory;
+        scrollbar-width: none; overscroll-behavior-x: contain;
+        margin: 0 calc(-1 * var(--v2-pad)); padding: 0 var(--v2-pad);
+        scroll-padding-left: var(--v2-pad);
+    }
+    .v2 .v2-home .v2-domain-examples::-webkit-scrollbar { display: none; }
+    .v2 .v2-home .v2-domain-examples > li { flex: 0 0 84%; scroll-snap-align: start; }
+    .v2 .v2-home .v2-domain-examples .v2-domain-photo { aspect-ratio: 4 / 5; }
+    .v2 .v2-home .v2-domain-examples a { gap: 4px; }
+    .v2 .v2-home .v2-domain-examples .v2-domain-caption { margin-top: 6px; }
+
+    /* Réalisations autour d'Aix : simple liste de liens, sans photos (déjà vues dans les domaines) */
+    .v2 .v2-home .v2-local { display: block; margin-top: 24px; border-top: 1px solid var(--v2-line); }
+    .v2 .v2-home .v2-local li { border-bottom: 1px solid var(--v2-line); }
+    .v2 .v2-home .v2-local a {
+        display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; row-gap: 2px;
+        padding: 14px 0; align-items: baseline;
+    }
+    .v2 .v2-home .v2-local .v2-domain-photo { display: none; }
+    .v2 .v2-home .v2-local .v2-domain-caption { grid-column: 1; grid-row: 1; font-size: var(--t1); }
+    .v2 .v2-home .v2-local .v2-domain-place { grid-column: 2; grid-row: 1; text-align: right; }
+    .v2 .v2-home .v2-local .v2-small { grid-column: 1 / -1; grid-row: 2; color: var(--v2-muted); font-size: 14px; }
+    .v2 .v2-home .v2-local-links { margin-top: 24px; }
+
+    /* Texte de l'agence replié derrière « À propos de l'agence » */
+    .v2 .v2-home .v2-about-end { padding-top: 40px; }
+    .v2 .v2-about-fold { border-top: 1px solid var(--v2-line); border-bottom: 1px solid var(--v2-line); }
+    .v2 .v2-about-fold > summary {
+        display: flex; justify-content: space-between; align-items: center; gap: 16px;
+        padding: 18px 0; cursor: pointer; list-style: none;
+        font-size: var(--t2); font-weight: 500; text-transform: uppercase; color: var(--v2-ink);
+    }
+    .v2 .v2-about-fold > summary::-webkit-details-marker { display: none; }
+    .v2 .v2-about-fold > summary::marker { content: ""; }
+    .v2 .v2-about-fold > summary::after { content: "+"; font-size: 22px; font-weight: 300; line-height: 1; transition: transform 0.3s var(--v2-ease); }
+    .v2 .v2-about-fold[open] > summary::after { transform: rotate(45deg); }
+    .v2 .v2-about-fold .v2-about-text { padding-bottom: 20px; }
+    .v2 .v2-about-fold .v2-fade { opacity: 1; transform: none; }
+}

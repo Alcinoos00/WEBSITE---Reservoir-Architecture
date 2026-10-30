@@ -16,7 +16,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Où intervient Reservoir Architecture ?",
-    a: "Basée à Aix-en-Provence, l'agence intervient sur le Pays d'Aix, Marseille, les Bouches-du-Rhône et l'ensemble de la région PACA. Elle a notamment conçu des projets à Puyricard, Bouc-Bel-Air, Vitrolles, Salon-de-Provence et Grans.",
+    a: "Basée à Aix-en-Provence, l'agence intervient sur le Pays d'Aix, Marseille, les Bouches-du-Rhône et l'ensemble de la région PACA, ainsi qu'en Occitanie (Gard, Hérault). Elle a notamment conçu des projets à Puyricard, Bouc-Bel-Air, Vitrolles, Salon-de-Provence et Grans.",
   },
   {
     q: "Réalisez-vous des rénovations et des extensions à Aix-en-Provence ?",

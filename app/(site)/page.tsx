@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Architecte à Aix-en-Provence - Reservoir Architecture",
     description:
-      "Agence d'architecture à Aix-en-Provence pour villas contemporaines, logements collectifs, commerces et équipements publics en PACA.",
+      "Agence d'architecture à Aix-en-Provence pour villas contemporaines, logements collectifs, commerces et équipements publics en PACA et en Occitanie.",
     url: SITE_URL,
     type: "website",
     images: [

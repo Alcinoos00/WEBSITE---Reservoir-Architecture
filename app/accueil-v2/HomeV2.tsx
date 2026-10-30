@@ -15,6 +15,7 @@ import { v2, v2ProjectHref } from "./v2Links";
 import V2Reviews from "./V2Reviews";
 import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
+import V2AboutFold from "./V2AboutFold";
 
 // Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
@@ -61,12 +62,12 @@ const DOMAINS = [
 
 // Textes identiques à ceux de l'accueil en ligne (app/page.tsx), pour garder le même référencement.
 const INTRO =
-    "Implantée à Aix-en-Provence, Reservoir Architecture intervient dans le Pays d'Aix, les Bouches-du-Rhône et l'ensemble de la région PACA, auprès de particuliers, promoteurs, commerçants et collectivités. L'agence développe une architecture attentive au site, aux usages, au budget et à la durée de vie des bâtiments.";
+    "Implantée à Aix-en-Provence, Reservoir Architecture intervient dans le Pays d'Aix, les Bouches-du-Rhône et l'ensemble de la région PACA, ainsi qu'en Occitanie (Gard, Hérault), auprès de particuliers, promoteurs, commerçants et collectivités. L'agence développe une architecture attentive au site, aux usages, au budget et à la durée de vie des bâtiments.";
 const AGENCY_PARAGRAPHS = [
     "Le travail de l'agence couvre la conception de maisons et villas contemporaines, la rénovation, l'extension, les logements collectifs, les espaces commerciaux, les showrooms et les équipements publics. Cette diversité correspond à la réalité de l'agence : une pratique large, mais une même exigence de justesse constructive.",
     "Chaque projet part d'un contexte précis : orientation, lumière, structure existante, contraintes réglementaires, économie de moyens, parcours et matérialité. L'objectif est de produire une réponse claire, durable et lisible, sans réduire l'architecture à un style répétitif.",
     "L'agence est dirigée par Serge Ettore, architecte DPLG. Faire appel à un architecte à Aix-en-Provence, c'est s'assurer d'un interlocuteur unique et responsable, de la faisabilité au suivi de chantier, qui engage sa signature et son assurance sur la qualité du projet.",
-    "Pour une mission d'architecte à Aix-en-Provence ou en région Provence-Alpes-Côte d'Azur, le premier échange permet de qualifier le programme, le niveau d'accompagnement attendu et les conditions de faisabilité du projet.",
+    "Pour une mission d'architecte à Aix-en-Provence, en région Provence-Alpes-Côte d'Azur ou en Occitanie, le premier échange permet de qualifier le programme, le niveau d'accompagnement attendu et les conditions de faisabilité du projet.",
 ];
 // Données structurées FAQ (comme sur l'accueil précédent) pour les résultats enrichis Google
 const FAQ_JSON_LD = {
@@ -75,9 +76,8 @@ const FAQ_JSON_LD = {
     mainEntity: FAQ_ITEMS.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
 };
 export default function HomeV2() {
-    const count = (category: string) => PROJECTS.filter((p) => p.category === category).length;
     return (
-        <>
+        <div className="v2-home">
 
             {/* Hero */}
             <section className="v2-hero">
@@ -109,7 +109,7 @@ export default function HomeV2() {
                             Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                         </p>
                     </div>
-                    <p className="v2-statement" data-scrub aria-label={INTRO}>
+                    <p className="v2-statement v2-desk-only" data-scrub aria-label={INTRO}>
                         <span aria-hidden="true"><Letters text={INTRO} /></span>
                     </p>
                 </div>
@@ -163,7 +163,6 @@ export default function HomeV2() {
                                     <p className="v2-tag">{d.eyebrow}</p>
                                     <h3 className="v2-h3">{d.label}</h3>
                                 </div>
-                                <p className="v2-facts-line">{count(d.category)} projets</p>
                             </div>
                             <ul className="v2-domain-examples">
                                 {d.examples.map((p) => (
@@ -171,7 +170,7 @@ export default function HomeV2() {
                                         <Link href={v2ProjectHref(p)}>
                                             <span className="v2-domain-photo">
                                                 <AfterLoad>
-                                                    <Image src={p.heroImages[0]} alt={`${p.title}, ${d.label.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 45vw, 18vw" />
+                                                    <Image src={p.heroImages[0]} alt={`${p.title}, ${d.label.toLowerCase()} par Reservoir Architecture`} fill sizes="(max-width: 768px) 82vw, 18vw" />
                                                 </AfterLoad>
                                             </span>
                                             <span className="v2-domain-caption">{p.title}</span>
@@ -203,7 +202,10 @@ export default function HomeV2() {
             </section>
 
             {/* Contact juste après la FAQ, même bloc que le bas de page avec une autre photo */}
-            <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
+            {/* Sur téléphone, un seul bloc contact : celui du bas de page */}
+            <div className="v2-desk-only">
+                <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
+            </div>
 
             {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix */}
             <section className="v2-section">
@@ -240,15 +242,20 @@ export default function HomeV2() {
 
             {/* Texte de l'agence (repris de l'accueil actuel), placé en fin de page */}
             <section className="v2-section v2-about v2-about-end">
-                <div className="v2-about-text v2-fade" data-reveal>
-                    {AGENCY_PARAGRAPHS.map((p) => (
-                        <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
-                    ))}
-                </div>
+                {/* Sur téléphone, replié derrière « À propos de l'agence » (le texte reste dans la page) ;
+                    sur ordinateur, toujours ouvert comme avant. */}
+                <V2AboutFold summary="À propos de l'agence">
+                    <div className="v2-about-text v2-fade" data-reveal>
+                        <p className="v2-small v2-mob-only">{INTRO}</p>
+                        {AGENCY_PARAGRAPHS.map((p) => (
+                            <p className="v2-small" key={p.slice(0, 24)}>{p}</p>
+                        ))}
+                    </div>
+                </V2AboutFold>
             </section>
 
             <V2Cta />
 
-        </>
+        </div>
     );
 }
