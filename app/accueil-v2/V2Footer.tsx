@@ -11,7 +11,6 @@ import {
     SITE_PHONE_DISPLAY,
 } from "@/lib/seo";
 import { v2 } from "./v2Links";
-import FooterStyleSwitch from "./FooterStyleSwitch";
 
 // Réseaux : icônes officielles (Simple Icons, CC0) dans public/images/ui/social.
 // LinkedIn à ajouter quand l'adresse de la page sera connue (icône absente de Simple Icons).
@@ -71,7 +70,6 @@ export default function V2Footer() {
             <p className="v2-footer-copy">
                 © {new Date().getFullYear()} Reservoir Architecture · Architecte DPLG · Ordre des architectes S16033 · <Link href={v2("/mentions-legales")}>Mentions légales</Link>
             </p>
-            <FooterStyleSwitch />
         </footer>
     );
 }
