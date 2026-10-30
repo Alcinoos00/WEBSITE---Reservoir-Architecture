@@ -3,7 +3,7 @@ import { SITE_ADDRESS, SITE_EMAIL, SITE_NAME, SITE_PHONE, SITE_PHONE_DISPLAY, SI
 
 export const metadata: Metadata = {
     title: "Mentions légales",
-    description: "Mentions légales du site de Reservoir Architecture : éditeur, hébergeur et informations sur les avis clients.",
+    description: "Mentions légales du site de Reservoir Architecture : éditeur, hébergeur, avis clients, données personnelles et cookies.",
     alternates: { canonical: `${SITE_URL}/mentions-legales` },
 };
 
@@ -47,6 +47,23 @@ export default function MentionsLegalesPage() {
                 </p>
                 <p className="v2-small">
                     Aucune contrepartie n&apos;est accordée en échange d&apos;un avis. Les avis restent affichés sur ce site au plus 10 ans après leur publication.
+                </p>
+
+                <h2 className="v2-h3" id="donnees">Données personnelles et cookies</h2>
+                <p className="v2-small">
+                    Responsable du traitement : {SITE_NAME}, joignable à <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
+                </p>
+                <p className="v2-small">
+                    Formulaire de contact : les informations saisies (nom, email, budget, description du projet) sont envoyées par email à l&apos;agence, uniquement pour répondre à votre demande et, le cas échéant, préparer une proposition. Elles ne sont ni vendues ni cédées. Sans suite donnée à la demande, elles sont conservées au plus 3 ans après le dernier contact.
+                </p>
+                <p className="v2-small">
+                    Mesure d&apos;audience : le site utilise Google Analytics (Google) et Microsoft Clarity (Microsoft) pour mesurer sa fréquentation et améliorer ses pages. Ces outils déposent des cookies et ne sont activés qu&apos;avec votre accord, donné ou refusé dans le bandeau affiché à votre arrivée. Votre choix est conservé 6 mois dans votre navigateur ; vous pouvez le modifier à tout moment avec le lien « Gérer les cookies » en bas de page.
+                </p>
+                <p className="v2-small">
+                    Les prestataires techniques du site (hébergement, messagerie, mesure d&apos;audience) peuvent traiter des données hors de l&apos;Union européenne, notamment aux États-Unis.
+                </p>
+                <p className="v2-small">
+                    Vous pouvez demander l&apos;accès à vos données, leur rectification ou leur effacement, ou vous opposer à leur utilisation, en écrivant à <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>. Vous pouvez aussi adresser une réclamation à la CNIL (cnil.fr).
                 </p>
             </section>
         </main>
