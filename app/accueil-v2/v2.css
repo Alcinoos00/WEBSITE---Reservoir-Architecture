@@ -1294,3 +1294,11 @@ body:has(.v2) { background: #ffffff; }
 /* Pied de page : titres sans cadre, plus gras (2026-10-30) */
 .v2 .v2-foot .v2-foot-col .v2-label { display: block; padding: 0; border: 0; font-weight: 600; letter-spacing: 0.06em; }
 @media (max-width: 768px) { .v2 .v2-foot .v2-foot-col .v2-label { padding: 0; } }
+
+/* Cascade « VOIR » (2026-10-30) : mots alignés à droite pour que « VOIR » forme une colonne */
+.v2 .v2-voir { display: grid; justify-items: end; align-content: start; font-family: var(--tf-josefin), sans-serif; font-weight: 300; font-size: clamp(30px, 4.2vw, 64px); line-height: 1.12; letter-spacing: 0.05em; text-transform: uppercase; color: var(--v2-ink); }
+.v2 .v2-voir-line { margin: 0; transition: opacity 0.5s var(--v2-ease), transform 0.5s var(--v2-ease), color 0.5s var(--v2-ease); }
+.v2 .v2-voir-line strong { font-weight: 600; }
+.v2 .v2-voir-line.is-off { opacity: 0; transform: translateY(14px); }
+.v2 .v2-voir-line.is-past { color: #c4c4c4; }
+@media (max-width: 768px) { .v2 .v2-voir { margin-top: 28px; font-size: clamp(30px, 9vw, 40px); } }

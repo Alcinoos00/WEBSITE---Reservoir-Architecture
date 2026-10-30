@@ -8,7 +8,7 @@ import "./v2.css";
 
 // Texte courant, boutons et menu en Jost ; titres en Josefin Sans (choix d'Emeric le 2026-10-30, à la place de Manrope).
 const jost = Jost({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--v2-font" });
-const josefin = Josefin_Sans({ subsets: ["latin"], weight: ["300", "400"], variable: "--tf-josefin" });
+const josefin = Josefin_Sans({ subsets: ["latin"], weight: ["300", "400", "600"], variable: "--tf-josefin" });
 
 // Habillage commun à toutes les pages v2 : police, animations, barre du haut et pied de page.
 // La barre et le pied de page du site actuel sont masqués par v2.css sur ces pages.

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import AfterLoad from "@/components/AfterLoad";
@@ -16,28 +15,11 @@ import V2Reviews from "./V2Reviews";
 import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
 import V2AboutFold from "./V2AboutFold";
+import V2VoirCascade from "./V2VoirCascade";
 
 // Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
 
-
-// Découpe un texte en lettres (mots insécables) pour les animations lettre à lettre.
-function Letters({ text }: { text: string }) {
-    let n = 0;
-    return (
-        <>
-            {text.split(" ").map((word, w) => (
-                <Fragment key={w}>
-                    <span className="v2-w">
-                        {Array.from(word).map((ch) => (
-                            <span className="v2-l" key={n} style={{ ["--i" as string]: n++ }}>{ch}</span>
-                        ))}
-                    </span>{" "}
-                </Fragment>
-            ))}
-        </>
-    );
-}
 
 const pick = (...ids: string[]) => ids.map((id) => PROJECTS.find((p) => p.id === id)).filter((p): p is ProjectData => !!p);
 
@@ -111,9 +93,7 @@ export default function HomeV2() {
                             Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
                         </p>
                     </div>
-                    <p className="v2-statement v2-desk-only" data-scrub aria-label={INTRO}>
-                        <span aria-hidden="true"><Letters text={INTRO} /></span>
-                    </p>
+                    <V2VoirCascade />
                 </div>
             </section>
 
