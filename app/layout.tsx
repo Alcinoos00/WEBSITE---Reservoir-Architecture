@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import ClarityInit from "@/components/ClarityInit";
 import GtagLoader from "@/components/GtagLoader";
-import CookieBanner from "@/components/CookieBanner";
 import { LeadTracking } from "@/components/LeadButtons";
 import {
   SITE_DEFAULT_IMAGE,
@@ -91,7 +90,6 @@ export default function RootLayout({
         />
         {/* Habillage dans app/(site)/layout.tsx (site v2) et app/v1/layout.tsx (ancienne version). */}
         {children}
-        <CookieBanner />
       </body>
     </html>
   );
