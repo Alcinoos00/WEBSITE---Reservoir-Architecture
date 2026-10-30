@@ -16,8 +16,8 @@ export default function MentionsLegalesPage() {
 
                 <h2 className="v2-h3">Éditeur du site</h2>
                 <p className="v2-small">
-                    {SITE_NAME}, société par actions simplifiée (SAS)<br />
-                    SIRET 792 144 875 00020<br />
+                    {SITE_NAME}, société par actions simplifiée (SAS) au capital de 1 000 €<br />
+                    RCS Aix-en-Provence 792 144 875 · SIRET 792 144 875 00020<br />
                     Siège : {SITE_ADDRESS}<br />
                     Téléphone : <a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a><br />
                     Email : <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
@@ -25,6 +25,9 @@ export default function MentionsLegalesPage() {
                 <p className="v2-small">
                     Société d&apos;architecture inscrite au Tableau de l&apos;Ordre des architectes sous le numéro S16033.<br />
                     Assurance professionnelle : Mutuelle des Architectes Français (MAF).
+                </p>
+                <p className="v2-small">
+                    Directeur de la publication : Serge Ettore, président.
                 </p>
 
                 <h2 className="v2-h3">Hébergeur</h2>
