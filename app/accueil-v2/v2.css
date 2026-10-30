@@ -1303,8 +1303,10 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-voir-layer { grid-area: 1 / 1; }
 .v2 .v2-voir-layer.is-hidden, .v2 .v2-voir-fixed.is-hidden { opacity: 0; }
 .v2 .v2-voir-layer { position: relative; }
-.v2 .v2-voir-word { padding-bottom: 0.55em; }
-.v2 .v2-voir-sub { position: absolute; left: 0; top: 100%; margin-top: 0.12em; font-family: var(--v2-font), sans-serif; font-size: 0.3em; font-weight: 400; letter-spacing: 0.62em; text-transform: none; line-height: 1.2; white-space: nowrap; opacity: 0; transform: translateY(4px); transition: opacity 1.6s cubic-bezier(0.37, 0, 0.63, 1), transform 1.6s cubic-bezier(0.37, 0, 0.63, 1); }
+.v2 .v2-voir-word { padding-bottom: 0.55em; position: relative; }
+/* sans l'espace d'approche ajouté après le dernier R, pour que le bord droit tombe pile sur la lettre */
+.v2 .fx-voirfixe .v2-voir-fixed { margin-right: -0.06em; }
+.v2 .v2-voir-sub { position: absolute; right: 0; top: 100%; margin-right: -0.62em; margin-top: 0.12em; font-family: var(--v2-font), sans-serif; font-size: 0.3em; font-weight: 400; letter-spacing: 0.62em; text-transform: none; line-height: 1.2; white-space: nowrap; opacity: 0; transform: translateY(4px); transition: opacity 1.6s cubic-bezier(0.37, 0, 0.63, 1), transform 1.6s cubic-bezier(0.37, 0, 0.63, 1); }
 .v2 .v2-voir-sub.is-on { opacity: 1; transform: none; }
 @media (max-width: 768px) { .v2 .v2-voir { margin-top: 28px; font-size: clamp(34px, 10vw, 44px); } }
 

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 // Effet « VOIR fixe » de l'accueil (choisi par Emeric le 2026-10-30), sur une seule ligne :
 // « VOIR » reste immobile, en gras ; seul le début du mot change en fondu enchaîné devant lui :
 // RESER → PRE → PERCE → ENTRE → CONCE → RESER. Puis « architecture » apparaît sous le dernier mot,
-// accroché à son R, comme sur le logo. Déclenché une seule fois, quand le bloc arrive à l'écran.
+// aligné sur son bord droit. Déclenché une seule fois, quand le bloc arrive à l'écran.
 const STEMS = ["RESER", "PRE", "PERCE", "ENTRE", "CONCE", "RESER"];
 const HOLD_MS = 1000; // mot affiché
 const TRANS_MS = 1900; // fondu enchaîné (doit correspondre à v2.css)
@@ -84,11 +84,11 @@ export default function V2VoirCascade() {
                     )}
                     <span key={`in-${cur}`} className={`v2-voir-layer${!run ? " is-hidden" : entering ? " is-in" : ""}`}>
                         {STEMS[cur]}
-                        {/* « architecture » accroché au début du dernier mot : aligné sur le R de RESERVOIR */}
-                        {cur === last && <span className={`v2-voir-sub${done ? " is-on" : ""}`}>architecture</span>}
                     </span>
                 </span>
                 <strong className={`v2-voir-fixed${run ? "" : " is-hidden"}`}>VOIR</strong>
+                {/* « architecture » aligné sur le bord droit de RESERVOIR (fin du R de VOIR) */}
+                {cur === last && <span className={`v2-voir-sub${done ? " is-on" : ""}`}>architecture</span>}
             </p>
         </div>
     );
