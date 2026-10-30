@@ -1290,3 +1290,7 @@ body:has(.v2) { background: #ffffff; }
 /* Logo Archidvisor plus grand dans les avis (il paraissait pâle à 104 px) */
 .v2 .v2-reviews-logo { width: 140px; }
 @media (max-width: 768px) { .v2 .v2-reviews-logo { width: 140px; } .v2 .v2-reviews-google { width: auto; } }
+
+/* Pied de page : titres sans cadre, plus gras (2026-10-30) */
+.v2 .v2-foot .v2-foot-col .v2-label { display: block; padding: 0; border: 0; font-weight: 600; letter-spacing: 0.06em; }
+@media (max-width: 768px) { .v2 .v2-foot .v2-foot-col .v2-label { padding: 0; } }

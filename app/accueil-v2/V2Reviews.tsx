@@ -3,16 +3,16 @@ import { ARCHIDVISOR_URL, GOOGLE_REVIEWS_URL } from "@/lib/seo";
 
 // Avis clients : Archidvisor et Google (avis contrôlés par l'agence, procédure décrite dans /mentions-legales#avis),
 // réutilisés sur l'accueil et les landing pages v2.
-// Avis Google recopiés à la main le 2026-10-30 : extraits courts, prénom et initiale, lien vers la fiche.
+// Avis Google recopiés à la main le 2026-10-30 : texte complet, prénom et initiale, lien vers la fiche.
 // À mettre à jour quand la note ou le nombre d'avis change sur la fiche Google.
 const GOOGLE_RATING = "5,0";
 const GOOGLE_COUNT = 3;
 
 // Classés du plus récent au plus ancien (date de publication de l'avis, au mois près).
 const REVIEWS = [
-    { text: "Serge a été un très bon architecte pour notre projet de rénovation lourde : force de proposition, challenge de nos idées […]", author: "Pierre-Alain L.", source: "Google", date: "octobre 2026" },
-    { text: "Notre maison a dix ans cette année et nous en sommes toujours ravis !", author: "David P.", source: "Google", date: "octobre 2026" },
-    { text: "Nous avons été très bien orientés et conseillés tout au long de notre projet de construction. Un architecte à l'écoute, qui a su comprendre nos besoins […]", author: "Emeric", source: "Google", date: "octobre 2026" },
+    { text: "Serge a été un très bon architecte pour notre projet de rénovation lourde : force de proposition, challenge de nos idées, identification et négociation avec les intervenants, suivi et réception de chantier. Nous le recommandons !", author: "Pierre-Alain L.", source: "Google", date: "octobre 2026" },
+    { text: "Notre maison a dix ans cette année et nous en sommes toujours ravis ! Tant au niveau du conseil, que de la conception, du dépôt de permis ou du suivi de chantier, Réservoir Architecture a toujours été d'un grand professionnalisme, d'une aide précieuse et éclairée. Nous recommandons plus plus plus !", author: "David P.", source: "Google", date: "octobre 2026" },
+    { text: "Nous avons été très bien orientés et conseillés tout au long de notre projet de construction. Un architecte à l'écoute, qui a su comprendre nos besoins et nous proposer un projet sur mesure, tirant profit de toutes les spécificités et contraintes de notre terrain, comme de nos envies. Nous recommandons vivement !", author: "Emeric", source: "Google", date: "octobre 2026" },
     { text: "Très professionnel et force de proposition. Très bon contact.", author: "Arnaud M.", source: "Archidvisor", date: "août 2026" },
     { text: "Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence.", author: "Hamid Y.", source: "Archidvisor", date: "décembre 2025" },
     { text: "Très disponible, rapide, de bons conseils.", author: "Celsio C.", source: "Archidvisor", date: "novembre 2024" },
