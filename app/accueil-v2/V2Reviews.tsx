@@ -8,13 +8,15 @@ import { ARCHIDVISOR_URL, GOOGLE_REVIEWS_URL } from "@/lib/seo";
 const GOOGLE_RATING = "5,0";
 const GOOGLE_COUNT = 3;
 
+// Classés du plus récent au plus ancien (date de publication de l'avis, au mois près).
 const REVIEWS = [
-    { text: "Serge a été un très bon architecte pour notre projet de rénovation lourde : force de proposition, challenge de nos idées […]", author: "Pierre-Alain L.", source: "Google" },
-    { text: "Notre maison a dix ans cette année et nous en sommes toujours ravis !", author: "David P.", source: "Google" },
-    { text: "Très professionnel et force de proposition. Très bon contact.", author: "Arnaud M.", source: "Archidvisor" },
-    { text: "Très disponible, rapide, de bons conseils.", author: "Celsio C.", source: "Archidvisor" },
-    { text: "Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence.", author: "Hamid Y.", source: "Archidvisor" },
-    { text: "Bien à l'écoute, a parfaitement compris ce que j'attendais.", author: "Axel A.", source: "Archidvisor" },
+    { text: "Serge a été un très bon architecte pour notre projet de rénovation lourde : force de proposition, challenge de nos idées […]", author: "Pierre-Alain L.", source: "Google", date: "octobre 2026" },
+    { text: "Notre maison a dix ans cette année et nous en sommes toujours ravis !", author: "David P.", source: "Google", date: "octobre 2026" },
+    { text: "Nous avons été très bien orientés et conseillés tout au long de notre projet de construction. Un architecte à l'écoute, qui a su comprendre nos besoins […]", author: "Emeric", source: "Google", date: "octobre 2026" },
+    { text: "Très professionnel et force de proposition. Très bon contact.", author: "Arnaud M.", source: "Archidvisor", date: "août 2026" },
+    { text: "Il a été très rapide et précis. Merci pour votre professionnalisme et votre compétence.", author: "Hamid Y.", source: "Archidvisor", date: "décembre 2025" },
+    { text: "Très disponible, rapide, de bons conseils.", author: "Celsio C.", source: "Archidvisor", date: "novembre 2024" },
+    { text: "Bien à l'écoute, a parfaitement compris ce que j'attendais.", author: "Axel A.", source: "Archidvisor", date: "mars 2023" },
 ];
 
 export default function V2Reviews() {
@@ -38,11 +40,12 @@ export default function V2Reviews() {
                 {REVIEWS.map((r) => (
                     <li key={r.author}>
                         <blockquote>« {r.text} »</blockquote>
-                        <cite>{r.author} · {r.source}</cite>
+                        <cite>{r.author} · {r.source} · {r.date}</cite>
                         <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
                     </li>
                 ))}
             </ul>
+            <p className="v2-reviews-note">Avis classés du plus récent au plus ancien. Les avis Google ne font l&apos;objet d&apos;aucun contrôle par Google ni par l&apos;agence.</p>
             <div className="v2-reviews-links">
                 <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Google</a>
                 <a href={ARCHIDVISOR_URL} target="_blank" rel="noopener noreferrer" className="v2-btn v2-btn-ghost">Avis Archidvisor</a>

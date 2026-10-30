@@ -28,7 +28,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Qui dirige l'agence et quelle est son expérience ?",
-    a: "Serge Ettore est architecte DPLG depuis 1999. Avant de fonder Reservoir Architecture en 2013, il a été responsable des projets d'architecture de Cacharel, en France et à l'international. Le site présente 36 projets : 10 villas, 6 opérations de logements, 9 commerces et 11 équipements publics.",
+    a: "Serge Ettore est architecte DPLG depuis 1999. Avant de fonder Reservoir Architecture en 2013, il a été responsable des projets d'architecture de Cacharel, en France et à l'international.",
   },
   {
     q: "Quelles missions l'agence prend-elle en charge ?",

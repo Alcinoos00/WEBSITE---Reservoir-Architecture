@@ -1245,3 +1245,4 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-reviews-head { gap: 10px; }
     .v2 .v2-reviews-logo, .v2 .v2-reviews-google { width: 104px; }
 }
+.v2 .v2-reviews-note { font-size: var(--t1); color: var(--v2-muted); max-width: 60ch; }
