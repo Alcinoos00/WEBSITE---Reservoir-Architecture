@@ -5,14 +5,14 @@ import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, getCollectionPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte commerce et showroom en PACA",
+    title: "Architecte commerce et showroom en PACA et en Occitanie",
     description:
-        "Architecture commerciale, boutiques, showrooms et espaces de vente en PACA. Reservoir Architecture conçoit des lieux de marque et de parcours client.",
+        "Architecture commerciale, boutiques, showrooms et espaces de vente en PACA et en Occitanie. Reservoir Architecture conçoit des lieux de marque et de parcours client.",
     alternates: { canonical: `${SITE_URL}/commerces` },
     openGraph: {
-        title: "Architecte commerce et showroom en PACA - Reservoir Architecture",
+        title: "Architecte commerce et showroom en PACA et en Occitanie - Reservoir Architecture",
         description:
-            "Architecture commerciale, design retail, boutiques, showrooms et espaces de vente en Provence-Alpes-Côte d'Azur.",
+            "Architecture commerciale, design retail, boutiques, showrooms et espaces de vente en Provence-Alpes-Côte d'Azur et en Occitanie.",
         url: `${SITE_URL}/commerces`,
         type: "website",
     },
@@ -22,9 +22,9 @@ export default function CommercesPage() {
     const categoryProjects = PROJECTS.filter((p) => p.category === "COMMERCES");
     const jsonLd = getCollectionPageJsonLd({
         url: `${SITE_URL}/commerces`,
-        name: "Architecte commerce et showroom en PACA",
+        name: "Architecte commerce et showroom en PACA et en Occitanie",
         description:
-            "Aménagement, architecture commerciale, boutiques, showrooms et espaces de vente en Provence-Alpes-Côte d'Azur.",
+            "Aménagement, architecture commerciale, boutiques, showrooms et espaces de vente en Provence-Alpes-Côte d'Azur et en Occitanie.",
         items: categoryProjects,
     });
 

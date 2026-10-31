@@ -2,7 +2,7 @@ import { FAQ_ITEMS } from "@/lib/homeContent";
 import { PROJECTS } from "@/lib/projects";
 import {
     SITE_URL, SITE_NAME, SITE_PHONE_DISPLAY, SITE_EMAIL, SITE_FOUNDED, SITE_FOUNDER, SITE_FOUNDER_TITLE,
-    AREA_SERVED_CITIES, ARCHIDVISOR_URL, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, typologyLabel, projectAt, titleCase,
+    AREA_SERVED_CITIES, ARCHIDVISOR_URL, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, typologyLabel, projectAt, projectName,
 } from "@/lib/seo";
 
 // /llms.txt : résumé du site pour les assistants IA (ChatGPT, Perplexity, Claude...).
@@ -22,7 +22,7 @@ export function GET() {
         "",
         `> ${SITE_NAME} est une agence d'architecture basée à Aix-en-Provence (Bouches-du-Rhône), fondée en ${SITE_FOUNDED} par ${SITE_FOUNDER}, ${SITE_FOUNDER_TITLE}. Elle conçoit des villas contemporaines, des rénovations et extensions, des logements collectifs, des commerces et des équipements publics en région PACA et en Occitanie.`,
         "",
-        `- Zone d'intervention : ${AREA_SERVED_CITIES.join(", ")}, et l'ensemble de la région PACA.`,
+        `- Zone d'intervention : ${AREA_SERVED_CITIES.join(", ")}, et l'ensemble des régions PACA et Occitanie.`,
         "- Clients : particuliers, promoteurs, commerçants et collectivités (maîtrise d'œuvre loi MOP).",
         "- Missions : conception, permis de construire, mission complète jusqu'à la réception du chantier.",
         `- Contact : ${SITE_PHONE_DISPLAY}, ${SITE_EMAIL}, ${SITE_URL}/contact`,
@@ -51,7 +51,7 @@ export function GET() {
     for (const c of CATEGORIES) {
         lines.push(`## ${c.label}`, "", `- [Tous les projets : ${c.label.toLowerCase()}](${SITE_URL}/${c.path})`);
         for (const p of PROJECTS.filter((x) => x.category === c.key)) {
-            lines.push(`- [${titleCase(p.title)}](${getProjectUrl(p)}) : ${typologyLabel(p.category).toLowerCase()} ${projectAt(p)}`);
+            lines.push(`- [${projectName(p)}](${getProjectUrl(p)}) : ${typologyLabel(p.category).toLowerCase()} ${projectAt(p)}`);
         }
         lines.push("");
     }

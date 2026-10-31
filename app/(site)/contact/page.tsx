@@ -5,7 +5,7 @@ import { SITE_URL, getContactPageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
     title: "Contact architecte Aix-en-Provence",
     description:
-        "Contacter Reservoir Architecture, agence d'architecture à Aix-en-Provence : email, téléphone, adresse et demandes de projets en PACA.",
+        "Contacter Reservoir Architecture, agence d'architecture à Aix-en-Provence : email, téléphone, adresse et demandes de projets en PACA et en Occitanie.",
     alternates: { canonical: `${SITE_URL}/contact` },
     openGraph: {
         title: "Contact - Reservoir Architecture",

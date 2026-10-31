@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Agence d'architecture à Aix-en-Provence intervenant en PACA. Villas contemporaines, logements collectifs, commerces et équipements publics.",
+    "Agence d'architecture à Aix-en-Provence intervenant en PACA et en Occitanie. Villas contemporaines, logements collectifs, commerces et équipements publics.",
   applicationName: SITE_NAME,
   authors: [{ name: SITE_NAME }],
   generator: "Next.js",
@@ -29,6 +29,8 @@ export const metadata: Metadata = {
     "architecte PACA",
     "architecte Marseille",
     "architecte Provence",
+    "architecte Nîmes",
+    "architecte Montpellier",
     "villa contemporaine architecte",
     "architecte logements collectifs",
     "architecte commerce",

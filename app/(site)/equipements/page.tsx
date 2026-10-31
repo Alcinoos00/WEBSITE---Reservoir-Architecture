@@ -5,14 +5,14 @@ import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, getCollectionPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte équipements publics en PACA",
+    title: "Architecte équipements publics en PACA et en Occitanie",
     description:
-        "Conception, réhabilitation et extension d'équipements publics en PACA : bâtiments municipaux, gendarmerie, capitainerie, archives et services techniques.",
+        "Conception, réhabilitation et extension d'équipements publics en PACA et en Occitanie : bâtiments municipaux, gendarmerie, capitainerie, archives et services techniques.",
     alternates: { canonical: `${SITE_URL}/equipements` },
     openGraph: {
-        title: "Architecte équipements publics en PACA - Reservoir Architecture",
+        title: "Architecte équipements publics en PACA et en Occitanie - Reservoir Architecture",
         description:
-            "Équipements publics, bâtiments municipaux et projets pour collectivités en Provence-Alpes-Côte d'Azur.",
+            "Équipements publics, bâtiments municipaux et projets pour collectivités en Provence-Alpes-Côte d'Azur et en Occitanie.",
         url: `${SITE_URL}/equipements`,
         type: "website",
     },
@@ -22,9 +22,9 @@ export default function EquipementsPage() {
     const categoryProjects = PROJECTS.filter((p) => p.category === "ÉQUIPEMENTS");
     const jsonLd = getCollectionPageJsonLd({
         url: `${SITE_URL}/equipements`,
-        name: "Architecte équipements publics en PACA",
+        name: "Architecte équipements publics en PACA et en Occitanie",
         description:
-            "Conception, réhabilitation et extension d'équipements publics et bâtiments pour collectivités en Provence-Alpes-Côte d'Azur.",
+            "Conception, réhabilitation et extension d'équipements publics et bâtiments pour collectivités en Provence-Alpes-Côte d'Azur et en Occitanie.",
         items: categoryProjects,
     });
 
