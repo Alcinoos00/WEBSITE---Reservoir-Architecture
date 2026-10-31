@@ -40,6 +40,7 @@ export const AREA_SERVED_CITIES = [
     "Avignon",
     "Toulon",
     "Nîmes",
+    "Montpellier",
 ];
 
 export const AREA_SERVED_REGIONS = [
@@ -47,7 +48,9 @@ export const AREA_SERVED_REGIONS = [
     "Bouches-du-Rhône",
     "Var",
     "Vaucluse",
+    "Occitanie",
     "Gard",
+    "Hérault",
 ];
 
 export const KNOWS_ABOUT = [
@@ -62,7 +65,7 @@ export const KNOWS_ABOUT = [
     "Design retail",
     "Équipements publics",
     "Réhabilitation",
-    "Architecture en PACA",
+    "Architecture en PACA et en Occitanie",
     "Étude de faisabilité",
     "Étude capacitaire",
     "Analyse de PLU avant achat de terrain",
@@ -92,9 +95,18 @@ export function typologyLabel(category: string | undefined): string {
     return TYPOLOGY_LABEL[category] ?? "Projet d'architecture";
 }
 
+// Type d'un projet précis : son type propre s'il en a un, sinon celui de sa catégorie.
+export function projectTypology(project: ProjectData): string {
+    return project.typology ?? typologyLabel(project.category);
+}
+
 export function getProjectAlt(project: ProjectData, index: number): string {
-    const typology = typologyLabel(project.category);
-    return `${typology} ${project.title} à ${project.subtitle} - projet d'architecte ${SITE_NAME}, image ${index + 1}`;
+    const described = project.imageAlts?.[index];
+    if (described) return `${described} - ${projectName(project)}, ${SITE_NAME}`;
+    const typology = projectTypology(project);
+    const count = project.heroImages.length;
+    const view = index === 0 ? "vue principale" : `vue ${index + 1} sur ${count}`;
+    return `${projectName(project)}, ${typology.toLowerCase()} ${projectAt(project)} par ${SITE_NAME} : ${view}`;
 }
 
 export function getProjectUrl(project: ProjectData): string {
@@ -126,6 +138,20 @@ export function titleCase(text: string): string {
         );
 }
 
+// Nom du projet en casse normale, en gardant les sigles courts : "VILLA T" -> "Villa T",
+// "CENTRE DE PREMIERE INTERVENTION - CPI" -> "Centre de Premiere Intervention - CPI", "SUPER U" -> "Super U".
+export function projectName(project: ProjectData): string {
+    const original = project.title.split(/(\s+)/);
+    return titleCase(project.title)
+        .split(/(\s+)/)
+        .map((w, i) => {
+            const o = original[i] ?? "";
+            // Lettre seule ("VILLA L", "VILLA D") ou sigle ("CPI") : gardé tel quel. Les petits mots (DE, LES) passent en minuscules.
+            return /^\p{Lu}$/u.test(o) || (/^\p{Lu}{2,3}$/u.test(o) && !LOWER_WORDS.has(o.toLowerCase())) ? o : w;
+        })
+        .join("");
+}
+
 // Lieu du projet précédé de sa préposition : "à Nîmes (30)", "en France et à l'international".
 export function projectAt(project: ProjectData): string {
     if (/international/i.test(project.subtitle)) return "en France et à l'international";
@@ -133,13 +159,14 @@ export function projectAt(project: ProjectData): string {
 }
 
 export function getProjectMetadata(project: ProjectData): Metadata {
-    const typology = typologyLabel(project.category);
-    const title = `${project.title} - ${typology} à ${project.subtitle}`;
+    const typology = projectTypology(project);
+    // Casse normale (les majuscules pleines se lisent mal dans les résultats Google et les réponses des IA).
+    const title = `${projectName(project)}, ${typology.toLowerCase()} ${projectAt(project)}`;
     const ogTitle = `${title} | ${SITE_NAME}`;
     // Description lisible par Google et les assistants IA : type de projet + lieu d'abord,
     // puis l'accroche du projet (seule, elle ne disait ni quoi ni où).
     const header = project.descriptionHeader ?? project.optionalSubtitle;
-    const rawDesc = `${typology} ${projectAt(project)} par ${SITE_NAME}, architecte à ${SITE_LOCATION}. ${titleCase(project.title)}${header ? ` : ${header.replace(/\s+/g, " ").trim()}` : ""}.`;
+    const rawDesc = `${typology} ${projectAt(project)} par ${SITE_NAME}, architecte à ${SITE_LOCATION}. ${projectName(project)}${header ? ` : ${header.replace(/\s+/g, " ").trim()}` : ""}.`;
     const description = truncateAtWord(rawDesc, 160);
     const url = getProjectUrl(project);
     const image = project.heroImages[0]
@@ -169,6 +196,7 @@ export function getProjectMetadata(project: ProjectData): Metadata {
 }
 
 function extractDept(subtitle: string): string | undefined {
+    if (/\(GARD\)/i.test(subtitle)) return "30";
     const match = subtitle.match(/\((\d{2,3})\)/);
     return match?.[1];
 }
@@ -180,13 +208,14 @@ function deptToRegion(dept: string | undefined): string {
         "83": "Provence-Alpes-Côte d'Azur",
         "84": "Provence-Alpes-Côte d'Azur",
         "34": "Occitanie",
+        "24": "Nouvelle-Aquitaine",
     };
     if (!dept) return SITE_REGION;
     return map[dept] ?? SITE_REGION;
 }
 
 function extractCity(subtitle: string): string {
-    return subtitle.replace(/\s*\(\d{2,3}\)\s*$/, "").trim();
+    return titleCase(subtitle.replace(/\s*\((\d{2,3}|GARD)\)\s*$/i, "").trim());
 }
 
 export function getOrganizationJsonLd() {
@@ -197,7 +226,7 @@ export function getOrganizationJsonLd() {
         name: SITE_NAME,
         alternateName: "RESERVOIR Architecture",
         description:
-            "Agence d'architecture à Aix-en-Provence intervenant en PACA. Villas contemporaines, logements collectifs, commerces, équipements publics, rénovation et réhabilitation.",
+            "Agence d'architecture à Aix-en-Provence intervenant en PACA et en Occitanie. Villas contemporaines, logements collectifs, commerces, équipements publics, rénovation et réhabilitation.",
         url: SITE_URL,
         logo: `${SITE_URL}/images/ui/logo_light.svg`,
         image: SITE_DEFAULT_IMAGE,
@@ -316,7 +345,7 @@ export function getProjectJsonLd(project: ProjectData) {
                 addressCountry: SITE_COUNTRY,
             },
         },
-        about: typologyLabel(project.category),
+        about: projectTypology(project),
         ...(year ? { dateCreated: year } : {}),
     };
 }

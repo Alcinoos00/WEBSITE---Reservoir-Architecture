@@ -966,6 +966,9 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-project[data-pstyle] .v2-pb { display: block; }
     .v2 .v2-project .v2-switch { display: none; }
 }
+.v2 .v2-project-h1 { margin: 0; font-size: inherit; font-weight: inherit; }
+.v2 .v2-project-h1 > span { display: block; }
+.v2 .v2-project-h1 > .v2-tag { margin: 6px 0 13px; }
 .v2 .v2-project-title { font-size: clamp(40px, 5vw, 72px) !important; letter-spacing: -0.02em; margin: 8px 0 !important; }
 .v2 .v2-project-desc { display: grid; gap: 14px; align-content: start; }
 .v2 .v2-project-desc .v2-h3, .v2 .v2-project-desc .v2-small { margin: 0; max-width: 58ch; }

@@ -10,7 +10,7 @@ export default function V2Contact() {
                 <p className="v2-tag">Contact</p>
                 <h1 className="v2-h2">Contacter un architecte à <span className="v2-nowrap">Aix-en-Provence</span></h1>
                 <p className="v2-small">
-                    Pour présenter un projet de villa, logement, commerce ou équipement public en PACA, {CONTACT_FORM_ENABLED ? <>décrivez-le dans le formulaire ci-dessous, l&apos;agence vous répond par email.</> : <>privilégiez l&apos;email avec les premières informations utiles.</>}
+                    Pour présenter un projet de villa, logement, commerce ou équipement public en PACA ou en Occitanie, {CONTACT_FORM_ENABLED ? <>décrivez-le dans le formulaire ci-dessous, l&apos;agence vous répond par email.</> : <>privilégiez l&apos;email avec les premières informations utiles.</>}
                 </p>
             </div>
             <div className="v2-row v2-contact">

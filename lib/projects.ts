@@ -10,6 +10,12 @@ export const GENDARMERIE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/gendarmerie/gendarmerie_3.jpg",
         "/images/projects/4-equipements/gendarmerie/gendarmerie_4.jpg"
     ],
+    imageAlts: [
+        "Façade principale à bardage cuivré et entrée sous auvent sombre",
+        "Façade arrière à bardage cuivré au-dessus du parking des véhicules",
+        "Perspective : vue aérienne du bâtiment à toitures végétalisées dans le quartier résidentiel",
+        "Perspective : vue plongeante sur les toitures végétalisées parmi les maisons"
+    ],
     subtitle: "BOUC BEL AIR (13)",
     title: "GENDARMERIE",
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION",
@@ -43,6 +49,15 @@ export const VILLA_F_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa F/villaF_6.jpg",
         "/images/projects/1-villas/villa F/villaF_7.jpg"
     ],
+    imageAlts: [
+        "Perspective : façade vitrée et piscine entourée de terrasses en bois et pierre",
+        "Perspective : séjour ouvert sur la piscine sous un volume à bardage sombre",
+        "Perspective : vue aérienne de la villa, piscine et stationnement au soleil couchant",
+        "Plan de masse avec jardin, piscine, stationnements et extensions",
+        "Plan du rez-de-chaussée avec séjour, chambres, garage et terrasses",
+        "Élévations des façades ouest et sud avec bardage à lames verticales",
+        "État existant : maison de lotissement et piscine vues depuis le jardin"
+    ],
     subtitle: "CAISSARGUES (30)",
     title: "VILLA F",
     optionalSubtitle: "RÉNOVATION ET EXTENSION POUR TRANSFORMATION D’UNE MAISON DE LOTISSEMENT EN UNE VILLA CONTEMPORAINE",
@@ -71,6 +86,13 @@ export const VILLA_P1_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa P1/villaP_3.jpg",
         "/images/projects/1-villas/villa P1/villaP_4.jpg",
         "/images/projects/1-villas/villa P1/villaP_5.jpg"
+    ],
+    imageAlts: [
+        "Vue aérienne de la villa sur mur de pierre sèche avec piscine",
+        "Grande baie vitrée ouverte sur la terrasse en bois et la piscine",
+        "Piscine bordée de bois face à la façade en enduit blanc",
+        "Plan du rez-de-chaussée avec séjour, chambres, terrasse et piscine",
+        "Coupes longitudinale et transversales montrant l'implantation dans la pente"
     ],
     subtitle: "NÎMES (30)",
     title: "VILLA P",
@@ -101,6 +123,13 @@ export const VILLA_B_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa B/villaB_3.jpg",
         "/images/projects/1-villas/villa B/villaB_4.jpg",
         "/images/projects/1-villas/villa B/villaB_5.jpg"
+    ],
+    imageAlts: [
+        "Vue aérienne des volumes à toitures végétalisées entourés de terrasses en bois",
+        "Vue plongeante sur la toiture végétalisée et les façades en bardage bois",
+        "Perspective : façade d'entrée en panneaux clairs et bardage bois sous les arbres en fleurs",
+        "Perspective : angle de façade en panneaux clairs et passerelle en bois vers le jardin",
+        "Perspective : terrasse en bois longeant les baies vitrées protégées de volets persiennés"
     ],
     subtitle: "BERGERAC (24)",
     title: "VILLA B",
@@ -133,6 +162,15 @@ export const VILLA_L_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa L/villaL_6.jpg",
         "/images/projects/1-villas/villa L/villaL_7.jpg"
     ],
+    imageAlts: [
+        "Vue d'ensemble de la villa en pierre et enduit dans la garrigue",
+        "Terrasse en tomettes sous une pergola métallique longeant les murs en pierre",
+        "Façade principale avec oculus face à la piscine et aux murets en pierre",
+        "Escalier extérieur en pierre et volume maçonné entouré de végétation méditerranéenne",
+        "Plan de masse du rez-de-chaussée avec la maison, le garage et la piscine",
+        "Plan détaillé du rez-de-chaussée avec séjour, chambres, cuisine et terrasse",
+        "Plan de l'étage avec chambre, passerelle et terrasses accessibles"
+    ],
     subtitle: "NÎMES (30)",
     title: "VILLA L",
     optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE",
@@ -164,6 +202,14 @@ export const VILLA_S_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa S/villaS_5.jpg",
         "/images/projects/1-villas/villa S/villaS_6.jpg"
     ],
+    imageAlts: [
+        "Façade de plain-pied en enduit blanc et bardage bois au milieu des pins",
+        "Vue de biais de la villa avec terrasse en bois sur pelouse",
+        "Portail et murs de clôture devant l'entrée de la maison",
+        "Terrasse en bois sous auvent le long de la façade côté jardin",
+        "Plan de masse de la parcelle avec implantation et stationnement",
+        "Plan du rez-de-chaussée avec séjour, chambres, garage et terrasse"
+    ],
     subtitle: "LANGLADE (30)",
     title: "VILLA S",
     optionalSubtitle: "CONSTRUCTION D'UNE VILLA CONTEMPORAINE",
@@ -194,6 +240,14 @@ export const VILLA_P2_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa P2/villaD_5.jpg",
         "/images/projects/1-villas/villa P2/villaD_6.jpg"
     ],
+    imageAlts: [
+        "Perspective : villa en bardage bois sur pilotis dans un jardin arboré",
+        "Volume en bardage bois derrière un mur en pierre sèche le long d'une ruelle",
+        "Perspective : façade en bois et garde-corps vitrés surélevée sur pilotis en béton",
+        "Perspective : séjour entièrement vitré avec plafond en béton et parquet ouvert sur les arbres",
+        "Perspective : pilotis en acier et en béton sous les volumes en bardage bois",
+        "Esquisse filaire en perspective de la maison posée sur le terrain"
+    ],
     subtitle: "NÎMES (30)",
     title: "VILLA D",
     optionalSubtitle: "CONSTRUCTION D’UNE VILLA CONTEMPORAINE DANS UN SITE SENSIBLE INONDABLE",
@@ -222,6 +276,14 @@ export const VILLA_C_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa C/villaC_4.jpg",
         "/images/projects/1-villas/villa C/villaC_5.jpg",
         "/images/projects/1-villas/villa C/villaC_6.jpg"
+    ],
+    imageAlts: [
+        "Perspective : vue aérienne de la villa blanche et de la piscine",
+        "Perspective : piscine et terrasse en bois devant les façades en enduit blanc",
+        "Perspective : reflets des façades blanches et des jarres dans la piscine",
+        "Perspective : salon d'extérieur sous pergola contre la façade en enduit blanc",
+        "Perspective : façade blanche largement ouverte sur le séjour et la terrasse",
+        "Perspective : terrasse en bois menant à la piscine et à la pergola"
     ],
     subtitle: "NÎMES (30)",
     title: "VILLA C",
@@ -252,6 +314,14 @@ export const VILLA_V_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa V/villaV_4.jpg",
         "/images/projects/1-villas/villa V/villaV_5.jpg",
         "/images/projects/1-villas/villa V/villaV_6.jpg"
+    ],
+    imageAlts: [
+        "Façade côté jardin en enduit clair avec terrasse et grandes baies vitrées",
+        "Vue de trois quarts de la villa à étage et du jardin",
+        "Volume à étage et pergola blanche vus depuis le bas du jardin",
+        "Perspective : baies vitrées sur deux niveaux dans la façade en enduit clair",
+        "Perspective : pergola blanche à lames au-dessus de la terrasse en bois et des baies",
+        "Perspective : façade d'entrée avec auvent abritant l'accès et massifs de lavande"
     ],
     subtitle: "VERARGUES (34)",
     title: "VILLA V",
@@ -287,8 +357,20 @@ export const VILLA_T_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa T/villaT_8.jpg",
         "/images/projects/1-villas/villa T/villaT_9.jpg"
     ],
+    imageAlts: [
+        "Terrasse dallée devant l'extension vitrée de la maison en enduit beige",
+        "Piscine et jardin devant la maison et le pavillon annexe",
+        "Pavillon annexe en enduit beige au bord de la piscine",
+        "Séjour lumineux sous plafond rampant ouvert sur la cuisine et le jardin",
+        "Perspective : séjour meublé ouvert sur la terrasse par de grandes baies",
+        "Perspective : séjour avec coin bureau et espace repas en enfilade",
+        "État existant : façade jaune à volets roulants et maison provençale entourée de cyprès",
+        "État existant : terrasse ombragée avec table et fauteuils devant les volets roulants",
+        "État existant : salle à manger vue à travers une arche, avec meubles en bois"
+    ],
     subtitle: "AIX-EN-PROVENCE (13)",
     title: "VILLA T",
+    typology: "Rénovation de maison de ville",
     optionalSubtitle: "RENOVATION- REHABILITATION MAISON DE VILLE",
     descriptionHeader: "Lumière Provençale, Réinterprétée",
     descriptionParagraphs: [
@@ -319,8 +401,18 @@ export const MAISON_G_PROJECT: ProjectData = {
         "/images/projects/1-villas/maison G/maisonG_6.png",
         "/images/projects/1-villas/maison G/maisonG_7.png"
     ],
+    imageAlts: [
+        "Façade sur rue en enduit ocre avec volet bois coulissant",
+        "Vue plongeante sur la terrasse en bois et la verrière de toiture",
+        "Coupe perspective illustrée montrant les niveaux, l'escalier et la terrasse",
+        "État existant : grange en pierre sur la rue avant démolition",
+        "Plans du rez-de-chaussée, du premier et du deuxième étage",
+        "Coupe longitudinale avec escaliers, terrasse jardin et stationnement",
+        "Coupe transversale montrant les trois niveaux et la toiture en pente"
+    ],
     subtitle: "AIMARGUES (30)",
     title: "MAISON G",
+    typology: "Maison de ville contemporaine",
     optionalSubtitle: "DÉMOLITION D'UNE GRANGE ET RECONSTRUCTION D'UNE MAISON DE VILLE CONTEMPORAINE EN CENTRE ANCIEN",
     descriptionHeader: "Elévation compacte en coeur de Village - Greffe urbaine",
     descriptionParagraphs: [
@@ -348,6 +440,15 @@ export const TRENTINI_PROJECT: ProjectData = {
         "/images/projects/2-logements/trentini/childebert_5.jpg",
         "/images/projects/2-logements/trentini/childebert_6.jpg",
         "/images/projects/2-logements/trentini/childebert_7.jpg"
+    ],
+    imageAlts: [
+        "Façade sur rue blanche avec balcons, fenêtres à garde-corps et garages",
+        "Entrée de l'immeuble et garage ouvert abritant des vélos",
+        "Vue depuis la ruelle de l'immeuble neuf entre bâtiments existants",
+        "Vue plongeante sur la terrasse couverte en attique et les toits voisins",
+        "Perspective : vue plongeante sur la façade et la terrasse plantée en attique",
+        "État existant : ancienne remise aux portes en bois avant démolition",
+        "État existant : ruelle et ancienne remise avant la construction"
     ],
     subtitle: "NÎMES (30)",
     title: "CHILDEBERT",
@@ -379,6 +480,15 @@ export const JACOU_PROJECT: ProjectData = {
         "/images/projects/2-logements/jacou/plaine_6.png",
         "/images/projects/2-logements/jacou/plaine_7.png"
     ],
+    imageAlts: [
+        "Perspective : résidence avec balcons filants et volumes ocre rouge au couchant",
+        "Façade de la résidence sur pilotis avec balcons et pergolas en bois",
+        "Vue d'ensemble de la résidence en lisière de pinède au soleil couchant",
+        "Bâtiment à toiture en tuiles et escaliers extérieurs derrière des claustras",
+        "Détail de façade enduite avec escalier extérieur derrière un brise-soleil à lames",
+        "Plan du rez-de-chaussée de la résidence",
+        "Plan de l'étage avec logements et terrasses"
+    ],
     subtitle: "JACOU (34)",
     title: "LES TERRASSES DE LA PLAINE",
     optionalSubtitle: "CONSTRUCTION D’UNE RESIDENCE DE 6 LOGEMENTS T2/T3",
@@ -407,6 +517,13 @@ export const MARTIN_PIERRE_PROJECT: ProjectData = {
         "/images/projects/2-logements/martin-pierre/guillot_3.jpg",
         "/images/projects/2-logements/martin-pierre/guillot_4.jpg",
         "/images/projects/2-logements/martin-pierre/guillot_5.jpg"
+    ],
+    imageAlts: [
+        "Façade principale enduite ocre rouge avec balcons et volets à lames",
+        "Vue latérale de la résidence derrière la végétation du jardin",
+        "Vue d'angle de l'immeuble avec loggias, garage et mur de clôture",
+        "Entrée vitrée sous auvent, bas-relief mural et porte de garage",
+        "Vue aérienne de l'immeuble, toiture terrasse et quartier environnant"
     ],
     subtitle: "NÎMES (30)",
     title: "LE GUILLOT",
@@ -440,6 +557,14 @@ export const ROMI_PROJECT: ProjectData = {
         "/images/projects/2-logements/romi/rosalie_5.jpg",
         "/images/projects/2-logements/romi/rosalie_6.jpg"
     ],
+    imageAlts: [
+        "Vue aérienne des maisons à toits de tuiles reliées par une pergola",
+        "Allée dallée sous pergola métallique entre deux ailes de logements",
+        "Passage couvert d'une pergola métallique bordé de pots de lavande",
+        "Façades enduites avec pergolas ombrageant les terrasses côté jardin",
+        "Terrasse sous pergola ouverte sur la pelouse et les oliviers",
+        "Façades sur cour gravillonnée avec massifs plantés et garage"
+    ],
     subtitle: "ROCHEFORT DU GARD (30)",
     title: "LES JARDINS DE ROSALIE",
     optionalSubtitle: "EXTENSION D’UNE RESIDENCE DE LOGEMENTS T2 AU T4",
@@ -471,6 +596,15 @@ export const VACQUEROLLES_PROJECT: ProjectData = {
         "/images/projects/2-logements/vacquerolles/vacquerolles_6.jpg",
         "/images/projects/2-logements/vacquerolles/vacquerolles_7.jpg"
     ],
+    imageAlts: [
+        "Perspective : vue aérienne des deux maisons ocre et jaune autour d'une cour dallée",
+        "Perspective : cour d'accès dallée, garages et escalier extérieur en bois",
+        "Perspective : façade ocre rouge avec oculus, garages et escalier d'accès",
+        "Perspective : les deux maisons et la terrasse sur pilotis dans la garrigue",
+        "Perspective : façade arrière avec grande terrasse filante sur la garrigue",
+        "Plan de masse des deux maisons sur la parcelle",
+        "Plans des deux logements avec séjours, chambres et terrasses"
+    ],
     subtitle: "NÎMES (30)",
     title: "LES HAUTS DE VACQUEROLLES",
     optionalSubtitle: "CONSTRUCTION D'UNE RESIDENCE COMPRENANT UN T3 ET UN T5",
@@ -501,6 +635,14 @@ export const SAMARITAINE_PROJECT: ProjectData = {
         "/images/projects/2-logements/samaritaine/samaritaine_5.jpg",
         "/images/projects/2-logements/samaritaine/samaritaine_6.png"
     ],
+    imageAlts: [
+        "Perspective : vue aérienne des deux bâtiments avec jardin central et toitures gravillonnées",
+        "Perspective : jardin intérieur planté d'un olivier entre façades à loggias en bois",
+        "Perspective : loggias superposées habillées de lames de bois en angle de bâtiment",
+        "Perspective : façade sur rue avec loggias à claire-voie en bois et garages",
+        "Plan de masse avec toitures terrasses et jardins entre les bâtiments",
+        "Plan des étages courants avec répartition des logements T2 et T3"
+    ],
     subtitle: "NÎMES (30)",
     title: "SAMARITAINE",
     optionalSubtitle: "CONSTRUCTION D’UNE RESIDENCE DE 30 LOGEMENTS COLLECTIFS",
@@ -528,6 +670,12 @@ export const WAUQUIEZ_PROJECT: ProjectData = {
         "/images/projects/3-commerces/wauquiez/wauquiez_2.jpg",
         "/images/projects/3-commerces/wauquiez/wauquiez_3.jpg",
         "/images/projects/3-commerces/wauquiez/wauquiez_4.jpg"
+    ],
+    imageAlts: [
+        "Perspective : vue plongeante sur le showroom en mezzanine, parquet et rayonnages bois",
+        "Perspective : salon d'accueil avec banquette en U et table basse en bois",
+        "Perspective : salon d'accueil en soirée sous un éclairage indirect tamisé",
+        "Perspective : enseigne rétroéclairée devant l'escalier menant à la mezzanine vitrée"
     ],
     subtitle: "PORT-CAMARGUE (GARD)",
     title: "WAUQUIEZ",
@@ -566,14 +714,23 @@ export const PUYRICARD_PROJECT: ProjectData = {
         "/images/projects/3-commerces/puyricard/puyricard_5.jpg",
         "/images/projects/3-commerces/puyricard/puyricard_6.jpg"
     ],
+    imageAlts: [
+        "Perspective de l'étude de faisabilité : façades sur rue des commerces avec oliviers et parvis",
+        "Perspective de l'étude de faisabilité : cour piétonne bordée de vitrines, terrasse et oliviers",
+        "Perspective de l'étude de faisabilité : allée dallée plantée de lavandes et d'oliviers entre bâtiments",
+        "Perspective de l'étude de faisabilité : vue plongeante sur un patio avec bassin et terrasse",
+        "Perspective de l'étude de faisabilité : façade en pierre et enduit avec accès au garage",
+        "Perspective de l'étude de faisabilité : vue aérienne de l'ensemble au soleil couchant"
+    ],
     subtitle: "PUYRICARD (13)",
     title: "ESPRIT BASTIDE",
-    optionalSubtitle: "CONSTRUCTION D’UN ENSEMBLE DE COMMERCES ET SERVICES",
+    typology: "Étude de faisabilité commerciale",
+    optionalSubtitle: "ÉTUDE DE FAISABILITÉ POUR UN ENSEMBLE DE COMMERCES ET SERVICES",
     descriptionHeader: "Cour des Oliviers",
     descriptionParagraphs: [
-        "Articulé autour d’un patio planté d’oliviers, ce projet de construction d’un complexe haut de gamme de commerce et services réinterprète l’esprit des bastides en mêlant pierre naturelle, enduits clairs et toitures tuilées.",
-        "Les commerces et services s’ouvrent largement sur la cour, créant un lieu de vie convivial où transparence, ombre et végétation composent une atmosphère méditerranéenne chaleureuse.",
-        "Entre espace public et intimité protégée, l’ensemble dessine un fragment de village contemporain, ancré dans son territoire et pensé à l’échelle humaine autour de l’emblématique Chocolaterie de Puyricard."
+        "Cette étude de faisabilité imagine un complexe haut de gamme de commerces et services articulé autour d’un patio planté d’oliviers. Le parti architectural réinterprète l’esprit des bastides en mêlant pierre naturelle, enduits clairs et toitures tuilées.",
+        "Les commerces et services s’y ouvriraient largement sur la cour, pour créer un lieu de vie convivial où transparence, ombre et végétation composent une atmosphère méditerranéenne chaleureuse.",
+        "Entre espace public et intimité protégée, l’ensemble proposé dessine un fragment de village contemporain, ancré dans son territoire et pensé à l’échelle humaine autour de l’emblématique Chocolaterie de Puyricard."
     ],
     techSheet: [
         { label: "Lieu", value: "Puyricard (13)" },
@@ -592,6 +749,12 @@ export const CACHAREL_PROJECT: ProjectData = {
         "/images/projects/3-commerces/cacharel/cacharel_2.jpg",
         "/images/projects/3-commerces/cacharel/cacharel_3.jpg",
         "/images/projects/3-commerces/cacharel/cacharel_4.jpg"
+    ],
+    imageAlts: [
+        "Espace de vente avec étagères murales et table de présentation en bois clair",
+        "Dessin en perspective au trait de l'aménagement de la boutique",
+        "Boutique sous verrière avec comptoir et présentoirs en bois clair",
+        "Surface de vente avec table vitrée, portants et niches en bois"
     ],
     subtitle: "France et International",
     title: "CACHAREL",
@@ -629,6 +792,11 @@ export const FOOD_VILLAGE_PROJECT: ProjectData = {
         "/images/projects/3-commerces/food-village/foodvillage_2.jpg",
         "/images/projects/3-commerces/food-village/foodvillage_3.jpg"
     ],
+    imageAlts: [
+        "Salle du café avec comptoir, vitrines réfrigérées et tables blanches",
+        "Salle lumineuse aux grandes baies vitrées et suspensions au-dessus des tables",
+        "Comptoir en bois aux formes courbes et étagères murales face aux tables"
+    ],
     subtitle: "NÎMES (30)",
     title: "FOOD VILLAGE",
     optionalSubtitle: "CREATION CONCEPT POUR UN CAFÉ, SNACKING, DRINK",
@@ -664,6 +832,12 @@ export const GARONS_PROJECT: ProjectData = {
         "/images/projects/3-commerces/garons/domes_3.jpg",
         "/images/projects/3-commerces/garons/domes_4.jpg"
     ],
+    imageAlts: [
+        "Façade blanche du restaurant aux menuiseries bleues et enseigne murale",
+        "Façade à motifs bleus et blancs avec arcades vitrées et palmiers",
+        "Plan du rez-de-chaussée : salle de restaurant et logement de fonction",
+        "Dessins des quatre façades du bâtiment"
+    ],
     subtitle: "GARONS (30)",
     title: "LES DÔMES",
     optionalSubtitle: "EXTENSION DE LA SALLE DE RESTAURANT ET CRÉATION D’UN LOGEMENT DE FONCTION",
@@ -691,8 +865,13 @@ export const FOURNIL_ST_HONORE_PROJECT: ProjectData = {
         "/images/projects/3-commerces/fournil-st-honore/honore_2.jpg",
         "/images/projects/3-commerces/fournil-st-honore/honore_3.jpg"
     ],
+    imageAlts: [
+        "Devanture de la sandwicherie sous l'auvent d'une galerie commerciale",
+        "Vitrine d'angle de la boulangerie avec comptoir de vente et pains",
+        "Salle de consommation avec sol rose et suspensions rouges"
+    ],
     subtitle: "MONTPELLIER (34)",
-    title: "LE PETRIN D’HONORÉ",
+    title: "LE PÉTRIN D’HONORÉ",
     optionalSubtitle: "DEVELOPPEMENT DU CONCEPT BOULANGERIE - CRÉATION",
     descriptionHeader: "La Tradition en Vitrine",
     descriptionParagraphs: [
@@ -719,6 +898,13 @@ export const ANHA_CIUDAD_PROJECT: ProjectData = {
         "/images/projects/3-commerces/anha-ciudad/anhaciudad_3.jpg",
         "/images/projects/3-commerces/anha-ciudad/anhaciudad_4.jpg",
         "/images/projects/3-commerces/anha-ciudad/anhaciudad_5.jpg"
+    ],
+    imageAlts: [
+        "Boutique étroite avec étagères lumineuses, portants et comptoir courbe en verre",
+        "Comptoir en verre aux formes courbes devant les étagères de vêtements",
+        "Détail du plateau de verre du comptoir et tabouret chromé",
+        "Étagères rétroéclairées et portant de vêtements le long du mur",
+        "Plan de la boutique avec espace de vente et cabine d'essayage"
     ],
     subtitle: "AVIGNON (84)",
     title: "ANHA CIUDAD",
@@ -752,6 +938,11 @@ export const DENIM_PROJECT: ProjectData = {
         "/images/projects/3-commerces/denim/denim_1.jpg",
         "/images/projects/3-commerces/denim/denim_2.jpg",
         "/images/projects/3-commerces/denim/denim_3.jpg"
+    ],
+    imageAlts: [
+        "Espace de vente avec tables de présentation en métal et bois",
+        "Vue plongeante sur la boutique, rayonnages muraux et vitrine sur rue",
+        "Perspective : maquette 3D vue du dessus de l'aménagement de la boutique"
     ],
     subtitle: "NÎMES (30)",
     title: "DENIM",
@@ -792,8 +983,17 @@ export const REGIE_DES_EAUX_PROJECT: ProjectData = {
         "/images/projects/4-equipements/regie-des-eaux/regiedeseaux_6.jpg",
         "/images/projects/4-equipements/regie-des-eaux/regiedeseaux_7.jpg"
     ],
+    imageAlts: [
+        "Vue aérienne du bâtiment à bardage vertical bleu au milieu des champs",
+        "Façade principale à lames verticales bleues et parking au premier plan",
+        "Entrée principale sous auvent métallique dans la façade à lames bleues",
+        "Perspective : hall avec banque d'accueil blanche et escalier métallique",
+        "Perspective : mezzanine vitrée sous verrière ouvrant sur les bureaux",
+        "Perspective : espace de restauration du personnel avec tables rondes et comptoir",
+        "Bâtiment à bardage métallique blanc avec escalier extérieur et véhicules de service"
+    ],
     subtitle: "AIX EN PROVENCE (13)",
-    title: "REGIE DES EAUX",
+    title: "RÉGIE DES EAUX",
     optionalSubtitle: "RÉHABILITATION - RESTRUCTURATION - EXTENSION - TRANSFORMATION D’ATELIERS EN BUREAUX",
     descriptionHeader: "Flux & Transparence – Le nouveau visage de la Régie des Eaux",
     descriptionParagraphs: [
@@ -821,6 +1021,10 @@ export const SUPER_U_PROJECT: ProjectData = {
         "/images/projects/4-equipements/super-u/superu_1.jpg",
         "/images/projects/4-equipements/super-u/superu_2.jpg"
     ],
+    imageAlts: [
+        "Façade du supermarché avec auvent et parking paysager au premier plan",
+        "Vue d'ensemble du supermarché depuis la route, haie et parking"
+    ],
     subtitle: "LA CALMETTE (30)",
     title: "SUPER U",
     optionalSubtitle: "RÉHABILITATION ET EXTENSION D’UN SUPERMARCHE POUR L’ENSEIGNE SUPER U",
@@ -844,6 +1048,13 @@ export const CLAPIERS_PROJECT: ProjectData = {
         "/images/projects/4-equipements/clapiers/clapiers_3.jpg",
         "/images/projects/4-equipements/clapiers/clapiers_4.jpg",
         "/images/projects/4-equipements/clapiers/clapiers_5.jpg"
+    ],
+    imageAlts: [
+        "Façade d'entrée avec claustras en bois et jardin méditerranéen en terrasse",
+        "Terrasse à garde-corps en bois sur poteaux, jardin sec en contrebas",
+        "Vue d'ensemble du nouveau hall vitré et des ailes de chambres",
+        "Hall d'accueil lumineux au sol en béton poli et colonnes métalliques",
+        "Plan du rez-de-chaussée : hall d'accueil, patio, galerie et terrasse"
     ],
     subtitle: "CLAPIERS (34)",
     title: "MAISON DE RETRAITE",
@@ -875,8 +1086,15 @@ export const CUCURRON_PROJECT: ProjectData = {
         "/images/projects/4-equipements/cucurron/cucurron_5.jpg",
         "/images/projects/4-equipements/cucurron/cucurron_6.jpg"
     ],
+    imageAlts: [
+        "Bâtiment administratif bardé de bois et remise des véhicules à quatre portes",
+        "Façade latérale en bardage bois à lames verticales et parking",
+        "Façade en bois et terrasse couverte d'une pergola métallique",
+        "Remises des véhicules d'intervention numérotées vues depuis la cour",
+        "Hangar enduit et vaste terrain en terre au pied des collines"
+    ],
     subtitle: "CUCURON (84)",
-    title: "CENTRE DE PREMIERE INTERVENTION - CPI",
+    title: "CENTRE DE PREMIÈRE INTERVENTION - CPI",
     navigationTitle: "SDIS",
     optionalSubtitle: "CONSTRUCTION - EXTENSION",
     descriptionHeader: "Un trait d’union entre technicité et paysage",
@@ -908,8 +1126,15 @@ export const LA_TOUR_DAIGUES_PROJECT: ProjectData = {
         "/images/projects/4-equipements/la-tour-daigues/latourdaigues_4.jpg",
         "/images/projects/4-equipements/la-tour-daigues/latourdaigues_5.jpg"
     ],
+    imageAlts: [
+        "Façade enduite avec portes de remise et cage d'escalier vitrée",
+        "Vue frontale des quatre portes de remise sous les fenêtres à persiennes",
+        "Vue depuis la rue avec le bâtiment voisin de la poste",
+        "Façade latérale avec escalier hélicoïdal métallique extérieur",
+        "Bâtiment bas à trois portes de remise, toiture en tuiles"
+    ],
     subtitle: "LA TOUR D’AIGUES (84)",
-    title: "CENTRE DE PREMIERE INTERVENTION - CPI",
+    title: "CENTRE DE PREMIÈRE INTERVENTION - CPI",
     navigationTitle: "SDIS",
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION",
     descriptionParagraphs: [
@@ -937,6 +1162,13 @@ export const GRANS_PROJECT: ProjectData = {
         "/images/projects/4-equipements/grans/grans_3.jpg",
         "/images/projects/4-equipements/grans/grans_4.jpg",
         "/images/projects/4-equipements/grans/grans_5.jpg"
+    ],
+    imageAlts: [
+        "Façade enduite avec baie vitrée et balcon à garde-corps en métal déployé",
+        "Palier d'étage sous combles desservant des salles par portes vitrées",
+        "Salle d'activités avec baby-foot, écran mural et escalier métallique",
+        "Salle principale en double hauteur avec mezzanine et escalier métallique",
+        "Bâtiment enduit à toiture en tuiles derrière un mur sur rue"
     ],
     subtitle: "GRANS (13)",
     title: "MAISON DES JEUNES",
@@ -968,6 +1200,13 @@ export const CAPITAINERIE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/capitainerie/capitainerie_4.jpg",
         "/images/projects/4-equipements/capitainerie/capitainerie_5.jpg"
     ],
+    imageAlts: [
+        "Bâtiment habillé de lames céramiques colorées et escalier extérieur sombre",
+        "Vue depuis le bassin avec pontons, bateaux amarrés et falaises",
+        "Détail de la façade en lames émaillées bleues et du volume sombre",
+        "Escalier métallique ajouré ouvrant sur la mer au coucher du soleil",
+        "Façade côté port vue depuis le ponton entre deux bateaux"
+    ],
     subtitle: "MARSEILLE (13)",
     title: "CAPITAINERIE",
     optionalSubtitle: "RÉHABILITATION - EXTENSION - SURÉLÉVATION - PORTS DU SUD",
@@ -997,6 +1236,12 @@ export const LODEVE_PROJECT: ProjectData = {
         "/images/projects/4-equipements/lodeve/lodeve_2.jpg",
         "/images/projects/4-equipements/lodeve/lodeve_3.jpg",
         "/images/projects/4-equipements/lodeve/lodeve_4.jpg"
+    ],
+    imageAlts: [
+        "Allée centrale de la halle réhabilitée bordée de cellules en polycarbonate",
+        "Cellules vitrées sur socle en béton avec escalier d'accès",
+        "Atelier en polycarbonate turquoise surélevé sous la charpente métallique",
+        "Locaux grillagés de stockage et escalier vers une cellule à l'étage"
     ],
     subtitle: "LODÈVE (34)",
     title: "CENTRE TECHNIQUE MUNICIPAL",
@@ -1028,6 +1273,13 @@ export const VITROLLES_PROJECT: ProjectData = {
         "/images/projects/4-equipements/vitrolles/vitrolles_3.jpg",
         "/images/projects/4-equipements/vitrolles/vitrolles_4.jpg",
         "/images/projects/4-equipements/vitrolles/vitrolles_5.jpg"
+    ],
+    imageAlts: [
+        "Bâtiment à bardage métallique sombre sous ciel bleu, vu en angle",
+        "Façade à bardage gris foncé et longue casquette au-dessus des fenêtres",
+        "Façade principale avec auvent, rampe d'accès et parking",
+        "Parking de véhicules de service devant un hangar vert",
+        "Plan meublé : rayonnages d'archives, salle de consultation et bureaux"
     ],
     subtitle: "VITROLLES (13)",
     title: "ARCHIVES MUNICIPALES",
@@ -1061,6 +1313,14 @@ export const SALON_PROJECT: ProjectData = {
         "/images/projects/4-equipements/salon-de-provence/salon_5.jpg",
         "/images/projects/4-equipements/salon-de-provence/salon_6.png"
     ],
+    imageAlts: [
+        "Grande halle couverte vue depuis le parking, structure sur poteaux métalliques",
+        "Vue frontale sous la couverture à charpente bois et acier",
+        "Façade longitudinale de la halle avec enseigne sur le bandeau",
+        "Terrains de boules sous la couverture éclairée, de nuit",
+        "Joueurs de pétanque sur un terrain bordé de madriers en bois",
+        "Plan de masse de la halle avec terrains et locaux annexes"
+    ],
     subtitle: "SALON DE PROVENCE (13)",
     title: "BOULODROME",
     optionalSubtitle: "CONSTRUCTION EQUIPEMENT PUBLIC",
@@ -1086,6 +1346,10 @@ export const FERRIGNO_PROJECT: ProjectData = {
     heroImages: [
         "/images/projects/4-equipements/ferrigno/ferrigno_1.jpg",
         "/images/projects/4-equipements/ferrigno/ferrigno_2.jpg"
+    ],
+    imageAlts: [
+        "Perspective : entrepôt avec quais de chargement et volume de bureaux bleu",
+        "Perspective : quai de chargement et bureaux à bardage bleu, vue frontale"
     ],
     subtitle: "PORT ST LOUIS DU RHÔNE (13)",
     title: "ENTREPÔT STOCKAGE- CONSERVERIE",

@@ -5,14 +5,14 @@ import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, getCollectionPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte villa contemporaine en PACA",
+    title: "Architecte villa contemporaine en PACA et en Occitanie",
     description:
-        "Conception, rénovation et extension de villas contemporaines en PACA. Reservoir Architecture accompagne les maisons d'architecte depuis Aix-en-Provence.",
+        "Conception, rénovation et extension de villas contemporaines en PACA et en Occitanie. Reservoir Architecture accompagne les maisons d'architecte depuis Aix-en-Provence.",
     alternates: { canonical: `${SITE_URL}/villas` },
     openGraph: {
-        title: "Architecte villa contemporaine en PACA - Reservoir Architecture",
+        title: "Architecte villa contemporaine en PACA et en Occitanie - Reservoir Architecture",
         description:
-            "Villas contemporaines, maisons d'architecte, rénovation et extension en Provence-Alpes-Côte d'Azur.",
+            "Villas contemporaines, maisons d'architecte, rénovation et extension en Provence-Alpes-Côte d'Azur et en Occitanie.",
         url: `${SITE_URL}/villas`,
         type: "website",
     },
@@ -22,9 +22,9 @@ export default function VillasPage() {
     const categoryProjects = PROJECTS.filter((p) => p.category === "VILLAS");
     const jsonLd = getCollectionPageJsonLd({
         url: `${SITE_URL}/villas`,
-        name: "Architecte villa contemporaine en PACA",
+        name: "Architecte villa contemporaine en PACA et en Occitanie",
         description:
-            "Conception, rénovation et extension de villas contemporaines et maisons d'architecte en PACA.",
+            "Conception, rénovation et extension de villas contemporaines et maisons d'architecte en PACA et en Occitanie.",
         items: categoryProjects,
     });
 

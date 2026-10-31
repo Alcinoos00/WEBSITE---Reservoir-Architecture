@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getProjectAlt, typologyLabel } from "@/lib/seo";
+import { getProjectAlt, projectTypology } from "@/lib/seo";
 import type { ProjectData } from "@/types/project";
 
 // Fiche projet v2, style « Image + colonne » (retenu par Emeric le 2026-10-20) :
@@ -23,7 +23,7 @@ export function StyleImageColonne({ p }: { p: ProjectData }) {
                     ))}
                 </div>
                 <div className="v2-colfix-info">
-                    <p className="v2-tag">{typologyLabel(p.category)} · {p.subtitle}</p>
+                    <p className="v2-tag">{projectTypology(p)} · {p.subtitle}</p>
                     {/* Pas de h1/h2 ici : la page rend aussi le style « Actuel » (seul visible sur mobile, donc lu par Google),
                         qui porte le vrai h1. Un seul h1 par page. */}
                     <p className="v2-h2 v2-project-title">{p.title}</p>

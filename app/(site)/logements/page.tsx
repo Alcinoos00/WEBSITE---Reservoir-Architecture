@@ -5,14 +5,14 @@ import { PROJECTS } from "@/lib/projects";
 import { SITE_URL, getCollectionPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte logements collectifs en PACA",
+    title: "Architecte logements collectifs en PACA et en Occitanie",
     description:
-        "Architecte pour vos opérations de logements collectifs et résidences en PACA. Promoteurs, bailleurs et maîtres d'ouvrage, de l'étude de faisabilité au permis et à la livraison.",
+        "Architecte pour vos opérations de logements collectifs et résidences en PACA et en Occitanie. Promoteurs, bailleurs et maîtres d'ouvrage, de l'étude de faisabilité au permis et à la livraison.",
     alternates: { canonical: `${SITE_URL}/logements` },
     openGraph: {
-        title: "Architecte logements collectifs en PACA - Reservoir Architecture",
+        title: "Architecte logements collectifs en PACA et en Occitanie - Reservoir Architecture",
         description:
-            "Opérations de logements collectifs et résidences en PACA, du montage à la livraison, pour promoteurs et maîtres d'ouvrage.",
+            "Opérations de logements collectifs et résidences en PACA et en Occitanie, du montage à la livraison, pour promoteurs et maîtres d'ouvrage.",
         url: `${SITE_URL}/logements`,
         type: "website",
     },
@@ -32,8 +32,8 @@ const FAQ_ITEMS = [
         a: "Du petit collectif de quelques logements à la résidence de 30 logements et plus, en construction neuve comme en extension ou réhabilitation.",
     },
     {
-        q: "Intervenez-vous partout en PACA ?",
-        a: "Oui. Basée à Aix-en-Provence, l'agence conçoit des logements collectifs sur toute la région PACA, d'Aix à Marseille, ainsi que dans le Gard voisin où elle a réalisé de nombreuses résidences.",
+        q: "Intervenez-vous partout en PACA et en Occitanie ?",
+        a: "Oui. Basée à Aix-en-Provence, l'agence conçoit des logements collectifs sur toute la région PACA, d'Aix à Marseille, et en Occitanie, dans le Gard et l'Hérault, où elle a réalisé de nombreuses résidences (Nîmes, Jacou, Rochefort-du-Gard).",
     },
     {
         q: "Intégrez-vous la réglementation en vigueur (RE2020, accessibilité) ?",
@@ -49,9 +49,9 @@ export default function LogementsPage() {
     const categoryProjects = PROJECTS.filter((p) => p.category === "LOGEMENTS");
     const jsonLd = getCollectionPageJsonLd({
         url: `${SITE_URL}/logements`,
-        name: "Architecte logements collectifs en PACA",
+        name: "Architecte logements collectifs en PACA et en Occitanie",
         description:
-            "Conception de logements collectifs, résidences et opérations immobilières en Provence-Alpes-Côte d'Azur.",
+            "Conception de logements collectifs, résidences et opérations immobilières en Provence-Alpes-Côte d'Azur et en Occitanie.",
         items: categoryProjects,
     });
 
