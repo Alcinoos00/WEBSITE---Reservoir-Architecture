@@ -725,12 +725,12 @@ export const PUYRICARD_PROJECT: ProjectData = {
     subtitle: "PUYRICARD (13)",
     title: "ESPRIT BASTIDE",
     typology: "Étude de faisabilité commerciale",
-    optionalSubtitle: "CONSTRUCTION D’UN ENSEMBLE DE COMMERCES ET SERVICES",
+    optionalSubtitle: "ÉTUDE DE FAISABILITÉ POUR UN ENSEMBLE DE COMMERCES ET SERVICES",
     descriptionHeader: "Cour des Oliviers",
     descriptionParagraphs: [
-        "Articulé autour d’un patio planté d’oliviers, ce projet de construction d’un complexe haut de gamme de commerce et services réinterprète l’esprit des bastides en mêlant pierre naturelle, enduits clairs et toitures tuilées.",
-        "Les commerces et services s’ouvrent largement sur la cour, créant un lieu de vie convivial où transparence, ombre et végétation composent une atmosphère méditerranéenne chaleureuse.",
-        "Entre espace public et intimité protégée, l’ensemble dessine un fragment de village contemporain, ancré dans son territoire et pensé à l’échelle humaine autour de l’emblématique Chocolaterie de Puyricard."
+        "Cette étude de faisabilité imagine un complexe haut de gamme de commerces et services articulé autour d’un patio planté d’oliviers. Le parti architectural réinterprète l’esprit des bastides en mêlant pierre naturelle, enduits clairs et toitures tuilées.",
+        "Les commerces et services s’y ouvriraient largement sur la cour, pour créer un lieu de vie convivial où transparence, ombre et végétation composent une atmosphère méditerranéenne chaleureuse.",
+        "Entre espace public et intimité protégée, l’ensemble proposé dessine un fragment de village contemporain, ancré dans son territoire et pensé à l’échelle humaine autour de l’emblématique Chocolaterie de Puyricard."
     ],
     techSheet: [
         { label: "Lieu", value: "Puyricard (13)" },
