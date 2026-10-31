@@ -1,18 +1,12 @@
 import Image from "next/image";
 import type { ProjectData } from "@/types/project";
-import StyleSwitch from "./StyleSwitch";
 import V2Cta from "./V2Cta";
 import V2Strip from "./V2Strip";
 import { StyleImageColonne } from "./V2ProjectStyles";
 import { projectTypology, titleCase } from "@/lib/seo";
 
-// « Image + colonne » par défaut (retenu par Emeric le 2026-10-20) ; « Actuel » reste comparable via le sélecteur.
-const STYLES = [
-    { id: "i", label: "Image + colonne" },
-    { id: "b", label: "Actuel" },
-];
-
 // Fiche projet v2.
+// Sélecteur de mise en page retiré le 2026-10-31 : « Image + colonne » sur ordinateur, « Actuel » sur téléphone (CSS).
 // I « Image + colonne » : photo panoramique, puis photos à gauche et texte fixe à droite (V2ProjectStyles) ;
 // B « Actuel » : même ordre que la fiche en ligne (bande de photos puis texte), habillé en v2.
 export default function V2ProjectPage({ project }: { project: ProjectData }) {
@@ -20,7 +14,6 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
 
     return (
         <div className="v2-project" data-pstyle="i">
-            <StyleSwitch target=".v2-project" attr="pstyle" storageKey="v2-project-style-2" options={STYLES} />
 
             <div className="v2-pi"><StyleImageColonne p={project} /></div>
 
