@@ -13,7 +13,7 @@ export const GENDARMERIE_PROJECT: ProjectData = {
     imageAlts: [
         "Façade principale à bardage cuivré et entrée sous auvent sombre",
         "Façade arrière à bardage cuivré au-dessus du parking des véhicules",
-        "Vue aérienne du bâtiment à toitures végétalisées dans le quartier résidentiel",
+        "Perspective : vue aérienne du bâtiment à toitures végétalisées dans le quartier résidentiel",
         "Perspective : vue plongeante sur les toitures végétalisées parmi les maisons"
     ],
     subtitle: "BOUC BEL AIR (13)",
@@ -127,9 +127,9 @@ export const VILLA_B_PROJECT: ProjectData = {
     imageAlts: [
         "Vue aérienne des volumes à toitures végétalisées entourés de terrasses en bois",
         "Vue plongeante sur la toiture végétalisée et les façades en bardage bois",
-        "Façade d'entrée en panneaux clairs et bardage bois sous les arbres en fleurs",
-        "Angle de façade en panneaux clairs et passerelle en bois vers le jardin",
-        "Terrasse en bois longeant les baies vitrées protégées de volets persiennés"
+        "Perspective : façade d'entrée en panneaux clairs et bardage bois sous les arbres en fleurs",
+        "Perspective : angle de façade en panneaux clairs et passerelle en bois vers le jardin",
+        "Perspective : terrasse en bois longeant les baies vitrées protégées de volets persiennés"
     ],
     subtitle: "BERGERAC (24)",
     title: "VILLA B",
@@ -241,11 +241,11 @@ export const VILLA_P2_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa P2/villaD_6.jpg"
     ],
     imageAlts: [
-        "Villa en bardage bois sur pilotis dans un jardin arboré",
+        "Perspective : villa en bardage bois sur pilotis dans un jardin arboré",
         "Volume en bardage bois derrière un mur en pierre sèche le long d'une ruelle",
-        "Façade en bois et garde-corps vitrés surélevée sur pilotis en béton",
-        "Séjour entièrement vitré avec plafond en béton et parquet ouvert sur les arbres",
-        "Pilotis en acier et en béton sous les volumes en bardage bois",
+        "Perspective : façade en bois et garde-corps vitrés surélevée sur pilotis en béton",
+        "Perspective : séjour entièrement vitré avec plafond en béton et parquet ouvert sur les arbres",
+        "Perspective : pilotis en acier et en béton sous les volumes en bardage bois",
         "Esquisse filaire en perspective de la maison posée sur le terrain"
     ],
     subtitle: "NÎMES (30)",
@@ -319,9 +319,9 @@ export const VILLA_V_PROJECT: ProjectData = {
         "Façade côté jardin en enduit clair avec terrasse et grandes baies vitrées",
         "Vue de trois quarts de la villa à étage et du jardin",
         "Volume à étage et pergola blanche vus depuis le bas du jardin",
-        "Baies vitrées sur deux niveaux dans la façade en enduit clair",
-        "Pergola blanche à lames au-dessus de la terrasse en bois et des baies",
-        "Façade d'entrée avec auvent abritant l'accès et massifs de lavande"
+        "Perspective : baies vitrées sur deux niveaux dans la façade en enduit clair",
+        "Perspective : pergola blanche à lames au-dessus de la terrasse en bois et des baies",
+        "Perspective : façade d'entrée avec auvent abritant l'accès et massifs de lavande"
     ],
     subtitle: "VERARGUES (34)",
     title: "VILLA V",
@@ -364,9 +364,9 @@ export const VILLA_T_PROJECT: ProjectData = {
         "Séjour lumineux sous plafond rampant ouvert sur la cuisine et le jardin",
         "Perspective : séjour meublé ouvert sur la terrasse par de grandes baies",
         "Perspective : séjour avec coin bureau et espace repas en enfilade",
-        "Façade jaune à volets roulants et maison provençale entourée de cyprès",
-        "Terrasse ombragée avec table et fauteuils devant les volets roulants",
-        "Salle à manger vue à travers une arche, avec meubles en bois"
+        "État existant : façade jaune à volets roulants et maison provençale entourée de cyprès",
+        "État existant : terrasse ombragée avec table et fauteuils devant les volets roulants",
+        "État existant : salle à manger vue à travers une arche, avec meubles en bois"
     ],
     subtitle: "AIX-EN-PROVENCE (13)",
     title: "VILLA T",
@@ -597,7 +597,7 @@ export const VACQUEROLLES_PROJECT: ProjectData = {
         "/images/projects/2-logements/vacquerolles/vacquerolles_7.jpg"
     ],
     imageAlts: [
-        "Vue aérienne des deux maisons ocre et jaune autour d'une cour dallée",
+        "Perspective : vue aérienne des deux maisons ocre et jaune autour d'une cour dallée",
         "Perspective : cour d'accès dallée, garages et escalier extérieur en bois",
         "Perspective : façade ocre rouge avec oculus, garages et escalier d'accès",
         "Perspective : les deux maisons et la terrasse sur pilotis dans la garrigue",
@@ -636,10 +636,10 @@ export const SAMARITAINE_PROJECT: ProjectData = {
         "/images/projects/2-logements/samaritaine/samaritaine_6.png"
     ],
     imageAlts: [
-        "Vue aérienne des deux bâtiments avec jardin central et toitures gravillonnées",
-        "Jardin intérieur planté d'un olivier entre façades à loggias en bois",
-        "Loggias superposées habillées de lames de bois en angle de bâtiment",
-        "Façade sur rue avec loggias à claire-voie en bois et garages",
+        "Perspective : vue aérienne des deux bâtiments avec jardin central et toitures gravillonnées",
+        "Perspective : jardin intérieur planté d'un olivier entre façades à loggias en bois",
+        "Perspective : loggias superposées habillées de lames de bois en angle de bâtiment",
+        "Perspective : façade sur rue avec loggias à claire-voie en bois et garages",
         "Plan de masse avec toitures terrasses et jardins entre les bâtiments",
         "Plan des étages courants avec répartition des logements T2 et T3"
     ],
@@ -672,10 +672,10 @@ export const WAUQUIEZ_PROJECT: ProjectData = {
         "/images/projects/3-commerces/wauquiez/wauquiez_4.jpg"
     ],
     imageAlts: [
-        "Vue plongeante sur le showroom en mezzanine, parquet et rayonnages bois",
-        "Salon d'accueil avec banquette en U et table basse en bois",
-        "Salon d'accueil en soirée sous un éclairage indirect tamisé",
-        "Enseigne rétroéclairée devant l'escalier menant à la mezzanine vitrée"
+        "Perspective : vue plongeante sur le showroom en mezzanine, parquet et rayonnages bois",
+        "Perspective : salon d'accueil avec banquette en U et table basse en bois",
+        "Perspective : salon d'accueil en soirée sous un éclairage indirect tamisé",
+        "Perspective : enseigne rétroéclairée devant l'escalier menant à la mezzanine vitrée"
     ],
     subtitle: "PORT-CAMARGUE (GARD)",
     title: "WAUQUIEZ",
@@ -715,15 +715,16 @@ export const PUYRICARD_PROJECT: ProjectData = {
         "/images/projects/3-commerces/puyricard/puyricard_6.jpg"
     ],
     imageAlts: [
-        "Perspective : façades sur rue des commerces avec oliviers et parvis",
-        "Perspective : cour piétonne bordée de vitrines, terrasse et oliviers",
-        "Perspective : allée dallée plantée de lavandes et d'oliviers entre bâtiments",
-        "Perspective : vue plongeante sur un patio avec bassin et terrasse",
-        "Perspective : façade en pierre et enduit avec accès au garage",
-        "Perspective : vue aérienne de l'ensemble au soleil couchant"
+        "Perspective de l'étude de faisabilité : façades sur rue des commerces avec oliviers et parvis",
+        "Perspective de l'étude de faisabilité : cour piétonne bordée de vitrines, terrasse et oliviers",
+        "Perspective de l'étude de faisabilité : allée dallée plantée de lavandes et d'oliviers entre bâtiments",
+        "Perspective de l'étude de faisabilité : vue plongeante sur un patio avec bassin et terrasse",
+        "Perspective de l'étude de faisabilité : façade en pierre et enduit avec accès au garage",
+        "Perspective de l'étude de faisabilité : vue aérienne de l'ensemble au soleil couchant"
     ],
     subtitle: "PUYRICARD (13)",
     title: "ESPRIT BASTIDE",
+    typology: "Étude de faisabilité commerciale",
     optionalSubtitle: "CONSTRUCTION D’UN ENSEMBLE DE COMMERCES ET SERVICES",
     descriptionHeader: "Cour des Oliviers",
     descriptionParagraphs: [
