@@ -8,6 +8,7 @@ import {
   SITE_DEFAULT_IMAGE_ALT,
   SITE_NAME,
   SITE_URL,
+  getFounderJsonLd,
   getOrganizationJsonLd,
   getWebsiteJsonLd,
 } from "@/lib/seo";
@@ -73,7 +74,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = [getOrganizationJsonLd(), getWebsiteJsonLd()];
+  const jsonLd = [getOrganizationJsonLd(), getFounderJsonLd(), getWebsiteJsonLd()];
   return (
     <html lang="fr">
       <body>

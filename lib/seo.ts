@@ -252,11 +252,7 @@ export function getOrganizationJsonLd() {
             ...AREA_SERVED_CITIES.map((name) => ({ "@type": "City", name })),
             ...AREA_SERVED_REGIONS.map((name) => ({ "@type": "AdministrativeArea", name })),
         ],
-        founder: {
-            "@type": "Person",
-            name: SITE_FOUNDER,
-            jobTitle: SITE_FOUNDER_TITLE,
-        },
+        founder: { "@id": `${SITE_URL}/#serge-ettore` },
         foundingDate: SITE_FOUNDED,
         knowsAbout: KNOWS_ABOUT,
         slogan: "Construire une présence",
@@ -268,6 +264,36 @@ export function getOrganizationJsonLd() {
             areaServed: SITE_COUNTRY,
             availableLanguage: ["fr"],
         },
+    };
+}
+
+// Fiche de l'architecte, reliée à l'agence par son @id : les moteurs et les IA rattachent
+// ainsi l'expertise (diplôme, parcours) à une personne identifiée. Uniquement des faits publiés sur le site.
+export function getFounderJsonLd() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": `${SITE_URL}/#serge-ettore`,
+        name: SITE_FOUNDER,
+        givenName: "Serge",
+        familyName: "Ettore",
+        jobTitle: SITE_FOUNDER_TITLE,
+        description:
+            "Architecte DPLG depuis 1999, fondateur de Reservoir Architecture en 2013. Auparavant responsable des projets d'architecture de Cacharel, en France et à l'international.",
+        hasCredential: {
+            "@type": "EducationalOccupationalCredential",
+            credentialCategory: "Diplôme",
+            name: "Architecte diplômé par le gouvernement (DPLG)",
+            dateCreated: "1999",
+        },
+        hasOccupation: {
+            "@type": "Occupation",
+            name: "Architecte",
+            occupationLocation: { "@type": "City", name: SITE_LOCATION },
+        },
+        worksFor: { "@id": `${SITE_URL}/#organization` },
+        knowsAbout: KNOWS_ABOUT,
+        url: SITE_URL,
     };
 }
 
