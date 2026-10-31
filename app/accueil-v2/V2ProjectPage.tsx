@@ -4,7 +4,7 @@ import StyleSwitch from "./StyleSwitch";
 import V2Cta from "./V2Cta";
 import V2Strip from "./V2Strip";
 import { StyleImageColonne } from "./V2ProjectStyles";
-import { titleCase, typologyLabel } from "@/lib/seo";
+import { projectTypology, titleCase } from "@/lib/seo";
 
 // « Image + colonne » par défaut (retenu par Emeric le 2026-10-20) ; « Actuel » reste comparable via le sélecteur.
 const STYLES = [
@@ -33,7 +33,7 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
                             {/* Le h1 porte le type de projet et la ville, pas seulement « VILLA T » : c'est ce que lisent
                                 Google et les assistants IA pour savoir de quoi parle la page. Rendu visuel inchangé. */}
                             <h1 className="v2-project-h1">
-                                <span className="v2-tag">{typologyLabel(project.category)} · {titleCase(project.subtitle)}</span>{" "}
+                                <span className="v2-tag">{projectTypology(project)} · {titleCase(project.subtitle)}</span>{" "}
                                 <span className="v2-h2 v2-project-title">{project.title}</span>
                             </h1>
                             {project.optionalLogo && (

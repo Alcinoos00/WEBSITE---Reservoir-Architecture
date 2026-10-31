@@ -95,8 +95,15 @@ export function typologyLabel(category: string | undefined): string {
     return TYPOLOGY_LABEL[category] ?? "Projet d'architecture";
 }
 
+// Type d'un projet précis : son type propre s'il en a un, sinon celui de sa catégorie.
+export function projectTypology(project: ProjectData): string {
+    return project.typology ?? typologyLabel(project.category);
+}
+
 export function getProjectAlt(project: ProjectData, index: number): string {
-    const typology = typologyLabel(project.category);
+    const described = project.imageAlts?.[index];
+    if (described) return `${described} - ${projectName(project)}, ${SITE_NAME}`;
+    const typology = projectTypology(project);
     const count = project.heroImages.length;
     const view = index === 0 ? "vue principale" : `vue ${index + 1} sur ${count}`;
     return `${projectName(project)}, ${typology.toLowerCase()} ${projectAt(project)} par ${SITE_NAME} : ${view}`;
@@ -152,7 +159,7 @@ export function projectAt(project: ProjectData): string {
 }
 
 export function getProjectMetadata(project: ProjectData): Metadata {
-    const typology = typologyLabel(project.category);
+    const typology = projectTypology(project);
     // Casse normale (les majuscules pleines se lisent mal dans les résultats Google et les réponses des IA).
     const title = `${projectName(project)}, ${typology.toLowerCase()} ${projectAt(project)}`;
     const ogTitle = `${title} | ${SITE_NAME}`;
@@ -338,7 +345,7 @@ export function getProjectJsonLd(project: ProjectData) {
                 addressCountry: SITE_COUNTRY,
             },
         },
-        about: typologyLabel(project.category),
+        about: projectTypology(project),
         ...(year ? { dateCreated: year } : {}),
     };
 }

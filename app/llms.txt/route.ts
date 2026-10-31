@@ -2,7 +2,7 @@ import { FAQ_ITEMS } from "@/lib/homeContent";
 import { PROJECTS } from "@/lib/projects";
 import {
     SITE_URL, SITE_NAME, SITE_PHONE_DISPLAY, SITE_EMAIL, SITE_FOUNDED, SITE_FOUNDER, SITE_FOUNDER_TITLE,
-    AREA_SERVED_CITIES, ARCHIDVISOR_URL, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, typologyLabel, projectAt, projectName,
+    AREA_SERVED_CITIES, ARCHIDVISOR_URL, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, projectAt, projectName, projectTypology,
 } from "@/lib/seo";
 
 // /llms.txt : résumé du site pour les assistants IA (ChatGPT, Perplexity, Claude...).
@@ -51,7 +51,7 @@ export function GET() {
     for (const c of CATEGORIES) {
         lines.push(`## ${c.label}`, "", `- [Tous les projets : ${c.label.toLowerCase()}](${SITE_URL}/${c.path})`);
         for (const p of PROJECTS.filter((x) => x.category === c.key)) {
-            lines.push(`- [${projectName(p)}](${getProjectUrl(p)}) : ${typologyLabel(p.category).toLowerCase()} ${projectAt(p)}`);
+            lines.push(`- [${projectName(p)}](${getProjectUrl(p)}) : ${projectTypology(p).toLowerCase()} ${projectAt(p)}`);
         }
         lines.push("");
     }
