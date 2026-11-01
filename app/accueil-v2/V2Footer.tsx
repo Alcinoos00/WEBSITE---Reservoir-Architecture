@@ -26,7 +26,7 @@ const SOCIALS = [
 
 // Pied de page réorganisé le 2026-10-30, condensé le 2026-11-01 : logo et réseaux sur une ligne,
 // contact en taille de texte courant, liens à la suite (séparés par des points) au lieu de colonnes.
-// Tous les liens sont conservés (pages Aix en particulier, utiles au référencement).
+// Liste « Réalisations » retirée (doublon du menu, présent sur chaque page) ; pages Aix gardées : elles ne sont reliées que d'ici.
 export default function V2Footer() {
     return (
         <footer className="v2-footer v2-foot v2-ft">
@@ -51,16 +51,6 @@ export default function V2Footer() {
                         <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
                     </p>
                 </div>
-
-                <nav className="v2-ft-block" aria-label="Réalisations">
-                    <p className="v2-label">Réalisations</p>
-                    <p className="v2-ft-line">
-                        <Link href={v2("/villas")}>Villas</Link>
-                        <Link href={v2("/logements")}>Logements</Link>
-                        <Link href={v2("/commerces")}>Commerces</Link>
-                        <Link href={v2("/equipements")}>Équipements</Link>
-                    </p>
-                </nav>
 
                 <nav className="v2-ft-block" aria-label="À Aix-en-Provence">
                     <p className="v2-label">À Aix-en-Provence</p>
