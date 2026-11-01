@@ -1434,3 +1434,8 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-ft-block:first-child .v2-ft-line { flex-direction: column; align-items: flex-start; }
     .v2 .v2-ft-block:first-child .v2-ft-line a::after { content: none; }
 }
+/* Icônes centrées sur les cases RESERVOIR du logo (cases : 0 à 71 % de la hauteur du logo, « architecture » en dessous) */
+.v2 .v2-ft-social { transform: translateY(calc(-0.144 * 180px * 55.5 / 251.25)); }
+@media (max-width: 768px) {
+    .v2 .v2-ft-social { transform: translateY(calc(-0.144 * 118px * 55.5 / 251.25)); }
+}
