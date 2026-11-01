@@ -76,6 +76,10 @@ export default function HomeV2() {
                             className="v2-wordmark-img"
                         />
                     </div>
+                    {/* TEMPORAIRE (aperçu ?anim=4) : l'animation VOIR à la place du logo en haut de page */}
+                    <div className="v2-voir-top">
+                        <V2VoirCascade />
+                    </div>
                 </div>
                 <HeroCategories
                     items={[
@@ -85,10 +89,10 @@ export default function HomeV2() {
                         { label: "Équipements", href: v2("/equipements"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
                     ]}
                 />
-                {/* TEMPORAIRE (aperçu) : ?anim=1, 2 ou 3 pour comparer les trois placements de l'animation VOIR (1 par défaut) */}
+                {/* TEMPORAIRE (aperçu) : ?anim=1, 2, 3 ou 4 pour comparer les placements de l'animation VOIR (1 par défaut) */}
                 <script
                     dangerouslySetInnerHTML={{
-                        __html: "try{var m=location.search.match(/[?&]anim=([123])/);document.documentElement.setAttribute('data-ra-anim',m?m[1]:'1')}catch(e){}",
+                        __html: "try{var m=location.search.match(/[?&]anim=([1234])/);document.documentElement.setAttribute('data-ra-anim',m?m[1]:'1')}catch(e){}",
                     }}
                 />
                 <div className="v2-hero-below">

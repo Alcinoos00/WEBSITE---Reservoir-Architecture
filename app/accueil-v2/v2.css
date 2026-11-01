@@ -1441,3 +1441,14 @@ html[data-ra-anim] .v2 .fx-voirfixe .v2-voir-layer:not(.v2-voir-sizer) { positio
     html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir { justify-self: center; }
     html[data-ra-anim="3"] .v2 .v2-hero-below .v2-voir { justify-self: start; }
 }
+
+/* Option 4 (aperçu) : l'animation VOIR remplace le logo encadré en haut de page */
+.v2 .v2-voir-top { display: none; }
+html[data-ra-anim="4"] .v2 .v2-hero-top > .v2-wordmark-wrap { display: none; }
+html[data-ra-anim="4"] .v2 .v2-voir-top { display: block; position: relative; z-index: 1; }
+html[data-ra-anim="4"] .v2 .v2-voir-top .v2-voir { margin: 0; font-size: clamp(40px, 4.4vw, 72px); }
+html[data-ra-anim="4"] .v2 .v2-hero-below > .v2-voir { display: none; }
+html[data-ra-anim="4"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 768px) {
+    html[data-ra-anim="4"] .v2 .v2-voir-top .v2-voir { font-size: clamp(34px, 11vw, 46px); }
+}
