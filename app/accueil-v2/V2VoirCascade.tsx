@@ -36,7 +36,8 @@ export default function V2VoirCascade({ toLogo = false }: { toLogo?: boolean }) 
         const w = width * 1.12;
         const h = (w * 65.25) / 293.25;
         const midY = (v.top + v.bottom) / 2 - b.top;
-        setLogoBox({ x: left - width * 0.06, y: midY - h * (23 / 65.25), w });
+        // Bord gauche du logo calé sur la marge de la page (même place que le logo d'origine)
+        setLogoBox({ x: left, y: midY - h * (23 / 65.25), w });
     }, []);
 
     useEffect(() => {

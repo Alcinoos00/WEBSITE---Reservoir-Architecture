@@ -1476,3 +1476,5 @@ html[data-ra-anim="4"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr
 @media (prefers-reduced-motion: reduce) {
     .v2 .v2-voir.is-logo .v2-voir-logo, .v2 .v2-voir.is-logo .v2-voir-word { animation: none; -webkit-mask-position: 0 0; mask-position: 0 0; }
 }
+/* Le petit « architecture » du texte s'efface d'abord : seul celui du logo reste */
+.v2 .v2-voir.is-logo .v2-voir-sub.is-on { opacity: 0; transition: opacity 0.7s ease; }
