@@ -9,7 +9,7 @@ import {
     PUYRICARD_PROJECT,
     SAMARITAINE_PROJECT,
 } from "@/lib/projects";
-import { FAQ_ITEMS, LOCAL_PROJECTS } from "@/lib/homeContent";
+import { FAQ_ITEMS } from "@/lib/homeContent";
 import { v2, v2ProjectHref } from "./v2Links";
 import V2Reviews from "./V2Reviews";
 import V2EtudesOffers from "./V2EtudesOffers";
@@ -40,8 +40,8 @@ const DOMAINS = [
     {
         label: "Équipements publics", eyebrow: "Équipements publics", href: v2("/equipements"), category: "ÉQUIPEMENTS",
         examples: pick("vitrolles", "regie-des-eaux", "salon-de-provence"),
-        // Téléphone uniquement : 4e photo du carrousel (la section « réalisations autour d'Aix » y est masquée)
-        mobileExtra: pick("gendarmerie"),
+        // 4e photo (lien vers la Gendarmerie de Bouc-Bel-Air, depuis la suppression de la section « réalisations autour d'Aix ») (la section « réalisations autour d'Aix » y est masquée)
+        extra: pick("gendarmerie"),
     },
 ];
 
@@ -148,8 +148,8 @@ export default function HomeV2() {
                             {/* Photos très panoramiques (1920 × 815) dans un cadre vertical : la photo est agrandie pour remplir le cadre,
                                 il faut donc demander une version bien plus large que le cadre, sinon elle est floue. */}
                             <ul className="v2-domain-examples">
-                                {[...d.examples, ...(d.mobileExtra ?? [])].map((p) => (
-                                    <li key={p.id} className={d.mobileExtra?.includes(p) ? "v2-mob-only" : undefined}>
+                                {[...d.examples, ...(d.extra ?? [])].map((p) => (
+                                    <li key={p.id}>
                                         <Link href={v2ProjectHref(p)}>
                                             <span className="v2-domain-photo">
                                                 <AfterLoad>
@@ -167,7 +167,7 @@ export default function HomeV2() {
                     ))}
                 </div>
                 {/* Téléphone uniquement : les liens vers les pages Aix, repris de la section masquée plus bas */}
-                <nav className="v2-local-links v2-mob-only" aria-label="Votre projet à Aix-en-Provence (mobile)">
+                <nav className="v2-local-links" aria-label="Votre projet à Aix-en-Provence">
                     <span className="v2-tag">Votre projet à Aix-en-Provence :</span>
                     <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
                     <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
@@ -209,39 +209,7 @@ export default function HomeV2() {
                 <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
             </div>
 
-            {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix.
-                Ordinateur uniquement : sur téléphone, ses projets sont dans les carrousels et ses liens sous les domaines. */}
-            <section className="v2-section v2-desk-only">
-                <div className="v2-stack v2-fade" data-reveal>
-                    <h2 className="v2-h2">Nos réalisations à Aix-en-Provence et alentours</h2>
-                    <p className="v2-small">
-                        Maison de ville, commerces, équipements publics : l&apos;agence conçoit des projets à Aix-en-Provence, Puyricard, Bouc-Bel-Air, Vitrolles et Salon-de-Provence, pour des particuliers comme pour les communes.
-                    </p>
-                </div>
-                <ul className="v2-local">
-                    {LOCAL_PROJECTS.map(({ project, place, summary }) => (
-                        <li key={project.id} className="v2-fade" data-reveal>
-                            <Link href={v2ProjectHref(project)}>
-                                <span className="v2-domain-photo">
-                                    <AfterLoad>
-                                        <Image src={project.heroImages[0]} alt={`${summary}, ${project.title} à ${place}`} fill sizes="(max-width: 768px) 50vw, 33vw" />
-                                    </AfterLoad>
-                                </span>
-                                <span className="v2-domain-place">{place}</span>
-                                <h3 className="v2-domain-caption">{project.title}</h3>
-                                <span className="v2-small">{summary}</span>
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-                <nav className="v2-local-links" aria-label="Votre projet à Aix-en-Provence">
-                    <span className="v2-tag">Votre projet à Aix-en-Provence :</span>
-                    <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
-                    <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
-                    <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
-                    <Link href={v2("/equipements-aix-en-provence")}>Architecte équipements publics</Link>
-                </nav>
-            </section>
+            {/* Section « Nos réalisations à Aix-en-Provence et alentours » supprimée le 2026-11-01 (projets dans les carrousels, villes dans la FAQ, liens Aix sous les domaines). */}
 
             {/* Texte de l'agence (repris de l'accueil actuel), placé en fin de page */}
             <section className="v2-section v2-about v2-about-end">
