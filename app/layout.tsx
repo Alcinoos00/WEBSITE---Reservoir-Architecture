@@ -75,8 +75,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const jsonLd = [getOrganizationJsonLd(), getFounderJsonLd(), getWebsiteJsonLd()];
+  // suppressHydrationWarning : la classe « ra-intro » est posée sur <html> avant l'hydratation (animation d'entrée de l'accueil)
   return (
-    <html lang="fr">
+    <html lang="fr" suppressHydrationWarning>
       <body>
         <ClarityInit />
         {/* Suivi des clics téléphone et email sur tout le site (conversions Google Ads). */}

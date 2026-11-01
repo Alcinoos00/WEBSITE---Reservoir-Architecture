@@ -16,7 +16,7 @@ import V2EtudesOffers from "./V2EtudesOffers";
 import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
 import V2AboutFold from "./V2AboutFold";
-import V2VoirCascade from "./V2VoirCascade";
+import V2HeroIntro from "./V2HeroIntro";
 
 // Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
@@ -62,6 +62,12 @@ export default function HomeV2() {
     return (
         <div className="v2-home">
 
+            {/* Animation d'entrée du logo : décidée avant l'affichage (première visite seulement), pour éviter tout clignotement */}
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: "try{if(!localStorage.getItem('ra-intro-vu')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ra-intro')}catch(e){}",
+                }}
+            />
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
@@ -75,6 +81,7 @@ export default function HomeV2() {
                             priority
                             className="v2-wordmark-img"
                         />
+                        <V2HeroIntro />
                     </div>
                 </div>
                 <HeroCategories
@@ -88,11 +95,10 @@ export default function HomeV2() {
                 <div className="v2-hero-below">
                     <div className="v2-fade" data-reveal>
                         <h1 className="v2-h2">Architecte à <span className="v2-nowrap">Aix-en-Provence</span></h1>
-                        <p className="v2-small v2-hero-intro">
-                            Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
-                        </p>
                     </div>
-                    <V2VoirCascade />
+                    <p className="v2-small v2-hero-intro v2-fade" data-reveal>
+                        Reservoir Architecture, agence d&apos;architecture DPLG fondée en 2013, conçoit et accompagne villas contemporaines, logements collectifs, commerces et équipements publics depuis Aix-en-Provence.
+                    </p>
                 </div>
             </section>
 
