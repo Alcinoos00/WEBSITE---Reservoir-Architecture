@@ -1427,9 +1427,10 @@ html[data-ra-anim] .v2 .fx-voirfixe .v2-voir-layer:not(.v2-voir-sizer) { positio
     /* 1 : titre à gauche, animation calée sur le bord droit (aligné sur la dernière photo) */
     html[data-ra-anim="1"] .v2 .v2-hero-below .v2-voir { justify-items: end; justify-self: end; }
     /* 2 : animation centrée sur sa propre ligne, au-dessus du titre, en plus petit pour garder le titre visible */
-    html[data-ra-anim="2"] .v2 .v2-cats-panels + .v2-hero-below { padding-top: 28px; }
-    html[data-ra-anim="2"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-    html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir { order: -1; justify-self: center; font-size: clamp(30px, 3.2vw, 48px); }
+    html[data-ra-anim="2"] .v2 .v2-cats-panels + .v2-hero-below { padding-top: 16px; }
+    html[data-ra-anim="2"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+    html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir { order: -1; justify-self: center; font-size: clamp(28px, 2.6vw, 40px); }
+    html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir-word { padding-bottom: 0.25em; }
     /* 3 : animation sous le texte de présentation, alignée à gauche sur le titre */
     html[data-ra-anim="3"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 20px; }
     html[data-ra-anim="3"] .v2 .v2-hero-below .v2-voir { justify-self: start; }
