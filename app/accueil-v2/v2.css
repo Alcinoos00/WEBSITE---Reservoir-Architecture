@@ -1393,3 +1393,17 @@ body:has(.v2) { background: #ffffff; }
 /* Avis : icône Google devant le mot « Google » (2026-11-01) */
 .v2 .v2-reviews-google { display: inline-flex; align-items: center; gap: 8px; }
 .v2 .v2-reviews-google-icon { width: 0.95em; height: 0.95em; }
+/* Avis compacts (2026-11-01) : notes sur une ligne, textes limités à 4 lignes avec « Lire la suite » */
+.v2 .v2-reviews-sources { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; flex-direction: row; }
+.v2 .v2-reviews-total { display: inline-flex; align-items: baseline; gap: 8px; }
+.v2 .v2-reviews-src { display: inline-flex; align-items: center; gap: 8px; }
+.v2 .v2-reviews-src .v2-reviews-google-icon { width: 20px; height: 20px; }
+.v2 .v2-reviews-src .v2-reviews-logo { width: 104px; height: auto; }
+.v2 .v2-reviews blockquote.is-clamped { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; line-clamp: 4; overflow: hidden; }
+.v2 .v2-review-more { margin: 6px 0 0; padding: 0; border: 0; background: none; font: inherit; font-size: var(--t1); color: var(--v2-ink); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 768px) {
+    .v2 .v2-reviews-sources { flex-direction: row; gap: 8px 16px; }
+    .v2 .v2-reviews-src .v2-reviews-logo { width: 96px; }
+    .v2 .v2-home .v2-reviews ul { align-items: flex-start; }
+    .v2 .v2-reviews-note { max-width: none; }
+}
