@@ -1389,3 +1389,7 @@ body:has(.v2) { background: #ffffff; }
     .v2 .v2-dossier-form-grid { grid-template-columns: minmax(0, 1fr); }
 }
 .v2 .v2-faq .v2-offer-body .v2-offer-list li.v2-small { padding: 0 0 0 20px; }
+
+/* Avis : icône Google devant le mot « Google » (2026-11-01) */
+.v2 .v2-reviews-google { display: inline-flex; align-items: center; gap: 8px; }
+.v2 .v2-reviews-google-icon { width: 0.95em; height: 0.95em; }

@@ -30,7 +30,11 @@ export default function V2Reviews() {
                     <span className="v2-reviews-count">8 avis vérifiés</span>
                 </div>
                 <div className="v2-reviews-head">
-                    <span className="v2-reviews-google">Google</span>
+                    <span className="v2-reviews-google">
+                        {/* Icône officielle « G » de Google (Simple Icons, CC0), en noir comme le reste du site */}
+                        <Image src="/images/ui/social/google.svg" alt="" width={24} height={24} unoptimized className="v2-reviews-google-icon" />
+                        Google
+                    </span>
                     <span className="v2-reviews-score">{GOOGLE_RATING}<span>/5</span></span>
                     <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
                     <span className="v2-reviews-count">{GOOGLE_COUNT} avis vérifiés</span>
