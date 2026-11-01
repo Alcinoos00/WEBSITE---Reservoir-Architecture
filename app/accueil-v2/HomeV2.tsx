@@ -40,7 +40,7 @@ const DOMAINS = [
     {
         label: "Équipements publics", eyebrow: "Équipements publics", href: v2("/equipements"), category: "ÉQUIPEMENTS",
         examples: pick("vitrolles", "regie-des-eaux", "salon-de-provence"),
-        // 4e photo (lien vers la Gendarmerie de Bouc-Bel-Air, depuis la suppression de la section « réalisations autour d'Aix ») (la section « réalisations autour d'Aix » y est masquée)
+        // 4e photo : lien vers la Gendarmerie de Bouc-Bel-Air (repris de l'ancienne section « réalisations autour d'Aix »)
         extra: pick("gendarmerie"),
     },
 ];
