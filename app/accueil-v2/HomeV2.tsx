@@ -78,7 +78,7 @@ export default function HomeV2() {
                     </div>
                     {/* TEMPORAIRE (aperçu ?anim=4) : l'animation VOIR à la place du logo en haut de page */}
                     <div className="v2-voir-top">
-                        <V2VoirCascade />
+                        <V2VoirCascade toLogo />
                     </div>
                 </div>
                 <HeroCategories
