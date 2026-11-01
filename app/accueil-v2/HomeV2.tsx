@@ -16,7 +16,7 @@ import V2EtudesOffers from "./V2EtudesOffers";
 import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
 import V2AboutFold from "./V2AboutFold";
-import V2HeroIntro from "./V2HeroIntro";
+import V2Splash from "./V2Splash";
 
 // Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
@@ -62,12 +62,13 @@ export default function HomeV2() {
     return (
         <div className="v2-home">
 
-            {/* Animation d'entrée du logo : décidée avant l'affichage (première visite seulement), pour éviter tout clignotement */}
+            {/* Page d'entrée animée : décidée avant l'affichage (première visite seulement), pour éviter tout clignotement */}
             <script
                 dangerouslySetInnerHTML={{
                     __html: "try{if(!localStorage.getItem('ra-intro-vu')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ra-intro')}catch(e){}",
                 }}
             />
+            <V2Splash />
             {/* Hero */}
             <section className="v2-hero">
                 <div className="v2-hero-top">
@@ -81,7 +82,6 @@ export default function HomeV2() {
                             priority
                             className="v2-wordmark-img"
                         />
-                        <V2HeroIntro />
                     </div>
                 </div>
                 <HeroCategories
