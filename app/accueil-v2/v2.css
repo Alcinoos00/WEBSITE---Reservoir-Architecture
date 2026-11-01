@@ -1451,7 +1451,7 @@ html.ra-intro-out .v2 .v2-splash { opacity: 0; pointer-events: none; }
     font-size: min(10vw, 92px);
 }
 .v2 .v2-splash-word { grid-area: 1 / 1; transition: opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1); }
-.v2 .v2-splash-logo { grid-area: 1 / 1; width: 8.7em; height: auto; opacity: 0; transform: translateY(0.14em); transition: opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1); }
+.v2 .v2-splash-logo { position: absolute; left: 0; top: 50%; width: 8.7em; height: auto; opacity: 0; transform: translateY(-36%); transition: opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1); }
 .v2 .v2-splash.is-logo .v2-splash-word { opacity: 0; }
 .v2 .v2-splash.is-logo .v2-splash-logo { opacity: 1; }
 .v2 .v2-splash-skip {

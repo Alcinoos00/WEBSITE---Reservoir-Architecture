@@ -23,6 +23,25 @@ export default function V2Splash() {
     const [entering, setEntering] = useState(true);
     const [logo, setLogo] = useState(false);
     const timers = useRef<number[]>([]);
+    const stageRef = useRef<HTMLDivElement>(null);
+    const [logoBox, setLogoBox] = useState<{ x: number; w: number } | null>(null);
+
+    // Le logo encadré se pose exactement sur le dernier « RESERVOIR » écrit (même début, même largeur)
+    const placeLogo = useCallback(() => {
+        const stage = stageRef.current;
+        const word = stage?.querySelector<HTMLElement>(".v2-intro-layer:not(.v2-intro-sizer):not(.is-out)");
+        const voir = stage?.querySelector<HTMLElement>(".v2-intro-voir");
+        if (!stage || !word || !voir) return;
+        const r = document.createRange();
+        r.setStart(word.firstChild ?? word, 0);
+        r.setEndAfter(word);
+        const left = r.getBoundingClientRect().left;
+        const right = voir.getBoundingClientRect().right;
+        const s0 = stage.getBoundingClientRect().left;
+        // les cases du logo débordent un peu des lettres : on élargit de 6 % de part et d'autre
+        const w = (right - left) * 1.12;
+        setLogoBox({ x: left - s0 - (right - left) * 0.06, w });
+    }, []);
 
     const finish = useCallback(() => {
         timers.current.forEach((id) => window.clearTimeout(id));
@@ -55,16 +74,19 @@ export default function V2Splash() {
             });
             t += HOLD_MS;
         }
-        at(t, () => setLogo(true));
+        at(t, () => {
+            placeLogo();
+            setLogo(true);
+        });
         t += LOGO_MS + LOGO_HOLD_MS;
         at(t, finish);
         const list = timers.current;
         return () => list.forEach((id) => window.clearTimeout(id));
-    }, [finish]);
+    }, [finish, placeLogo]);
 
     return (
         <div className={`v2-splash${logo ? " is-logo" : ""}`} onClick={finish}>
-            <div className="v2-splash-stage" aria-hidden="true">
+            <div className="v2-splash-stage" aria-hidden="true" ref={stageRef}>
                 <span className="v2-intro-line v2-splash-word">
                     <span className="v2-intro-stack">
                         {Array.from(new Set(STEMS)).map((st) => (
@@ -83,7 +105,7 @@ export default function V2Splash() {
                     </span>
                     <strong className="v2-intro-voir">VOIR</strong>
                 </span>
-                <Image src="/images/ui/logo_light_outline.svg" alt="" width={391} height={87} className="v2-splash-logo" />
+                <Image src="/images/ui/logo_light_outline.svg" alt="" width={391} height={87} className="v2-splash-logo" style={logoBox ? { left: logoBox.x, width: logoBox.w } : undefined} />
             </div>
             <button type="button" className="v2-splash-skip" onClick={finish}>
                 Passer
