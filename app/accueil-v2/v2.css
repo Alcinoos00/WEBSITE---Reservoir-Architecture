@@ -1416,3 +1416,15 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark-wrap { width: 70%; }
 }
+
+/* Animation VOIR placée sous le texte de présentation, alignée à gauche sur le titre (choix d'Emeric le 2026-11-01).
+   Le bloc prend la largeur du RESERVOIR final, calé sur la marge ; VOIR reste immobile.
+   Les débuts de mots plus larges que RESER sont légèrement resserrés pour ne jamais dépasser la marge
+   (CONCE surtout, qui sortait de l'écran sur téléphone). */
+.v2 .fx-voirfixe .v2-voir-stack { position: relative; }
+.v2 .fx-voirfixe .v2-voir-sizer:not(.is-final) { display: none; }
+.v2 .fx-voirfixe .v2-voir-layer:not(.v2-voir-sizer) { position: absolute; top: 0; right: 0; white-space: nowrap; }
+.v2 .fx-voirfixe .v2-voir-layer.stem-CONCE { letter-spacing: -0.054em; }
+.v2 .fx-voirfixe .v2-voir-layer.stem-ENTRE { letter-spacing: 0.024em; }
+.v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.v2 .v2-hero-below .v2-voir { justify-self: start; }

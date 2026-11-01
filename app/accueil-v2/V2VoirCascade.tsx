@@ -73,16 +73,16 @@ export default function V2VoirCascade() {
                 <span className="v2-voir-stack">
                     {/* Débuts de mots invisibles : donnent sa largeur exacte à la pile, pour que VOIR ne bouge pas */}
                     {Array.from(new Set(STEMS)).map((st) => (
-                        <span key={`sizer-${st}`} className="v2-voir-layer v2-voir-sizer">
+                        <span key={`sizer-${st}`} className={`v2-voir-layer v2-voir-sizer${st === STEMS[STEMS.length - 1] ? " is-final" : ""}`}>
                             {st}
                         </span>
                     ))}
                     {prev !== null && (
-                        <span key={`out-${prev}`} className="v2-voir-layer is-out">
+                        <span key={`out-${prev}`} className={`v2-voir-layer is-out stem-${STEMS[prev]}`}>
                             {STEMS[prev]}
                         </span>
                     )}
-                    <span key={`in-${cur}`} className={`v2-voir-layer${!run ? " is-hidden" : entering ? " is-in" : ""}`}>
+                    <span key={`in-${cur}`} className={`v2-voir-layer stem-${STEMS[cur]}${!run ? " is-hidden" : entering ? " is-in" : ""}`}>
                         {STEMS[cur]}
                     </span>
                 </span>
