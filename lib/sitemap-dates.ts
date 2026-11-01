@@ -1,7 +1,7 @@
 // Fichier généré par scripts/sitemap-dates.mjs : ne pas modifier à la main.
 // Date de dernière modification du contenu de chaque page (AAAA-MM-JJ), utilisée par app/sitemap.ts.
 export const SITEMAP_DATES: Record<string, string> = {
-    "/": "2026-10-30",
+    "/": "2026-11-01",
     "/commerces": "2026-10-31",
     "/commerces-aix-en-provence": "2026-10-30",
     "/commerces/anha-ciudad": "2026-10-31",
@@ -40,10 +40,10 @@ export const SITEMAP_DATES: Record<string, string> = {
     "/logements/vacquerolles": "2026-10-31",
     "/mentions-legales": "2026-10-30",
     "/villas": "2026-10-31",
-    "/villas-aix-en-provence": "2026-10-30",
-    "/villas-marseille": "2026-10-30",
-    "/villas-nice": "2026-10-30",
-    "/villas-nimes": "2026-10-30",
+    "/villas-aix-en-provence": "2026-11-01",
+    "/villas-marseille": "2026-11-01",
+    "/villas-nice": "2026-11-01",
+    "/villas-nimes": "2026-11-01",
     "/villas/maison-g": "2026-10-31",
     "/villas/villa-b": "2026-10-31",
     "/villas/villa-c": "2026-10-31",
