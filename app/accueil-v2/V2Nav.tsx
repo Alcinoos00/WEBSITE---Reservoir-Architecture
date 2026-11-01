@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { v2 } from "./v2Links";
 
@@ -33,6 +34,26 @@ export default function V2Nav() {
     const [subOpen, setSubOpen] = useState<string | null>(null);
     const [hidden, setHidden] = useState(false);
     const last = useRef(0);
+    // Accueil : le petit « R » est masqué tant que le grand logo RESERVOIR architecture est à l'écran,
+    // puis réapparaît dès qu'on fait défiler la page. Sur les autres pages, il reste toujours affiché.
+    const pathname = usePathname();
+    const isHome = pathname === v2("/");
+    const [brandHidden, setBrandHidden] = useState(isHome);
+
+    useEffect(() => {
+        if (!isHome) {
+            setBrandHidden(false);
+            return;
+        }
+        const big = document.querySelector(".v2-wordmark-wrap");
+        if (!big) {
+            setBrandHidden(false);
+            return;
+        }
+        const io = new IntersectionObserver(([e]) => setBrandHidden(e.isIntersecting), { rootMargin: "-60px 0px 0px 0px" });
+        io.observe(big);
+        return () => io.disconnect();
+    }, [isHome]);
 
     useEffect(() => {
         const onScroll = () => {
@@ -61,7 +82,13 @@ export default function V2Nav() {
     return (
         <>
             <header className={`v2-nav${hidden && !open ? " is-hidden" : ""}`}>
-                <Link href={v2("/")} className="v2-nav-logo" aria-label="Reservoir Architecture, accueil">
+                <Link
+                    href={v2("/")}
+                    className={`v2-nav-logo${brandHidden && !open ? " is-brand-hidden" : ""}`}
+                    aria-label="Reservoir Architecture, accueil"
+                    aria-hidden={brandHidden && !open ? true : undefined}
+                    tabIndex={brandHidden && !open ? -1 : undefined}
+                >
                     <Image src="/images/ui/brand/icon-light.svg" alt="" width={206} height={212} className="v2-nav-icon-img" priority />
                 </Link>
                 <div className="v2-nav-right">

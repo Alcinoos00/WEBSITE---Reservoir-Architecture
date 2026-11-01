@@ -1428,3 +1428,7 @@ body:has(.v2) { background: #ffffff; }
 .v2 .fx-voirfixe .v2-voir-layer.stem-ENTRE { letter-spacing: 0.024em; }
 .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 20px; }
 .v2 .v2-hero-below .v2-voir { justify-self: start; }
+
+/* Accueil : petit « R » masqué tant que le grand logo est visible, puis réaffiché en fondu au défilement */
+.v2-nav-logo { transition: opacity 0.6s ease, visibility 0.6s ease; }
+.v2-nav-logo.is-brand-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
