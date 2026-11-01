@@ -24,50 +24,54 @@ const SOCIALS = [
     { name: "Avis Google", href: GOOGLE_REVIEWS_URL, icon: "google" },
 ];
 
-// Pied de page réorganisé le 2026-10-30 : logo, contact, réalisations, pages Aix, réseaux, ligne légale.
+// Pied de page réorganisé le 2026-10-30, condensé le 2026-11-01 : logo et réseaux sur une ligne,
+// contact en taille de texte courant, liens à la suite (séparés par des points) au lieu de colonnes.
+// Tous les liens sont conservés (pages Aix en particulier, utiles au référencement).
 export default function V2Footer() {
     return (
-        <footer className="v2-footer v2-foot">
-            <div className="v2-foot-grid">
-                <div className="v2-foot-brand">
-                    <Image src="/images/ui/logo-navbar.svg" alt="Reservoir Architecture" width={335} height={74} className="v2-footer-logo" />
-                </div>
+        <footer className="v2-footer v2-foot v2-ft">
+            <div className="v2-ft-top">
+                <Image src="/images/ui/logo-navbar.svg" alt="Reservoir Architecture" width={335} height={74} className="v2-footer-logo v2-ft-logo" />
+                <ul className="v2-ft-social" aria-label="Suivre l'agence">
+                    {SOCIALS.filter((s) => s.href).map((s) => (
+                        <li key={s.icon}>
+                            <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} title={s.name}>
+                                <Image src={`/images/ui/social/${s.icon}.svg`} alt="" width={22} height={22} unoptimized />
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
 
-                <div className="v2-foot-col v2-foot-contact">
+            <div className="v2-ft-grid">
+                <div className="v2-ft-block">
                     <p className="v2-label">Contact</p>
-                    <a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a>
-                    <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+                    <p className="v2-ft-line">
+                        <a href={`tel:${SITE_PHONE}`}>{SITE_PHONE_DISPLAY}</a>
+                        <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>
+                    </p>
                 </div>
 
-                <nav className="v2-foot-col" aria-label="Réalisations">
+                <nav className="v2-ft-block" aria-label="Réalisations">
                     <p className="v2-label">Réalisations</p>
-                    <Link href={v2("/villas")}>Villas</Link>
-                    <Link href={v2("/logements")}>Logements</Link>
-                    <Link href={v2("/commerces")}>Commerces</Link>
-                    <Link href={v2("/equipements")}>Équipements</Link>
+                    <p className="v2-ft-line">
+                        <Link href={v2("/villas")}>Villas</Link>
+                        <Link href={v2("/logements")}>Logements</Link>
+                        <Link href={v2("/commerces")}>Commerces</Link>
+                        <Link href={v2("/equipements")}>Équipements</Link>
+                    </p>
                 </nav>
 
-                <nav className="v2-foot-col" aria-label="À Aix-en-Provence">
+                <nav className="v2-ft-block" aria-label="À Aix-en-Provence">
                     <p className="v2-label">À Aix-en-Provence</p>
-                    <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
-                    <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
-                    <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
-                    <Link href={v2("/equipements-aix-en-provence")}>Équipements publics</Link>
-                    <Link href={v2("/etudes")}>Études avant achat</Link>
+                    <p className="v2-ft-line">
+                        <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
+                        <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
+                        <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
+                        <Link href={v2("/equipements-aix-en-provence")}>Équipements publics</Link>
+                        <Link href={v2("/etudes")}>Études avant achat</Link>
+                    </p>
                 </nav>
-
-                <div className="v2-foot-col v2-foot-social">
-                    <p className="v2-label">Suivre l&apos;agence</p>
-                    <ul>
-                        {SOCIALS.filter((s) => s.href).map((s) => (
-                            <li key={s.icon}>
-                                <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.name} title={s.name}>
-                                    <Image src={`/images/ui/social/${s.icon}.svg`} alt="" width={22} height={22} unoptimized />
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
             </div>
 
             <p className="v2-footer-copy">
