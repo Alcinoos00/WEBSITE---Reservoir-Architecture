@@ -135,7 +135,7 @@ export const data: LandingData = {
     faq: {
         eyebrow: "Questions fréquentes",
         items: [
-            { q: "Faut-il obligatoirement un architecte pour une villa ?", a: "Oui dès que la surface de plancher dépasse 150 m². En dessous, l’architecte reste vivement conseillé pour la qualité, la valeur et la maîtrise du projet." },
+            { q: "Faut-il obligatoirement un architecte pour une villa ?", a: "Oui si la surface de plancher dépasse 150 m², en comptant l’existant pour un agrandissement : une maison de 120 m² agrandie de 40 m² nécessite un architecte. Si la villa est construite par une société, comme une SCI, l’architecte est obligatoire quelle que soit la surface. En dessous de 150 m², pour un particulier qui construit pour lui-même, il reste vivement conseillé pour la qualité, la valeur et la maîtrise du projet." },
             { q: "Intervenez-vous à Marseille et dans les Bouches-du-Rhône ?", a: "Oui. Basés à Aix-en-Provence, à trente minutes de Marseille, nous concevons des villas et maisons contemporaines sur toute la métropole marseillaise et son littoral." },
             { q: "Comment fonctionne l’estimation en 48h ?", a: "Vous nous décrivez votre projet par téléphone ou email (terrain, surface, intentions). Nous revenons vers vous sous 48h avec une première estimation chiffrée." },
             { q: "Quels délais pour une villa contemporaine ?", a: "Ils dépendent de la complexité du projet et de l’instruction du permis. Nous vous communiquons un calendrier prévisionnel dès la phase de faisabilité." },
