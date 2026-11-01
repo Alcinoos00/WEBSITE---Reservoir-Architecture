@@ -1393,3 +1393,8 @@ body:has(.v2) { background: #ffffff; }
 /* Avis : icône Google devant le mot « Google » (2026-11-01) */
 .v2 .v2-reviews-google { display: inline-flex; align-items: center; gap: 8px; }
 .v2 .v2-reviews-google-icon { width: 0.95em; height: 0.95em; }
+
+/* Domaines sur ordinateur : 3 ou 4 photos par ligne selon le domaine (Équipements a 4 photos) */
+@media (min-width: 769px) {
+    .v2 .v2-home .v2-domain-examples { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+}

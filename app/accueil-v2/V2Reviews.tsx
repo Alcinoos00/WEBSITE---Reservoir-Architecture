@@ -31,8 +31,8 @@ export default function V2Reviews() {
                 </div>
                 <div className="v2-reviews-head">
                     <span className="v2-reviews-google">
-                        {/* Icône officielle « G » de Google (Simple Icons, CC0), en noir comme le reste du site */}
-                        <Image src="/images/ui/social/google.svg" alt="" width={24} height={24} unoptimized className="v2-reviews-google-icon" />
+                        {/* Logo « G » de Google en couleurs (SVG Logos, CC0) */}
+                        <Image src="/images/ui/social/google-color.svg" alt="" width={24} height={24} unoptimized className="v2-reviews-google-icon" />
                         Google
                     </span>
                     <span className="v2-reviews-score">{GOOGLE_RATING}<span>/5</span></span>
