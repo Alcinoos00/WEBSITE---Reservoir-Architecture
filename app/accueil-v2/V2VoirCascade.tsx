@@ -73,7 +73,7 @@ export default function V2VoirCascade() {
                 <span className="v2-voir-stack">
                     {/* Débuts de mots invisibles : donnent sa largeur exacte à la pile, pour que VOIR ne bouge pas */}
                     {Array.from(new Set(STEMS)).map((st) => (
-                        <span key={`sizer-${st}`} className="v2-voir-layer v2-voir-sizer">
+                        <span key={`sizer-${st}`} className={`v2-voir-layer v2-voir-sizer${st === STEMS[STEMS.length - 1] ? " is-final" : ""}`}>
                             {st}
                         </span>
                     ))}

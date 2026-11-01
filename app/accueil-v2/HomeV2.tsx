@@ -85,6 +85,12 @@ export default function HomeV2() {
                         { label: "Équipements", href: v2("/equipements"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
                     ]}
                 />
+                {/* TEMPORAIRE (aperçu) : ?anim=1, 2 ou 3 pour comparer les trois placements de l'animation VOIR (1 par défaut) */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: "try{var m=location.search.match(/[?&]anim=([123])/);document.documentElement.setAttribute('data-ra-anim',m?m[1]:'1')}catch(e){}",
+                    }}
+                />
                 <div className="v2-hero-below">
                     <div className="v2-fade" data-reveal>
                         <h1 className="v2-h2">Architecte à <span className="v2-nowrap">Aix-en-Provence</span></h1>

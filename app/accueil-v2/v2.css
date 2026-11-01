@@ -1416,3 +1416,27 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-wordmark-wrap { width: 70%; }
 }
+
+/* Placement de l'animation VOIR (aperçu 2026-11-01, comparaison ?anim=1|2|3).
+   Le bloc prend la largeur du RESERVOIR final : c'est lui qui est aligné. Les débuts de mots plus longs
+   (PERCE, ENTRE, CONCE) débordent un peu à gauche pendant l'animation, VOIR restant immobile. */
+html[data-ra-anim] .v2 .fx-voirfixe .v2-voir-stack { position: relative; }
+html[data-ra-anim] .v2 .fx-voirfixe .v2-voir-sizer:not(.is-final) { display: none; }
+html[data-ra-anim] .v2 .fx-voirfixe .v2-voir-layer:not(.v2-voir-sizer) { position: absolute; top: 0; right: 0; white-space: nowrap; }
+@media (min-width: 769px) {
+    /* 1 : titre à gauche, animation calée sur le bord droit (aligné sur la dernière photo) */
+    html[data-ra-anim="1"] .v2 .v2-hero-below .v2-voir { justify-items: end; justify-self: end; }
+    /* 2 : animation centrée sur sa propre ligne, au-dessus du titre, en plus petit pour garder le titre visible */
+    html[data-ra-anim="2"] .v2 .v2-cats-panels + .v2-hero-below { padding-top: 28px; }
+    html[data-ra-anim="2"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+    html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir { order: -1; justify-self: center; font-size: clamp(30px, 3.2vw, 48px); }
+    /* 3 : animation sous le texte de présentation, alignée à gauche sur le titre */
+    html[data-ra-anim="3"] .v2 .v2-hero-below { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    html[data-ra-anim="3"] .v2 .v2-hero-below .v2-voir { justify-self: start; }
+}
+@media (max-width: 768px) {
+    /* Téléphone : centrée (1 et 2) ou alignée à gauche sur le titre (3), toujours sous le texte pour que le titre reste visible */
+    html[data-ra-anim="1"] .v2 .v2-hero-below .v2-voir,
+    html[data-ra-anim="2"] .v2 .v2-hero-below .v2-voir { justify-self: center; }
+    html[data-ra-anim="3"] .v2 .v2-hero-below .v2-voir { justify-self: start; }
+}
