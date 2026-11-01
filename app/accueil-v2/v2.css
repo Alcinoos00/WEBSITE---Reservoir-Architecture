@@ -1409,10 +1409,10 @@ body:has(.v2) { background: #ffffff; }
 }
 
 /* Logo de l'accueil réduit (2026-11-01) : environ 2/3 de la taille précédente.
-   Ordinateur : 36 % de la largeur (560 px au plus) au lieu de 56 % ; téléphone : 62 % au lieu de 85 %. */
+   Ordinateur : 36 % de la largeur (560 px au plus) au lieu de 56 % ; téléphone : 70 % au lieu de 85 %. */
 @media (min-width: 769px) {
     .v2 .v2-wordmark-wrap { width: min(36vw, 560px); }
 }
 @media (max-width: 768px) {
-    .v2 .v2-wordmark-wrap { width: 62%; }
+    .v2 .v2-wordmark-wrap { width: 70%; }
 }
