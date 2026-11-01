@@ -1437,12 +1437,12 @@ html.ra-intro-out .v2 .v2-intro { opacity: 0; }
 /* Sous les photos : titre à gauche, présentation à droite (ordinateur) */
 .v2 .v2-hero-below .v2-hero-intro { margin-top: 0; }
 
-/* Page d'entrée animée plein écran (2026-11-01) : visible seulement à la première visite (classe ra-intro sur <html>) */
+/* Page d'entrée animée plein écran (2026-11-01), environ 4 s : visible seulement à la première visite (classe ra-intro sur <html>) */
 .v2 .v2-splash { display: none; }
 html.ra-intro body { overflow: hidden; }
 html.ra-intro .v2 .v2-splash {
     position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center;
-    background: #fff; cursor: pointer; transition: opacity 0.7s cubic-bezier(0.37, 0, 0.63, 1);
+    background: #fff; cursor: pointer; transition: opacity var(--out, 0.5s) cubic-bezier(0.37, 0, 0.63, 1);
 }
 html.ra-intro-out .v2 .v2-splash { opacity: 0; pointer-events: none; }
 .v2 .v2-splash-stage {
@@ -1450,10 +1450,20 @@ html.ra-intro-out .v2 .v2-splash { opacity: 0; pointer-events: none; }
     font-family: var(--tf-josefin), sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1; color: var(--v2-ink);
     font-size: min(10vw, 92px);
 }
-.v2 .v2-splash-word { grid-area: 1 / 1; transition: opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1); }
-.v2 .v2-splash-logo { position: absolute; left: 0; top: 50%; width: 8.7em; height: auto; opacity: 0; transform: translateY(-36%); transition: opacity 0.8s cubic-bezier(0.37, 0, 0.63, 1); }
-.v2 .v2-splash.is-logo .v2-splash-word { opacity: 0; }
-.v2 .v2-splash.is-logo .v2-splash-logo { opacity: 1; }
+.v2 .v2-splash .v2-intro-voir, .v2 .v2-splash .v2-intro-layer.is-in { animation: v2-intro-in var(--fx, 0.5s) cubic-bezier(0.37, 0, 0.63, 1) both; }
+.v2 .v2-splash .v2-intro-layer.is-out { animation: v2-intro-out var(--fx, 0.5s) cubic-bezier(0.37, 0, 0.63, 1) both; }
+.v2 .v2-splash-word { grid-area: 1 / 1; position: relative; transition: opacity var(--end, 0.45s) cubic-bezier(0.37, 0, 0.63, 1); }
+/* Fin « logo » : le mot se fond dans le logo encadré */
+.v2 .v2-splash-logo { position: absolute; left: 0; top: 50%; width: 8.7em; height: auto; opacity: 0; transform: translateY(-36%); transition: opacity var(--end, 0.45s) cubic-bezier(0.37, 0, 0.63, 1); }
+.v2 .v2-splash.end-logo.is-end .v2-splash-word { opacity: 0; }
+.v2 .v2-splash.end-logo.is-end .v2-splash-logo { opacity: 1; }
+/* Fin « texte » : « architecture » en petit sous RESERVOIR, aligné sur son bord droit */
+.v2 .v2-splash-sub {
+    position: absolute; right: 0; top: 3.45em; margin-right: -0.62em; font-size: 0.3em; line-height: 1.2;
+    font-family: var(--v2-font), sans-serif; font-weight: 400; letter-spacing: 0.62em; text-transform: none; white-space: nowrap;
+    opacity: 0; transform: translateY(4px); transition: opacity var(--end, 0.45s) cubic-bezier(0.37, 0, 0.63, 1), transform var(--end, 0.45s) cubic-bezier(0.37, 0, 0.63, 1);
+}
+.v2 .v2-splash.end-texte.is-end .v2-splash-sub { opacity: 1; transform: none; }
 .v2 .v2-splash-skip {
     position: absolute; right: 20px; bottom: calc(20px + env(safe-area-inset-bottom)); padding: 10px 16px; border: 1px solid var(--v2-line); border-radius: 999px;
     background: #fff; color: var(--v2-muted); font: inherit; font-family: var(--v2-font), sans-serif; font-size: var(--t1); letter-spacing: 0.04em; cursor: pointer;

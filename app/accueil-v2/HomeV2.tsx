@@ -65,7 +65,7 @@ export default function HomeV2() {
             {/* Page d'entrée animée : décidée avant l'affichage (première visite seulement), pour éviter tout clignotement */}
             <script
                 dangerouslySetInnerHTML={{
-                    __html: "try{if(!localStorage.getItem('ra-intro-vu')&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ra-intro')}catch(e){}",
+                    __html: "try{if((/[?&]entree=/.test(location.search)||!localStorage.getItem('ra-intro-vu'))&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('ra-intro')}catch(e){}",
                 }}
             />
             <V2Splash />
