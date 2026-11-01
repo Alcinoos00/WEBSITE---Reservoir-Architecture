@@ -161,17 +161,6 @@ body:has(.v2) .main-container { overflow-x: clip; }
     align-items: start;
     padding-bottom: 22px;
 }
-/* « RESERVOIR » occupe toute la colonne de gauche sans jamais la dépasser :
-   la largeur du mot vaut ~4,9 fois la taille de police. */
-.v2-wordmark {
-    font-size: min(260px, calc((100vw - 2 * var(--v2-gutter) - var(--v2-side) - 32px) / 4.95));
-    line-height: 0.78;
-    font-weight: 400;
-    letter-spacing: -0.045em;
-    color: var(--v2-ink);
-    white-space: nowrap;
-    margin-left: -0.03em;
-}
 .v2-hero-side { display: grid; gap: 10px; padding-top: 6px; }
 .v2-hero-photo {
     position: relative;
@@ -337,7 +326,6 @@ body:has(.v2) .main-container { overflow-x: clip; }
     .v2 { --v2-gutter: 16px; }
     .v2-hero { padding-top: 76px; }
     .v2-hero-top, .v2-row, .v2-cta-content { grid-template-columns: minmax(0, 1fr); gap: 18px; }
-    .v2-wordmark { font-size: calc((100vw - 2 * var(--v2-gutter)) / 4.95); }
     .v2-hero-photo { height: 56vh; }
     .v2-about-body { grid-template-columns: minmax(0, 1fr); }
     .v2-about-body > .v2-small, .v2-about-photo { grid-column: 1; }
@@ -621,7 +609,6 @@ body:has(.v2) .main-container { overflow-x: clip; }
 /* Variante 4 : icône claire dans la barre + logo long en grand à la place du mot */
 .v2 .v2-hero-logo { display: none; }
 .v2[data-brand="4"] .v2-hero-logo { display: block; width: min(100%, 820px); height: auto; align-self: end; }
-.v2[data-brand="4"] .v2-wordmark { display: none; }
 
 /* Panneaux du haut : pas de zoom sur la photo quand le panneau s'agrandit */
 .v2 .v2-panel img, .v2 .v2-panel.is-active img { transform: none; transition: none; }
@@ -648,8 +635,7 @@ body:has(.v2) { background: #ffffff; }
     }
 }
 
-/* Grand « RESERVOIR » : le mot exporté de Canva en Arial Nova Condensed (vectoriel, police exacte).
-   Il occupe toute la colonne de gauche ; il se dévoile de bas en haut au chargement. */
+/* Logo encadré de l'accueil (image vectorielle, sans police) : il se dévoile de bas en haut au chargement. */
 .v2 .v2-wordmark-img { display: block; width: 100%; height: auto; align-self: end; }
 .v2-js .v2-wordmark-img { clip-path: inset(100% 0 0 0); transition: clip-path 1.1s var(--v2-ease) 0.1s; }
 .v2-js.v2-loaded .v2-wordmark-img { clip-path: inset(0 0 0 0); }
@@ -671,18 +657,6 @@ body:has(.v2) { background: #ffffff; }
         height: calc((72svh - 18px) * 3.6 / 6.6) !important;
         transform: translateY(-50%) !important;
     }
-}
-
-/* Grand « RESERVOIR » en Arial Nova Condensed (repli : Roboto Condensed).
-   Police plus étroite : la largeur du mot vaut au plus ~4,8 fois la taille. */
-.v2 .v2-wordmark {
-    font-family: "Arial Nova Cond", "Arial Nova Condensed", var(--v2-cond), "Arial Narrow", sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    font-size: min(300px, calc((100vw - 2 * var(--v2-gutter) - var(--v2-side) - 32px) / 4.8));
-}
-@media (max-width: 768px) {
-    .v2 .v2-wordmark { font-size: calc((100vw - 2 * var(--v2-gutter)) / 4.8); }
 }
 
 /* « Architecture » en petit, sous le grand mot, calé à droite */
