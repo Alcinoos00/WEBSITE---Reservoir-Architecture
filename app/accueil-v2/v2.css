@@ -1439,3 +1439,12 @@ body:has(.v2) { background: #ffffff; }
 @media (max-width: 768px) {
     .v2 .v2-ft-social { transform: translateY(calc(-0.144 * 118px * 55.5 / 251.25)); }
 }
+
+/* ESSAI (branche essai-site-leger, 2026-11-03) : rendu plus aéré et léger, inspiré de sunday.fr.
+   1. Texte courant gris #686868 (au lieu de #1e1e1e), Jost Regular, 16 px (au lieu de 17 px), espacement normal.
+   2. Titres et éléments forts en gris très foncé #333 (au lieu de #070707).
+   3. Petites étiquettes en capitales en gris #747474, légèrement espacées.
+   5. Paragraphes limités à environ 65 caractères par ligne. */
+.v2.v2 { --v2-text: #686868; --v2-ink: #333333; --t2: 16px; }
+.v2.v2 :is(.v2-label, .v2-tag, .v2-domain-caption, .v2-figs-2 dt, .v2-pb-tech dt) { color: #747474; letter-spacing: 0.04em; }
+.v2.v2 p:not([class]), .v2.v2 .v2-small { max-width: 65ch; }
