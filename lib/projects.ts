@@ -60,7 +60,8 @@ export const VILLA_F_PROJECT: ProjectData = {
     ],
     subtitle: "CAISSARGUES (30)",
     title: "VILLA F",
-    optionalSubtitle: "RÉNOVATION ET EXTENSION POUR TRANSFORMATION D’UNE MAISON DE LOTISSEMENT EN UNE VILLA CONTEMPORAINE",
+    typology: "Réhabilitation et extension de maison",
+    optionalSubtitle: "RÉHABILITATION ET EXTENSION : TRANSFORMATION D’UNE MAISON DE LOTISSEMENT EN VILLA CONTEMPORAINE",
     descriptionHeader: "Eminence des lignes, souveraineté des espaces - Une architecture de l’essentiel",
     descriptionParagraphs: [
         "Maison élégamment introvertie, structurée par une géométrie précise et une horizontalité assumée, elle s’organise autour d’une cour-piscine conçue comme un cœur vivant, ouvert au ciel et à la lumière. La majesté des espaces ne s’impose pas par démonstration, mais par la justesse des proportions et la qualité des volumes.",

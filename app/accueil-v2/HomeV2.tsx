@@ -79,7 +79,7 @@ export default function HomeV2() {
                 </div>
                 <HeroCategories
                     items={[
-                        { label: "Villas", href: v2("/villas"), img: VILLA_F_PROJECT.heroImages[0], alt: "Villa F, villa contemporaine avec piscine" },
+                        { label: "Villas", href: v2("/villas"), img: VILLA_F_PROJECT.heroImages[0], alt: "Villa F, villa contemporaine avec piscine issue de la réhabilitation d’une maison" },
                         { label: "Logements", href: v2("/logements"), img: SAMARITAINE_PROJECT.heroImages[0], alt: "Résidence Samaritaine, logements collectifs" },
                         { label: "Commerces", href: v2("/commerces"), img: PUYRICARD_PROJECT.heroImages[0], alt: "Esprit Bastide, commerces à Puyricard" },
                         { label: "Équipements", href: v2("/equipements"), img: REGIE_DES_EAUX_PROJECT.heroImages[0], alt: "Régie des eaux d'Aix-en-Provence" },
@@ -206,7 +206,7 @@ export default function HomeV2() {
             {/* Contact juste après la FAQ, même bloc que le bas de page avec une autre photo */}
             {/* Sur téléphone, un seul bloc contact : celui du bas de page */}
             <div className="v2-desk-only">
-                <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, villa contemporaine à Aix-en-Provence" />
+                <V2Cta img={VILLA_F_PROJECT.heroImages[1]} alt="Villa F, maison réhabilitée et agrandie en villa contemporaine à Caissargues" />
             </div>
 
             {/* Preuve locale (reprise de l'accueil précédent) : projets d'Aix et alentours + liens vers les pages Aix.
