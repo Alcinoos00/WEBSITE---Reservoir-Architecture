@@ -4,12 +4,12 @@ import { data } from "@/lib/landings/villas-aix-en-provence";
 import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Architecte villa contemporaine à Aix-en-Provence",
+    title: "Architecte villa et extension de maison à Aix-en-Provence",
     description:
-        "Architecte DPLG à Aix-en-Provence : Reservoir Architecture conçoit votre villa contemporaine ou maison d’architecte sur-mesure, du terrain au permis. Estimation sous 48h.",
+        "Architecte DPLG à Aix-en-Provence : villa contemporaine sur-mesure, extension, surélévation et rénovation de maison, du terrain au permis. Estimation sous 48h.",
     alternates: { canonical: `${SITE_URL}/villas-aix-en-provence` },
     openGraph: {
-        title: "Architecte villa contemporaine à Aix-en-Provence - Reservoir Architecture",
+        title: "Architecte villa et extension de maison à Aix-en-Provence - Reservoir Architecture",
         description:
             "Villa contemporaine sur-mesure à Aix-en-Provence, du choix du terrain au permis de construire. Estimation sous 48h.",
         url: `${SITE_URL}/villas-aix-en-provence`,

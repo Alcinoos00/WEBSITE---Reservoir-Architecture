@@ -5,9 +5,9 @@ import { data } from "@/lib/landings/etude-de-faisabilite";
 import { SITE_URL, SITE_DEFAULT_IMAGE, SITE_DEFAULT_IMAGE_ALT, getServiceJsonLd, getBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: { absolute: "Étude de faisabilité et capacitaire | Reservoir Architecture" },
+    title: { absolute: "Étude de faisabilité d’un terrain par un architecte | Reservoir Architecture" },
     description:
-        "Étude de faisabilité et capacitaire par un architecte DPLG : logements, division, surélévation, commerces, locaux d’activité, ZAC. Devis sur dossier.",
+        "Que peut-on construire sur ce terrain ? Étude de faisabilité et capacitaire par un architecte DPLG : logements, division, surélévation, commerces. Sur devis.",
     alternates: { canonical: `${SITE_URL}/etude-de-faisabilite` },
     openGraph: {
         title: "Étude de faisabilité et étude capacitaire - Reservoir Architecture",
