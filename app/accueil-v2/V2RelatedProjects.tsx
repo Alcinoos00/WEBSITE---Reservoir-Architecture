@@ -22,7 +22,8 @@ export default function V2RelatedProjects({ project }: { project: ProjectData })
     const same = PROJECTS.filter((p) => p.category === project.category);
     const index = same.findIndex((p) => p.slug === project.slug);
     const others = index < 0 ? same : [...same.slice(index + 1), ...same.slice(0, index)];
-    const related = others.slice(0, MAX_LINKS);
+    // Les fiches sans texte (ex. Super U) ne sont pas mises en avant : pages trop minces pour Google.
+    const related = others.filter((p) => p.descriptionParagraphs.some((t) => t.trim())).slice(0, MAX_LINKS);
     const categoryPath = categoryToPath(project.category);
 
     if (related.length === 0) return null;
