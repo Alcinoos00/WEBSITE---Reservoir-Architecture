@@ -2,6 +2,7 @@ import Image from "next/image";
 import type { ProjectData } from "@/types/project";
 import V2Cta from "./V2Cta";
 import V2Strip from "./V2Strip";
+import V2RelatedProjects from "./V2RelatedProjects";
 import { StyleImageColonne } from "./V2ProjectStyles";
 import { projectTypology, titleCase } from "@/lib/seo";
 
@@ -53,6 +54,8 @@ export default function V2ProjectPage({ project }: { project: ProjectData }) {
                     </div>
                 </section>
             </div>
+
+            <V2RelatedProjects project={project} />
 
             <V2Cta />
         </div>

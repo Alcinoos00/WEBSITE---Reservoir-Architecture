@@ -1451,3 +1451,13 @@ body:has(.v2) { background: #ffffff; }
 /* 6. Espacements : 20 px sous les titres (au lieu de 14 px), une ligne vide (24 px) entre les paragraphes (au lieu de 14 px). */
 .v2.v2 :is(.v2-stack .v2-small, .v2-cta-text) { margin-top: 20px; }
 .v2.v2 :is(.v2-about-text, .v2-project-desc) { gap: 24px; }
+
+/* Autres projets en bas des fiches projet (maillage interne, 2026-11-18) */
+.v2 .v2-related .v2-label { margin-bottom: 18px; }
+.v2 .v2-related-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px; border-top: 1px solid var(--v2-line, rgba(0,0,0,.12)); }
+.v2 .v2-related-list li { border-bottom: 1px solid var(--v2-line, rgba(0,0,0,.12)); }
+.v2 .v2-related-list a { display: flex; flex-direction: column; gap: 4px; padding: 16px 0; text-decoration: none; color: inherit; }
+.v2 .v2-related-name { font-size: var(--fs-md, 16px); font-weight: 600; }
+.v2 .v2-related-meta { font-size: var(--fs-sm, 13px); color: var(--v2-muted, #6b6b6b); }
+.v2 .v2-related-list a:hover .v2-related-name, .v2 .v2-related-list a:focus-visible .v2-related-name { text-decoration: underline; }
+.v2 .v2-related-all { margin: 20px 0 0; }

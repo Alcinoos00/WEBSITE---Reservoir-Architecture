@@ -23,6 +23,10 @@ const nextConfig = {
       { source: "/architecture-commerciale-cjoo", destination: "/commerces", permanent: true },
       { source: "/copie-de-tertiaire", destination: "/logements", permanent: true },
       { source: "/copie-de-architecture-commerciale", destination: "/commerces", permanent: true },
+      // Anciennes adresses encore signalées en 404 ou « noindex » par Search Console (2026-11-18).
+      { source: "/copie-de-tertiaire-1", destination: "/logements", permanent: true },
+      { source: "/copie-de-equipements", destination: "/equipements", permanent: true },
+      { source: "/logements-collectifs", destination: "/logements", permanent: true },
       // La v2 a remplacé la v1 à la racine le 2026-10-27 : anciennes adresses de test vers les vraies.
       { source: "/v2", destination: "/", permanent: true },
       { source: "/v2/:path*", destination: "/:path*", permanent: true },
