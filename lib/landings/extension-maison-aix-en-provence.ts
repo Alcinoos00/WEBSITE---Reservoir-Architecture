@@ -64,8 +64,8 @@ export const data: LandingData = {
         reasons: [
             {
                 icon: "shield",
-                title: "Obligatoire au-delà de 150 m².",
-                text: "Si votre maison dépasse 150 m² de surface de plancher après agrandissement, le permis de construire doit être établi par un architecte. En dessous, il reste le meilleur moyen de réussir le raccord avec l’existant.",
+                title: "Obligatoire au-delà de 150 m² avec permis.",
+                text: "Si l’agrandissement exige un permis de construire et que votre maison dépasse 150 m² de surface de plancher après travaux, ce permis doit être établi par un architecte. Sinon, il reste le meilleur moyen de réussir le raccord avec l’existant.",
             },
             {
                 icon: "pin",
