@@ -20,8 +20,8 @@ export const data: LandingData = {
         projects: [
             {
                 title: "Villa T",
-                img: "/images/projects/1-villas/villa T/villaT_3.jpg",
-                alt: "Pavillon annexe en enduit beige au bord de la piscine, Villa T à Aix-en-Provence, par Reservoir Architecture",
+                img: "/images/projects/1-villas/villa T/villaT_2.jpg",
+                alt: "Vue d’ensemble de la Villa T réhabilitée à Aix-en-Provence : la maison, son annexe et la piscine, par Reservoir Architecture",
                 desc: "Réhabilitation d’une maison de ville aixoise et de ses annexes existantes : volumes réaménagés et largement ouverts sur les terrasses, le jardin et la piscine. Mission complète, livrée en 2024.",
                 specs: [
                     { icon: "surface", label: "202 m²" },
