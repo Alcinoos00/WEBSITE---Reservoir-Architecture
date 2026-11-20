@@ -32,7 +32,7 @@ export const data: LandingData = {
                 title: "Villa T",
                 img: "/images/projects/1-villas/villa T/villaT_1.jpg",
                 alt: "Villa contemporaine T, maison de ville réhabilitée, par Reservoir Architecture",
-                desc: "Réhabilitation d’une maison méditerranéenne, prolongée d’extensions contemporaines largement ouvertes sur les terrasses et le jardin. La lumière du Sud devient matière première.",
+                desc: "Réhabilitation d’une maison méditerranéenne et de ses annexes, aux volumes réaménagés et largement ouverts sur les terrasses et le jardin. La lumière du Sud devient matière première.",
                 specs: [
                     { icon: "surface", label: "202 m²" },
                     { icon: "mission", label: "Réhabilitation" },

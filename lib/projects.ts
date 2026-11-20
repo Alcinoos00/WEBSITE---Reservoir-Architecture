@@ -359,7 +359,7 @@ export const VILLA_T_PROJECT: ProjectData = {
         "/images/projects/1-villas/villa T/villaT_9.jpg"
     ],
     imageAlts: [
-        "Terrasse dallée devant l'extension vitrée de la maison en enduit beige",
+        "Terrasse dallée devant les baies vitrées de la maison en enduit beige",
         "Piscine et jardin devant la maison et le pavillon annexe",
         "Pavillon annexe en enduit beige au bord de la piscine",
         "Séjour lumineux sous plafond rampant ouvert sur la cuisine et le jardin",
@@ -376,7 +376,7 @@ export const VILLA_T_PROJECT: ProjectData = {
     descriptionHeader: "Lumière Provençale, Réinterprétée",
     descriptionParagraphs: [
         "Cette réhabilitation révèle une villa méditerranéenne où tradition et modernité dialoguent avec finesse.",
-        "Les volumes existants réaménagés sont prolongés par des extensions contemporaines, largement ouvertes sur les terrasses et le jardin, effaçant les limites entre intérieur et extérieur.",
+        "Les volumes existants, maison et annexes, sont réaménagés et largement ouverts sur les terrasses et le jardin, effaçant les limites entre intérieur et extérieur.",
         "La lumière devient matière première, glissant sur des espaces épurés aux tonalités naturelles et chaleureuses.",
         "Le projet offre ainsi un cadre de vie apaisé, ancré dans un paysage aixois exceptionnel tout en affirmant une écriture architecturale résolument actuelle."
     ],
