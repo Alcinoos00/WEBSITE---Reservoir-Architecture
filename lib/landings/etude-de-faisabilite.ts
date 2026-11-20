@@ -45,11 +45,11 @@ export const data: LandingData = {
             {
                 title: "Esprit Bastide",
                 img: "/images/projects/3-commerces/puyricard/puyricard_1.jpg",
-                alt: "Ensemble de commerces et services Esprit Bastide à Puyricard par Reservoir Architecture",
-                desc: "Construction d’un ensemble de commerces et services à Puyricard, organisé autour d’un patio planté d’oliviers.",
+                alt: "Perspective de l’étude de faisabilité Esprit Bastide, ensemble de commerces et services à Puyricard, par Reservoir Architecture",
+                desc: "Étude de faisabilité d’un ensemble de commerces et services à Puyricard, organisé autour d’un patio planté d’oliviers.",
                 specs: [
                     { icon: "tag", label: "Commerces et services" },
-                    { icon: "mission", label: "Construction neuve" },
+                    { icon: "mission", label: "Étude de faisabilité" },
                 ],
                 cta: "Étudier mon projet commercial",
                 loc: "inv_card_puyricard",

@@ -19,8 +19,8 @@ export const data: LandingData = {
             {
                 title: "Esprit Bastide",
                 img: "/images/projects/3-commerces/puyricard/puyricard_1.jpg",
-                alt: "Esprit Bastide, ensemble de commerces à Puyricard, par Reservoir Architecture",
-                desc: "Ensemble de commerces et services articulé autour d’un patio d’oliviers, dans l’esprit d’un village provençal contemporain, autour de l’emblématique Chocolaterie de Puyricard.",
+                alt: "Esprit Bastide, perspective de l’étude de faisabilité d’un ensemble de commerces à Puyricard, par Reservoir Architecture",
+                desc: "Étude de faisabilité d’un ensemble de commerces et services articulé autour d’un patio d’oliviers, dans l’esprit d’un village provençal contemporain, autour de l’emblématique Chocolaterie de Puyricard.",
                 specs: [
                     { icon: "tag", label: "Commerces et services" },
                     { icon: "pin", label: "Puyricard (13)" },

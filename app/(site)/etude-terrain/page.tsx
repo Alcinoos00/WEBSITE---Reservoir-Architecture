@@ -16,9 +16,9 @@ import "./etude-terrain.css";
 const TEL = `tel:${SITE_PHONE}`;
 
 export const metadata: Metadata = {
-    title: { absolute: "Étude de terrain avant achat (PLU) | Reservoir Architecture" },
+    title: { absolute: "Étude de terrain avant achat : PLU et constructibilité | Reservoir Architecture" },
     description:
-        "Avant d’acheter un terrain ou une maison, Serge Ettore, architecte DPLG, vérifie le PLU et ce que vous pourrez construire ou agrandir. Rapport en 15 jours.",
+        "Étude de faisabilité avant achat : Serge Ettore, architecte DPLG, fait l’analyse de constructibilité de votre terrain (PLU, surface constructible, risques). Rapport en 15 jours.",
     alternates: { canonical: `${SITE_URL}/etude-terrain` },
     openGraph: {
         title: "Étude de terrain avant achat - Reservoir Architecture",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const INCLUDED = [
     { title: "Le PLU(i) applicable", text: "La zone du terrain et son règlement : ce qui est autorisé, interdit ou soumis à conditions." },
     { title: "Les règles de construction", text: "Emprise au sol, hauteur, reculs par rapport aux voies et aux voisins, espaces verts, stationnement." },
-    { title: "Ce que vous pourrez construire", text: "Une estimation de la surface constructible et du nombre de logements possible, pour une maison ou de petits logements." },
+    { title: "L’analyse de constructibilité", text: "Ce que vous pourrez réellement construire : une estimation de la surface constructible et du nombre de logements possible, pour une maison ou de petits logements." },
     { title: "Extension et annexes", text: "Si une maison existe déjà : possibilité de l’agrandir, de la surélever ou d’ajouter un garage, un abri, un pool house ou une piscine, et surface encore disponible." },
     { title: "Travaux déjà réalisés", text: "Si une maison existe déjà : comparaison entre ce qui est construit et les autorisations obtenues, pour repérer d’éventuels travaux non déclarés." },
     { title: "Servitudes et risques", text: "Monuments historiques, emplacements réservés, inondation, feux de forêt, retrait-gonflement des argiles, mouvements de terrain." },
@@ -71,6 +71,7 @@ const STEPS = [
 ];
 
 const FAQ = [
+    { q: "Qu’est-ce qu’une analyse de constructibilité ?", a: "C’est l’étude de faisabilité d’un terrain avant achat : elle dit ce que le PLU(i) permet d’y construire (surface, hauteur, implantation, nombre de logements) et quelles contraintes s’y ajoutent (servitudes, risques, accès, réseaux). C’est le cœur de cette étude." },
     { q: "Pourquoi faire cette étude avant de signer ?", a: "Une fois le terrain acheté, il est trop tard pour découvrir qu’on ne peut pas y construire la maison ou le nombre de logements prévu. L’étude vous aide à négocier ou à prévoir les bonnes conditions suspensives." },
     { q: "Combien coûte l’étude ?", a: "Le prix dépend du bien : terrain nu ou maison existante, complexité des règles d’urbanisme. Nous vous adressons un devis forfaitaire à réception de votre dossier, avant tout engagement." },
     { q: "J’achète une maison. Pourrai-je l’agrandir ou ajouter une annexe ?", a: "C’est justement ce que l’étude vérifie : surface encore constructible selon le PLU(i), reculs, hauteur, emprise au sol, possibilité d’un garage, d’un abri, d’un pool house ou d’une piscine. À noter : un particulier doit faire appel à un architecte si l’agrandissement exige un permis de construire et porte la surface de plancher totale au-delà de 150 m²." },
@@ -118,7 +119,7 @@ export default function EtudeTerrainPage() {
                     </div>
                     <div>
                         <p className="v2-small">
-                            Avant de signer, Serge Ettore, architecte DPLG à Aix-en-Provence, analyse le PLU(i) et les contraintes du bien que vous voulez acheter : pour y faire construire une maison ou de petits logements, ou, si une maison existe déjà, pour savoir si vous pourrez l’agrandir ou ajouter des annexes. Un rapport clair, sans visite sur place.
+                            Avant de signer, Serge Ettore, architecte DPLG à Aix-en-Provence, réalise l’analyse de constructibilité du bien que vous voulez acheter (PLU(i), règles de construction, servitudes et risques) : pour y faire construire une maison ou de petits logements, ou, si une maison existe déjà, pour savoir si vous pourrez l’agrandir ou ajouter des annexes. Un rapport clair, sans visite sur place.
                         </p>
                         <p className="v2-tag v2-landing-trust">Architecte DPLG depuis 1999 · Agence fondée en 2013 à Aix-en-Provence · Rapport sous 15 jours ouvrés</p>
                         <div className="v2-cta-actions">
