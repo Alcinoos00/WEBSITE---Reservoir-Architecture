@@ -40,7 +40,7 @@ export const FAQ_ITEMS = [
   },
   {
     q: "Faut-il obligatoirement faire appel à un architecte ?",
-    a: "Oui, dans la plupart des cas. Un permis de construire doit être établi par un architecte. Seul un particulier (ou une exploitation agricole) qui construit pour lui-même en est dispensé, à condition que la surface de plancher ne dépasse pas 150 m². Pour un agrandissement, on compte la surface totale après travaux : une maison de 120 m² agrandie de 40 m² nécessite un architecte. Une société (SCI, promoteur, entreprise) doit toujours y recourir, quelle que soit la surface.",
+    a: "Oui, dans la plupart des cas. Un permis de construire doit être établi par un architecte. Seul un particulier (ou une exploitation agricole) qui construit pour lui-même en est dispensé, à condition que la surface de plancher ne dépasse pas 150 m². Pour un agrandissement, on compte la surface totale après travaux : une maison de 120 m² agrandie de 40 m² nécessite un architecte. Une société (SCI, promoteur, entreprise) doit y recourir pour tout permis de construire, quelle que soit la surface. Une simple déclaration préalable n’exige jamais d’architecte.",
   },
   {
     q: "Comment se passe un premier contact ?",
