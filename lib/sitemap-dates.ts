@@ -30,6 +30,7 @@ export const SITEMAP_DATES: Record<string, string> = {
     "/etude-de-faisabilite": "2026-11-20",
     "/etude-terrain": "2026-11-20",
     "/etudes": "2026-10-30",
+    "/extension-maison-aix-en-provence": "2026-11-20",
     "/logements": "2026-10-31",
     "/logements-aix-en-provence": "2026-10-30",
     "/logements/jacou": "2026-10-31",
