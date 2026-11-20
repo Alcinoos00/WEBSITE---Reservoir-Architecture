@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { ARCHIDVISOR_URL, GOOGLE_REVIEWS_URL } from "@/lib/seo";
+import { ARCHIDVISOR_RATING, ARCHIDVISOR_REVIEW_COUNT, ARCHIDVISOR_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, GOOGLE_REVIEWS_URL } from "@/lib/seo";
 import V2ReviewText from "./V2ReviewText";
 
 // Avis clients : Archidvisor et Google (avis contrôlés par l'agence, procédure décrite dans /mentions-legales#avis),
 // réutilisés sur l'accueil et les landing pages v2.
 // Avis Google recopiés à la main le 2026-10-30 : texte complet, prénom et initiale, lien vers la fiche.
-// À mettre à jour quand la note ou le nombre d'avis change sur la fiche Google.
-const GOOGLE_COUNT = 3;
+// Notes et nombres d'avis : constantes de lib/seo.ts, à mettre à jour quand une fiche change.
 
 // Classés du plus récent au plus ancien (date de publication de l'avis, au mois près).
 // Sur téléphone, seuls les 5 premiers sont affichés (les 3 Google et les 2 Archidvisor les plus récents).
@@ -26,18 +25,14 @@ export default function V2Reviews() {
         <div className="v2-reviews">
             {/* Notes regroupées sur une ligne compacte */}
             <div className="v2-reviews-sources">
-                <span className="v2-reviews-total">
-                    <span className="v2-reviews-score">5,0<span>/5</span></span>
-                    <span className="v2-stars" aria-label="5 étoiles sur 5">★★★★★</span>
-                </span>
                 <span className="v2-reviews-src">
                     {/* Logo « G » de Google en couleurs (SVG Logos, CC0) */}
                     <Image src="/images/ui/social/google-color.svg" alt="Google" width={24} height={24} unoptimized className="v2-reviews-google-icon" />
-                    <span className="v2-reviews-count">{GOOGLE_COUNT} avis vérifiés</span>
+                    <span className="v2-reviews-count"><span className="v2-reviews-score">{GOOGLE_RATING}<span>/5</span></span> {GOOGLE_REVIEW_COUNT} avis vérifiés</span>
                 </span>
                 <span className="v2-reviews-src">
                     <Image src="/images/ui/archidvisor.webp" alt="Archidvisor" width={797} height={165} className="v2-reviews-logo" />
-                    <span className="v2-reviews-count">8 avis vérifiés</span>
+                    <span className="v2-reviews-count"><span className="v2-reviews-score">{ARCHIDVISOR_RATING}<span>/5</span></span> {ARCHIDVISOR_REVIEW_COUNT} avis vérifiés</span>
                 </span>
             </div>
             <ul>

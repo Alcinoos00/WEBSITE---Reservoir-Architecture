@@ -19,6 +19,11 @@ export const ARCHIDVISOR_URL =
     "https://www.archidvisor.com/professionnels/architectes/provence-alpes-cote-d-azur/bouches-du-rhone/aix-en-provence-13/reservoir-architecture";
 // Fiche Google de l'agence (lien de partage donné par Emeric le 2026-10-30)
 export const GOOGLE_REVIEWS_URL = "https://share.google/DirUVGBGHu9twK7XL";
+// Notes affichées sur le site : à recopier depuis les fiches dès qu'elles changent (relevé du 2026-11-20).
+export const GOOGLE_RATING = "5,0";
+export const GOOGLE_REVIEW_COUNT = 3;
+export const ARCHIDVISOR_RATING = "4,8";
+export const ARCHIDVISOR_REVIEW_COUNT = 8;
 export const INSTAGRAM_URL = "https://www.instagram.com/reservoirarchitecture/";
 export const FACEBOOK_URL = "https://www.facebook.com/reservoir.architecture/";
 export const HOUZZ_URL = "https://www.houzz.fr/pro/reservoir-architecture";

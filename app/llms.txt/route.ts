@@ -2,7 +2,7 @@ import { FAQ_ITEMS } from "@/lib/homeContent";
 import { PROJECTS } from "@/lib/projects";
 import {
     SITE_URL, SITE_NAME, SITE_PHONE_DISPLAY, SITE_EMAIL, SITE_FOUNDED, SITE_FOUNDER, SITE_FOUNDER_TITLE,
-    AREA_SERVED_CITIES, ARCHIDVISOR_URL, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, projectAt, projectName, projectTypology,
+    AREA_SERVED_CITIES, ARCHIDVISOR_RATING, ARCHIDVISOR_REVIEW_COUNT, ARCHIDVISOR_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT, HOUZZ_URL, INSTAGRAM_URL, getProjectUrl, projectAt, projectName, projectTypology,
 } from "@/lib/seo";
 
 // /llms.txt : résumé du site pour les assistants IA (ChatGPT, Perplexity, Claude...).
@@ -26,7 +26,8 @@ export function GET() {
         "- Clients : particuliers, promoteurs, commerçants et collectivités (maîtrise d'œuvre loi MOP).",
         "- Missions : conception, permis de construire, mission complète jusqu'à la réception du chantier.",
         `- Contact : ${SITE_PHONE_DISPLAY}, ${SITE_EMAIL}, ${SITE_URL}/contact`,
-        `- Avis clients et profils : ${ARCHIDVISOR_URL} ; ${HOUZZ_URL} ; ${INSTAGRAM_URL}`,
+        `- Avis clients : ${ARCHIDVISOR_RATING}/5 sur Archidvisor (${ARCHIDVISOR_REVIEW_COUNT} avis, ${ARCHIDVISOR_URL}) et ${GOOGLE_RATING}/5 sur Google (${GOOGLE_REVIEW_COUNT} avis, fiche Google « Reservoir Architecture »). Archidvisor est la plateforme française d'avis clients dédiée aux architectes.`,
+        `- Profils : ${HOUZZ_URL} ; ${INSTAGRAM_URL}`,
         "",
         "## Pages principales",
         "",
