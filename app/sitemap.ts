@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         { url: `${SITE_URL}/commerces`, ...dated("/commerces"), priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/equipements`, ...dated("/equipements"), priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/villas-aix-en-provence`, ...dated("/villas-aix-en-provence"), priority: 0.9, changeFrequency: "monthly" },
+        { url: `${SITE_URL}/extension-maison-aix-en-provence`, ...dated("/extension-maison-aix-en-provence"), priority: 0.9, changeFrequency: "monthly" },
         { url: `${SITE_URL}/commerces-aix-en-provence`, ...dated("/commerces-aix-en-provence"), priority: 0.8, changeFrequency: "monthly" },
         { url: `${SITE_URL}/logements-aix-en-provence`, ...dated("/logements-aix-en-provence"), priority: 0.8, changeFrequency: "monthly" },
         { url: `${SITE_URL}/equipements-aix-en-provence`, ...dated("/equipements-aix-en-provence"), priority: 0.8, changeFrequency: "monthly" },

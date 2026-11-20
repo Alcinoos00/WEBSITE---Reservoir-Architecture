@@ -56,6 +56,7 @@ export default function V2Footer() {
                     <p className="v2-label">À Aix-en-Provence</p>
                     <p className="v2-ft-line">
                         <Link href={v2("/villas-aix-en-provence")}>Architecte villa</Link>
+                        <Link href={v2("/extension-maison-aix-en-provence")}>Extension de maison</Link>
                         <Link href={v2("/commerces-aix-en-provence")}>Architecte commerce</Link>
                         <Link href={v2("/logements-aix-en-provence")}>Architecte logements</Link>
                         <Link href={v2("/equipements-aix-en-provence")}>Équipements publics</Link>

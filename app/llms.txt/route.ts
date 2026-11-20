@@ -32,6 +32,7 @@ export function GET() {
         "",
         `- [Accueil : architecte à Aix-en-Provence](${SITE_URL}/)`,
         `- [Architecte villa à Aix-en-Provence](${SITE_URL}/villas-aix-en-provence)`,
+        `- [Architecte extension et surélévation de maison à Aix-en-Provence](${SITE_URL}/extension-maison-aix-en-provence)`,
         `- [Architecte logements collectifs à Aix-en-Provence](${SITE_URL}/logements-aix-en-provence)`,
         `- [Architecte commerces à Aix-en-Provence](${SITE_URL}/commerces-aix-en-provence)`,
         `- [Architecte équipements publics à Aix-en-Provence](${SITE_URL}/equipements-aix-en-provence)`,
