@@ -6,7 +6,7 @@ import type { LandingData } from "@/components/LandingPage";
 export const data: LandingData = {
     hero: {
         eyebrow: "Architecte à Aix-en-Provence",
-        h1: "Agrandir votre maison à Aix-en-Provence",
+        h1: "Réhabiliter ou agrandir votre maison à Aix-en-Provence",
         sub: "Extension, surélévation, annexe ou transformation complète : Serge Ettore, architecte DPLG, conçoit l’agrandissement de votre maison existante, de l’analyse du PLU(i) au permis de construire et jusqu’au suivi du chantier.",
         trust: "Architecte DPLG depuis 1999 · Agence fondée en 2013 à Aix-en-Provence · Estimation sous 48h",
         img: "/images/projects/1-villas/villa T/villaT_1.jpg",
