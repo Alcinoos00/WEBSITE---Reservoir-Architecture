@@ -53,6 +53,6 @@ export const SITEMAP_DATES: Record<string, string> = {
     "/villas/villa-p1": "2026-10-31",
     "/villas/villa-p2": "2026-10-31",
     "/villas/villa-s": "2026-10-31",
-    "/villas/villa-t": "2026-10-31",
+    "/villas/villa-t": "2026-11-20",
     "/villas/villa-v": "2026-10-31"
 };
