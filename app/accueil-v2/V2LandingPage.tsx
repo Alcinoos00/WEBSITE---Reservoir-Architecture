@@ -5,9 +5,11 @@ import AfterLoad from "@/components/AfterLoad";
 import { noBreakHyphens } from "@/components/noBreakHyphens";
 import type { LandingData } from "@/components/LandingPage";
 import { SITE_EMAIL, SITE_PHONE, SITE_PHONE_DISPLAY } from "@/lib/seo";
-import { v2 } from "./v2Links";
 import V2Reviews from "./V2Reviews";
 import V2Cta from "./V2Cta";
+import V2MoreProjects from "./V2MoreProjects";
+import { PROJECTS } from "@/lib/projects";
+import { v2, v2ProjectHref } from "./v2Links";
 
 const TEL = `tel:${SITE_PHONE}`;
 
@@ -50,20 +52,35 @@ export default function V2LandingPage({ data, afterSteps }: { data: LandingData;
                     <p className="v2-small">{realisations.lead}</p>
                 </div>
                 <ul className="v2-cards">
-                    {realisations.projects.map((p) => (
-                        <li key={p.title} className="v2-fade" data-reveal>
+                    {realisations.projects.map((p) => {
+                        const project = p.projectId ? PROJECTS.find((x) => x.id === p.projectId) : undefined;
+                        const href = project ? v2ProjectHref(project) : undefined;
+                        const photo = (
                             <span className="v2-works-photo v2-cards-photo">
                                 <AfterLoad>
                                     <Image src={p.img} alt={p.alt} fill sizes="(max-width: 768px) 100vw, 33vw" />
                                 </AfterLoad>
                             </span>
-                            <h3 className="v2-domain-caption">{p.title}</h3>
-                            <p className="v2-tag">{p.specs.map((s) => s.label).join(" · ")}</p>
-                            <p className="v2-small">{p.desc}</p>
-                            <a href={TEL} className="v2-cards-link">{p.cta}</a>
-                        </li>
-                    ))}
+                        );
+                        return (
+                            <li key={p.title} className="v2-fade" data-reveal>
+                                {href ? <Link href={href} tabIndex={-1} aria-hidden="true">{photo}</Link> : photo}
+                                <h3 className="v2-domain-caption v2-cards-title">{href ? <Link href={href}>{p.title}</Link> : p.title}</h3>
+                                <p className="v2-tag">{p.specs.map((s) => s.label).join(" · ")}</p>
+                                <p className="v2-small">{p.desc}</p>
+                                <div className="v2-cta-actions">
+                                    {href && <Link href={href} className="v2-cards-link">Voir le projet</Link>}
+                                    <a href={TEL} className="v2-cards-link">{p.cta}</a>
+                                </div>
+                            </li>
+                        );
+                    })}
                 </ul>
+                {(() => {
+                    const ids = realisations.projects.map((p) => p.projectId).filter((x): x is string => !!x);
+                    const category = ids.length ? PROJECTS.find((x) => x.id === ids[0])?.category : undefined;
+                    return category ? <V2MoreProjects category={category} exclude={ids} className="v2-landing-more" /> : null;
+                })()}
             </section>
 
             <section className="v2-section">

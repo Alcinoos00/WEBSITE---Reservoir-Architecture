@@ -16,6 +16,8 @@ export type ProjectCard = {
     specs: Spec[];
     cta: string;
     loc: string;
+    // Identifiant du projet (lib/projects.ts) : la carte renvoie alors vers sa fiche (maillage interne).
+    projectId?: string;
 };
 export type Reason = { icon: string; title: string; text: string };
 export type Step = { title: string; text: string };

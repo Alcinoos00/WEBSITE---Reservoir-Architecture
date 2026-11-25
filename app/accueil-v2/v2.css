@@ -1461,3 +1461,15 @@ body:has(.v2) { background: #ffffff; }
 .v2 .v2-related-meta { font-size: var(--fs-sm, 13px); color: var(--v2-muted, #6b6b6b); }
 .v2 .v2-related-list a:hover .v2-related-name, .v2 .v2-related-list a:focus-visible .v2-related-name { text-decoration: underline; }
 .v2 .v2-related-all { margin: 20px 0 0; }
+
+/* Liens texte « Autres projets » (accueil et pages Aix) : maillage interne vers toutes les fiches projet */
+.v2 .v2-more-projects { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px; }
+.v2 .v2-more-projects a { font-size: var(--t1); font-weight: 500; text-transform: uppercase; color: var(--v2-ink); text-decoration: underline; text-underline-offset: 4px; }
+.v2 .v2-more-projects .v2-more-place { font-weight: 400; text-transform: none; color: var(--v2-muted); text-decoration: none; }
+.v2-domain { grid-template-areas: "text examples" ". more" ". btn"; }
+.v2-domain .v2-more-projects { grid-area: more; }
+.v2-landing-more { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--v2-line); }
+.v2 .v2-cards-title a { color: inherit; text-decoration: none; }
+@media (max-width: 768px) {
+    .v2-domain { grid-template-areas: "text" "examples" "more" "btn"; }
+}

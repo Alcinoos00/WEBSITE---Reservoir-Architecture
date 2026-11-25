@@ -18,6 +18,7 @@ export const data: LandingData = {
         projects: [
             {
                 title: "Esprit Bastide",
+                projectId: "puyricard",
                 img: "/images/projects/3-commerces/puyricard/puyricard_1.jpg",
                 alt: "Esprit Bastide, perspective de l’étude de faisabilité d’un ensemble de commerces à Puyricard, par Reservoir Architecture",
                 desc: "Étude de faisabilité d’un ensemble de commerces et services articulé autour d’un patio d’oliviers, dans l’esprit d’un village provençal contemporain, autour de l’emblématique Chocolaterie de Puyricard.",
@@ -30,6 +31,7 @@ export const data: LandingData = {
             },
             {
                 title: "Cacharel",
+                projectId: "cacharel",
                 img: "/images/projects/3-commerces/cacharel/cacharel_1.jpg",
                 alt: "Concept boutique Cacharel par Reservoir Architecture",
                 desc: "Concept boutique de la maison Cacharel, décliné en France et à l’international. Un écrin minimaliste de bois blond au service d’une marque de luxe.",
@@ -42,6 +44,7 @@ export const data: LandingData = {
             },
             {
                 title: "Wauquiez",
+                projectId: "wauquiez",
                 img: "/images/projects/3-commerces/wauquiez/wauquiez_1.jpg",
                 alt: "Showroom nautique Wauquiez par Reservoir Architecture",
                 desc: "Showroom nautique haut de gamme sur deux niveaux pour le constructeur Wauquiez. Parcours client, verrières et matériaux clairs au service du positionnement de la marque.",
@@ -55,6 +58,7 @@ export const data: LandingData = {
             },
             {
                 title: "Denim",
+                projectId: "denim",
                 img: "/images/projects/3-commerces/denim/denim_1.jpg",
                 alt: "Boutique Denim, aménagement intérieur par Reservoir Architecture",
                 desc: "Aménagement de l’espace de vente de la marque Denim. Un paysage intérieur industriel où béton, acier et bois subliment une identité brute et authentique.",
@@ -68,6 +72,7 @@ export const data: LandingData = {
             },
             {
                 title: "Food Village",
+                projectId: "food-village",
                 img: "/images/projects/3-commerces/food-village/foodvillage_1.jpg",
                 alt: "Concept de café et snacking Food Village par Reservoir Architecture",
                 desc: "Concept de café et de snacking organisé autour d’un comptoir central. Blanc immaculé, bois naturel et touches graphiques pour une atmosphère fraîche et conviviale.",
@@ -81,6 +86,7 @@ export const data: LandingData = {
             },
             {
                 title: "Le Pétrin d’Honoré",
+                projectId: "fournil-st-honore",
                 img: "/images/projects/3-commerces/fournil-st-honore/honore_1.jpg",
                 alt: "Concept de boulangerie Le Pétrin d’Honoré par Reservoir Architecture",
                 desc: "Concept de boulangerie pensé pour être décliné sur plusieurs sites. Façade noire largement vitrée qui met en scène le savoir-faire artisanal au cœur du flux urbain.",

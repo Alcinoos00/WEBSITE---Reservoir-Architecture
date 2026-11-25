@@ -18,6 +18,7 @@ export const data: LandingData = {
         projects: [
             {
                 title: "Samaritaine",
+                projectId: "samaritaine",
                 img: "/images/projects/2-logements/samaritaine/samaritaine_1.jpg",
                 alt: "Résidence Samaritaine de 30 logements par Reservoir Architecture",
                 desc: "Résidence de 30 logements collectifs organisée autour d’un jardin patio. Façades en béton teinté, loggias et claustras bois, pour un îlot dense mais respirant.",
@@ -31,6 +32,7 @@ export const data: LandingData = {
             },
             {
                 title: "Les Terrasses de la Plaine",
+                projectId: "jacou",
                 img: "/images/projects/2-logements/jacou/plaine_1.jpg",
                 alt: "Résidence Les Terrasses de la Plaine à Jacou par Reservoir Architecture",
                 desc: "Résidence de 6 logements conçue dans un esprit de villa, déployée dans la pente avec terrasses, coursives et espaces extérieurs généreux.",
@@ -44,6 +46,7 @@ export const data: LandingData = {
             },
             {
                 title: "Les Jardins de Rosalie",
+                projectId: "romi",
                 img: "/images/projects/2-logements/romi/rosalie_1.jpg",
                 alt: "Résidence Les Jardins de Rosalie par Reservoir Architecture",
                 desc: "Extension d’une résidence en logements T2 à T4, réinterprétation contemporaine de la bastide provençale autour d’un cœur extérieur structurant.",
@@ -57,6 +60,7 @@ export const data: LandingData = {
             },
             {
                 title: "Le Guillot",
+                projectId: "martin-pierre",
                 img: "/images/projects/2-logements/martin-pierre/guillot_1.jpg",
                 alt: "Résidence Le Guillot de 6 logements T3 par Reservoir Architecture",
                 desc: "Petit collectif résidentiel de 6 logements T3 inséré avec retenue dans un tissu de maisons de ville. Loggias creusées et retraits pour l’intimité des logements.",
@@ -70,6 +74,7 @@ export const data: LandingData = {
             },
             {
                 title: "Childebert",
+                projectId: "trentini",
                 img: "/images/projects/2-logements/trentini/childebert_1.jpg",
                 alt: "Petit immeuble Childebert de 2 logements T3 par Reservoir Architecture",
                 desc: "Petit immeuble de 2 logements T3 à volumétrie compacte, inséré entre les constructions existantes. Retraits, loggias et terrasse en attique.",
@@ -83,6 +88,7 @@ export const data: LandingData = {
             },
             {
                 title: "Les Hauts de Vacquerolles",
+                projectId: "vacquerolles",
                 img: "/images/projects/2-logements/vacquerolles/vacquerolles_1.jpg",
                 alt: "Résidence Les Hauts de Vacquerolles par Reservoir Architecture",
                 desc: "Deux volumes méditerranéens, un T3 et un T5, dialoguant avec la topographie de la garrigue nîmoise. Façades minérales ocre et larges terrasses.",

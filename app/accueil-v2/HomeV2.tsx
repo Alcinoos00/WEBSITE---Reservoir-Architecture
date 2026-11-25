@@ -17,6 +17,7 @@ import V2Cta from "./V2Cta";
 import HeroCategories from "./HeroCategories";
 import V2AboutFold from "./V2AboutFold";
 import V2VoirCascade from "./V2VoirCascade";
+import V2MoreProjects from "./V2MoreProjects";
 
 // Accueil v2 (refonte façon template Teras), rendu par app/accueil-v2/page.tsx (noindex).
 // Les textes reprennent ceux de l'accueil précédent pour garder le même référencement.
@@ -162,6 +163,7 @@ export default function HomeV2() {
                                     </li>
                                 ))}
                             </ul>
+                            <V2MoreProjects category={d.category} exclude={[...d.examples, ...(d.mobileExtra ?? [])].map((p) => p.id)} />
                             <Link href={d.href} className="v2-btn v2-domain-btn">Voir toutes les réalisations</Link>
                         </article>
                     ))}

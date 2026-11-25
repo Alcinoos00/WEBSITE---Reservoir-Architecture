@@ -18,6 +18,7 @@ export const data: LandingData = {
         projects: [
             {
                 title: "Villa F",
+                projectId: "villa-f",
                 img: "/images/projects/1-villas/villa F/villaF_2.jpg",
                 alt: "Villa F, maison réhabilitée et agrandie avec piscine, vue aérienne en perspective, par Reservoir Architecture",
                 desc: "Maison de lotissement réhabilitée et agrandie en villa contemporaine, organisée autour d’une cour-piscine. Béton clair, bois brûlé, lignes ciselées, un haut de gamme sans ostentation.",
@@ -31,6 +32,7 @@ export const data: LandingData = {
             },
             {
                 title: "Villa P",
+                projectId: "villa-p1",
                 img: "/images/projects/1-villas/villa P1/villaP_1.jpg",
                 alt: "Villa contemporaine P, restanque en surplomb du paysage, par Reservoir Architecture",
                 desc: "Restanque contemporaine posée en surplomb du paysage, ancrée dans la pente par un soubassement en pierre qui dialogue avec la garrigue.",
@@ -44,6 +46,7 @@ export const data: LandingData = {
             },
             {
                 title: "Villa T",
+                projectId: "villa-t",
                 img: "/images/projects/1-villas/villa T/villaT_1.jpg",
                 alt: "Villa contemporaine T, maison de ville réhabilitée à Aix-en-Provence, par Reservoir Architecture",
                 desc: "Réhabilitation d’une maison de ville aixoise et de ses annexes, aux volumes réaménagés et largement ouverts sur les terrasses et le jardin. La lumière provençale devient matière première.",
@@ -57,6 +60,7 @@ export const data: LandingData = {
             },
             {
                 title: "Villa C",
+                projectId: "villa-c",
                 img: "/images/projects/1-villas/villa C/villaC_2.jpg",
                 alt: "Villa contemporaine C, volumes blancs et piscine miroir, par Reservoir Architecture",
                 desc: "Volumes blancs purs posés comme une sculpture horizontale dans le paysage méditerranéen, ouverts sur une terrasse en bois et une piscine miroir.",
@@ -70,6 +74,7 @@ export const data: LandingData = {
             },
             {
                 title: "Villa S",
+                projectId: "villa-s",
                 img: "/images/projects/1-villas/villa S/villaS_1.jpg",
                 alt: "Villa contemporaine S, maison entre les pins à Langlade, par Reservoir Architecture",
                 desc: "Glissée entre les pins, la maison s’étire horizontalement pour préserver le paysage et dialoguer avec la forêt de chênes verts. Un refuge sobre et chaleureux.",
@@ -83,6 +88,7 @@ export const data: LandingData = {
             },
             {
                 title: "Villa L",
+                projectId: "villa-l",
                 img: "/images/projects/1-villas/villa L/villaL_1.jpg",
                 alt: "Villa contemporaine L, socle de pierre sèche et volumes enduits, par Reservoir Architecture",
                 desc: "Ancrée dans un socle de pierre sèche et pensée comme un cadran solaire. Volumes enduits sobres et lumineux, protégés par de larges débords qui filtrent le soleil.",
