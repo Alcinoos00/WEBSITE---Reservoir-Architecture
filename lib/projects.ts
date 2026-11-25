@@ -1029,7 +1029,12 @@ export const SUPER_U_PROJECT: ProjectData = {
     subtitle: "LA CALMETTE (30)",
     title: "SUPER U",
     optionalSubtitle: "RÉHABILITATION ET EXTENSION D’UN SUPERMARCHE POUR L’ENSEIGNE SUPER U",
-    descriptionParagraphs: [],
+    descriptionHeader: "Supermarché de proximité",
+    descriptionParagraphs: [
+        "Le projet porte sur la réhabilitation et l’extension d’un supermarché de 2 600 m² à La Calmette, dans le Gard, pour l’enseigne Super U. L’enjeu : moderniser un magasin en activité et lui donner une façade claire et accueillante, à l’entrée du village.",
+        "La façade est recomposée en panneaux blancs, rythmée par de hautes fenêtres étroites. De grands auvents métalliques, portés par de fins poteaux, abritent l’entrée et le cheminement des clients. Un volume en enduit couleur sable, à l’angle, porte le nom de la commune et ancre le bâtiment dans son village.",
+        "Les abords sont traités avec soin : parking redessiné, îlots plantés d’essences méditerranéennes et haie le long de la route pour adoucir la présence du bâtiment depuis l’espace public."
+    ],
     techSheet: [
         { label: "Lieu", value: "La Calmette (30)" },
         { label: "Maitre d'Ouvrage", value: "Privé" },
